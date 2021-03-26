@@ -1,0 +1,316 @@
+h1, h2, h3, h4, h5, h6, p, span, b {
+    font-family: 'Times New Roman', sans-serif;
+}
+
+
+.faculty_and_center {
+    /* background-color: #F8F8F8; */
+}
+
+
+
+[data-tab-content] {
+    display: none;
+  }
+  
+  .active[data-tab-content] {
+    display: block;
+  }
+  
+  
+  .fc_tabs {
+    display: flex;
+    justify-content: space-around;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    background-color: #233585;
+    color: white;
+    border: 1px solid #2c42A6;
+  }
+  
+  .fc_tab {
+    cursor: pointer;
+    padding: 10px;
+    background-color: #2C42A6;
+    display: block;
+    width: calc(100% / 4);
+    text-align: center;
+  }
+  
+  .fc_tab.active {
+    background-color: white;
+    color: #233585;
+  }
+  
+  .fc_tab:hover {
+  }
+  
+  .fc_tab-content {
+    border-left: 1px solid #2c42A6;
+    border-right: 1px solid #2c42A6;
+    border-bottom: 1px solid #2c42A6;
+  }
+  
+  
+  
+  
+  
+  
+  
+  
+  
+
+
+
+
+
+
+
+.about_fc_card {
+    display: flex;
+    background-color: white;
+}
+
+.about_fc_card>div:nth-child(1) {
+    width: 200px;
+    height: auto;
+}
+
+.about_fc_card>div:nth-child(1) img {
+    width: 100%;
+    height: 100%;
+}
+
+.about_fc_card_text_box {
+    width: 100%;
+    padding: 4px 10px 4px 20px;
+}
+
+.about_fc_card_text_box i {
+    font-size: 18px;
+    color: #233585;
+}
+
+.about_fc_card_text_box b {
+    font-size: 16px;
+}
+
+.about_fc_card_text_box span {
+    font-size: 17px;
+}
+
+.header_fc_content h5 {
+    font-size: 24px;
+    font-weight: 500;
+    font-family: 'Times New Roman', sans-serif;
+    color: #233585;
+}
+
+.header_fc_content p {
+    font-size: 16px;
+    font-family: 'Times New Roman', sans-serif;
+    text-align: justify;
+}
+
+/* accordion */
+
+.accordion-container {
+    position: relative;
+    width: 100%;
+    border: 1px solid #233585;
+    border-top: none;
+    outline: 0;
+    cursor: pointer
+}
+
+.accordion-container .article-title {
+    display: block;
+    position: relative;
+    margin: 0;
+    padding: 0.625em 0.625em 0.625em 2em;
+    border-top: 1px solid #233585;
+    font-size: 1.25em;
+    font-weight: normal;
+    color: #233585;
+    cursor: pointer;
+}
+
+.accordion-container .article-title:hover, .accordion-container .article-title:active, .accordion-container .content-entry.open .article-title {
+    background-color: #233585;
+    color: white;
+}
+
+.accordion-container .article-title:hover i:before, .accordion-container .article-title:hover i:active, .accordion-container .content-entry.open i {
+    color: white;
+}
+
+.accordion-container .content-entry i {
+    position: absolute;
+    top: 3px;
+    left: 12px;
+    font-style: normal;
+    font-size: 1.625em;
+    font-family: sans-serif;
+    color: #233585;
+}
+
+.accordion-container .content-entry i:before {
+    content: "+ ";
+}
+
+.accordion-container .content-entry.open i:before {
+    content: "- ";
+}
+
+.accordion-content {
+    display: none;
+    padding-left: 2em;
+}
+
+/* This stuff is just for the Codepen demo */
+
+#content_accordion {
+    width: 100%;
+}
+
+@media all and (min-width: 860px) {
+    #content_accordion {
+        width: 100%;
+        margin: 0 auto;
+    }
+}
+
+/* accordion */
+
+.faculty_and_centers_list {
+    margin: 20px 0;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.faculty_and_centers_list>div {
+    width: 300px;
+    margin: 0px 10px;
+    text-align: center;
+    padding: 26px 0;
+    cursor: pointer;
+}
+
+.faculty_and_centers_list>div:hover {
+    background-color: #233585;
+    color: white;
+}
+
+.faculty_and_centers_list>div:hover i {
+    background-color: #233585;
+    color: white;
+}
+
+.faculty_and_centers_list>div:hover span {
+    background-color: #233585;
+    color: white;
+}
+
+.faculty_and_centers_list>div i {
+    font-size: 28px;
+    color: #233585;
+}
+
+.faculty_and_centers_list>div span {
+    font-size: 20px;
+    font-weight: 500;
+    color: #233585;
+}
+
+.faculty_and_centers_list_text>ul {
+    list-style: none;
+}
+
+.faculty_and_centers_list_text>ul li {
+    font-size: 16px;
+    font-weight: 400;
+    cursor: pointer;
+}
+
+.faculty_and_centers_list_text>ul li i {
+    color: #233585;
+    transition: all 0.2s ease-in-out;
+}
+.faculty_and_centers_list_text>ul li:hover i {
+    margin-left: 4px;
+}
+
+/* media */
+
+@media(max-width:1291px){
+    .faculty_and_center {
+        margin-top: 46px;
+    }
+}
+
+@media(max-width:768px) {
+    .about_fc_card {
+        display: block;
+        background-color: white;
+    }
+    .about_fc_card>div:nth-child(1) {
+        width: 100%;
+        height: 250px;
+    }
+    .about_fc_card>div:nth-child(1) img {
+        width: 100%;
+        height: 100%;
+    }
+    .about_fc_card_text_box {
+        padding: 4px 10px 4px 16px;
+    }
+    .about_fc_card_text_box i {
+        font-size: 14px;
+        color: #006523;
+    }
+    .about_fc_card_text_box b {
+        font-size: 14px;
+    }
+    .about_fc_card_text_box span {
+        font-size: 14px;
+    }
+    .header_fc_content h5 {
+        font-size: 24px;
+        font-weight: 500;
+    }
+    .header_fc_content p {
+        font-size: 14px;
+    }
+    .accordion-container .article-title {
+        font-size: 14px;
+    }
+    .accordion-container .content-entry i {
+        position: absolute;
+        top: 50%;
+        left: 12px;
+        transform: translateY(-50%);
+        font-style: normal;
+        font-size: 14px;
+        font-family: sans-serif;
+        color: #006523;
+    }
+    .faculty_and_centers_list_text>ul {
+        padding-left: 10px;
+        font-size: 14px;
+    }
+    .faculty_and_centers_list_text>ul li {
+        font-size: 15px;
+    }
+    .header_fc_content h5 {
+        font-size: 20px;
+        font-weight: 500;
+    }
+    .header_fc_content p {
+        font-size: 14px;
+        text-align: justify;
+    }
+}
+
+/* media */

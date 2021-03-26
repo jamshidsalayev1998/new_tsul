@@ -1,0 +1,46 @@
+.content {
+  background-color: #F6F7FD; }
+  .content h1 {
+    text-align: center;
+    text-transform: uppercase;
+    color: #2f3542; }
+  .content .accordion .ui-accordion-header {
+    border: 0px solid #F6F7FD;
+    padding: 10px;
+    background: #bdc3c7;
+    cursor: pointer;
+    outline: none;
+    color: #ffffff; }
+    .content .accordion .ui-accordion-header:hover {
+      background: #C0C6CA;
+      color: #000; }
+      .content .accordion .ui-accordion-header:hover i {
+        color: #000; }
+  .content .accordion .ui-accordion-content {
+    border: 0px solid #F6F7FD;
+    margin: 0 0 10px 0;
+    padding: 5px;
+    font-size: 14px;
+    background: #ffffff;
+    color: #2f3542;
+    text-align: justify; }
+  .content .accordion h3 {
+    text-align: justify; }
+    .content .accordion h3 i {
+      color: #ffffff;
+      margin-right: 10px; }
+
+/*Click rotate*/
+.rotate {
+  -moz-transition: all .5s linear;
+  -webkit-transition: all .5s linear;
+  transition: all .5s linear; }
+
+.rotate.down {
+  -moz-transform: rotate(-90deg);
+  -webkit-transform: rotate-(90deg);
+  transform: rotate(-90deg); }
+
+/*End Click rotate*/
+
+/*# sourceMappingURL=faq.css.map */
