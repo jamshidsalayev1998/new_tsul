@@ -1,26 +1,26 @@
 @extends('simple.layouts.master')
 @section('content')
+    <?php
+        $locale = app()->getLocale();
+        $text_locale = 'text_'.$locale;
+        $name_locale = 'name_'.$locale;
+    ?>
             <div class="main_content ">
             <div class="main_content_text_box">
                 <div>
                     <div>
                         <span>
                             <i class="fas fa-envelope"></i>
-                            <a href="mailto:info@tsul.uz" class="text-white ">info@tsul.uz </a>
+                            <a href="mailto:info@tsul.uz" class="text-white ">{{$slider_texts->email}} </a>
                         </span>
                         <span>
                             <i class="fas fa-phone-alt"></i>
-                            +71 777 77 77
+                            {{$slider_texts->phone}}
                         </span>
                     </div>
-                    <div>
-                        <h4 class="text-white" style="z-index: 100;">ОБ УНИВЕРСИТЕТЕ</h4>
-                        <p>
-                            Ташкентский государственный юридический университет является базовым
-                            высшим образовательным и научно-методическим учреждением по
-                            подготовке юридических кадров в Узбекистане.
-                        </p>
-                        <a href="ob_unversitete.html" class="mc_button">подробнее <i class="fas fa-arrow-right ml-2"
+                    <div style="color: white !important;">
+                        {!! $slider_texts->$text_locale !!}
+                        <a href="{{$slider_texts->link}}" class="mc_button">подробнее <i class="fas fa-arrow-right ml-2"
                                 style="font-size: 14px;"></i></a>
                         <div class="owl-dots">
                             <button role="button" class="owl-dot"><span></span></button><button role="button"
@@ -35,61 +35,30 @@
                 </div>
             </div>
             <div id="owl-demo" class="owl-carousel">
-                <div class="item"><img class="lazyOwl" src="{{asset('front_assets/assets/img/img1.jpg')}}" alt="Lazy Owl Image">
-                </div>
-                <div class="item"><img class="lazyOwl" src="{{asset('front_assets/assets/img/img2.jpg')}}" alt="Lazy Owl Image">
-                </div>
-                <div class="item"><img class="lazyOwl" src="{{asset('front_assets/assets/img/img3.jpg')}}" alt="Lazy Owl Image">
-                </div>
+                @foreach($slider_images as $image)
+                    <div class="item">
+                        <img class="lazyOwl" src="{{asset('/')}}{{$image->image_uz}}" alt="Lazy Owl Image">
+                    </div>
+                @endforeach
+{{--                <div class="item"><img class="lazyOwl" src="{{asset('front_assets/assets/img/img2.jpg')}}" alt="Lazy Owl Image">--}}
+{{--                </div>--}}
+{{--                <div class="item"><img class="lazyOwl" src="{{asset('front_assets/assets/img/img3.jpg')}}" alt="Lazy Owl Image">--}}
+{{--                </div>--}}
             </div>
         </div>
 
         <section class="main_icon_menu">
             <div class="container-fuid menu_box_icon">
-                <a href="#" class="menu_icon_box mt-2">
-                    <div class="menu_icon_effect">
-                        <i class="fas fa-user-cog"></i>
-                        <h5>SRS</h5>
-                    </div>
-                </a>
-                <a href="#" class="menu_icon_box  mt-2">
-                    <div class="menu_icon_effect">
-                        <i class="fas fa-laptop-house"></i>
-                        <h5>Дистанционное образование</h5>
-                    </div>
-                </a>
-                <a href="#" class="menu_icon_box  mt-2">
-                    <div class="menu_icon_effect">
-                        <i class="fas fa-user-clock"></i>
-                        <h5>Приемная комиссия</h5>
-                    </div>
-                </a>
-                <a href="#" class="menu_icon_box  mt-2">
-                    <div class="menu_icon_effect">
-                        <i class="fas fa-chart-bar"></i>
-                        <h5>Статистика</h5>
-                    </div>
-                </a>
-                <a href="./faq.html" class="menu_icon_box  mt-2">
-                    <div class="menu_icon_effect">
-                        <i class="fas fa-question-circle"></i>
-                        <h5>Faq</h5>
-                    </div>
-                </a>
-                <a href="#" class="menu_icon_box  mt-2">
-                    <div class="menu_icon_effect">
-                        <i class="fas fa-chalkboard-teacher"></i>
-                        <h5>Моодле</h5>
-                    </div>
-                </a>
-                <a href="./euc.html"  class="menu_icon_box  mt-2">
+                @foreach($system_cards as $card)
+                <a href="{{$card->link}}"  class="menu_icon_box  mt-2">
                     <!-- <div class="menu_icon_box  mt-2"> -->
                         <div class="menu_icon_effect">
-                            <i class="fas fa-project-diagram"></i>
-                            <h5>Электрон университет</h5>
+                            {!! $card->icon !!}
+                            <h5>{{$card->$name_locale}}</h5>
                         </div>
                     <!-- </div> -->
                 </a>
+                @endforeach
             </div>
         </section>
 

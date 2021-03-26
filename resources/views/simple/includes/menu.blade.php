@@ -34,7 +34,7 @@
                     </div>
                     <div class="lnb_bottom">
                         <span class="c_main_link">
-                            <a id="link_to" class="main_links" href="#">Университет <i class="fas fa-sort-down"></i></a>
+                            <a id="link_to" class="main_links" href="#">@lang('menu.Университет') <i class="fas fa-sort-down"></i></a>
                             <div class="hover_menu fadeInDown" data-wow-duration="0.2s" data-wow-delay="0.1s">
                                 <div class="c_parent_box">
                                     <div class="c_parent_link">
@@ -389,14 +389,16 @@
                         <div class="p-0 m-0 d-flex h-100 align-items-center">
                             <div class="language_box">
                                 <div id="hlb" class="head_language_box">
-                                    <span id="selected_language">O'zbekcha</span>
+                                    <span id="selected_language">{{LaravelLocalization::getCurrentLocaleName()}}</span>
                                     <span id="animating_icons_lang" class="animating_language_icon"><i
                                             class="fas fa-chevron-down"></i></span>
                                 </div>
                                 <div id="selecting_box_id" class="selecting_box">
-                                    <span>Ўзбекча</span>
-                                    <span>Русский</span>
-                                    <span>English</span>
+                                    @foreach(LaravelLocalization::getSupportedLocales() as $localeCode => $properties)
+                                        @if(app()->getLocale() != $localeCode)
+                                            <span class="select-language-j" hreflang="{{ $localeCode }}" data-href="{{ LaravelLocalization::getLocalizedURL($localeCode, null, [], true) }}">{{ $properties['native'] }}</span>
+                                        @endif
+                                    @endforeach
                                 </div>
                             </div>
                             <span id="search_id" class="search_box  px-3"><i id="search_id_i"

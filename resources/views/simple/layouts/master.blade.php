@@ -65,4 +65,11 @@
 
 </script>
 
+<script>
+    $('.select-language-j').click(function () {
+        var href = $(this).attr('data-href');
+        window.location.href=href;
+    });
+</script>
+
 </html>
