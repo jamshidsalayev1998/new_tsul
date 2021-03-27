@@ -10,6 +10,11 @@ class Menu extends Authenticatable
 {
     protected $table = 'menus';
 
+    public function scopeBasic($query)
+    {
+        return $query->where('type', 1);
+    }
+
     public function childs(){
         $childs = Menu::where('parent_id' , $this->id)->get();
         return $childs;

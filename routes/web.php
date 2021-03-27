@@ -38,6 +38,8 @@ Route::group(
 ], function(){
     Route::get('/', 'IndexController@index')->name('simple.index');
     Route::get('/general-page/{slug}' , 'SlugController@index')->name('slug.index');
+
+    Route::get('/about-university' , 'IndexController@about_university')->name('simple.about.university');
 });
 
 Route::group(
@@ -59,5 +61,9 @@ Route::group(
 
     Route::get('/pages', 'PageController@index')->name('admin.page.index');
     Route::get('/page-create', 'PageController@create')->name('admin.page.create');
+    Route::post('/page-store', 'PageController@store')->name('admin.page.store');
     Route::delete('/page-delete', 'PageController@destroy')->name('admin.page.delete');
+
+    Route::get('/about-university' , 'AboutUniversityController@index')->name('admin.about_university.index');
+    Route::post('/admin-about-university-update' , 'AboutUniversityController@update')->name('admin.about_university.update');
 });

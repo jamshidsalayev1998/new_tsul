@@ -1,3 +1,11 @@
+<?php
+$about = 'App\AboutUniversity'::where('status' , 1)->first();
+$locale = app()->getLocale();
+        $name_locale = 'name_'.$locale;
+        $short_desc_locale = 'short_description_'.$locale;
+        $full_inf_locale = 'full_information_'.$locale;
+        $address_locale = 'address_'.$locale;
+?>
 <footer class="eighth-part w-100">
             <div class="footer_img_box">
                 <img src="assets/img/img1.jpg" alt="img not found">
@@ -11,10 +19,7 @@
                                     <img src="{{asset('front_assets/assets/img/logo_university/TDYU_UZ_white.png')}}" alt="">
                                 </div>
                                 <h5 class="footer_about_universty">
-                                    О Ташкентском Государственном Юридическом Университете
-                                    Ташкентский государственный юридический университет
-                                    является базовым высшим образовательным и научно-методическим
-                                    учреждением по подготовке юридических кадров в Узбекистане
+                                    {!! $about->$short_desc_locale !!}
                                 </h5>
                             </div>
                         </div>
@@ -23,40 +28,37 @@
                             <div>
                                 <p class="mt-3" style="font-size: 16px; font-weight: 600;">
                                     <i class="fas fa-phone-alt mr-2"></i>
-                                    <span>Tel: +99 871 233-66-36</span>
+                                    <span>Tel: {{$about->phone}}</span>
                                 </p>
                                 <p class="mt-3" style="font-size: 16px; font-weight: 600;">
                                     <i class="fas fa-fax mr-2"></i>
-                                    <span>Faks: +99 871 233-37-48</span>
+                                    <span>Faks: {{$about->faks}}</span>
                                 </p>
                                 <p class="mt-3" style="font-size: 16px; font-weight: 600;">
                                     <i class="fas fa-envelope mr-2"></i>
                                     <span>e-mail: <a href="#"
-                                            style="font-size: 16px; font-weight: 600; color: white;">info@tsyl.uz</a></span>
+                                            style="font-size: 16px; font-weight: 600; color: white;">{{$about->email}}</a></span>
                                 </p>
                                 <p>
                                     <i class="fas fa-map-marker-alt mr-2"></i>
-                                    <span style="font-size: 16px; font-weight: 600;">Республика Узбекистан, 100047. г.
-                                        Ташкент,
-                                        ул.
-                                        Сайилгох, 35</span>
+                                    <span style="font-size: 16px; font-weight: 600;">{{$about->$address_locale}}</span>
                                 </p>
                                 <p class="mt-4">
-                                    <a href="https://twitter.com/tsulofficial" class="footer_icons" target="_blank"
+                                    <a href="{{$about->twitter}}" class="footer_icons" target="_blank"
                                         rel="noopener noreferrer">
                                         <i class="fab fa-twitter"></i></a>
-                                    <a href="https://t.me/tsulofficial" target="_blank" class="footer_icons"
+                                    <a href="{{$about->telegram}}" target="_blank" class="footer_icons"
                                         rel="noopener noreferrer">
                                         <i class="fab fa-telegram-plane"></i>
                                     </a>
-                                    <a href="https://www.youtube.com/channel/UCTAhGEQDYohjqmDAsD9yRBg"
+                                    <a href="{{$about->youtube}}"
                                         class="footer_icons" target="_blank" rel="noopener noreferrer">
                                         <i class="fab fa-youtube"></i>
                                     </a>
-                                    <a href="https://www.instagram.com/tsulofficial" class="footer_icons"
+                                    <a href="{{$about->instagram}}" class="footer_icons"
                                         target="_blank" rel="noopener noreferrer">
                                         <i class="fab fa-instagram"></i></a>
-                                    <a href="https://www.fb.com/tsulofficial" target="_blank" class="footer_icons"
+                                    <a href="{{$about->facebook}}" target="_blank" class="footer_icons"
                                         rel="noopener noreferrer">
                                         <i class="fab fa-facebook-f"></i>
                                     </a>

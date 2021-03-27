@@ -1,6 +1,7 @@
 <?php
 
 namespace App\Http\Controllers\Simple;
+use App\AboutUniversity;
 use App\Http\Controllers\Controller;
 use App\Menu;
 use App\SliderImage;
@@ -26,6 +27,13 @@ class IndexController extends Controller
             'slider_texts' => $slider_texts,
             'system_cards' => $system_cards,
             'menus' => $menus
+        ]);
+    }
+
+    public function about_university(){
+        $about = AboutUniversity::first();
+        return view('simple.about_university.index' , [
+            'about' => $about
         ]);
     }
 }

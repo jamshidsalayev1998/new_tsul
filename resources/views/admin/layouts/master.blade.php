@@ -28,6 +28,7 @@
       <link rel="stylesheet" href="{{asset('admin_lte/plugins/datatables-bs4/css/dataTables.bootstrap4.min.css')}}">
   <link rel="stylesheet" href="{{asset('admin_lte/plugins/datatables-responsive/css/responsive.bootstrap4.min.css')}}">
   <link rel="stylesheet" href="{{asset('admin_lte/plugins/datatables-buttons/css/buttons.bootstrap4.min.css')}}">
+    @yield('link')
 
     <style>
         .last-td{
@@ -45,60 +46,6 @@
         div.card{
             /*min-height: 91vh !important;*/
             margin-bottom: 0px !important;
-        }
-        /*.main-sidebar{*/
-        /*    width: 200px !important;*/
-
-        /*}*/
-        /*.layout-fixed .brand-link{*/
-        /*    width: 200px !important;*/
-        /*}*/
-        /*.sidebar-mini .main-sidebar .nav-link{*/
-        /*    width: unset !important;*/
-        /*}*/
-        /*.nav-sidebar .nav-item a p{*/
-        /*    font-size: 12px !important;*/
-        /*}*/
-        /*.nav-sidebar .nav-item a{*/
-        /*    padding: 5px 10px !important;*/
-        /*}*/
-        /*.nav-sidebar .nav-item a i{*/
-        /*    font-size: 14px !important;*/
-        /*}*/
-        /*@media (min-width: 768px){*/
-        /*    body:not(.sidebar-mini-md):not(.sidebar-mini-xs):not(.layout-top-nav) .content-wrapper{*/
-        /*        margin-left: 200px !important;*/
-        /*    }*/
-        /*}*/
-        .main-sidebar{
-            width: 167px;
-
-        }
-        .layout-fixed .brand-link{
-            width: 167px;
-        }
-        .sidebar-mini .main-sidebar .nav-link{
-            width: unset;
-        }
-        .nav-sidebar .nav-item a p{
-            font-size: 11px !important;
-        }
-        .nav-sidebar .nav-item a{
-            padding: 5px 10px !important;
-        }
-        .nav-sidebar .nav-item a i{
-            font-size: 13px !important;
-        }
-
-        @media (min-width: 768px){
-            body:not(.sidebar-mini-md):not(.sidebar-mini-xs):not(.layout-top-nav) .content-wrapper{
-                margin-left: 167px;
-            }
-        }
-        @media( min-width: 768px){
-            body:not(.sidebar-mini-md):not(.sidebar-mini-xs):not(.layout-top-nav) .main-header{
-                margin-left: 167px;
-            }
         }
     </style>
     @yield('css')

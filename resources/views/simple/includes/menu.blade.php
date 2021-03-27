@@ -1,6 +1,7 @@
 <?php
 $locale = app()->getLocale();
 $name_locale = 'name_'.$locale;
+$menus = 'App\Menu'::where('leap' , 0)->basic()->get();
 ?>
 <div id="header_pc">
             <div class="searching_box">
