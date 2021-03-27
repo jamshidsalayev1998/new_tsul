@@ -9,4 +9,17 @@ use Illuminate\Notifications\Notifiable;
 class Menu extends Authenticatable
 {
     protected $table = 'menus';
+
+    public function childs(){
+        $childs = Menu::where('parent_id' , $this->id)->get();
+        return $childs;
+    }
+    public function has_child(){
+        if (Menu::where('parent_id' , $this->id)->exists()){
+            return 1;
+        }
+        else{
+            return 0;
+        }
+    }
 }

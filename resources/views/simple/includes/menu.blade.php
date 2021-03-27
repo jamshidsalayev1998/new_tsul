@@ -1,4 +1,8 @@
- <div id="header_pc">
+<?php
+$locale = app()->getLocale();
+$name_locale = 'name_'.$locale;
+?>
+<div id="header_pc">
             <div class="searching_box">
                 <form id="searchingBox">
                     <input type="search" id="search_id_input">
@@ -33,346 +37,43 @@
                         </div>
                     </div>
                     <div class="lnb_bottom">
-                        <span class="c_main_link">
-                            <a id="link_to" class="main_links" href="#">@lang('menu.Университет') <i class="fas fa-sort-down"></i></a>
-                            <div class="hover_menu fadeInDown" data-wow-duration="0.2s" data-wow-delay="0.1s">
-                                <div class="c_parent_box">
-                                    <div class="c_parent_link">
-                                        <a href="./ob_unversitete.html">Об университете</a>
+                        <?php
+                        $i = 1;
+                        ?>
+                        @foreach($menus as $menu)
+                            <?php
+                        $i++;
+                        ?>
+
+                            @if($i < 5)
+                                <span class="c_main_link">
+                                    <a id="link_to" class="main_links" href="#">{{$menu->$name_locale}}
+                                        @if($menu->has_child())
+                                        <i class="fas fa-sort-down"></i>
+                                            @endif
+                                    </a>
+                                    <div class="hover_menu fadeInDown" data-wow-duration="0.2s" data-wow-delay="0.1s">
+                                        @foreach($menu->childs() as $child)
+                                        <div class="c_parent_box">
+                                            <div class="c_parent_link border-top">
+                                                <a href="{{$child->slug}}">{{$child->$name_locale}}</a>
+                                                @if($child->has_child())
+                                                <i class="fas fa-caret-right mr-2 text-secondary"></i>
+                                                    @endif
+                                            </div>
+                                            <div class="c_child_box">
+                                                @foreach($child->childs() as $chch)
+                                                <div>
+                                                    <a href="@if($chch->slug){{$chch->slug}}@else # @endif">{{$chch->$name_locale}}</a>
+                                                </div>
+                                                @endforeach
+                                            </div>
+                                        </div>
+                                        @endforeach
                                     </div>
-                                </div>
-                                <div class="c_parent_box">
-                                    <div class="c_parent_link border-top">
-                                        <a href="#">Ректорат</a><i class="fas fa-caret-right mr-2 text-secondary"></i>
-                                    </div>
-                                    <div class="c_child_box">
-                                        <div>
-                                            <a href="./rektor.html">Ректор</a>
-                                        </div>
-                                        <div class="border-top">
-                                            <a href="/not_found.html">Проректор по учебной работе</a>
-                                        </div>
-                                        <div class="border-top">
-                                            <a href="/not_found.html">Проректор по научной работе и инновациям</a>
-                                        </div>
-                                        <div class="border-top">
-                                            <a href="/not_found.html">Проректор по работе с молодежью</a>
-                                        </div>
-                                        <div class="border-top">
-                                            <a href="/not_found.html">Проректор по международному сотрудничеству и
-                                                непрерывному
-                                                образованию</a>
-                                        </div>
-                                        <div class="border-top">
-                                            <a href="/not_found.html">Проректор по финансовой и экономической</a>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="c_parent_box">
-                                    <div class="c_parent_link border-top">
-                                        <a href="#">Факултеты</a><i class="fas fa-caret-right mr-2 text-secondary"></i>
-                                    </div>
-                                    <div class="c_child_box">
-                                        <div>
-                                            <a href="./faculty_and_center.html">Факультет международного права и
-                                                сравнительного правоведения</a>
-                                        </div>
-                                        <div class="border-top">
-                                            <a href="./faculty_and_center.html">Факультет уголовного правосудия</a>
-                                        </div>
-                                        <div class="border-top">
-                                            <a href="./faculty_and_center.html">Факультет публичного права</a>
-                                        </div>
-                                        <div class="border-top">
-                                            <a href="./faculty_and_center.html">Факультет частного права</a>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="c_parent_box">
-                                    <div class="c_parent_link border-top">
-                                        <a href="#">Отделы</a><i class="fas fa-caret-right mr-2 text-secondary"></i>
-                                    </div>
-                                    <div class="c_child_box">
-                                        <div>
-                                            <a href="/not_found.html">Отдел магистратуры</a>
-                                        </div>
-                                        <div class="border-top">
-                                            <a href="/not_found.html">Отдел Практики и профессионального роста</a>
-                                        </div>
-                                        <div class="border-top">
-                                            <a href="/not_found.html">Бухгалтерия</a>
-                                        </div>
-                                        <div class="border-top">
-                                            <a href="/not_found.html">Отдел маркетинга</a>
-                                        </div>
-                                        <div class="border-top">
-                                            <a href="/not_found.html">Финансово-экономический отдел</a>
-                                        </div>
-                                        <div class="border-top">
-                                            <a href="/not_found.html">Отдел международных связей</a>
-                                        </div>
-                                        <div class="border-top">
-                                            <a href="/not_found.html">Отдел по работе с лицеями и колледжами
-                                                Ташкентского
-                                                государственного юридического университета</a>
-                                        </div>
-                                        <div class="border-top">
-                                            <a href="/not_found.html">Отдел кадров</a>
-                                        </div>
-                                        <div class="border-top">
-                                            <a href="/not_found.html">Oтдел мониторинга и внутреннего контроля</a>
-                                        </div>
-                                        <div class="border-top">
-                                            <a href="/not_found.html">Редакционно-издательский отдел</a>
-                                        </div>
-                                        <div class="border-top">
-                                            <a href="/not_found.html">Эксплуатационно-хозяйственный отдел</a>
-                                        </div>
-                                        <div class="border-top">
-                                            <a href="/not_found.html">Юридическая клиника</a>
-                                        </div>
-                                        <div class="border-top">
-                                            <a href="/not_found.html">Отдел канцелярии и архива </a>
-                                        </div>
-                                        <div class="border-top">
-                                            <a href="/not_found.html">Отдел коммерциализации научно-инновационных
-                                                разработок</a>
-                                        </div>
-                                        <div class="border-top">
-                                            <a href="/not_found.html">Типография</a>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="c_parent_box">
-                                    <div class="c_parent_link border-top">
-                                        <a href="#">Центры</a><i class="fas fa-caret-right mr-2 text-secondary"></i>
-                                    </div>
-                                    <div class="c_child_box">
-                                        <div>
-                                            <a href="./faculty_and_center.html">Информационно-ресурсный центр</a>
-                                        </div>
-                                        <div class="border-top">
-                                            <a href="./faculty_and_center.html">Отраслевой центр переподготовки и
-                                                повышения квалификации
-                                                педагогических кадров при ТГЮУ</a>
-                                        </div>
-                                        <div class="border-top">
-                                            <a href="./faculty_and_center.html">Центр духовности и просветительства</a>
-                                        </div>
-                                        <div class="border-top">
-                                            <a href="./faculty_and_center.html">Центр правовых инициатив и инноваций</a>
-                                        </div>
-                                        <div class="border-top">
-                                            <a href="./faculty_and_center.html">Центр "Электронный университет"</a>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="c_parent_box">
-                                    <div class="c_parent_link border-top">
-                                        <a href="./xalqaro.html">Международное сотрудничество</a>
-                                    </div>
-                                </div>
-                                <div class="c_parent_box">
-                                    <div class="c_parent_link border-top">
-                                        <a href="/not_found.html">Вакансии</a>
-                                    </div>
-                                </div>
-                            </div>
-                        </span>
-                        <span class="c_main_link">
-                            <a id="link_to" href="#" class="main_links">Деятелность<i
-                                    class="fas fa-sort-down ml-1"></i></a>
-                            <div class="hover_menu">
-                                <div class="c_parent_box">
-                                    <div class="c_parent_link">
-                                        <a href="#">Учебная Деятелность</a><i
-                                            class="fas fa-caret-right mr-2 text-secondary"></i>
-                                    </div>
-                                    <div class="c_child_box ">
-                                        <div>
-                                            <a href="/not_found.html">Учебный график</a>
-                                        </div>
-                                        <div class="border-top">
-                                            <a href="/not_found.html">Учебные планы</a>
-                                        </div>
-                                        <div class="border-top">
-                                            <a href="/not_found.html">Учебные правила</a>
-                                        </div>
-                                        <div class="border-top">
-                                            <a href="/not_found.html">Расписание занятий</a>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="c_parent_box">
-                                    <div class="c_parent_link border-top">
-                                        <a href="#">Научная Деятелность</a><i
-                                            class="fas fa-caret-right mr-2 text-secondary"></i>
-                                    </div>
-                                    <div class="c_child_box">
-                                        <div>
-                                            <a href="/not_found.html">Магистратура</a>
-                                        </div>
-                                        <div class="border-top">
-                                            <a href="/not_found.html">Докторантура</a>
-                                        </div>
-                                        <div class="border-top">
-                                            <a href="/not_found.html">Научный журнал</a>
-                                        </div>
-                                        <div class="border-top">
-                                            <a href="/not_found.html">Научные конференции</a>
-                                        </div>
-                                        <div class="border-top">
-                                            <a href="/not_found.html">Научные проекты</a>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="c_parent_box">
-                                    <div class="c_parent_link border-top">
-                                        <a href="#">Социальная Деятелность</a><i
-                                            class="fas fa-caret-right mr-2 text-secondary"></i>
-                                    </div>
-                                    <div class="c_child_box">
-                                        <div>
-                                            <a href="/not_found.html">Первичная организация Союза молодежи
-                                                Узбекистана</a>
-                                        </div>
-                                        <div class="border-top">
-                                            <a href="/not_found.html">Профсоюзы</a>
-                                        </div>
-                                        <div class="border-top">
-                                            <a href="/not_found.html">Общежития</a>
-                                        </div>
-                                        <div class="border-top">
-                                            <a href="/not_found.html">Социальные объекты</a>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="c_parent_box">
-                                    <div class="c_parent_link border-top">
-                                        <a href="#">Докторантура</a><i
-                                            class="fas fa-caret-right mr-2 text-secondary"></i>
-                                    </div>
-                                    <div class="c_child_box">
-                                        <div>
-                                            <a href="/not_found.html">Положение о докторантуре</a>
-                                        </div>
-                                        <div class="border-top">
-                                            <a href="/not_found.html">Специальности</a>
-                                        </div>
-                                        <div class="border-top">
-                                            <a href="/not_found.html">Диссертации</a>
-                                        </div>
-                                        <div class="border-top">
-                                            <a href="/not_found.html">Авторефераты</a>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="c_parent_box">
-                                    <div class="c_parent_link border-top">
-                                        <a href="#">Международная Деятелность</a><i
-                                            class="fas fa-caret-right mr-2 text-secondary"></i>
-                                    </div>
-                                    <div class="c_child_box">
-                                        <div>
-                                            <a href="/not_found.html">Международные связи</a>
-                                        </div>
-                                        <div class="border-top">
-                                            <a href="/not_found.html">Международные конференции</a>
-                                        </div>
-                                        <div class="border-top">
-                                            <a href="/not_found.html">Международные проекты и гранты</a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </span>
-                        <span class="c_main_link">
-                            <a id="link_to" href="#" class="main_links">Объявление <i class="fas fa-sort-down"></i></a>
-                            <div class="hover_menu">
-                                <div class="c_parent_box">
-                                    <div class="c_parent_link">
-                                        <a href="#">Всем</a><i class="fas fa-caret-right mr-2 text-secondary"></i>
-                                    </div>
-                                    <div class="c_child_box ">
-                                        <div>
-                                            <a href="/not_found.html">Ректорат</a>
-                                        </div>
-                                        <div class="border-top">
-                                            <a href="/not_found.html">Центры</a>
-                                        </div>
-                                        <div class="border-top">
-                                            <a href="/not_found.html">Факултеты</a>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="c_parent_box">
-                                    <div class="c_parent_link border-top">
-                                        <a href="#">Студентам</a><i class="fas fa-caret-right mr-2 text-secondary"></i>
-                                    </div>
-                                    <div class="c_child_box">
-                                        <div>
-                                            <a href="/not_found.html">Ректорат</a>
-                                        </div>
-                                        <div class="border-top">
-                                            <a href="/not_found.html">Центры</a>
-                                        </div>
-                                        <div class="border-top">
-                                            <a href="/not_found.html">Факултеты</a>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="c_parent_box">
-                                    <div class="c_parent_link border-top">
-                                        <a href="#">Магистрантам</a><i
-                                            class="fas fa-caret-right mr-2 text-secondary"></i>
-                                    </div>
-                                    <div class="c_child_box">
-                                        <div>
-                                            <a href="/not_found.html">Ректорат</a>
-                                        </div>
-                                        <div class="border-top">
-                                            <a href="/not_found.html">Центры</a>
-                                        </div>
-                                        <div class="border-top">
-                                            <a href="/not_found.html">Факултеты</a>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="c_parent_box">
-                                    <div class="c_parent_link border-top">
-                                        <a href="#">Учителям</a><i class="fas fa-caret-right mr-2 text-secondary"></i>
-                                    </div>
-                                    <div class="c_child_box">
-                                        <div>
-                                            <a href="/not_found.html">Ректорат</a>
-                                        </div>
-                                        <div class="border-top">
-                                            <a href="/not_found.html">Центры</a>
-                                        </div>
-                                        <div class="border-top">
-                                            <a href="/not_found.html">Факултеты</a>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="c_parent_box">
-                                    <div class="c_parent_link border-top">
-                                        <a href="#">Сотрудникам</a><i
-                                            class="fas fa-caret-right mr-2 text-secondary"></i>
-                                    </div>
-                                    <div class="c_child_box">
-                                        <div>
-                                            <a href="/not_found.html">Ректорат</a>
-                                        </div>
-                                        <div class="border-top">
-                                            <a href="/not_found.html">Центры</a>
-                                        </div>
-                                        <div class="border-top">
-                                            <a href="/not_found.html">Факултеты</a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </span>
+                                </span>
+                                @endif
+                        @endforeach
                     </div>
                 </div>
                 <div class="nav_logo_box">
@@ -461,12 +162,45 @@
                         </div>
                     </div>
                     <div class="rnb_bottom">
-                        <span class="c_main_link">
-                            <a id="link_to" class="main_links" href="./News.html">Новости</a>
-                        </span>
-                        <span class="c_main_link">
-                            <a id="link_to" class="main_links" href="/not_found.html">Абитуриент</a>
-                        </span>
+
+                         <?php
+                        $i = 1;
+                        ?>
+                        @foreach($menus as $menu)
+                            <?php
+                        $i++;
+                        ?>
+
+                            @if($i >= 5)
+                                <span class="c_main_link">
+                                    <a id="link_to" class="main_links" href="#">{{$menu->$name_locale}}
+                                        @if($menu->has_child())
+                                        <i class="fas fa-sort-down"></i>
+                                            @endif
+                                    </a>
+                                    <div class="hover_menu fadeInDown" data-wow-duration="0.2s" data-wow-delay="0.1s">
+                                        @foreach($menu->childs() as $child)
+                                        <div class="c_parent_box">
+                                            <div class="c_parent_link border-top">
+                                                <a href="#">{{$child->$name_locale}}</a>
+                                                 @if($child->has_child())
+                                                <i class="fas fa-caret-right mr-2 text-secondary"></i>
+                                                    @endif
+                                            </div>
+                                            <div class="c_child_box">
+                                                @foreach($child->childs() as $chch)
+                                                <div>
+                                                    <a href="./rektor.html">{{$chch->$name_locale}}</a>
+                                                </div>
+                                                @endforeach
+
+                                            </div>
+                                        </div>
+                                        @endforeach
+                                    </div>
+                                </span>
+                                @endif
+                        @endforeach
                     </div>
                 </div>
             </div>

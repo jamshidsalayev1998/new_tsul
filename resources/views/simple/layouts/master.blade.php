@@ -30,11 +30,11 @@
         @include('simple.includes.menu')
         <!--Main content-->
         @yield('content')
-        @include('simple.includes.footer')
 
 
 
     </div>
+        @include('simple.includes.footer')
 
 
 </body>

@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Simple;
 use App\Http\Controllers\Controller;
+use App\Menu;
 use App\SliderImage;
 
 use App\SliderText;
@@ -16,13 +17,15 @@ class IndexController extends Controller
      * @return void
      */
     public function index(){
+        $menus = Menu::where('leap' , 0)->get();
         $slider_images = SliderImage::where('status' , 1)->get();
         $slider_texts = SliderText::where('status' , 1)->first();
         $system_cards = SystemCard::all();
         return view('simple.index' , [
             'slider_images' => $slider_images,
             'slider_texts' => $slider_texts,
-            'system_cards' => $system_cards
+            'system_cards' => $system_cards,
+            'menus' => $menus
         ]);
     }
 }

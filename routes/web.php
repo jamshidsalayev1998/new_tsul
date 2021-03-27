@@ -37,6 +37,7 @@ Route::group(
 	'middleware' => [ 'localeSessionRedirect', 'localizationRedirect', 'localeViewPath' ]
 ], function(){
     Route::get('/', 'IndexController@index')->name('simple.index');
+    Route::get('/general-page/{slug}' , 'SlugController@index')->name('slug.index');
 });
 
 Route::group(
@@ -54,4 +55,9 @@ Route::group(
     Route::post('/system-card-delete', 'SystemCardController@store')->name('system_card.store');
 
     Route::get('/menu', 'MenuController@index')->name('admin.menu.index');
+
+
+    Route::get('/pages', 'PageController@index')->name('admin.page.index');
+    Route::get('/page-create', 'PageController@create')->name('admin.page.create');
+    Route::delete('/page-delete', 'PageController@destroy')->name('admin.page.delete');
 });

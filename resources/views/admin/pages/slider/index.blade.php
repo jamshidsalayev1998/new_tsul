@@ -63,7 +63,10 @@
                   </div>
                   <div class="col-md-12 mt-3">
                       <label for="">Text en</label>
-                      <textarea id="summernote2" name="text_en" style="width: 100%">{{$slider_texts->text_en}}</textarea>
+                      <textarea id="summernote2" name="text_en" style="width: 100%">
+{{--                          {{$slider_texts->text_en}}--}}
+
+                      </textarea>
                   </div>
                   <div class="col-md-3 mt-3">
                       <label for="">Email</label>
