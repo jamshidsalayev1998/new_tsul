@@ -66,4 +66,7 @@ Route::group(
 
     Route::get('/about-university' , 'AboutUniversityController@index')->name('admin.about_university.index');
     Route::post('/admin-about-university-update' , 'AboutUniversityController@update')->name('admin.about_university.update');
+
+    Route::get('/admin-slug/{id}' , 'SlugController@index')->name('admin.slug.index');
+    Route::post('/admin-slug-store' , 'SlugController@store')->name('admin.slug.store');
 });

@@ -52,20 +52,20 @@
                 {{$menu->name_ru}}
               </p>
             </a>
-             <ul class="nav nav-treeview" style="display: none; border-left: 1px solid black">
+             <ul class="nav nav-treeview" style="display: none; background-color: #508AD0">
                  @foreach($menu->childs() as $child)
-              <li class="nav-item">
-                <a href="/admin{{$child->slug}}" class="nav-link">
+              <li class="nav-item" style="">
+                <a href="/admin/admin-slug/{{$child->id}}" class="nav-link @if(!$child->has_child()) hrefed @endif">
 {{--                  <i class="far fa-circle nav-icon"></i>--}}
                   <p>
                       {{$child->name_ru}}
                       <i class="fas fa-angle-left right"></i>
                   </p>
                 </a>
-                  <ul class="nav nav-treeview" style="display: none;  border-left: 1px solid black">
+                  <ul class="nav nav-treeview" style="display: none;  background-color: #50C1D0">
                  @foreach($child->childs() as $chch)
                       <li class="nav-item">
-                        <a href="/admin{{$chch->slug}}" class="nav-link">
+                        <a href="/admin/admin-slug/{{$chch->id}}" class="nav-link">
 {{--                          <i class="far fa-circle nav-icon"></i>--}}
                           <p>{{$chch->name_ru}}</p>
                         </a>

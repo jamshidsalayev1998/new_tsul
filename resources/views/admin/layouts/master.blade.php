@@ -204,6 +204,11 @@
     });
   });
 </script>
+<script>
+    $('.hrefed').click(function(){
+        window.location.href = $(this).attr('href');
+    });
+</script>
 @yield('js')
 </body>
 </html>

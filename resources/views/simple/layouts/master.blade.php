@@ -14,9 +14,10 @@
     <link rel="stylesheet" href="{{asset('front_assets/special_feature/css/jquery-ui.css')}}">
     <link rel="stylesheet" href="{{asset('front_assets/special_feature/css/specialView.css')}}">
     <link rel="stylesheet" href="{{asset('front_assets/css/index.css')}}">
+    <link rel="stylesheet" href="{{asset('front_assets/css/newmenu.css')}}">
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="css/animate.css">
+    <link rel="stylesheet" href="{{asset('front_assets/css/animate.css')}}">
     @yield('links')
 
 </head>
@@ -52,6 +53,7 @@
 <script src="{{asset('front_assets/special_feature/js/specialView.js')}}"></script>
 <script src="{{asset('front_assets/special_feature/js/jquery.cookie.min.js')}}"></script>
 <script src="{{asset('front_assets/js/wow.js')}}"></script>
+<script src="{{asset('front_assets/js/nav.js')}}"></script>
 @yield('js')
 <script>
     wow = new WOW({
