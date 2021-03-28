@@ -249,7 +249,7 @@ $menus = 'App\Menu'::where('leap' , 0)->basic()->get();
 
                                                 <h6 class="font-weight-bold text-secondary">{{$child->$name_locale}}</h6>
                                                 @foreach($child->childs() as $chch)
-                                                <a href="#" class="nav_dropdown_links"><i
+                                                <a href="@if($chch->slug) {{$chch->slug}}@else # @endif" class="nav_dropdown_links"><i
                                                         class="fas fa-caret-right mr-2 text-secondary"></i>{{$chch->$name_locale}}</a>
                                                  @endforeach
 
@@ -349,7 +349,7 @@ $menus = 'App\Menu'::where('leap' , 0)->basic()->get();
 
                                                 <h6 class="font-weight-bold text-secondary">{{$child->$name_locale}}</h6>
                                                 @foreach($child->childs() as $chch)
-                                                <a href="#" class="nav_dropdown_links"><i
+                                                <a href="@if($chch->slug) {{$chch->slug}}@else # @endif" class="nav_dropdown_links"><i
                                                         class="fas fa-caret-right mr-2 text-secondary"></i>{{$chch->$name_locale}}</a>
                                                  @endforeach
 
