@@ -46,18 +46,49 @@
                           <label for="">Slug</label>
                           <input type="text" readonly class="form-control" name="slug" value="{{$for_slug}}">
                       </div>
-                      <div class="col-md-12">
-                          <label for="">Content uz</label>
-                          <textarea name="content_uz" id="summernote1" cols="30" rows="10">{{$page->content_uz}}</textarea>
+                      <div class="col-md-12 mt-3">
+                        <div class="card card-primary card-outline card-outline-tabs">
+                          <div class="card-header p-0 border-bottom-0">
+                            <ul class="nav nav-tabs" id="custom-tabs-four-tab" role="tablist">
+                              <li class="nav-item">
+                                <a class="nav-link active" id="custom-tabs-four-home-tab" data-toggle="pill" href="#custom-tabs-four-home" role="tab" aria-controls="custom-tabs-four-home" aria-selected="false">Content uz</a>
+                              </li>
+                              <li class="nav-item">
+                                <a class="nav-link" id="custom-tabs-four-profile-tab" data-toggle="pill" href="#custom-tabs-four-profile" role="tab" aria-controls="custom-tabs-four-profile" aria-selected="false">Content ru</a>
+                              </li>
+                              <li class="nav-item">
+                                <a class="nav-link" id="custom-tabs-four-messages-tab" data-toggle="pill" href="#custom-tabs-four-messages" role="tab" aria-controls="custom-tabs-four-messages" aria-selected="false">Content en</a>
+                              </li>
+                            </ul>
+                          </div>
+                          <div class="card-body">
+                            <div class="tab-content" id="custom-tabs-four-tabContent">
+                              <div class="tab-pane fade show active" id="custom-tabs-four-home" role="tabpanel" aria-labelledby="custom-tabs-four-home-tab">
+                                  <textarea name="content_uz" id="summernote1" cols="30" rows="10">{{$page->content_uz}}</textarea>
+                              </div>
+                              <div class="tab-pane fade" id="custom-tabs-four-profile" role="tabpanel" aria-labelledby="custom-tabs-four-profile-tab">
+                                  <textarea name="content_ru" id="summernote2" cols="30" rows="10">{{$page->content_ru}}</textarea>
+                              </div>
+                              <div class="tab-pane fade" id="custom-tabs-four-messages" role="tabpanel" aria-labelledby="custom-tabs-four-messages-tab">
+                                  <textarea name="content_en" id="summernote3" cols="30" rows="10">{{$page->content_en}}</textarea>
+                              </div>
+                            </div>
+                          </div>
+                          <!-- /.card -->
+                        </div>
                       </div>
-                      <div class="col-md-12">
-                          <label for="">Content ru</label>
-                          <textarea name="content_ru" id="summernote2" cols="30" rows="10">{{$page->content_ru}}</textarea>
-                      </div>
-                      <div class="col-md-12">
-                          <label for="">Content en</label>
-                          <textarea name="content_en" id="summernote3" cols="30" rows="10">{{$page->content_en}}</textarea>
-                      </div>
+{{--                      <div class="col-md-12">--}}
+{{--                          <label for="">Content uz</label>--}}
+{{--                          <textarea name="content_uz" id="summernote1" cols="30" rows="10">{{$page->content_uz}}</textarea>--}}
+{{--                      </div>--}}
+{{--                      <div class="col-md-12">--}}
+{{--                          <label for="">Content ru</label>--}}
+{{--                          <textarea name="content_ru" id="summernote2" cols="30" rows="10">{{$page->content_ru}}</textarea>--}}
+{{--                      </div>--}}
+{{--                      <div class="col-md-12">--}}
+{{--                          <label for="">Content en</label>--}}
+{{--                          <textarea name="content_en" id="summernote3" cols="30" rows="10">{{$page->content_en}}</textarea>--}}
+{{--                      </div>--}}
                   </div>
               </div>
               <!-- /.card-body -->

@@ -75,6 +75,7 @@ class SlugController extends Controller
 
     public function store(Request $request){
         $menu = Menu::find($request->menu_id);
+//        return $request;
         if (Page::where('id',$request->page_id)->exists()){
             $page = Page::find($request->page_id);
         }

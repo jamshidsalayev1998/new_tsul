@@ -3241,7 +3241,7 @@ ul.tabs_media li.current {
         cursor: pointer;
         margin-left: 0px;
     }
-    
+
     /* <------======= media part ends =======------> */
     /* <------======= third part starts =======------> */
     ._3_video_box {
@@ -3315,7 +3315,7 @@ ul.tabs_media li.current {
     }
     /* <------======= third part ends =======------> */
     /* <------======= fourth part starts =======------> */
-    
+
     .four_card_2, .four_card_3, .four_card_4 {
         margin-top: 7rem;
     }
@@ -4688,7 +4688,7 @@ ul.tabs_media li.current {
         font-size: 13px;
         transition: all 0.2s ease-in-out;
     }
-    
+
     /* <------======= fourth part ends =======------> */
     /* <------======= fifth part starts =======------> */
     .card_box_5 {
@@ -5032,4 +5032,57 @@ ul.tabs_media li.current {
         color: white;
     }
     /* <------======= eighth part ends =======------> */
+    .general {
+     padding: 40px 0;
+ }
+
+.general_content {
+    background-color: white;
+    padding: 10px 20px;
+}
+
+ .left_menu_of_page {
+     background-color: white;
+     position: sticky;
+    top: 100px;
+ }
+
+ .left_menu_of_page > div:nth-child(1) {
+     background-color: #233585;
+     color: white;
+     padding: 6px 0;
+     font-size: 15px;
+     font-weight: 500;
+     text-align: center;
+ }
+
+ .left_menu_of_page > div:nth-child(2) > a {
+     display: block;
+     color: #233585;
+     padding: 6px 10px;
+     font-size: 15px;
+     font-weight: 500;
+     border-bottom: 1px solid #F6F7FD;
+ }
+ .left_menu_of_page > div:nth-child(2) > a:hover {
+     display: block;
+     color: #233585;
+     text-decoration: none;
+     padding: 6px 10px;
+     font-size: 15px;
+     font-weight: 500;
+     background-color: #F6F7FD;
+ }
+ .left_menu_of_page > div:nth-child(2) > a i  {
+   margin-right: 10px;
+   vertical-align: middle;
+   font-size: 12px;
+   transition: all 0.2s ease-in-out;
+ }
+ .left_menu_of_page > div:nth-child(2) > a:hover i {
+     margin-right: 15px !important;
+ }
+
+
+ /* <------======= general page ends =======------> */
 }

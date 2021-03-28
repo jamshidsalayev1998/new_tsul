@@ -62,16 +62,18 @@
                       <i class="fas fa-angle-left right"></i>
                   </p>
                 </a>
+                  @if($child->has_child())
                   <ul class="nav nav-treeview" style="display: none;  background-color: #50C1D0">
                  @foreach($child->childs() as $chch)
                       <li class="nav-item">
-                        <a href="/admin/admin-slug/{{$chch->id}}" class="nav-link">
+                        <a href="/admin/admin-slug/{{$chch->id}}" class="nav-link ">
 {{--                          <i class="far fa-circle nav-icon"></i>--}}
                           <p>{{$chch->name_ru}}</p>
                         </a>
                       </li>
                          @endforeach
                     </ul>
+                      @endif
               </li>
                  @endforeach
             </ul>

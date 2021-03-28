@@ -5,8 +5,8 @@ $menus = 'App\Menu'::where('leap' , 0)->basic()->get();
 ?>
 <div id="header_pc">
             <header class="tsul_header">
-        <div class="logo_box">
-            <div>
+        <div class="logo_box" style="z-index: 100">
+            <div >
                 <img src="{{asset('front_assets/assets/img/logo_university/_Sign logo_EN_primary.png')}}" alt="">
             </div>
         </div>
@@ -156,14 +156,16 @@ $menus = 'App\Menu'::where('leap' , 0)->basic()->get();
                 <div class="p-0 m-0 d-flex h-100 align-items-center">
                     <div class="language_box">
                         <div id="hlb" class="head_language_box">
-                            <span id="selected_language">O'zbekcha</span>
+                            <span id="selected_language">{{LaravelLocalization::getCurrentLocaleName()}}</span>
                             <span id="animating_icons_lang" class="animating_language_icon"><i
                                     class="fas fa-chevron-down"></i></span>
                         </div>
                         <div id="selecting_box_id" class="selecting_box">
-                            <span>Ўзбекча</span>
-                            <span>Русский</span>
-                            <span>English</span>
+                             @foreach(LaravelLocalization::getSupportedLocales() as $localeCode => $properties)
+                                        @if(app()->getLocale() != $localeCode)
+                                            <span class="select-language-j" hreflang="{{ $localeCode }}" data-href="{{ LaravelLocalization::getLocalizedURL($localeCode, null, [], true) }}">{{ $properties['native'] }}</span>
+                                        @endif
+                                    @endforeach
                         </div>
                     </div>
                     <span id="search_id" class="search_box  px-3"><i id="search_id_i"
@@ -472,147 +474,35 @@ $menus = 'App\Menu'::where('leap' , 0)->basic()->get();
                         </div>
                         <div class="sidebar-menu pt-4">
                             <ul>
+                                 @foreach($menus as $menu)
                                 <li class="sidebar-dropdown">
                                     <a href="#">
                                         <i class="fas fa-university"></i>
-                                        <span>Университет</span>
+                                        <span>{{$menu->$name_locale}}</span>
                                     </a>
+                                    @if($menu->has_child())
                                     <div class="sidebar-submenu">
                                         <ul>
-                                            <li>
-                                                <a href="#" class="submenu_child"> <i
-                                                        class="fas fa-caret-right mr-0"></i>Об университете</a>
-                                            </li>
+                                            @foreach($menu->childs() as $child)
                                             <li class="sub_sub_link">
-                                                <a href="#"> <i class="fas fa-caret-right mr-0"></i>Ректорат</a>
+                                                <a href="#"> <i class="fas fa-caret-right mr-0"></i>{{$child->$name_locale}}</a>
+                                                @if($child->has_child())
                                                 <div class="sub_sub_menu">
+                                                    @foreach($child->childs() as $chch)
                                                     <span>
-                                                        <a href="/rektor.html">- Ректор</a>
+                                                        <a href="/rektor.html">- {{$chch->$name_locale}}</a>
                                                     </span>
-                                                    <span class="border-top">
-                                                        <a href="/not_found.html">- Проректор по учебной работе</a>
-                                                    </span>
-                                                    <span class="border-top">
-                                                        <a href="/not_found.html">- Проректор по научной работе и
-                                                            инновациям</a>
-                                                    </span>
-                                                    <span class="border-top">
-                                                        <a href="/not_found.html">- Проректор по работе с молодежью</a>
-                                                    </span>
-                                                    <span class="border-top">
-                                                        <a href="/not_found.html">- Проректор по международному
-                                                            сотрудничеству и
-                                                            непрерывному образованию</a>
-                                                    </span>
-                                                    <span class="border-top">
-                                                        <a href="/not_found.html">- Проректор по финансовой и
-                                                            экономической</a>
-                                                    </span>
+                                                    @endforeach
+
                                                 </div>
+                                                @endif
                                             </li>
-                                            <li>
-                                                <a href="#"> <i class="fas fa-caret-right mr-0"></i>Факултеты</a>
-                                                <div class="fgfg" style="background-color: green; display: none;">
-                                                    <span>
-                                                        <a href="#"></a>
-                                                    </span>
-                                                </div>
-                                            </li>
-                                            <li>
-                                                <a href="#"> <i class="fas fa-caret-right mr-0"></i>Отделы</a>
-                                            </li>
-                                            <li>
-                                                <a href="#"> <i class="fas fa-caret-right mr-0"></i>Центры</a>
-                                            </li>
-                                            <li>
-                                                <a href="#"> <i class="fas fa-caret-right mr-0"></i>Вакансии</a>
-                                            </li>
+                                            @endforeach
                                         </ul>
                                     </div>
+                                    @endif
                                 </li>
-                                <li class="sidebar-dropdown">
-                                    <a href="#">
-                                        <i class="fas fa-graduation-cap"></i>
-                                        <span>Новости</span>
-                                    </a>
-                                </li>
-                                <li class="sidebar-dropdown">
-                                    <a href="#">
-                                        <i class="fas fa-user-graduate"></i>
-                                        <span>Объявление</span>
-                                    </a>
-                                    <div class="sidebar-submenu">
-                                        <ul>
-                                            <li>
-                                                <a href="#" class="submenu_child"> <i
-                                                        class="fas fa-caret-right mr-0"></i>Всем</a>
-                                            </li>
-                                            <li class="sub_sub_link">
-                                                <a href="#"> <i class="fas fa-caret-right mr-0"></i>Ректорат</a>
-                                                <div class="sub_sub_menu">
-                                                    <span>
-                                                        <a href="#">- Ректор</a>
-                                                    </span>
-                                                    <span class="border-top">
-                                                        <a href="#">- Проректор по учебной работе</a>
-                                                    </span>
-                                                    <span class="border-top">
-                                                        <a href="#">- Проректор по научной работе и инновациям</a>
-                                                    </span>
-                                                    <span class="border-top">
-                                                        <a href="#">- Проректор по работе с молодежью</a>
-                                                    </span>
-                                                    <span class="border-top">
-                                                        <a href="#">- Проректор по международному сотрудничеству и
-                                                            непрерывному образованию</a>
-                                                    </span>
-                                                    <span class="border-top">
-                                                        <a href="#">- Проректор по финансовой и экономической</a>
-                                                    </span>
-                                                </div>
-                                            </li>
-                                            <li>
-                                                <a href="#"> <i class="fas fa-caret-right mr-0"></i>Студентам</a>
-                                                <div class="sub_sub_menu">
-                                                    <span>
-                                                        <a href="#">- Ректор</a>
-                                                    </span>
-                                                    <span class="border-top">
-                                                        <a href="#">- Проректор по учебной работе</a>
-                                                    </span>
-                                                    <span class="border-top">
-                                                        <a href="#">- Проректор по научной работе и инновациям</a>
-                                                    </span>
-                                                    <span class="border-top">
-                                                        <a href="#">- Проректор по работе с молодежью</a>
-                                                    </span>
-                                                    <span class="border-top">
-                                                        <a href="#">- Проректор по международному сотрудничеству и
-                                                            непрерывному образованию</a>
-                                                    </span>
-                                                    <span class="border-top">
-                                                        <a href="#">- Проректор по финансовой и экономической</a>
-                                                    </span>
-                                                </div>
-                                            </li>
-                                            <li>
-                                                <a href="#"> <i class="fas fa-caret-right mr-0"></i>Магистрантам</a>
-                                            </li>
-                                            <li>
-                                                <a href="#"> <i class="fas fa-caret-right mr-0"></i>Учителям</a>
-                                            </li>
-                                            <li>
-                                                <a href="#"> <i class="fas fa-caret-right mr-0"></i>Сотрудникам</a>
-                                            </li>
-                                        </ul>
-                                    </div>
-                                </li>
-                                <li class="sidebar-dropdown">
-                                    <a href="#">
-                                        <i class="fa fa-globe"></i>
-                                        <span>Международное сотрудничество</span>
-                                    </a>
-                                </li>
+                                @endforeach
                                 <li class="header-menu m-0 p-0">
                                     <span>Extra</span>
                                 </li>
