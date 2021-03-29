@@ -17,6 +17,9 @@ class SlugController extends Controller
     public function index($id){
         $menu = Menu::find($id);
         if ($menu->slug){
+            if ($menu->dynamik == 0){
+                return redirect('/admin'.$menu->slug);
+            }
             $page = Page::where('slug' , str_replace('/general-page/', '',$menu->slug))->first();
             $for_slug =  str_replace('/general-page/', '',$menu->slug);
         }

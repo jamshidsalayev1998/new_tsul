@@ -9,7 +9,7 @@ for (let i = 0; i < b_nav_links.length; i++) {
     const element = b_nav_links[i];
     element.onmouseenter = function(e){
         element.style.backgroundColor = "#F6F7FD"
-        element.style.borderBottom = "1px solid blue"
+        element.style.borderBottom = "1px solid #2C42A6"
     }
     element.addEventListener('mouseleave', () => {
         element.style.backgroundColor = "transparent"

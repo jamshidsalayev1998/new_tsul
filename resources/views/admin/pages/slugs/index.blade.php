@@ -29,6 +29,7 @@
                         <h3 class="card-title">Page create</h3>
                     </div>
                       <div>
+                          <button class="btn btn-dark" type="button"><i class="fas fa-eraser"></i></button>
                         <button type="submit" href="{{route('admin.page.store')}}" class="btn btn-success" >saqlash</button>
                     </div>
 

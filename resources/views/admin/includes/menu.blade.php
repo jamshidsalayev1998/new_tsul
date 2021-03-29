@@ -55,7 +55,39 @@
             </a>
              <ul class="nav nav-treeview" style="display: none; background-color: #508AD0">
                  @foreach($menu->childs() as $child)
-              <li class="nav-item" style="">
+                     <style>
+                         .tool-box{
+                             position: absolute;
+                             /*width: 80%;*/
+                             /*height: 100px;*/
+                             background-color: black;
+                             left: 10px;
+                             bottom: 100%;
+                             z-index: 10000;
+                             display: none;
+                             padding: 13px;
+                             border-radius: 16px;
+                             opacity: 0.9;
+                             /*display: flex;*/
+                             justify-content: flex-start;
+                         }
+                         .tool-box a{
+                             margin-left: 8px;
+                             margin-left: 8px;
+                         }
+                         .tool-nav:hover .tool-box{
+                             display: flex !important;
+                         }
+                     </style>
+              <li class="nav-item tool-nav" style="position: relative">
+                  <div class="tool-box">
+                      <a href="/admin/admin-slug/{{$child->id}}" >
+                          <i class="fa fa-file" aria-hidden="true"></i>
+                      </a>
+                      <a href="" style="color: #005ED0 !important;">
+                          <i class="fa fa-cogs" aria-hidden="true"></i>
+                      </a>
+                  </div>
                 <a href="/admin/admin-slug/{{$child->id}}" class="nav-link @if(!$child->has_child()) hrefed @endif">
 {{--                  <i class="far fa-circle nav-icon"></i>--}}
                   <p>
@@ -66,7 +98,7 @@
                   @if($child->has_child())
                   <ul class="nav nav-treeview" style="display: none;  background-color: #50C1D0">
                  @foreach($child->childs() as $chch)
-                      <li class="nav-item">
+                      <li class="nav-item ">
                         <a href="/admin/admin-slug/{{$chch->id}}" class="nav-link ">
 {{--                          <i class="far fa-circle nav-icon"></i>--}}
                           <p>{{$chch->name_ru}}</p>

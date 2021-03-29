@@ -117,8 +117,7 @@ jQuery(document).ready(function () {
             $('#header_pc').css('left', '0')
             $('#header_pc').css('right  ', '0')
             $('#header_pc').css('width', '100%')
-            $('#header_pc').css('transition', 'all 2s ease-in-out')
-            $('#header_pc').css('box-shadow', ' 0 0 4px 0 black')
+            $('#header_pc').css('box-shadow', ' 0 0 3px 0 black')
         } else {
             $('#header_pc').removeAttr('style');
         }

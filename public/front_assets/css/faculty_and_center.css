@@ -2,23 +2,19 @@ h1, h2, h3, h4, h5, h6, p, span, b {
     font-family: 'Times New Roman', sans-serif;
 }
 
-
 .faculty_and_center {
     /* background-color: #F8F8F8; */
 }
 
-
-
 [data-tab-content] {
     display: none;
-  }
-  
-  .active[data-tab-content] {
+}
+
+.active[data-tab-content] {
     display: block;
-  }
-  
-  
-  .fc_tabs {
+}
+
+.fc_tabs {
     display: flex;
     justify-content: space-around;
     list-style-type: none;
@@ -27,45 +23,29 @@ h1, h2, h3, h4, h5, h6, p, span, b {
     background-color: #233585;
     color: white;
     border: 1px solid #2c42A6;
-  }
-  
-  .fc_tab {
+}
+
+.fc_tab {
     cursor: pointer;
     padding: 10px;
     background-color: #2C42A6;
     display: block;
     width: calc(100% / 4);
     text-align: center;
-  }
-  
-  .fc_tab.active {
+}
+
+.fc_tab.active {
     background-color: white;
     color: #233585;
-  }
-  
-  .fc_tab:hover {
-  }
-  
-  .fc_tab-content {
+}
+
+.fc_tab:hover {}
+
+.fc_tab-content {
     border-left: 1px solid #2c42A6;
     border-right: 1px solid #2c42A6;
     border-bottom: 1px solid #2c42A6;
-  }
-  
-  
-  
-  
-  
-  
-  
-  
-  
-
-
-
-
-
-
+}
 
 .about_fc_card {
     display: flex;
@@ -238,13 +218,14 @@ h1, h2, h3, h4, h5, h6, p, span, b {
     color: #233585;
     transition: all 0.2s ease-in-out;
 }
+
 .faculty_and_centers_list_text>ul li:hover i {
     margin-left: 4px;
 }
 
 /* media */
 
-@media(max-width:1291px){
+@media(max-width:1291px) {
     .faculty_and_center {
         margin-top: 46px;
     }
@@ -311,6 +292,42 @@ h1, h2, h3, h4, h5, h6, p, span, b {
         font-size: 14px;
         text-align: justify;
     }
+    .rectors_greeting_img {
+        float: left;
+        margin: 0px 10px 10px 0px;
+        background-color: white;
+    }
+    .rectors_greeting_img img {
+        width: 150px !important;
+        height: 200px !important;
+    }
+}
+
+@media(max-width:576px) {
+    .rectors_greeting_img {
+        float: left;
+        margin: 0px 8px 8px 0px;
+        background-color: white;
+    }
+    .rectors_greeting_img img {
+        width: 150px !important;
+        height: 200px !important;
+    }
 }
 
 /* media */
+
+.rectors_greeting_img {
+    float: left;
+    margin: 0px 15px 15px 0px;
+    background-color: white;
+}
+
+.rectors_greeting_img img {
+    width: 200px;
+    height: 250px;
+}
+
+.rectors_greeting_box div > p {
+    font-size: 18px !important;
+}

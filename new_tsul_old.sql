@@ -11,7 +11,7 @@
  Target Server Version : 50731
  File Encoding         : 65001
 
- Date: 29/03/2021 13:41:16
+ Date: 28/03/2021 10:55:55
 */
 
 SET NAMES utf8mb4;
@@ -133,241 +133,111 @@ CREATE TABLE `menus`  (
 -- ----------------------------
 -- Records of menus
 -- ----------------------------
-INSERT INTO `menus` VALUES (1, NULL, NULL, NULL, NULL, 'Университет', 'Университет', 'Университет', NULL, NULL, 0, 1, 1);
-INSERT INTO `menus` VALUES (2, NULL, NULL, NULL, NULL, 'Образование', 'Образование', 'Образование', NULL, NULL, 0, 1, 1);
-INSERT INTO `menus` VALUES (3, NULL, '2021-03-27 05:36:03', NULL, NULL, 'Наука', 'Наука', 'Наука', '', NULL, 0, 1, 1);
-INSERT INTO `menus` VALUES (4, NULL, NULL, NULL, NULL, 'Международная деятельность', 'Международная деятельность', 'Международная деятельность', NULL, NULL, 0, 1, 1);
-INSERT INTO `menus` VALUES (5, NULL, NULL, NULL, NULL, 'Студенческая жизнь', 'Студенческая жизнь', 'Студенческая жизнь', NULL, NULL, 0, 1, 1);
-INSERT INTO `menus` VALUES (6, NULL, NULL, NULL, NULL, 'Приемная комиссия', 'Приемная комиссия', 'Приемная комиссия', NULL, NULL, 0, 1, 1);
-INSERT INTO `menus` VALUES (7, NULL, NULL, NULL, NULL, 'Об университете', 'Об университете', 'Об университете', '/about-university', 1, 1, 0, 1);
-INSERT INTO `menus` VALUES (8, NULL, NULL, NULL, NULL, 'Общая структура университета', 'Общая структура университета', 'Общая структура университета', NULL, 1, 1, 1, 1);
-INSERT INTO `menus` VALUES (9, NULL, NULL, NULL, NULL, 'Пресс-служба', 'Пресс-служба', 'Пресс-служба', NULL, 1, 1, 1, 1);
-INSERT INTO `menus` VALUES (10, NULL, NULL, NULL, NULL, 'Органы управления', 'Органы управления', 'Органы управления', NULL, 1, 1, 1, 1);
-INSERT INTO `menus` VALUES (11, NULL, NULL, NULL, NULL, 'Официальные документы', 'Официальные документы', 'Официальные документы', NULL, 1, 1, 1, 1);
-INSERT INTO `menus` VALUES (12, NULL, NULL, NULL, NULL, 'Контакты', 'Контакты', 'Контакты', NULL, 1, 1, 1, 1);
-INSERT INTO `menus` VALUES (13, NULL, NULL, NULL, NULL, 'Достижения', 'Достижения', 'Достижения', NULL, 1, 1, 1, 1);
-INSERT INTO `menus` VALUES (14, NULL, NULL, NULL, NULL, 'Факультеты бакалавриата', 'Факультеты бакалавриата', 'Факультеты бакалавриата', NULL, 2, 1, 1, 1);
-INSERT INTO `menus` VALUES (15, NULL, NULL, NULL, NULL, 'Направления магистратуры', 'Направления магистратуры', 'Направления магистратуры', NULL, 2, 1, 1, 1);
-INSERT INTO `menus` VALUES (16, NULL, NULL, NULL, NULL, 'Послевузовское образование', 'Послевузовское образование', 'Послевузовское образование', NULL, 2, 1, 1, 1);
-INSERT INTO `menus` VALUES (17, NULL, NULL, NULL, NULL, 'Стипендии и гранты', 'Стипендии и гранты', 'Стипендии и гранты', NULL, 2, 1, 1, 1);
-INSERT INTO `menus` VALUES (19, NULL, NULL, NULL, NULL, 'Расписание занятий', 'Расписание занятий', 'Расписание занятий', NULL, 2, 1, 1, 1);
-INSERT INTO `menus` VALUES (18, NULL, '2021-03-27 06:05:15', NULL, NULL, 'Библиотека', 'Библиотека', 'Библиотека', NULL, 2, 1, 1, 1);
-INSERT INTO `menus` VALUES (20, NULL, NULL, NULL, NULL, 'Расписание сессии', 'Расписание сессии', 'Расписание сессии', NULL, 2, 1, 1, 1);
-INSERT INTO `menus` VALUES (21, NULL, NULL, NULL, NULL, 'Дистанционное обучение', 'Дистанционное обучение', 'Дистанционное обучение', NULL, 2, 1, 1, 1);
-INSERT INTO `menus` VALUES (22, NULL, NULL, NULL, NULL, 'Дополнительное профессиональное образование', 'Дополнительное профессиональное образование', 'Дополнительное профессиональное образование', NULL, 2, 1, 1, 1);
-INSERT INTO `menus` VALUES (23, NULL, NULL, NULL, NULL, 'Платные образовательные услуги', 'Платные образовательные услуги', 'Платные образовательные услуги', NULL, 2, 1, 1, 1);
-INSERT INTO `menus` VALUES (24, NULL, NULL, NULL, NULL, 'Государственная итоговая аттестация', 'Государственная итоговая аттестация', 'Государственная итоговая аттестация', NULL, 2, 1, 1, 1);
-INSERT INTO `menus` VALUES (25, NULL, NULL, NULL, NULL, 'Конкурс на замещение вакантных должностей ППС', 'Конкурс на замещение вакантных должностей ППС', 'Конкурс на замещение вакантных должностей ППС', NULL, 2, 1, 1, 1);
-INSERT INTO `menus` VALUES (26, NULL, NULL, NULL, NULL, 'Практика и стажировка', 'Практика и стажировка', 'Практика и стажировка', NULL, 2, 1, 1, 1);
-INSERT INTO `menus` VALUES (27, NULL, NULL, NULL, NULL, 'Направления научных исследований', 'Направления научных исследований', 'Направления научных исследований', NULL, 3, 1, 1, 1);
-INSERT INTO `menus` VALUES (28, NULL, NULL, NULL, NULL, 'Научная деятельность', 'Научная деятельность', 'Научная деятельность', NULL, 3, 1, 1, 1);
-INSERT INTO `menus` VALUES (29, NULL, '2021-03-27 05:50:20', NULL, NULL, 'Публикации', 'Публикации', 'Публикации', NULL, 3, 1, 1, 1);
-INSERT INTO `menus` VALUES (30, NULL, NULL, NULL, NULL, 'Совет молодых ученых', 'Совет молодых ученых', 'Совет молодых ученых', NULL, 3, 1, 1, 1);
-INSERT INTO `menus` VALUES (31, NULL, NULL, NULL, NULL, 'Научные издания', 'Научные издания', 'Научные издания', NULL, 3, 1, 1, 1);
-INSERT INTO `menus` VALUES (32, NULL, NULL, NULL, NULL, 'Авторефераты', 'Авторефераты', 'Авторефераты', NULL, 3, 1, 1, 1);
-INSERT INTO `menus` VALUES (33, NULL, NULL, NULL, NULL, 'Фонд академических инноваций', 'Фонд академических инноваций', 'Фонд академических инноваций', NULL, 3, 1, 1, 1);
-INSERT INTO `menus` VALUES (34, NULL, NULL, NULL, NULL, 'Лаборатория Legal Tech', 'Лаборатория Legal Tech', 'Лаборатория Legal Tech', NULL, 3, 1, 1, 1);
-INSERT INTO `menus` VALUES (35, NULL, NULL, NULL, NULL, 'Международные отношения', 'Международные отношения', 'Международные отношения', NULL, 4, 1, 1, 1);
-INSERT INTO `menus` VALUES (36, NULL, NULL, NULL, NULL, 'Академическая мобильность', 'Академическая мобильность', 'Академическая мобильность', NULL, 4, 1, 1, 1);
-INSERT INTO `menus` VALUES (37, NULL, NULL, NULL, NULL, 'Исследовательские проекты', 'Исследовательские проекты', 'Исследовательские проекты', NULL, 4, 1, 1, 1);
-INSERT INTO `menus` VALUES (38, NULL, NULL, NULL, NULL, 'Международные студенты', 'Международные студенты', 'Международные студенты', NULL, 4, 1, 1, 1);
-INSERT INTO `menus` VALUES (39, NULL, NULL, NULL, NULL, 'Стажировка за рубежом и краткосрочные курсы', 'Стажировка за рубежом и краткосрочные курсы', 'Стажировка за рубежом и краткосрочные курсы', NULL, 4, 1, 1, 1);
-INSERT INTO `menus` VALUES (40, NULL, NULL, NULL, NULL, 'Центрально-азиатский студенческий конгресс', 'Центрально-азиатский студенческий конгресс', 'Центрально-азиатский студенческий конгресс', NULL, 4, 1, 1, 1);
-INSERT INTO `menus` VALUES (41, NULL, NULL, NULL, NULL, 'Поощрение социальной активности', 'Поощрение социальной активности', 'Поощрение социальной активности', NULL, 5, 1, 1, 1);
-INSERT INTO `menus` VALUES (42, NULL, NULL, NULL, NULL, 'Студенческие объединения', 'Студенческие объединения', 'Студенческие объединения', NULL, 5, 1, 1, 1);
-INSERT INTO `menus` VALUES (43, NULL, NULL, NULL, NULL, 'Творческие студии и клубы по интересам', 'Творческие студии и клубы по интересам', 'Творческие студии и клубы по интересам', NULL, 5, 1, 1, 1);
-INSERT INTO `menus` VALUES (44, NULL, NULL, NULL, NULL, 'Студенческий спортивный клуб', 'Студенческий спортивный клуб', 'Студенческий спортивный клуб', NULL, 5, 1, 1, 1);
-INSERT INTO `menus` VALUES (45, NULL, NULL, NULL, NULL, 'Научные школы', 'Научные школы', 'Научные школы', NULL, 5, 1, 1, 1);
-INSERT INTO `menus` VALUES (46, NULL, NULL, NULL, NULL, 'Летний отдых', 'Летний отдых', 'Летний отдых', NULL, 5, 1, 1, 1);
-INSERT INTO `menus` VALUES (47, NULL, NULL, NULL, NULL, 'Форумы и лагеря', 'Форумы и лагеря', 'Форумы и лагеря', NULL, 5, 1, 1, 1);
-INSERT INTO `menus` VALUES (48, NULL, NULL, NULL, NULL, 'Студенческие фестивали', 'Студенческие фестивали', 'Студенческие фестивали', NULL, 5, 1, 1, 1);
-INSERT INTO `menus` VALUES (49, NULL, NULL, NULL, NULL, 'Стипендии', 'Стипендии', 'Стипендии', NULL, 5, 1, 1, 1);
-INSERT INTO `menus` VALUES (50, NULL, NULL, NULL, NULL, ' Деятельность приемной комиссии', ' Деятельность приемной комиссии', ' Деятельность приемной комиссии', NULL, 6, 1, 1, 1);
-INSERT INTO `menus` VALUES (51, NULL, NULL, NULL, NULL, ' Бакалавриат', ' Бакалавриат', ' Бакалавриат', NULL, 6, 1, 1, 1);
-INSERT INTO `menus` VALUES (52, NULL, NULL, NULL, NULL, ' Магистратура', ' Магистратура', ' Магистратура', NULL, 6, 1, 1, 1);
-INSERT INTO `menus` VALUES (53, NULL, NULL, NULL, NULL, ' Заочное обучение и второе высшее образование', ' Заочное обучение и второе высшее образование', ' Заочное обучение и второе высшее образование', NULL, 6, 1, 1, 1);
-INSERT INTO `menus` VALUES (54, NULL, NULL, NULL, NULL, ' Прием иностранных граждан', ' Прием иностранных граждан', ' Прием иностранных граждан', NULL, 6, 1, 1, 1);
-INSERT INTO `menus` VALUES (55, NULL, NULL, NULL, NULL, ' Прием на совместные образовательные программы', ' Прием на совместные образовательные программы', ' Прием на совместные образовательные программы', NULL, 6, 1, 1, 1);
-INSERT INTO `menus` VALUES (56, NULL, NULL, NULL, NULL, 'Прием выпускников юридических техникумов и академического лицея', 'Прием выпускников юридических техникумов и академического лицея', 'Прием выпускников юридических техникумов и академического лицея', NULL, 6, 1, 1, 1);
-INSERT INTO `menus` VALUES (58, NULL, '2021-03-29 06:44:33', NULL, NULL, ' Приветствие ректора', ' Приветствие ректора', ' Приветствие ректора', '/general-page/privetstvie-rektora', 7, 2, 1, 1);
-INSERT INTO `menus` VALUES (59, NULL, NULL, NULL, NULL, 'Миссия и ценности', 'Миссия и ценности', 'Миссия и ценности', NULL, 7, 2, 1, 1);
-INSERT INTO `menus` VALUES (60, NULL, NULL, NULL, NULL, 'Отчеты и презентации', 'Отчеты и презентации', 'Отчеты и презентации', NULL, 7, 2, 1, 1);
-INSERT INTO `menus` VALUES (61, NULL, '2021-03-27 14:12:05', NULL, NULL, 'Логотип и фирменный стиль', 'Логотип и фирменный стиль', 'Логотип и фирменный стиль', '/general-page/logotip-i-firmenniy-stily', 7, 2, 1, 1);
-INSERT INTO `menus` VALUES (62, NULL, NULL, NULL, NULL, 'Музей', 'Музей', 'Музей', NULL, 7, 2, 1, 1);
-INSERT INTO `menus` VALUES (63, NULL, NULL, NULL, NULL, '  Факультеты', '  Факультеты', '  Факультеты', NULL, 8, 2, 1, 1);
-INSERT INTO `menus` VALUES (64, NULL, NULL, NULL, NULL, 'Управления', 'Управления', 'Управления', NULL, 8, 2, 1, 1);
-INSERT INTO `menus` VALUES (65, NULL, NULL, NULL, NULL, 'Центры', 'Центры', 'Центры', NULL, 8, 2, 1, 1);
-INSERT INTO `menus` VALUES (66, NULL, NULL, NULL, NULL, 'Филиалы', 'Филиалы', 'Филиалы', NULL, 8, 2, 1, 1);
-INSERT INTO `menus` VALUES (67, NULL, NULL, NULL, NULL, 'Академический лицей', 'Академический лицей', 'Академический лицей', NULL, 8, 2, 1, 1);
-INSERT INTO `menus` VALUES (68, NULL, NULL, NULL, NULL, 'Мероприятия', 'Мероприятия', 'Мероприятия', NULL, 9, 2, 1, 1);
-INSERT INTO `menus` VALUES (69, NULL, NULL, NULL, NULL, 'Публикации в СМИ', 'Публикации в СМИ', 'Публикации в СМИ', NULL, 9, 2, 1, 1);
-INSERT INTO `menus` VALUES (70, NULL, NULL, NULL, NULL, 'Медиацентр', 'Медиацентр', 'Медиацентр', NULL, 9, 2, 1, 1);
-INSERT INTO `menus` VALUES (76, NULL, NULL, NULL, NULL, 'Научный совет', 'Научный совет', 'Научный совет', NULL, 10, 2, 1, 1);
-INSERT INTO `menus` VALUES (75, NULL, NULL, NULL, NULL, 'Попечительский совет', 'Попечительский совет', 'Попечительский совет', NULL, 10, 2, 1, 1);
-INSERT INTO `menus` VALUES (74, NULL, NULL, NULL, NULL, 'Ректорат', 'Ректорат', 'Ректорат', NULL, 10, 2, 1, 1);
-INSERT INTO `menus` VALUES (78, NULL, NULL, NULL, NULL, 'Сведения об образовательной организации', 'Сведения об образовательной организации', 'Сведения об образовательной организации', NULL, 11, 2, 1, 1);
-INSERT INTO `menus` VALUES (79, NULL, NULL, NULL, NULL, 'Лицензия и аккредитация', 'Лицензия и аккредитация', 'Лицензия и аккредитация', NULL, 11, 2, 1, 1);
-INSERT INTO `menus` VALUES (80, NULL, NULL, NULL, NULL, 'Устав', 'Устав', 'Устав', NULL, 11, 2, 1, 1);
-INSERT INTO `menus` VALUES (81, NULL, NULL, NULL, NULL, 'Реквизиты', 'Реквизиты', 'Реквизиты', NULL, 11, 2, 1, 1);
-INSERT INTO `menus` VALUES (82, NULL, NULL, NULL, NULL, 'Противодействие коррупции', 'Противодействие коррупции', 'Противодействие коррупции', NULL, 11, 2, 1, 1);
-INSERT INTO `menus` VALUES (83, NULL, NULL, NULL, NULL, 'Телефонный справочник', 'Телефонный справочник', 'Телефонный справочник', NULL, 12, 2, 1, 1);
-INSERT INTO `menus` VALUES (84, NULL, NULL, NULL, NULL, 'Карта корпусов', 'Карта корпусов', 'Карта корпусов', NULL, 12, 2, 1, 1);
-INSERT INTO `menus` VALUES (85, NULL, NULL, NULL, NULL, 'Виртуальная приёмная', 'Виртуальная приёмная', 'Виртуальная приёмная', NULL, 12, 2, 1, 1);
-INSERT INTO `menus` VALUES (86, NULL, NULL, NULL, NULL, 'Цифры и факты', 'Цифры и факты', 'Цифры и факты', NULL, 13, 2, 1, 1);
-INSERT INTO `menus` VALUES (87, NULL, NULL, NULL, NULL, 'Позиции в рейтингах', 'Позиции в рейтингах', 'Позиции в рейтингах', NULL, 13, 2, 1, 1);
-INSERT INTO `menus` VALUES (88, NULL, NULL, NULL, NULL, ' Зарубежные партнеры – университеты', ' Зарубежные партнеры – университеты', ' Зарубежные партнеры – университеты', NULL, 35, 2, 1, 1);
-INSERT INTO `menus` VALUES (89, NULL, NULL, NULL, NULL, 'Международные организации – партнеры', 'Международные организации – партнеры', 'Международные организации – партнеры', NULL, 35, 2, 1, 1);
-INSERT INTO `menus` VALUES (90, NULL, NULL, NULL, NULL, 'Членство в международных ассоциациях', 'Членство в международных ассоциациях', 'Членство в международных ассоциациях', NULL, 35, 2, 1, 1);
-INSERT INTO `menus` VALUES (91, NULL, NULL, NULL, NULL, 'Международные олимпиады и конкурсы', 'Международные олимпиады и конкурсы', 'Международные олимпиады и конкурсы', NULL, 35, 2, 1, 1);
-INSERT INTO `menus` VALUES (92, NULL, NULL, NULL, NULL, ' Приглашенные профессора', ' Приглашенные профессора', ' Приглашенные профессора', NULL, 35, 2, 1, 1);
-INSERT INTO `menus` VALUES (94, NULL, NULL, NULL, NULL, ' Совместные образовательные программы', ' Совместные образовательные программы', ' Совместные образовательные программы', NULL, 36, 2, 1, 1);
-INSERT INTO `menus` VALUES (95, NULL, NULL, NULL, NULL, 'Образовательный курс University Foundation Program', 'Образовательный курс University Foundation Program', 'Образовательный курс University Foundation Program', NULL, 36, 2, 1, 1);
-INSERT INTO `menus` VALUES (96, NULL, NULL, NULL, NULL, 'Обмен ППС', 'Обмен ППС', 'Обмен ППС', NULL, 36, 2, 1, 1);
-INSERT INTO `menus` VALUES (97, NULL, NULL, NULL, NULL, 'Совместные факультеты за рубежом', 'Совместные факультеты за рубежом', 'Совместные факультеты за рубежом', NULL, 36, 2, 1, 1);
-INSERT INTO `menus` VALUES (98, NULL, NULL, NULL, NULL, 'Студенческий обмен', 'Студенческий обмен', 'Студенческий обмен', NULL, 36, 2, 1, 1);
-INSERT INTO `menus` VALUES (99, NULL, NULL, NULL, NULL, 'Международные конференции, семинары и «круглые столы»', 'Международные конференции, семинары и «круглые столы»', 'Международные конференции, семинары и «круглые столы»', NULL, 37, 2, 1, 1);
-INSERT INTO `menus` VALUES (100, NULL, NULL, NULL, NULL, 'Международные научные проекты и гранты', 'Международные научные проекты и гранты', 'Международные научные проекты и гранты', NULL, 37, 2, 1, 1);
-INSERT INTO `menus` VALUES (101, NULL, NULL, NULL, NULL, 'Экспертный совет ТГЮУ (соотечественники)', 'Экспертный совет ТГЮУ (соотечественники)', 'Экспертный совет ТГЮУ (соотечественники)', NULL, 37, 2, 1, 1);
-INSERT INTO `menus` VALUES (102, NULL, NULL, NULL, NULL, 'Международные стипендии', 'Международные стипендии', 'Международные стипендии', NULL, 37, 2, 1, 1);
-INSERT INTO `menus` VALUES (103, NULL, NULL, NULL, NULL, 'Стипендии партнеров-вузов', 'Стипендии партнеров-вузов', 'Стипендии партнеров-вузов', NULL, 37, 2, 1, 1);
-INSERT INTO `menus` VALUES (104, NULL, NULL, NULL, NULL, ' Прием иностранных студентов', ' Прием иностранных студентов', ' Прием иностранных студентов', NULL, 38, 2, 1, 1);
-INSERT INTO `menus` VALUES (105, NULL, NULL, NULL, NULL, 'Программы академической мобильности', 'Программы академической мобильности', 'Программы академической мобильности', NULL, 38, 2, 1, 1);
-INSERT INTO `menus` VALUES (106, NULL, NULL, NULL, NULL, 'Бакалавр', 'Бакалавр', 'Бакалавр', NULL, 38, 2, 1, 1);
-INSERT INTO `menus` VALUES (107, NULL, NULL, NULL, NULL, 'Магистратура', 'Магистратура', 'Магистратура', NULL, 38, 2, 1, 1);
-INSERT INTO `menus` VALUES (108, NULL, NULL, NULL, NULL, 'Контакты', 'Контакты', 'Контакты', NULL, 38, 2, 1, 1);
-INSERT INTO `menus` VALUES (109, NULL, NULL, NULL, NULL, 'Стажировка сотрудников и ППС', 'Стажировка сотрудников и ППС', 'Стажировка сотрудников и ППС', NULL, 39, 2, 1, 1);
-INSERT INTO `menus` VALUES (110, NULL, NULL, NULL, NULL, 'Научная стажировка научных соискателей и докторантов', 'Научная стажировка научных соискателей и докторантов', 'Научная стажировка научных соискателей и докторантов', NULL, 39, 2, 1, 1);
-INSERT INTO `menus` VALUES (111, NULL, NULL, NULL, NULL, 'Летние и зимние школы', 'Летние и зимние школы', 'Летние и зимние школы', NULL, 39, 2, 1, 1);
-
--- ----------------------------
--- Table structure for menus_uz_en_lardan oldin
--- ----------------------------
-DROP TABLE IF EXISTS `menus_uz_en_lardan oldin`;
-CREATE TABLE `menus_uz_en_lardan oldin`  (
-  `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT,
-  `created_at` timestamp(0) NULL DEFAULT NULL,
-  `updated_at` timestamp(0) NULL DEFAULT NULL,
-  `created_by` bigint(20) NULL DEFAULT NULL,
-  `updated_by` bigint(20) NULL DEFAULT NULL,
-  `name_uz` varchar(255) CHARACTER SET utf8 COLLATE utf8_unicode_ci NULL DEFAULT NULL,
-  `name_ru` varchar(255) CHARACTER SET utf8 COLLATE utf8_unicode_ci NULL DEFAULT NULL,
-  `name_en` varchar(255) CHARACTER SET utf8 COLLATE utf8_unicode_ci NULL DEFAULT NULL,
-  `slug` varchar(255) CHARACTER SET utf8 COLLATE utf8_unicode_ci NULL DEFAULT NULL,
-  `parent_id` int(11) NULL DEFAULT NULL,
-  `leap` int(11) NULL DEFAULT NULL,
-  `dynamik` int(1) NULL DEFAULT NULL,
-  `type` int(1) NULL DEFAULT NULL,
-  PRIMARY KEY (`id`) USING BTREE
-) ENGINE = MyISAM AUTO_INCREMENT = 113 CHARACTER SET = utf8 COLLATE = utf8_unicode_ci ROW_FORMAT = Dynamic;
-
--- ----------------------------
--- Records of menus_uz_en_lardan oldin
--- ----------------------------
-INSERT INTO `menus_uz_en_lardan oldin` VALUES (1, NULL, NULL, NULL, NULL, NULL, 'Университет', NULL, NULL, NULL, 0, 1, 1);
-INSERT INTO `menus_uz_en_lardan oldin` VALUES (2, NULL, NULL, NULL, NULL, NULL, 'Образование', NULL, NULL, NULL, 0, 1, 1);
-INSERT INTO `menus_uz_en_lardan oldin` VALUES (3, NULL, '2021-03-27 05:36:03', NULL, NULL, NULL, 'Наука', NULL, '', NULL, 0, 1, 1);
-INSERT INTO `menus_uz_en_lardan oldin` VALUES (4, NULL, NULL, NULL, NULL, NULL, 'Международная деятельность', NULL, NULL, NULL, 0, 1, 1);
-INSERT INTO `menus_uz_en_lardan oldin` VALUES (5, NULL, NULL, NULL, NULL, NULL, 'Студенческая жизнь', NULL, NULL, NULL, 0, 1, 1);
-INSERT INTO `menus_uz_en_lardan oldin` VALUES (6, NULL, NULL, NULL, NULL, NULL, 'Приемная комиссия', NULL, NULL, NULL, 0, 1, 1);
-INSERT INTO `menus_uz_en_lardan oldin` VALUES (7, NULL, NULL, NULL, NULL, NULL, 'Об университете', NULL, '/about-university', 1, 1, 1, 1);
-INSERT INTO `menus_uz_en_lardan oldin` VALUES (8, NULL, NULL, NULL, NULL, NULL, 'Общая структура университета', NULL, NULL, 1, 1, 1, 1);
-INSERT INTO `menus_uz_en_lardan oldin` VALUES (9, NULL, NULL, NULL, NULL, NULL, 'Пресс-служба', NULL, NULL, 1, 1, 1, 1);
-INSERT INTO `menus_uz_en_lardan oldin` VALUES (10, NULL, NULL, NULL, NULL, NULL, 'Органы управления', NULL, NULL, 1, 1, 1, 1);
-INSERT INTO `menus_uz_en_lardan oldin` VALUES (11, NULL, NULL, NULL, NULL, NULL, 'Официальные документы', NULL, NULL, 1, 1, 1, 1);
-INSERT INTO `menus_uz_en_lardan oldin` VALUES (12, NULL, NULL, NULL, NULL, NULL, 'Контакты', NULL, NULL, 1, 1, 1, 1);
-INSERT INTO `menus_uz_en_lardan oldin` VALUES (13, NULL, NULL, NULL, NULL, NULL, 'Достижения', NULL, NULL, 1, 1, 1, 1);
-INSERT INTO `menus_uz_en_lardan oldin` VALUES (14, NULL, NULL, NULL, NULL, NULL, 'Факультеты бакалавриата', NULL, NULL, 2, 1, 1, 1);
-INSERT INTO `menus_uz_en_lardan oldin` VALUES (15, NULL, NULL, NULL, NULL, NULL, 'Направления магистратуры', NULL, NULL, 2, 1, 1, 1);
-INSERT INTO `menus_uz_en_lardan oldin` VALUES (16, NULL, NULL, NULL, NULL, NULL, 'Послевузовское образование', NULL, NULL, 2, 1, 1, 1);
-INSERT INTO `menus_uz_en_lardan oldin` VALUES (17, NULL, NULL, NULL, NULL, NULL, 'Стипендии и гранты', NULL, NULL, 2, 1, 1, 1);
-INSERT INTO `menus_uz_en_lardan oldin` VALUES (19, NULL, NULL, NULL, NULL, NULL, 'Расписание занятий', NULL, NULL, 2, 1, 1, 1);
-INSERT INTO `menus_uz_en_lardan oldin` VALUES (18, NULL, '2021-03-27 06:05:15', NULL, NULL, NULL, 'Библиотека', NULL, NULL, 2, 1, 1, 1);
-INSERT INTO `menus_uz_en_lardan oldin` VALUES (20, NULL, NULL, NULL, NULL, NULL, 'Расписание сессии', '', NULL, 2, 1, 1, 1);
-INSERT INTO `menus_uz_en_lardan oldin` VALUES (21, NULL, NULL, NULL, NULL, NULL, 'Дистанционное обучение', '', NULL, 2, 1, 1, 1);
-INSERT INTO `menus_uz_en_lardan oldin` VALUES (22, NULL, NULL, NULL, NULL, NULL, 'Дополнительное профессиональное образование', '', NULL, 2, 1, 1, 1);
-INSERT INTO `menus_uz_en_lardan oldin` VALUES (23, NULL, NULL, NULL, NULL, NULL, 'Платные образовательные услуги', '', NULL, 2, 1, 1, 1);
-INSERT INTO `menus_uz_en_lardan oldin` VALUES (24, NULL, NULL, NULL, NULL, NULL, 'Государственная итоговая аттестация', '', NULL, 2, 1, 1, 1);
-INSERT INTO `menus_uz_en_lardan oldin` VALUES (25, NULL, NULL, NULL, NULL, NULL, 'Конкурс на замещение вакантных должностей ППС', '', NULL, 2, 1, 1, 1);
-INSERT INTO `menus_uz_en_lardan oldin` VALUES (26, NULL, NULL, NULL, NULL, NULL, 'Практика и стажировка', '', NULL, 2, 1, 1, 1);
-INSERT INTO `menus_uz_en_lardan oldin` VALUES (27, NULL, NULL, NULL, NULL, NULL, 'Направления научных исследований', '', NULL, 3, 1, 1, 1);
-INSERT INTO `menus_uz_en_lardan oldin` VALUES (28, NULL, NULL, NULL, NULL, NULL, 'Научная деятельность', NULL, NULL, 3, 1, 1, 1);
-INSERT INTO `menus_uz_en_lardan oldin` VALUES (29, NULL, '2021-03-27 05:50:20', NULL, NULL, NULL, 'Публикации', NULL, NULL, 3, 1, 1, 1);
-INSERT INTO `menus_uz_en_lardan oldin` VALUES (30, NULL, NULL, NULL, NULL, NULL, 'Совет молодых ученых', '', NULL, 3, 1, 1, 1);
-INSERT INTO `menus_uz_en_lardan oldin` VALUES (31, NULL, NULL, NULL, NULL, NULL, 'Научные издания', NULL, NULL, 3, 1, 1, 1);
-INSERT INTO `menus_uz_en_lardan oldin` VALUES (32, NULL, NULL, NULL, NULL, NULL, 'Авторефераты', NULL, NULL, 3, 1, 1, 1);
-INSERT INTO `menus_uz_en_lardan oldin` VALUES (33, NULL, NULL, NULL, NULL, NULL, 'Фонд академических инноваций', NULL, NULL, 3, 1, 1, 1);
-INSERT INTO `menus_uz_en_lardan oldin` VALUES (34, NULL, NULL, NULL, NULL, NULL, 'Лаборатория Legal Tech', '', NULL, 3, 1, 1, 1);
-INSERT INTO `menus_uz_en_lardan oldin` VALUES (35, NULL, NULL, NULL, NULL, NULL, 'Международные отношения', NULL, NULL, 4, 1, 1, 1);
-INSERT INTO `menus_uz_en_lardan oldin` VALUES (36, NULL, NULL, NULL, NULL, NULL, 'Академическая мобильность', NULL, NULL, 4, 1, 1, 1);
-INSERT INTO `menus_uz_en_lardan oldin` VALUES (37, NULL, NULL, NULL, NULL, NULL, 'Исследовательские проекты', NULL, NULL, 4, 1, 1, 1);
-INSERT INTO `menus_uz_en_lardan oldin` VALUES (38, NULL, NULL, NULL, NULL, NULL, 'Международные студенты', NULL, NULL, 4, 1, 1, 1);
-INSERT INTO `menus_uz_en_lardan oldin` VALUES (39, NULL, NULL, NULL, NULL, NULL, 'Стажировка за рубежом и краткосрочные курсы', NULL, NULL, 4, 1, 1, 1);
-INSERT INTO `menus_uz_en_lardan oldin` VALUES (40, NULL, NULL, NULL, NULL, NULL, 'Центрально-азиатский студенческий конгресс', NULL, NULL, 4, 1, 1, 1);
-INSERT INTO `menus_uz_en_lardan oldin` VALUES (41, NULL, NULL, NULL, NULL, NULL, 'Поощрение социальной активности', NULL, NULL, 5, 1, 1, 1);
-INSERT INTO `menus_uz_en_lardan oldin` VALUES (42, NULL, NULL, NULL, NULL, NULL, 'Студенческие объединения', NULL, NULL, 5, 1, 1, 1);
-INSERT INTO `menus_uz_en_lardan oldin` VALUES (43, NULL, NULL, NULL, NULL, NULL, 'Творческие студии и клубы по интересам', NULL, NULL, 5, 1, 1, 1);
-INSERT INTO `menus_uz_en_lardan oldin` VALUES (44, NULL, NULL, NULL, NULL, NULL, 'Студенческий спортивный клуб', NULL, NULL, 5, 1, 1, 1);
-INSERT INTO `menus_uz_en_lardan oldin` VALUES (45, NULL, NULL, NULL, NULL, NULL, 'Научные школы', NULL, NULL, 5, 1, 1, 1);
-INSERT INTO `menus_uz_en_lardan oldin` VALUES (46, NULL, NULL, NULL, NULL, NULL, 'Летний отдых', NULL, NULL, 5, 1, 1, 1);
-INSERT INTO `menus_uz_en_lardan oldin` VALUES (47, NULL, NULL, NULL, NULL, NULL, 'Форумы и лагеря', NULL, NULL, 5, 1, 1, 1);
-INSERT INTO `menus_uz_en_lardan oldin` VALUES (48, NULL, NULL, NULL, NULL, NULL, 'Студенческие фестивали', NULL, NULL, 5, 1, 1, 1);
-INSERT INTO `menus_uz_en_lardan oldin` VALUES (49, NULL, NULL, NULL, NULL, NULL, 'Стипендии', NULL, NULL, 5, 1, 1, 1);
-INSERT INTO `menus_uz_en_lardan oldin` VALUES (50, NULL, NULL, NULL, NULL, NULL, ' Деятельность приемной комиссии', NULL, NULL, 6, 1, 1, 1);
-INSERT INTO `menus_uz_en_lardan oldin` VALUES (51, NULL, NULL, NULL, NULL, NULL, ' Бакалавриат', NULL, NULL, 6, 1, 1, 1);
-INSERT INTO `menus_uz_en_lardan oldin` VALUES (52, NULL, NULL, NULL, NULL, NULL, ' Магистратура', NULL, NULL, 6, 1, 1, 1);
-INSERT INTO `menus_uz_en_lardan oldin` VALUES (53, NULL, NULL, NULL, NULL, NULL, ' Заочное обучение и второе высшее образование', NULL, NULL, 6, 1, 1, 1);
-INSERT INTO `menus_uz_en_lardan oldin` VALUES (54, NULL, NULL, NULL, NULL, NULL, ' Прием иностранных граждан', NULL, NULL, 6, 1, 1, 1);
-INSERT INTO `menus_uz_en_lardan oldin` VALUES (55, NULL, NULL, NULL, NULL, NULL, ' Прием на совместные образовательные программы', NULL, NULL, 6, 1, 1, 1);
-INSERT INTO `menus_uz_en_lardan oldin` VALUES (56, NULL, NULL, NULL, NULL, NULL, 'Прием выпускников юридических техникумов и академического лицея', NULL, NULL, 6, 1, 1, 1);
-INSERT INTO `menus_uz_en_lardan oldin` VALUES (58, NULL, NULL, NULL, NULL, NULL, ' Приветствие ректора', NULL, NULL, 7, 2, 1, 1);
-INSERT INTO `menus_uz_en_lardan oldin` VALUES (59, NULL, NULL, NULL, NULL, NULL, 'Миссия и ценности', NULL, NULL, 7, 2, 1, 1);
-INSERT INTO `menus_uz_en_lardan oldin` VALUES (60, NULL, NULL, NULL, NULL, NULL, 'Отчеты и презентации', NULL, NULL, 7, 2, 1, 1);
-INSERT INTO `menus_uz_en_lardan oldin` VALUES (61, NULL, '2021-03-27 14:12:05', NULL, NULL, NULL, 'Логотип и фирменный стиль', NULL, '/general-page/logotip-i-firmenniy-stily', 7, 2, 1, 1);
-INSERT INTO `menus_uz_en_lardan oldin` VALUES (62, NULL, NULL, NULL, NULL, NULL, 'Музей', NULL, NULL, 7, 2, 1, 1);
-INSERT INTO `menus_uz_en_lardan oldin` VALUES (63, NULL, NULL, NULL, NULL, NULL, '  Факультеты', NULL, NULL, 8, 2, 1, 1);
-INSERT INTO `menus_uz_en_lardan oldin` VALUES (64, NULL, NULL, NULL, NULL, NULL, 'Управления', NULL, NULL, 8, 2, 1, 1);
-INSERT INTO `menus_uz_en_lardan oldin` VALUES (65, NULL, NULL, NULL, NULL, NULL, 'Центры', NULL, NULL, 8, 2, 1, 1);
-INSERT INTO `menus_uz_en_lardan oldin` VALUES (66, NULL, NULL, NULL, NULL, NULL, 'Филиалы', NULL, NULL, 8, 2, 1, 1);
-INSERT INTO `menus_uz_en_lardan oldin` VALUES (67, NULL, NULL, NULL, NULL, NULL, 'Академический лицей', NULL, NULL, 8, 2, 1, 1);
-INSERT INTO `menus_uz_en_lardan oldin` VALUES (68, NULL, NULL, NULL, NULL, NULL, 'Мероприятия', NULL, NULL, 9, 2, 1, 1);
-INSERT INTO `menus_uz_en_lardan oldin` VALUES (69, NULL, NULL, NULL, NULL, NULL, 'Публикации в СМИ', NULL, NULL, 9, 2, 1, 1);
-INSERT INTO `menus_uz_en_lardan oldin` VALUES (70, NULL, NULL, NULL, NULL, NULL, 'Медиацентр', NULL, NULL, 9, 2, 1, 1);
-INSERT INTO `menus_uz_en_lardan oldin` VALUES (76, NULL, NULL, NULL, NULL, NULL, 'Научный совет', NULL, NULL, 10, 2, 1, 1);
-INSERT INTO `menus_uz_en_lardan oldin` VALUES (75, NULL, NULL, NULL, NULL, NULL, 'Попечительский совет', NULL, NULL, 10, 2, 1, 1);
-INSERT INTO `menus_uz_en_lardan oldin` VALUES (74, NULL, NULL, NULL, NULL, NULL, 'Ректорат', NULL, NULL, 10, 2, 1, 1);
-INSERT INTO `menus_uz_en_lardan oldin` VALUES (78, NULL, NULL, NULL, NULL, NULL, 'Сведения об образовательной организации', NULL, NULL, 11, 2, 1, 1);
-INSERT INTO `menus_uz_en_lardan oldin` VALUES (79, NULL, NULL, NULL, NULL, NULL, 'Лицензия и аккредитация', NULL, NULL, 11, 2, 1, 1);
-INSERT INTO `menus_uz_en_lardan oldin` VALUES (80, NULL, NULL, NULL, NULL, NULL, 'Устав', NULL, NULL, 11, 2, 1, 1);
-INSERT INTO `menus_uz_en_lardan oldin` VALUES (81, NULL, NULL, NULL, NULL, NULL, 'Реквизиты', NULL, NULL, 11, 2, 1, 1);
-INSERT INTO `menus_uz_en_lardan oldin` VALUES (82, NULL, NULL, NULL, NULL, NULL, 'Противодействие коррупции', NULL, NULL, 11, 2, 1, 1);
-INSERT INTO `menus_uz_en_lardan oldin` VALUES (83, NULL, NULL, NULL, NULL, NULL, 'Телефонный справочник', NULL, NULL, 12, 2, 1, 1);
-INSERT INTO `menus_uz_en_lardan oldin` VALUES (84, NULL, NULL, NULL, NULL, NULL, 'Карта корпусов', NULL, NULL, 12, 2, 1, 1);
-INSERT INTO `menus_uz_en_lardan oldin` VALUES (85, NULL, NULL, NULL, NULL, NULL, 'Виртуальная приёмная', NULL, NULL, 12, 2, 1, 1);
-INSERT INTO `menus_uz_en_lardan oldin` VALUES (86, NULL, NULL, NULL, NULL, NULL, 'Цифры и факты', NULL, NULL, 13, 2, 1, 1);
-INSERT INTO `menus_uz_en_lardan oldin` VALUES (87, NULL, NULL, NULL, NULL, NULL, 'Позиции в рейтингах', NULL, NULL, 13, 2, 1, 1);
-INSERT INTO `menus_uz_en_lardan oldin` VALUES (88, NULL, NULL, NULL, NULL, NULL, ' Зарубежные партнеры – университеты', NULL, NULL, 35, 2, 1, 1);
-INSERT INTO `menus_uz_en_lardan oldin` VALUES (89, NULL, NULL, NULL, NULL, NULL, 'Международные организации – партнеры', NULL, NULL, 35, 2, 1, 1);
-INSERT INTO `menus_uz_en_lardan oldin` VALUES (90, NULL, NULL, NULL, NULL, NULL, 'Членство в международных ассоциациях', NULL, NULL, 35, 2, 1, 1);
-INSERT INTO `menus_uz_en_lardan oldin` VALUES (91, NULL, NULL, NULL, NULL, NULL, 'Международные олимпиады и конкурсы', NULL, NULL, 35, 2, 1, 1);
-INSERT INTO `menus_uz_en_lardan oldin` VALUES (92, NULL, NULL, NULL, NULL, NULL, ' Приглашенные профессора', NULL, NULL, 35, 2, 1, 1);
-INSERT INTO `menus_uz_en_lardan oldin` VALUES (94, NULL, NULL, NULL, NULL, NULL, ' Совместные образовательные программы', NULL, NULL, 36, 2, NULL, NULL);
-INSERT INTO `menus_uz_en_lardan oldin` VALUES (95, NULL, NULL, NULL, NULL, NULL, 'Образовательный курс University Foundation Program', NULL, NULL, 36, 2, NULL, NULL);
-INSERT INTO `menus_uz_en_lardan oldin` VALUES (96, NULL, NULL, NULL, NULL, NULL, 'Обмен ППС', NULL, NULL, 36, 2, NULL, NULL);
-INSERT INTO `menus_uz_en_lardan oldin` VALUES (97, NULL, NULL, NULL, NULL, NULL, 'Совместные факультеты за рубежом', NULL, NULL, 36, 2, NULL, NULL);
-INSERT INTO `menus_uz_en_lardan oldin` VALUES (98, NULL, NULL, NULL, NULL, NULL, 'Студенческий обмен', NULL, NULL, 36, 2, NULL, NULL);
-INSERT INTO `menus_uz_en_lardan oldin` VALUES (99, NULL, NULL, NULL, NULL, NULL, 'Международные конференции, семинары и «круглые столы»', NULL, NULL, 37, 2, NULL, NULL);
-INSERT INTO `menus_uz_en_lardan oldin` VALUES (100, NULL, NULL, NULL, NULL, NULL, 'Международные научные проекты и гранты', NULL, NULL, 37, 2, NULL, NULL);
-INSERT INTO `menus_uz_en_lardan oldin` VALUES (101, NULL, NULL, NULL, NULL, NULL, 'Экспертный совет ТГЮУ (соотечественники)', NULL, NULL, 37, 2, NULL, NULL);
-INSERT INTO `menus_uz_en_lardan oldin` VALUES (102, NULL, NULL, NULL, NULL, NULL, 'Международные стипендии', NULL, NULL, 37, 2, NULL, NULL);
-INSERT INTO `menus_uz_en_lardan oldin` VALUES (103, NULL, NULL, NULL, NULL, NULL, 'Стипендии партнеров-вузов', NULL, NULL, 37, 2, NULL, NULL);
-INSERT INTO `menus_uz_en_lardan oldin` VALUES (104, NULL, NULL, NULL, NULL, NULL, ' Прием иностранных студентов', '', NULL, 38, 2, NULL, NULL);
-INSERT INTO `menus_uz_en_lardan oldin` VALUES (105, NULL, NULL, NULL, NULL, NULL, 'Программы академической мобильности', '', NULL, 38, 2, NULL, NULL);
-INSERT INTO `menus_uz_en_lardan oldin` VALUES (106, NULL, NULL, NULL, NULL, NULL, 'Бакалавр', '', NULL, 38, 2, NULL, NULL);
-INSERT INTO `menus_uz_en_lardan oldin` VALUES (107, NULL, NULL, NULL, NULL, NULL, 'Магистратура', '', NULL, 38, 2, NULL, NULL);
-INSERT INTO `menus_uz_en_lardan oldin` VALUES (108, NULL, NULL, NULL, NULL, NULL, 'Контакты', '', NULL, 38, 2, NULL, NULL);
-INSERT INTO `menus_uz_en_lardan oldin` VALUES (109, NULL, NULL, NULL, NULL, NULL, 'Стажировка сотрудников и ППС', '', NULL, 39, 2, NULL, NULL);
-INSERT INTO `menus_uz_en_lardan oldin` VALUES (110, NULL, NULL, NULL, NULL, NULL, 'Научная стажировка научных соискателей и докторантов', '', NULL, 39, 2, NULL, NULL);
-INSERT INTO `menus_uz_en_lardan oldin` VALUES (111, NULL, NULL, NULL, NULL, NULL, 'Летние и зимние школы', '', NULL, 39, 2, NULL, NULL);
+INSERT INTO `menus` VALUES (1, NULL, NULL, NULL, NULL, NULL, 'Университет', NULL, NULL, NULL, 0, 1, 1);
+INSERT INTO `menus` VALUES (2, NULL, NULL, NULL, NULL, NULL, 'Образование', NULL, NULL, NULL, 0, 1, 1);
+INSERT INTO `menus` VALUES (3, NULL, '2021-03-27 05:36:03', NULL, NULL, NULL, 'Наука', NULL, '', NULL, 0, 1, 1);
+INSERT INTO `menus` VALUES (4, NULL, NULL, NULL, NULL, NULL, 'Международная деятельность', NULL, NULL, NULL, 0, 1, 1);
+INSERT INTO `menus` VALUES (5, NULL, NULL, NULL, NULL, NULL, 'Студенческая жизнь', NULL, NULL, NULL, 0, 1, 1);
+INSERT INTO `menus` VALUES (6, NULL, NULL, NULL, NULL, NULL, 'Приемная комиссия', NULL, NULL, NULL, 0, 1, 1);
+INSERT INTO `menus` VALUES (7, NULL, NULL, NULL, NULL, NULL, 'Об университете', NULL, '/about-university', 1, 1, 1, 1);
+INSERT INTO `menus` VALUES (8, NULL, NULL, NULL, NULL, NULL, 'Общая структура университета', NULL, NULL, 1, 1, 1, 1);
+INSERT INTO `menus` VALUES (9, NULL, NULL, NULL, NULL, NULL, 'Пресс-служба', NULL, NULL, 1, 1, 1, 1);
+INSERT INTO `menus` VALUES (10, NULL, NULL, NULL, NULL, NULL, 'Органы управления', NULL, NULL, 1, 1, 1, 1);
+INSERT INTO `menus` VALUES (11, NULL, NULL, NULL, NULL, NULL, 'Официальные документы', NULL, NULL, 1, 1, 1, 1);
+INSERT INTO `menus` VALUES (12, NULL, NULL, NULL, NULL, NULL, 'Контакты', NULL, NULL, 1, 1, 1, 1);
+INSERT INTO `menus` VALUES (13, NULL, NULL, NULL, NULL, NULL, 'Достижения', NULL, NULL, 1, 1, 1, 1);
+INSERT INTO `menus` VALUES (14, NULL, NULL, NULL, NULL, NULL, 'Факультеты бакалавриата', NULL, NULL, 2, 1, 1, 1);
+INSERT INTO `menus` VALUES (15, NULL, NULL, NULL, NULL, NULL, 'Направления магистратуры', NULL, NULL, 2, 1, 1, 1);
+INSERT INTO `menus` VALUES (16, NULL, NULL, NULL, NULL, NULL, 'Послевузовское образование', NULL, NULL, 2, 1, 1, 1);
+INSERT INTO `menus` VALUES (17, NULL, NULL, NULL, NULL, NULL, 'Стипендии и гранты', NULL, NULL, 2, 1, 1, 1);
+INSERT INTO `menus` VALUES (19, NULL, NULL, NULL, NULL, NULL, 'Расписание занятий', NULL, NULL, 2, 1, 1, 1);
+INSERT INTO `menus` VALUES (18, NULL, '2021-03-27 06:05:15', NULL, NULL, NULL, 'Библиотека', NULL, NULL, 2, 1, 1, 1);
+INSERT INTO `menus` VALUES (20, NULL, NULL, NULL, NULL, NULL, 'Расписание сессии', '', NULL, 2, 1, 1, 1);
+INSERT INTO `menus` VALUES (21, NULL, NULL, NULL, NULL, NULL, 'Дистанционное обучение', '', NULL, 2, 1, 1, 1);
+INSERT INTO `menus` VALUES (22, NULL, NULL, NULL, NULL, NULL, 'Дополнительное профессиональное образование', '', NULL, 2, 1, 1, 1);
+INSERT INTO `menus` VALUES (23, NULL, NULL, NULL, NULL, NULL, 'Платные образовательные услуги', '', NULL, 2, 1, 1, 1);
+INSERT INTO `menus` VALUES (24, NULL, NULL, NULL, NULL, NULL, 'Государственная итоговая аттестация', '', NULL, 2, 1, 1, 1);
+INSERT INTO `menus` VALUES (25, NULL, NULL, NULL, NULL, NULL, 'Конкурс на замещение вакантных должностей ППС', '', NULL, 2, 1, 1, 1);
+INSERT INTO `menus` VALUES (26, NULL, NULL, NULL, NULL, NULL, 'Практика и стажировка', '', NULL, 2, 1, 1, 1);
+INSERT INTO `menus` VALUES (27, NULL, NULL, NULL, NULL, NULL, 'Направления научных исследований', '', NULL, 3, 1, 1, 1);
+INSERT INTO `menus` VALUES (28, NULL, NULL, NULL, NULL, NULL, 'Научная деятельность', NULL, NULL, 3, 1, 1, 1);
+INSERT INTO `menus` VALUES (29, NULL, '2021-03-27 05:50:20', NULL, NULL, NULL, 'Публикации', NULL, NULL, 3, 1, 1, 1);
+INSERT INTO `menus` VALUES (30, NULL, NULL, NULL, NULL, NULL, 'Совет молодых ученых', '', NULL, 3, 1, 1, 1);
+INSERT INTO `menus` VALUES (31, NULL, NULL, NULL, NULL, NULL, 'Научные издания', NULL, NULL, 3, 1, 1, 1);
+INSERT INTO `menus` VALUES (32, NULL, NULL, NULL, NULL, NULL, 'Авторефераты', NULL, NULL, 3, 1, 1, 1);
+INSERT INTO `menus` VALUES (33, NULL, NULL, NULL, NULL, NULL, 'Фонд академических инноваций', NULL, NULL, 3, 1, 1, 1);
+INSERT INTO `menus` VALUES (34, NULL, NULL, NULL, NULL, NULL, 'Лаборатория Legal Tech', '', NULL, 3, 1, 1, 1);
+INSERT INTO `menus` VALUES (35, NULL, NULL, NULL, NULL, NULL, 'Международные отношения', NULL, NULL, 4, 1, 1, 1);
+INSERT INTO `menus` VALUES (36, NULL, NULL, NULL, NULL, NULL, 'Академическая мобильность', NULL, NULL, 4, 1, 1, 1);
+INSERT INTO `menus` VALUES (37, NULL, NULL, NULL, NULL, NULL, 'Исследовательские проекты', NULL, NULL, 4, 1, 1, 1);
+INSERT INTO `menus` VALUES (38, NULL, NULL, NULL, NULL, NULL, 'Международные студенты', NULL, NULL, 4, 1, 1, 1);
+INSERT INTO `menus` VALUES (39, NULL, NULL, NULL, NULL, NULL, 'Стажировка за рубежом и краткосрочные курсы', NULL, NULL, 4, 1, 1, 1);
+INSERT INTO `menus` VALUES (40, NULL, NULL, NULL, NULL, NULL, 'Центрально-азиатский студенческий конгресс', NULL, NULL, 4, 1, 1, 1);
+INSERT INTO `menus` VALUES (41, NULL, NULL, NULL, NULL, NULL, 'Поощрение социальной активности', NULL, NULL, 5, 1, 1, 1);
+INSERT INTO `menus` VALUES (42, NULL, NULL, NULL, NULL, NULL, 'Студенческие объединения', NULL, NULL, 5, 1, 1, 1);
+INSERT INTO `menus` VALUES (43, NULL, NULL, NULL, NULL, NULL, 'Творческие студии и клубы по интересам', NULL, NULL, 5, 1, 1, 1);
+INSERT INTO `menus` VALUES (44, NULL, NULL, NULL, NULL, NULL, 'Студенческий спортивный клуб', NULL, NULL, 5, 1, 1, 1);
+INSERT INTO `menus` VALUES (45, NULL, NULL, NULL, NULL, NULL, 'Научные школы', NULL, NULL, 5, 1, 1, 1);
+INSERT INTO `menus` VALUES (46, NULL, NULL, NULL, NULL, NULL, 'Летний отдых', NULL, NULL, 5, 1, 1, 1);
+INSERT INTO `menus` VALUES (47, NULL, NULL, NULL, NULL, NULL, 'Форумы и лагеря', NULL, NULL, 5, 1, 1, 1);
+INSERT INTO `menus` VALUES (48, NULL, NULL, NULL, NULL, NULL, 'Студенческие фестивали', NULL, NULL, 5, 1, 1, 1);
+INSERT INTO `menus` VALUES (49, NULL, NULL, NULL, NULL, NULL, 'Стипендии', NULL, NULL, 5, 1, 1, 1);
+INSERT INTO `menus` VALUES (50, NULL, NULL, NULL, NULL, NULL, ' Деятельность приемной комиссии', NULL, NULL, 6, 1, 1, 1);
+INSERT INTO `menus` VALUES (51, NULL, NULL, NULL, NULL, NULL, ' Бакалавриат', NULL, NULL, 6, 1, 1, 1);
+INSERT INTO `menus` VALUES (52, NULL, NULL, NULL, NULL, NULL, ' Магистратура', NULL, NULL, 6, 1, 1, 1);
+INSERT INTO `menus` VALUES (53, NULL, NULL, NULL, NULL, NULL, ' Заочное обучение и второе высшее образование', NULL, NULL, 6, 1, 1, 1);
+INSERT INTO `menus` VALUES (54, NULL, NULL, NULL, NULL, NULL, ' Прием иностранных граждан', NULL, NULL, 6, 1, 1, 1);
+INSERT INTO `menus` VALUES (55, NULL, NULL, NULL, NULL, NULL, ' Прием на совместные образовательные программы', NULL, NULL, 6, 1, 1, 1);
+INSERT INTO `menus` VALUES (56, NULL, NULL, NULL, NULL, NULL, 'Прием выпускников юридических техникумов и академического лицея', NULL, NULL, 6, 1, 1, 1);
+INSERT INTO `menus` VALUES (58, NULL, NULL, NULL, NULL, NULL, ' Приветствие ректора', NULL, NULL, 7, 2, 1, 1);
+INSERT INTO `menus` VALUES (59, NULL, NULL, NULL, NULL, NULL, 'Миссия и ценности', NULL, NULL, 7, 2, 1, 1);
+INSERT INTO `menus` VALUES (60, NULL, NULL, NULL, NULL, NULL, 'Отчеты и презентации', NULL, NULL, 7, 2, 1, 1);
+INSERT INTO `menus` VALUES (61, NULL, '2021-03-27 14:12:05', NULL, NULL, NULL, 'Логотип и фирменный стиль', NULL, '/general-page/logotip-i-firmenniy-stily', 7, 2, 1, 1);
+INSERT INTO `menus` VALUES (62, NULL, NULL, NULL, NULL, NULL, 'Музей', NULL, NULL, 7, 2, 1, 1);
+INSERT INTO `menus` VALUES (63, NULL, NULL, NULL, NULL, NULL, '  Факультеты', NULL, NULL, 8, 2, 1, 1);
+INSERT INTO `menus` VALUES (64, NULL, NULL, NULL, NULL, NULL, 'Управления', NULL, NULL, 8, 2, 1, 1);
+INSERT INTO `menus` VALUES (65, NULL, NULL, NULL, NULL, NULL, 'Центры', NULL, NULL, 8, 2, 1, 1);
+INSERT INTO `menus` VALUES (66, NULL, NULL, NULL, NULL, NULL, 'Филиалы', NULL, NULL, 8, 2, 1, 1);
+INSERT INTO `menus` VALUES (67, NULL, NULL, NULL, NULL, NULL, 'Академический лицей', NULL, NULL, 8, 2, 1, 1);
+INSERT INTO `menus` VALUES (68, NULL, NULL, NULL, NULL, NULL, 'Мероприятия', NULL, NULL, 9, 2, 1, 1);
+INSERT INTO `menus` VALUES (69, NULL, NULL, NULL, NULL, NULL, 'Публикации в СМИ', NULL, NULL, 9, 2, 1, 1);
+INSERT INTO `menus` VALUES (70, NULL, NULL, NULL, NULL, NULL, 'Медиацентр', NULL, NULL, 9, 2, 1, 1);
+INSERT INTO `menus` VALUES (76, NULL, NULL, NULL, NULL, NULL, 'Научный совет', NULL, NULL, 10, 2, 1, 1);
+INSERT INTO `menus` VALUES (75, NULL, NULL, NULL, NULL, NULL, 'Попечительский совет', NULL, NULL, 10, 2, 1, 1);
+INSERT INTO `menus` VALUES (74, NULL, NULL, NULL, NULL, NULL, 'Ректорат', NULL, NULL, 10, 2, 1, 1);
+INSERT INTO `menus` VALUES (78, NULL, NULL, NULL, NULL, NULL, 'Сведения об образовательной организации', NULL, NULL, 11, 2, 1, 1);
+INSERT INTO `menus` VALUES (79, NULL, NULL, NULL, NULL, NULL, 'Лицензия и аккредитация', NULL, NULL, 11, 2, 1, 1);
+INSERT INTO `menus` VALUES (80, NULL, NULL, NULL, NULL, NULL, 'Устав', NULL, NULL, 11, 2, 1, 1);
+INSERT INTO `menus` VALUES (81, NULL, NULL, NULL, NULL, NULL, 'Реквизиты', NULL, NULL, 11, 2, 1, 1);
+INSERT INTO `menus` VALUES (82, NULL, NULL, NULL, NULL, NULL, 'Противодействие коррупции', NULL, NULL, 11, 2, 1, 1);
+INSERT INTO `menus` VALUES (83, NULL, NULL, NULL, NULL, NULL, 'Телефонный справочник', NULL, NULL, 12, 2, 1, 1);
+INSERT INTO `menus` VALUES (84, NULL, NULL, NULL, NULL, NULL, 'Карта корпусов', NULL, NULL, 12, 2, 1, 1);
+INSERT INTO `menus` VALUES (85, NULL, NULL, NULL, NULL, NULL, 'Виртуальная приёмная', NULL, NULL, 12, 2, 1, 1);
+INSERT INTO `menus` VALUES (86, NULL, NULL, NULL, NULL, NULL, 'Цифры и факты', NULL, NULL, 13, 2, 1, 1);
+INSERT INTO `menus` VALUES (87, NULL, NULL, NULL, NULL, NULL, 'Позиции в рейтингах', NULL, NULL, 13, 2, 1, 1);
+INSERT INTO `menus` VALUES (88, NULL, NULL, NULL, NULL, NULL, ' Зарубежные партнеры – университеты', NULL, NULL, 35, 2, 1, 1);
+INSERT INTO `menus` VALUES (89, NULL, NULL, NULL, NULL, NULL, 'Международные организации – партнеры', NULL, NULL, 35, 2, 1, 1);
+INSERT INTO `menus` VALUES (90, NULL, NULL, NULL, NULL, NULL, 'Членство в международных ассоциациях', NULL, NULL, 35, 2, 1, 1);
+INSERT INTO `menus` VALUES (91, NULL, NULL, NULL, NULL, NULL, 'Международные олимпиады и конкурсы', NULL, NULL, 35, 2, 1, 1);
+INSERT INTO `menus` VALUES (92, NULL, NULL, NULL, NULL, NULL, ' Приглашенные профессора', NULL, NULL, 35, 2, 1, 1);
+INSERT INTO `menus` VALUES (94, NULL, NULL, NULL, NULL, NULL, ' Совместные образовательные программы', NULL, NULL, 36, 2, NULL, NULL);
+INSERT INTO `menus` VALUES (95, NULL, NULL, NULL, NULL, NULL, 'Образовательный курс University Foundation Program', NULL, NULL, 36, 2, NULL, NULL);
+INSERT INTO `menus` VALUES (96, NULL, NULL, NULL, NULL, NULL, 'Обмен ППС', NULL, NULL, 36, 2, NULL, NULL);
+INSERT INTO `menus` VALUES (97, NULL, NULL, NULL, NULL, NULL, 'Совместные факультеты за рубежом', NULL, NULL, 36, 2, NULL, NULL);
+INSERT INTO `menus` VALUES (98, NULL, NULL, NULL, NULL, NULL, 'Студенческий обмен', NULL, NULL, 36, 2, NULL, NULL);
+INSERT INTO `menus` VALUES (99, NULL, NULL, NULL, NULL, NULL, 'Международные конференции, семинары и «круглые столы»', NULL, NULL, 37, 2, NULL, NULL);
+INSERT INTO `menus` VALUES (100, NULL, NULL, NULL, NULL, NULL, 'Международные научные проекты и гранты', NULL, NULL, 37, 2, NULL, NULL);
+INSERT INTO `menus` VALUES (101, NULL, NULL, NULL, NULL, NULL, 'Экспертный совет ТГЮУ (соотечественники)', NULL, NULL, 37, 2, NULL, NULL);
+INSERT INTO `menus` VALUES (102, NULL, NULL, NULL, NULL, NULL, 'Международные стипендии', NULL, NULL, 37, 2, NULL, NULL);
+INSERT INTO `menus` VALUES (103, NULL, NULL, NULL, NULL, NULL, 'Стипендии партнеров-вузов', NULL, NULL, 37, 2, NULL, NULL);
+INSERT INTO `menus` VALUES (104, NULL, NULL, NULL, NULL, NULL, ' Прием иностранных студентов', '', NULL, 38, 2, NULL, NULL);
+INSERT INTO `menus` VALUES (105, NULL, NULL, NULL, NULL, NULL, 'Программы академической мобильности', '', NULL, 38, 2, NULL, NULL);
+INSERT INTO `menus` VALUES (106, NULL, NULL, NULL, NULL, NULL, 'Бакалавр', '', NULL, 38, 2, NULL, NULL);
+INSERT INTO `menus` VALUES (107, NULL, NULL, NULL, NULL, NULL, 'Магистратура', '', NULL, 38, 2, NULL, NULL);
+INSERT INTO `menus` VALUES (108, NULL, NULL, NULL, NULL, NULL, 'Контакты', '', NULL, 38, 2, NULL, NULL);
+INSERT INTO `menus` VALUES (109, NULL, NULL, NULL, NULL, NULL, 'Стажировка сотрудников и ППС', '', NULL, 39, 2, NULL, NULL);
+INSERT INTO `menus` VALUES (110, NULL, NULL, NULL, NULL, NULL, 'Научная стажировка научных соискателей и докторантов', '', NULL, 39, 2, NULL, NULL);
+INSERT INTO `menus` VALUES (111, NULL, NULL, NULL, NULL, NULL, 'Летние и зимние школы', '', NULL, 39, 2, NULL, NULL);
 
 -- ----------------------------
 -- Table structure for migrations
@@ -403,13 +273,12 @@ CREATE TABLE `pages`  (
   `slug` longtext CHARACTER SET utf8 COLLATE utf8_unicode_ci NULL,
   `title` longtext CHARACTER SET utf8 COLLATE utf8_unicode_ci NULL,
   PRIMARY KEY (`id`) USING BTREE
-) ENGINE = MyISAM AUTO_INCREMENT = 12 CHARACTER SET = utf8 COLLATE = utf8_unicode_ci ROW_FORMAT = Dynamic;
+) ENGINE = MyISAM AUTO_INCREMENT = 11 CHARACTER SET = utf8 COLLATE = utf8_unicode_ci ROW_FORMAT = Dynamic;
 
 -- ----------------------------
 -- Records of pages
 -- ----------------------------
-INSERT INTO `pages` VALUES (10, '2021-03-27 14:12:05', '2021-03-28 06:25:51', NULL, NULL, '<h4 style=\"outline: none; font-weight: bold; color: rgb(0, 0, 0); font-family: PTSerif; font-size: 19px;\">Bugun, 27 mart kuni Xitoydan O‘zbekistonga 1 million doza ZF-UZ-VAC2001 vaksinasi olib kelindi.</h4><div class=\"main-img\" style=\"outline: none; width: 787px; margin-bottom: 10px; color: rgb(0, 0, 0); font-family: PTSerif; font-size: 19px;\"><img src=\"https://storage.kun.uz/source/7/fYexlCF-eXTUrYlSh49V-mklzhc1PAZV.jpg\" style=\"outline: none; border: 0px; max-width: 100%; height: auto; margin: auto; display: block; width: 787px;\"><div class=\"main-img__caption\" style=\"outline: none; opacity: 0.56; color: rgb(34, 34, 34); font-family: Montserrat; font-size: 12px; line-height: 16px; letter-spacing: -0.06px; padding-bottom: 10px; padding-top: 10px;\">Foto: Sog‘liqni saqlash vazirligi</div></div><p style=\"outline: none; font-family: PTSerif; color: rgb(0, 0, 0); font-size: 19px;\">Xitoyning «Zhifei Longcom Biopharmaceutical Co. Ltd kompaniyasi tomonidan O‘zbekistonda 3-bosqich sinovlari o‘tkazilgan, o‘zbekistonlik mutaxassislar hammuallifligida yaratilgan ZF-UZ-VAC 2001 vaksinasining 1 million dozasi Xitoydan O‘zbekistonga olib kelindi.</p><p style=\"outline: none; font-family: PTSerif; color: rgb(0, 0, 0); font-size: 19px;\">Toshkent xalqaro aeroportidagi tadbirda prezident maslahatchisi A.Abduvohidov, sog‘liqni saqlash vaziri A.Hojiboyev, innovatsion rivojlanish vaziri I.Abdurahmonov va boshqa mas\'ullar ishtirok etdi.</p><figure class=\"iframe\" style=\"outline: none; margin-bottom: 0px; text-align: center; max-width: 100%; color: rgb(0, 0, 0); font-family: PTSerif; font-size: 19px;\"><iframe allowfullscreen=\"allowfullscreen\" frameborder=\"0\" height=\"450\" src=\"https://www.youtube.com/embed/OCPUtbi3u88\" width=\"800\" style=\"outline: none; max-width: 100%; margin: auto; display: block; height: 400px;\"></iframe></figure><p style=\"outline: none; font-family: PTSerif; color: rgb(0, 0, 0); font-size: 19px; text-align: center;\">&nbsp;</p><p style=\"outline: none; font-family: PTSerif; color: rgb(0, 0, 0); font-size: 19px; text-align: center;\"><img alt=\"\" height=\"533\" src=\"https://storage.kun.uz/source/7/wfYEWF_IPUCM8m-f3tfWGqq0lUhLmdPW.jpg\" width=\"800\" style=\"outline: none; border: 0px; max-width: 100%; height: auto; margin: auto; display: block;\"></p>', '<div class=\"single-header\" style=\"outline: none; padding: 0px 20px 20px; position: relative; color: rgb(0, 0, 0); font-family: Montserrat;\"><div class=\"single-header__title\" style=\"outline: none; font-size: 26px; font-weight: bold; line-height: 32px;\">Узбекистан возвращается к показателям лета 2020 года. Коронавирус&nbsp;бьет новые рекорды</div></div><div class=\"single-content\" style=\"outline: none; font-size: 19px; line-height: 31px; color: rgb(0, 0, 0); padding: 0px 20px 20px; border-left: 1px solid rgba(151, 151, 151, 0.23); margin-bottom: 20px; position: relative; font-family: PTSerif;\"><h4 style=\"outline: none; font-weight: bold;\">В Узбекистане ежедневно выявляют почти столько же новых случаев заражения коронавирусом, сколько, например, в июле прошлого года.</h4><div class=\"main-img\" style=\"outline: none; width: 787px; margin-bottom: 10px;\"><img src=\"https://storage.kun.uz/source/7/uBkY4n705gqFZSaA99vZM4U6_mDQawxC.jpg\" style=\"outline: none; border: 0px; max-width: 100%; height: auto; margin: auto; display: block; width: 787px;\"><div class=\"main-img__caption\" style=\"outline: none; opacity: 0.56; color: rgb(34, 34, 34); font-family: Montserrat; font-size: 12px; line-height: 16px; letter-spacing: -0.06px; padding-bottom: 10px; padding-top: 10px;\"></div></div><p style=\"outline: none;\">Согласно&nbsp;последним&nbsp;<a href=\"https://t.me/ssvuz/5449\" target=\"_blank\" style=\"outline: none; background-image: initial; background-position: 0px 0px; background-size: initial; background-repeat: initial; background-attachment: initial; background-origin: initial; background-clip: initial; display: inline-block; cursor: pointer; transition: all 0.3s ease 0s;\">данным</a>&nbsp;пресс-службы Минздрава, 26 марта текущего года в республике коронавирус обнаружили у 186 человек. Общее количество зарегистрированных случаев составило 82&nbsp;146 человек.</p><p style=\"outline: none;\">Напомним, летом прошлого года в Узбекистане фиксировались аналогичные показатели. В частности, 7 июля 2020 года в Узбекистане&nbsp;<a href=\"https://kun.uz/ru/news/2020/07/07/v-uzbekistane-vyyavili-128-novyx-sluchayev-zarajyeniya-koronavirusom\" target=\"_blank\" style=\"outline: none; background-image: initial; background-position: 0px 0px; background-size: initial; background-repeat: initial; background-attachment: initial; background-origin: initial; background-clip: initial; display: inline-block; cursor: pointer; transition: all 0.3s ease 0s;\">зафиксировали</a>&nbsp;128 новых случаев заражения коронавирусом. 8 июля за ночь в Узбекистане&nbsp;<a href=\"https://kun.uz/ru/news/2020/07/08/za-noch-v-uzbekistane-vyyavili-168-sluchayev-koronavirusa\" target=\"_blank\" style=\"outline: none; background-image: initial; background-position: 0px 0px; background-size: initial; background-repeat: initial; background-attachment: initial; background-origin: initial; background-clip: initial; display: inline-block; cursor: pointer; transition: all 0.3s ease 0s;\">выявили</a>&nbsp;168 случаев коронавируса.</p><p style=\"outline: none;\">Вчера, 26 марта, в Ташкенте коронавирус обнаружили у 143 человек, в Андижанской области – 1, Бухарской области – 7, в Кашкадарьинской области – 6, в Наманганской области – 4, в Самаркандской области – 1, Сырдарьинской области – 2, Ферганской области – 1, Хорезмской области – 4 и в Ташкентской области – 17.</p><p style=\"outline: none;\">Также зафиксирован один случай гибели от коронавируса. Общее количество смертельных случаев достигло 625.</p><p style=\"outline: none;\">Кроме того, вчера в Ташкенте от коронавируса выздоровели 94 человек, а в Ташкентской области – 18.</p><p style=\"outline: none;\">Общее&nbsp;число вылечившихся от коронавируса в стране достигло 80&nbsp;360 или 98 процентов от заболевших.</p><p style=\"outline: none;\">Стало также известно, что количество активных случаев заражения составляет 1161. Из них 191 пациент находятся в тяжелом, а 85 – в критическом состоянии.</p></div>', '<h4 style=\"outline: none; font-weight: bold; color: rgb(0, 0, 0); font-family: PTSerif; font-size: 19px;\">President of Uzbekistan Shavkat Mirziyoyev met with media representatives on March 18 within the framework of his visit to the Chinaz district, Tashkent region, Kun.uz correspondent reports.&nbsp;</h4><div class=\"main-img\" style=\"outline: none; width: 787px; margin-bottom: 10px; color: rgb(0, 0, 0); font-family: PTSerif; font-size: 19px;\"><img src=\"https://storage.kun.uz/source/7/GRRfzKFASvUWoJiFYOaKBF0ivYo_ccdV.jpg\" style=\"outline: none; border: 0px; max-width: 100%; height: auto; margin: auto; display: block; width: 787px;\"><div class=\"main-img__caption\" style=\"outline: none; opacity: 0.56; color: rgb(34, 34, 34); font-family: Montserrat; font-size: 12px; line-height: 16px; letter-spacing: -0.06px; padding-bottom: 10px; padding-top: 10px;\"></div></div><p style=\"outline: none; font-family: PTSerif; color: rgb(0, 0, 0); font-size: 19px;\">At the meeting, the President stressed that the people should be active in implementing the reforms.</p><p style=\"outline: none; font-family: PTSerif; color: rgb(0, 0, 0); font-size: 19px;\">“There should be no unemployment in Tashkent region. It is a shame that there is such a problem, especially in the Chinaz district. We are launching very large projects to solve these issues. More than $11 billion will be directed to implement long-term projects in Tashkent region. The regional khokim is taking over this task,” Shavkat Mirziyoyev said.</p><p style=\"outline: none; font-family: PTSerif; color: rgb(0, 0, 0); font-size: 19px;\">The President also talked about energy resources.</p><p style=\"outline: none; font-family: PTSerif; color: rgb(0, 0, 0); font-size: 19px;\">“There are a lot of complaints about the lack of energy resources. But it all becomes clear by comparison. What was our situation three years ago? That fact must be taken into account,” he said.</p><p style=\"outline: none; font-family: PTSerif; color: rgb(0, 0, 0); font-size: 19px;\">As Kun.uz correspondent reports, Shavkat Mirziyoyev said that there are problems and their solutions should be sought together. The head of state also stressed the need to explain this to our people.</p><p style=\"outline: none; font-family: PTSerif; color: rgb(0, 0, 0); font-size: 19px;\">“Every year the population of our republic increases by an average of 700,000 people. Various enterprises are opening. In another 10 years, we will become a large country with a population of over 40 million people. We need to work now to be strong by then,” Mirziyoyev said.</p>', 'logotip-i-firmenniy-stily', 'logotip page22222');
-INSERT INTO `pages` VALUES (11, '2021-03-29 06:44:33', '2021-03-29 07:27:35', NULL, NULL, '<div class=\"articleContHead\" style=\"margin: 0px 0px 18px; color: rgb(0, 0, 0); font-family: Arial; font-size: 14px; outline: none !important;\"><div class=\"articleContHead\" style=\"margin: 0px 0px 18px; outline: none !important;\"><br></div></div>', '<div class=\"articleContHead\" style=\"margin: 0px 0px 18px; color: rgb(0, 0, 0); font-family: Arial; font-size: 14px; outline: none !important;\"><br></div>', '<div class=\"articleContHead\" style=\"margin: 0px 0px 18px; color: rgb(0, 0, 0); font-family: Arial; font-size: 14px; outline: none !important;\"><br></div>', 'privetstvie-rektora', 'privetstvie-rektora');
+INSERT INTO `pages` VALUES (10, '2021-03-27 14:12:05', '2021-03-27 14:15:49', NULL, NULL, '<div class=\"articleContHead\" style=\"margin: 0px 0px 18px; color: rgb(0, 0, 0); font-family: Arial; font-size: 14px; outline: none !important;\"><h1 class=\"title-1 without-author\" style=\"font-size: 26px; margin-right: 0px; margin-bottom: 0px; margin-left: 0px; padding: 0px; font-family: PTSerif-Bold; display: inline-block; vertical-align: middle; width: 690px; outline: none !important;\">Toshkentga xitoy—o‘zbek vaksinasining 1 mln dozasi olib kelindi (foto)</h1></div><div class=\"postContent\" style=\"margin: 0px 0px 40px; color: rgb(0, 0, 0); font-family: Arial; outline: none !important;\"><p style=\"margin-right: 0px; margin-bottom: 18px; margin-left: 0px; line-height: 1.5; outline: none !important;\">27-mart kuni Toshkent xalqaro aeroportiga Xitoydan 1 million dozada Xitoy—O‘zbekiston ZF-UZ-VAC2001 vaksinasi olib kelindi. Bu haqda “Daryo” muxbiri xabar bermoqda.</p><div id=\"attachment_1699077\" class=\"wp-caption aligncenter\" style=\"outline: none !important; margin: 0px auto 20px !important;\"><p style=\"line-height: 1.5; outline: none !important; margin-right: 0px !important; margin-bottom: 0px !important; margin-left: 0px !important;\"><img class=\"size-full wp-image-1699077\" src=\"https://s.daryo.uz/wp-content/uploads/2021/03/photo_2021-03-27_17-39-33-2.jpg\" alt=\"\" width=\"1200\" height=\"800\" style=\"border: 0px; max-width: 100%; height: auto; margin-bottom: 5px; outline: none !important;\"></p><p class=\"wp-caption-text\" style=\"line-height: 1.5; color: rgb(119, 119, 119); outline: none !important; margin-right: 0px !important; margin-bottom: 5px !important; margin-left: 0px !important; font-size: 12px !important;\">Foto: “Daryo”</p></div><p style=\"margin-right: 0px; margin-bottom: 18px; margin-left: 0px; line-height: 1.5; outline: none !important;\">ZF-UZ-VAC2001 Xitoy Fanlar akademiyasi Mikrobiologiya instituti olimlari tomonidan yaratilgan, Anhui Zhifei Longcom Biopharmaceutical Co.Ltd farmatsevtika kompaniyasi tomonidan ishlab chiqilgan va o‘zbekistonlik olimlar bilan hamkorlikda klinik tadqiqotlari olib borilgan koronavirusga qarshi yangi rekombinant vaksinadir.&nbsp;Uni yaratishda koronavirus tashqi oqsili biotexnologik usul bilan sintezlanib olingan bo‘lib, organizmga yuborilganda oqsilga nisbatan immun ja</p></div>', '<div class=\"articleContHead\" style=\"margin: 0px 0px 18px; color: rgb(0, 0, 0); font-family: Arial; font-size: 14px; outline: none !important;\"><h1 class=\"title-1 without-author\" style=\"font-size: 26px; margin-right: 0px; margin-bottom: 0px; margin-left: 0px; padding: 0px; font-family: PTSerif-Bold; display: inline-block; vertical-align: middle; width: 690px; outline: none !important;\">Toshkentga xitoy—o‘zbek vaksinasining 1 mln dozasi olib kelindi (foto)</h1></div><div class=\"postContent\" style=\"margin: 0px 0px 40px; color: rgb(0, 0, 0); font-family: Arial; outline: none !important;\"><p style=\"margin-right: 0px; margin-bottom: 18px; margin-left: 0px; line-height: 1.5; outline: none !important;\">27-mart kuni Toshkent xalqaro aeroportiga Xitoydan 1 million dozada Xitoy—O‘zbekiston ZF-UZ-VAC2001 vaksinasi olib kelindi. Bu haqda “Daryo” muxbiri xabar bermoqda.</p><div id=\"attachment_1699077\" class=\"wp-caption aligncenter\" style=\"outline: none !important; margin: 0px auto 20px !important;\"><p style=\"line-height: 1.5; outline: none !important; margin-right: 0px !important; margin-bottom: 0px !important; margin-left: 0px !important;\"><img class=\"size-full wp-image-1699077\" src=\"https://s.daryo.uz/wp-content/uploads/2021/03/photo_2021-03-27_17-39-33-2.jpg\" alt=\"\" width=\"1200\" height=\"800\" style=\"border: 0px; max-width: 100%; height: auto; margin-bottom: 5px; outline: none !important;\"></p><p class=\"wp-caption-text\" style=\"line-height: 1.5; color: rgb(119, 119, 119); outline: none !important; margin-right: 0px !important; margin-bottom: 5px !important; margin-left: 0px !important; font-size: 12px !important;\">Foto: “Daryo”</p></div><p style=\"margin-right: 0px; margin-bottom: 18px; margin-left: 0px; line-height: 1.5; outline: none !important;\">ZF-UZ-VAC2001 Xitoy Fanlar akademiyasi Mikrobiologiya instituti olimlari tomonidan yaratilgan, Anhui Zhifei Longcom Biopharmaceutical Co.Ltd farmatsevtika kompaniyasi tomonidan ishlab chiqilgan va o‘zbekistonlik olimlar bilan hamkorlikda klinik tadqiqotlari olib borilgan koronavirusga qarshi yangi rekombinant vaksinadir.&nbsp;Uni yaratishda koronavirus tashqi oqsili biotexnologik usul bilan sintezlanib olingan bo‘lib, organizmga yuborilganda oqsilga nisbatan immun ja</p></div>', '<div class=\"articleContHead\" style=\"margin: 0px 0px 18px; color: rgb(0, 0, 0); font-family: Arial; font-size: 14px; outline: none !important;\"><h1 class=\"title-1 without-author\" style=\"font-size: 26px; margin-right: 0px; margin-bottom: 0px; margin-left: 0px; padding: 0px; font-family: PTSerif-Bold; display: inline-block; vertical-align: middle; width: 690px; outline: none !important;\">Toshkentga xitoy—o‘zbek vaksinasining 1 mln dozasi olib kelindi (foto)</h1></div><div class=\"postContent\" style=\"margin: 0px 0px 40px; color: rgb(0, 0, 0); font-family: Arial; outline: none !important;\"><p style=\"margin-right: 0px; margin-bottom: 18px; margin-left: 0px; line-height: 1.5; outline: none !important;\">27-mart kuni Toshkent xalqaro aeroportiga Xitoydan 1 million dozada Xitoy—O‘zbekiston ZF-UZ-VAC2001 vaksinasi olib kelindi. Bu haqda “Daryo” muxbiri xabar bermoqda.</p><div id=\"attachment_1699077\" class=\"wp-caption aligncenter\" style=\"outline: none !important; margin: 0px auto 20px !important;\"><p style=\"line-height: 1.5; outline: none !important; margin-right: 0px !important; margin-bottom: 0px !important; margin-left: 0px !important;\"><img class=\"size-full wp-image-1699077\" src=\"https://s.daryo.uz/wp-content/uploads/2021/03/photo_2021-03-27_17-39-33-2.jpg\" alt=\"\" width=\"1200\" height=\"800\" style=\"border: 0px; max-width: 100%; height: auto; margin-bottom: 5px; outline: none !important;\"></p><p class=\"wp-caption-text\" style=\"line-height: 1.5; color: rgb(119, 119, 119); outline: none !important; margin-right: 0px !important; margin-bottom: 5px !important; margin-left: 0px !important; font-size: 12px !important;\">Foto: “Daryo”</p></div><p style=\"margin-right: 0px; margin-bottom: 18px; margin-left: 0px; line-height: 1.5; outline: none !important;\">ZF-UZ-VAC2001 Xitoy Fanlar akademiyasi Mikrobiologiya instituti olimlari tomonidan yaratilgan, Anhui Zhifei Longcom Biopharmaceutical Co.Ltd farmatsevtika kompaniyasi tomonidan ishlab chiqilgan va o‘zbekistonlik olimlar bilan hamkorlikda klinik tadqiqotlari olib borilgan koronavirusga qarshi yangi rekombinant vaksinadir.&nbsp;Uni yaratishda koronavirus tashqi oqsili biotexnologik usul bilan sintezlanib olingan bo‘lib, organizmga yuborilganda oqsilga nisbatan immun ja</p></div>', 'logotip-i-firmenniy-stily', 'logotip page22222');
 
 -- ----------------------------
 -- Table structure for password_resets

@@ -12,6 +12,11 @@ h1, h2, h3, h4, h5, h6, p, span, b {
     --backgroundColor:#233585;
 }
 
+
+.active_nav {
+    background-color: red;
+}
+
 .closing_sidebar {
     position: fixed;
     top: 0px;
@@ -177,56 +182,10 @@ h1, h2, h3, h4, h5, h6, p, span, b {
 }
 
 #header_pc {
-    transition: all 1s ease-in-out;
+    /* transition: all 0.3s ease-in-out; */
     background-color: #F6F7FD;
 }
 
-.navbar_social_icons {
-    border-radius: 50%;
-    display: block;
-    background-color: #2C42A6;
-    color: white;
-    width: 26px;
-    height: 26px;
-    transition: all 0.3s ease-in-out;
-    position: relative;
-    cursor: pointer;
-    margin-left: 10px;
-}
-
-.navbar_social_icons i {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    color: #f1f1f1;
-    font-size: 12px;
-}
-
-.lnb_top {
-    background-color: var(--backgroundColor);
-    height: 40px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding-left: 16px;
-}
-
-.rnb_top {
-    background-color: #233585;
-    height: 40px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-
-.navbar_social_icons:hover {
-    background-color: white;
-}
-
-.navbar_social_icons:hover i {
-    color: #342ead;
-}
 
 .top_links_left {
     font-size: 13px;
@@ -243,31 +202,6 @@ h1, h2, h3, h4, h5, h6, p, span, b {
     text-decoration: none;
 }
 
-.top_links_left:hover {
-    background-color: #F8F8F8;
-    color: #2C42A6;
-    text-decoration: none;
-}
-
-.top_links_right {
-    font-size: 13px;
-    font-weight: 500;
-    padding: 2px 0;
-    text-align: center;
-    display: inline-block;
-    color: #F8F8F8;
-    text-decoration: none;
-    background-color: #2C42A6;
-    width: 150px;
-    border-radius: 4px;
-    margin-left: 10%;
-}
-
-.top_links_right:hover {
-    background-color: #F8F8F8;
-    color: #2C42A6;
-    text-decoration: none;
-}
 
 /* language */
 
@@ -394,132 +328,6 @@ h1, h2, h3, h4, h5, h6, p, span, b {
 
 /* <----------======Navbar main menu starts======------------> */
 
-.c_main_link {
-    position: relative;
-    padding: 12px 4px;
-}
-
-.c_main_link a {
-    color: #585858;
-    text-decoration: none;
-    font-size: 18px;
-}
-
-.c_main_link:hover {
-    background-color: white;
-}
-
-.c_main_link:hover .hover_menu {
-    transition: all 0.4s ease-in-out;
-    display: block;
-}
-
-.c_parent_box {
-    position: relative;
-}
-
-.hover_menu {
-    display: none;
-    position: absolute;
-    width: 250px;
-    top: 96%;
-    left: 0;
-    z-index: 20;
-    background-color: #F6F7FD;
-    cursor: pointer;
-    box-shadow: 0 0 4px 0 rgba(0, 0, 0, 0.4);
-    text-align: start;
-    transition: all 0.4s ease-in-out;
-}
-
-.hover_menu>div {
-    display: block;
-    text-align: start;
-    background-color: #F6F7FD;
-}
-
-.c_parent_link {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 5px 0 5px 10px;
-}
-
-.c_parent_link i {
-    transform: rotate(90deg);
-    transition: all 0.1s ease-in-out;
-}
-
-.c_parent_link a {
-    color: #585858;
-    font-size: 15px;
-    text-decoration: none;
-    font-weight: 400;
-}
-
-.c_parent_link:hover i {
-    transform: rotate(0deg);
-    color: black !important;
-}
-
-.c_parent_link:hover {
-    background-color: white;
-    text-decoration: none;
-}
-
-.c_parent_link:hover a {
-    color: black !important;
-}
-
-.hover_menu>div:hover>a {
-    color: white;
-}
-
-.c_child_box .c_parent_link i {
-    transform: rotate(90deg);
-}
-
-.c_child_box {
-    display: none;
-    box-sizing: border-box;
-    position: absolute;
-    left: 100%;
-    top: 0;
-    background-color: #F6F7FD;
-    box-shadow: 0 0 4px 0 rgba(0, 0, 0, 0.2);
-}
-
-.c_parent_box:hover .c_child_box {
-    display: block;
-    width: max-content;
-}
-
-.c_child_box>div {
-    padding: 5px 6px 5px 10px;
-    box-sizing: border-box;
-    display: block;
-    text-align: justify;
-    hyphens: auto;
-    min-width: fit-content;
-}
-
-.c_child_box>div>a {
-    color: #333;
-    text-decoration: none;
-    font-size: 15px;
-    max-width: 100%;
-    font-weight: 400;
-}
-
-.c_child_box>div:hover>a {
-    color: black !important;
-    font-weight: 400 !important;
-}
-
-.c_child_box>div:hover {
-    background-color: white;
-    color: black;
-}
 
 /* <----------======Navbar main menu ends======------------> */
 
@@ -1558,8 +1366,8 @@ ul.tabs_media li.current {
 }
 
 
-.euc_title_products {
-    text-align: center;
+.euc_title {
+    /* text-align: center; */
     border-bottom: 1px solid #233585;
     padding: 10px 0;
     font-size: 30px;
@@ -1568,8 +1376,6 @@ ul.tabs_media li.current {
 
 
 .euc_product_item:hover {
-    width: 300px;
-    background-color: #233585;
     color: white;
     margin-top: 20px;
     box-shadow:  0 0 10px 0px rgba(0, 0, 0, 0.2);
@@ -1600,7 +1406,8 @@ ul.tabs_media li.current {
     -webkit-box-orient: vertical;
     overflow: hidden;
     font-size: 16px;
-    padding-bottom: 20px;
+    margin-bottom: 30px;
+    /* padding-bottom: 20px; */
 }
 
 .euc_product_item > div:nth-child(2) h5 {
@@ -1627,6 +1434,48 @@ ul.tabs_media li.current {
     color: white;
 }
 
+
+/* <----====Sections starts====----> */
+
+.head_of_department {
+    display: flex;
+}
+
+.head_of_department > div:nth-child(1){
+    width: 140px;
+    height: 160px;
+}
+.head_of_department > div:nth-child(1) img { 
+    width: 100%;
+    height: 100%;
+}
+
+
+.head_of_department > div:nth-child(2) { 
+    width: calc(100%-140px);
+    font-size: 14px;
+    padding: 12px;
+}
+
+.head_of_department > div:nth-child(2) > p { 
+    margin: 0;
+    color: #233585;
+}
+
+.head_of_department > div:nth-child(2) > p > span:nth-child(1){ 
+    font-weight: bold;
+}
+
+
+.sections_text_box {
+    background-color: white;
+    padding: 10px 20px;
+    text-align: justify;
+    font-size: 15px;
+}
+
+
+/* <----====Sections ends====----> */
 
 /*
 /*
@@ -1683,6 +1532,13 @@ ul.tabs_media li.current {
     }
 }
 
+
+@media(max-width:1291px){
+    .sections_page {
+        margin-top: 30px;
+    }
+}
+
 /*
 /
 /
@@ -1728,31 +1584,7 @@ ul.tabs_media li.current {
         display: flex;
         /* margin-bottom: 50px; */
     }
-    .left_nav_box {
-        width: 40%;
-        text-align: end;
-    }
-    .right_nav_box {
-        width: 40%;
-    }
-    .lnb_bottom {
-        background-color: #F6F7FD;
-        display: flex;
-        justify-content: flex-end;
-        align-items: center;
-    }
-    .lnb_bottom span {
-        margin-right: 10%;
-    }
-    .rnb_bottom {
-        background-color: #F6F7FD;
-        display: flex;
-        justify-content: flex-start;
-        align-items: center;
-    }
-    .rnb_bottom span {
-        margin-left: 10%;
-    }
+   
     /* <------======= first part ends =======------> */
     /* <------======= second part starts =======------> */
     .main_content {
@@ -3068,6 +2900,14 @@ ul.tabs_media li.current {
         color: white;
     }
     /* <------======= eighth part ends =======------> */
+    .sections_text_box {
+        background-color: white;
+        padding: 10px 20px;
+        text-align: justify;
+        font-size: 15px;
+        margin-top: 20px;
+    }
+    
 }
 
 /*
@@ -3241,7 +3081,7 @@ ul.tabs_media li.current {
         cursor: pointer;
         margin-left: 0px;
     }
-
+    
     /* <------======= media part ends =======------> */
     /* <------======= third part starts =======------> */
     ._3_video_box {
@@ -3315,7 +3155,7 @@ ul.tabs_media li.current {
     }
     /* <------======= third part ends =======------> */
     /* <------======= fourth part starts =======------> */
-
+    
     .four_card_2, .four_card_3, .four_card_4 {
         margin-top: 7rem;
     }
@@ -3757,6 +3597,30 @@ ul.tabs_media li.current {
         color: white;
     }
     /* <------======= eighth part ends =======------> */
+    /* <------======= sections part starts =======------> */
+    .sections_text_box {
+        background-color: white;
+        padding: 10px 20px;
+        text-align: justify;
+        font-size: 15px;
+        margin-top: 20px;
+    }
+    .euc_product_item> div:nth-child(1) {
+        width: 100%;
+        height: 350px;
+        border-bottom-left-radius: 30px;
+        border-bottom-right-radius: 30px;
+    }
+    
+    .euc_product_item > div:nth-child(1) img{
+        width: 100%;
+        height: 100%;
+        border-bottom-left-radius: 30px;
+        border-bottom-right-radius: 30px;
+    }
+
+    /* <------======= sections part ends =======------> */
+
 }
 
 /*
@@ -4374,6 +4238,33 @@ ul.tabs_media li.current {
         color: white;
     }
     /* <------======= eighth part ends =======------> */
+    /* <------======= sections part starts =======------> */
+    .sections_text_box {
+        background-color: white;
+        padding: 10px 20px;
+        text-align: justify;
+        font-size: 15px;
+        margin-top: 20px;
+    }
+    .euc_product_item> div:nth-child(1) {
+        width: 100%;
+        height: 350px;
+        border-bottom-left-radius: 30px;
+        border-bottom-right-radius: 30px;
+    }
+    
+    .euc_product_item > div:nth-child(1) img{
+        width: 100%;
+        height: 100%;
+        border-bottom-left-radius: 30px;
+        border-bottom-right-radius: 30px;
+    }
+
+    /* <------======= sections part ends =======------> */
+
+
+   
+    
 }
 
 /*
@@ -4688,7 +4579,7 @@ ul.tabs_media li.current {
         font-size: 13px;
         transition: all 0.2s ease-in-out;
     }
-
+    
     /* <------======= fourth part ends =======------> */
     /* <------======= fifth part starts =======------> */
     .card_box_5 {
@@ -5031,25 +4922,67 @@ ul.tabs_media li.current {
         padding: 14px 0;
         color: white;
     }
+
+
+
     /* <------======= eighth part ends =======------> */
 
+    /* <------======= elektron universitet markazi page starts =======------> */
 
- /* <------======= general page ends =======------> */
+    .euc_services_item {
+        width: 100%;
+        height: 120px;
+        box-shadow:  0 0 10px 0px rgba(0, 0, 0, 0.1);
+        background-color: #F6F7FD;
+        padding: 4px 10px;
+        display: flex;
+        align-items: center;
+        border-radius: 4px;
+        margin-top: 20px;
+    }
+
+    .euc_product_item {
+        width: 100%;
+        background-color: #233585;
+        color: white;
+        margin-top: 20px;
+        transition: all 0.3s ease-in-out;
+        cursor: pointer;
+        position:relative;
+    }
+
+    .euc_product_item> div:nth-child(1) {
+        width: 100%;
+        height: 350px;
+        border-bottom-left-radius: 30px;
+        border-bottom-right-radius: 30px;
+    }
+    
+    .euc_product_item > div:nth-child(1) img{
+        width: 100%;
+        height: 100%;
+        border-bottom-left-radius: 30px;
+        border-bottom-right-radius: 30px;
+    }
+
+    /* <------======= elektron universitet markazi page ends =======------> */
 }
+
+ /* <------======= general page starts =======------> */
 
  .general {
      padding: 40px 0;
  }
 
 .general_content {
-    background-color: white !important;
-    padding: 10px 20px !important;
+    background-color: white;
+    padding: 10px 20px;
 }
 
  .left_menu_of_page {
      background-color: white;
      position: sticky;
-    top: 100px;
+    top: 120px;
  }
 
  .left_menu_of_page > div:nth-child(1) {
@@ -5060,7 +4993,7 @@ ul.tabs_media li.current {
      font-weight: 500;
      text-align: center;
  }
-
+ 
  .left_menu_of_page > div:nth-child(2) > a {
      display: block;
      color: #233585;
@@ -5088,3 +5021,5 @@ ul.tabs_media li.current {
      margin-right: 15px !important;
  }
 
+
+ /* <------======= general page ends =======------> */
