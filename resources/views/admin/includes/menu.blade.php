@@ -1,4 +1,5 @@
 @if(Auth::user()->role == 7)
+
     <li class="nav-item">
             <a href="{{route('admin.slider.index')}}" class="nav-link">
               <i class="nav-icon fas fa-th"></i>

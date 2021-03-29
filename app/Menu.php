@@ -27,4 +27,14 @@ class Menu extends Authenticatable
             return 0;
         }
     }
+
+    public function has_second_leap_child(){
+        $childs = Menu::where('parent_id' , $this->id)->pluck('id');
+        if (Menu::where('leap' , 2)->whereIn('parent_id' , $childs)->exists()){
+            return 1;
+        }
+        else{
+            return 0;
+        }
+    }
 }

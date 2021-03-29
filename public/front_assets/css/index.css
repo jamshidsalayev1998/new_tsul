@@ -5032,13 +5032,18 @@ ul.tabs_media li.current {
         color: white;
     }
     /* <------======= eighth part ends =======------> */
-    .general {
+
+
+ /* <------======= general page ends =======------> */
+}
+
+ .general {
      padding: 40px 0;
  }
 
 .general_content {
-    background-color: white;
-    padding: 10px 20px;
+    background-color: white !important;
+    padding: 10px 20px !important;
 }
 
  .left_menu_of_page {
@@ -5083,6 +5088,3 @@ ul.tabs_media li.current {
      margin-right: 15px !important;
  }
 
-
- /* <------======= general page ends =======------> */
-}

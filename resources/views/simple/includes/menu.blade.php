@@ -3,6 +3,45 @@ $locale = app()->getLocale();
 $name_locale = 'name_'.$locale;
 $menus = 'App\Menu'::where('leap' , 0)->basic()->get();
 ?>
+<style>
+    .tooltip {
+  position: relative;
+  display: inline-block;
+  border-bottom: 1px dotted black;
+    /*padding:50px;*/
+    /*width: 100%;*/
+}
+
+.tooltip .tooltiptext {
+  visibility: hidden;
+  width: 120px;
+  background-color: black;
+  color: #fff;
+  text-align: center;
+  border-radius: 6px;
+  padding: 5px 0;
+  position: absolute;
+  z-index: 1;
+  /*top: 0%;*/
+  left: 160%;
+  margin-left: -60px;
+}
+
+/*.tooltip .tooltiptext::after {*/
+/*  content: "";*/
+/*  position: absolute;*/
+/*  bottom: 100%;*/
+/*  left: 50%;*/
+/*  margin-left: -5px;*/
+/*  border-width: 5px;*/
+/*  border-style: solid;*/
+/*  border-color: black transparent transparent transparent;*/
+/*}*/
+
+.tooltip:hover .tooltiptext {
+  visibility: visible;
+}
+</style>
 <div id="header_pc">
             <header class="tsul_header">
         <div class="logo_box" style="z-index: 100">
@@ -237,11 +276,11 @@ $menus = 'App\Menu'::where('leap' , 0)->basic()->get();
                    <?php
                   $i++;
                    ?>
-                    @if($i < 3)
+                    @if($i < 5)
                 <span class="main_links">
                     <a href="#">{{$menu->$name_locale}}</a>
                     <div class="mega_menu_custom" style="padding-top: 33px;">
-                        <div class="d-flex bottom_dropbox_box" style="max-width: 1000px; flex-wrap: wrap ">
+                        <div class="@if($menu->has_second_leap_child()) d-flex @else @endif bottom_dropbox_box" style="max-width: 1000px; flex-wrap: wrap ">
                                     <?php
                                     $j = 0;
                                     ?>
@@ -249,7 +288,12 @@ $menus = 'App\Menu'::where('leap' , 0)->basic()->get();
                                             <div class="text-left mx-3">
                                             <div class="mt-2">
 
-                                                <h6 class="font-weight-bold text-secondary">{{$child->$name_locale}}</h6>
+                                                 @if($child->has_child())
+                                                <h6 class="font-weight-bold text-secondary menu-h " data-href="@if($child->slug){{$child->slug}}@else#@endif">{{$child->$name_locale}}</h6>
+                                                @else
+                                                    <a href="@if($child->slug) {{$child->slug}}@else # @endif" class="nav_dropdown_links"><i
+                                                        class="fas fa-caret-right mr-2 text-secondary"></i>{{$child->$name_locale}}</a>
+                                                @endif
                                                 @foreach($child->childs() as $chch)
                                                 <a href="@if($chch->slug) {{$chch->slug}}@else # @endif" class="nav_dropdown_links"><i
                                                         class="fas fa-caret-right mr-2 text-secondary"></i>{{$chch->$name_locale}}</a>
@@ -267,67 +311,6 @@ $menus = 'App\Menu'::where('leap' , 0)->basic()->get();
 
                        @endif
                 @endforeach
-                <span class="main_links">
-                    <a href="#">Образование</a>
-                    <div class="mega_menu_custom text-left" style="padding-top: 33px;">
-                        <div class="bottom_dropbox_box">
-                            <a href="#" class="nav_dropdown_links"><i
-                                    class="fas fa-caret-right mr-2 text-secondary"></i>Факультеты бакалавриата</a>
-                            <a href="#" class="nav_dropdown_links"><i
-                                    class="fas fa-caret-right mr-2 text-secondary"></i>Направления магистратуры</a>
-                            <a href="#" class="nav_dropdown_links"><i
-                                    class="fas fa-caret-right mr-2 text-secondary"></i>Послевузовское образование</a>
-                            <a href="#" class="nav_dropdown_links"><i
-                                    class="fas fa-caret-right mr-2 text-secondary"></i>Стипендии и гранты</a>
-                            <a href="#" class="nav_dropdown_links"><i
-                                    class="fas fa-caret-right mr-2 text-secondary"></i>Библиотека</a>
-                            <a href="#" class="nav_dropdown_links"><i
-                                    class="fas fa-caret-right mr-2 text-secondary"></i>Расписание заняти</a>
-                            <a href="#" class="nav_dropdown_links"><i
-                                    class="fas fa-caret-right mr-2 text-secondary"></i>Расписание сессии</a>
-                            <a href="#" class="nav_dropdown_links"><i
-                                    class="fas fa-caret-right mr-2 text-secondary"></i>Дистанционное обучение</a>
-                            <a href="#" class="nav_dropdown_links"><i
-                                    class="fas fa-caret-right mr-2 text-secondary"></i>Дополнительное профессиональное
-                                образование</a>
-                            <a href="#" class="nav_dropdown_links"><i
-                                    class="fas fa-caret-right mr-2 text-secondary"></i>Платные образовательные
-                                услуги</a>
-                            <a href="#" class="nav_dropdown_links"><i
-                                    class="fas fa-caret-right mr-2 text-secondary"></i>Государственная итоговая
-                                аттестация</a>
-                            <a href="#" class="nav_dropdown_links"><i
-                                    class="fas fa-caret-right mr-2 text-secondary"></i>Конкурс на замещение вакантных
-                                должностей ППС</a>
-                            <a href="#" class="nav_dropdown_links"><i
-                                    class="fas fa-caret-right mr-2 text-secondary"></i>Практика и стажировка</a>
-                        </div>
-                    </div>
-                </span>
-                <span class="main_links">
-                    <a href="#">Наука</a>
-                    <div class="mega_menu_custom text-left" style="padding-top: 33px;">
-                        <div class="bottom_dropbox_box">
-                            <a href="#" class="nav_dropdown_links"><i
-                                    class="fas fa-caret-right mr-2 text-secondary"></i>Направления научных
-                                исследований</a>
-                            <a href="#" class="nav_dropdown_links"><i
-                                    class="fas fa-caret-right mr-2 text-secondary"></i>Научная деятельность</a>
-                            <a href="#" class="nav_dropdown_links"><i
-                                    class="fas fa-caret-right mr-2 text-secondary"></i>Публикации</a>
-                            <a href="#" class="nav_dropdown_links"><i
-                                    class="fas fa-caret-right mr-2 text-secondary"></i>Совет молодых ученых</a>
-                            <a href="#" class="nav_dropdown_links"><i
-                                    class="fas fa-caret-right mr-2 text-secondary"></i>Научные издания</a>
-                            <a href="#" class="nav_dropdown_links"><i
-                                    class="fas fa-caret-right mr-2 text-secondary"></i>Авторефераты</a>
-                            <a href="#" class="nav_dropdown_links"><i
-                                    class="fas fa-caret-right mr-2 text-secondary"></i>Фонд академических инноваций</a>
-                            <a href="#" class="nav_dropdown_links"><i
-                                    class="fas fa-caret-right mr-2 text-secondary"></i>Лаборатория Legal Tech</a>
-                        </div>
-                    </div>
-                </span>
             </div>
             <div class="right_bottom_nav">
                 <?php
@@ -341,15 +324,19 @@ $menus = 'App\Menu'::where('leap' , 0)->basic()->get();
                 <span class="main_links">
                     <a href="#">{{$menu->$name_locale}}</a>
                     <div class="mega_menu_custom text-left" style="padding-top: 33px;">
-                        <div class="d-flex bottom_dropbox_box" style="max-width: 1000px; flex-wrap: wrap ">
+                        <div class="@if($menu->has_second_leap_child()) d-flex @else @endif bottom_dropbox_box" style="max-width: 1000px; flex-wrap: wrap ">
                                     <?php
                                     $j = 0;
                                     ?>
                                     @foreach($menu->childs() as $child)
                                             <div class="text-left mx-3">
                                             <div class="mt-2">
-
-                                                <h6 class="font-weight-bold text-secondary">{{$child->$name_locale}}</h6>
+                                                @if($child->has_child())
+                                                <h6 class="font-weight-bold text-secondary menu-h">{{$child->$name_locale}}</h6>
+                                                @else
+                                                    <a href="@if($child->slug) {{$child->slug}}@else # @endif" class="nav_dropdown_links"><i
+                                                        class="fas fa-caret-right mr-2 text-secondary"></i>{{$child->$name_locale}}</a>
+                                                @endif
                                                 @foreach($child->childs() as $chch)
                                                 <a href="@if($chch->slug) {{$chch->slug}}@else # @endif" class="nav_dropdown_links"><i
                                                         class="fas fa-caret-right mr-2 text-secondary"></i>{{$chch->$name_locale}}</a>
@@ -359,12 +346,9 @@ $menus = 'App\Menu'::where('leap' , 0)->basic()->get();
                                             </div>
                                         </div>
                                     @endforeach
-
                         </div>
-
                     </div>
                 </span>
-
                        @endif
                 @endforeach
             </div>
