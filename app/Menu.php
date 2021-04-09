@@ -2,17 +2,19 @@
 
 namespace App;
 
-use Illuminate\Contracts\Auth\MustVerifyEmail;
-use Illuminate\Foundation\Auth\User as Authenticatable;
-use Illuminate\Notifications\Notifiable;
+use Illuminate\Database\Eloquent\Model;
 
-class Menu extends Authenticatable
+class Menu extends Model
 {
     protected $table = 'menus';
 
     public function scopeBasic($query)
     {
         return $query->where('type', 1);
+    }
+    public function scopeActive($query)
+    {
+        return $query->where('status', 1);
     }
 
     public function childs(){

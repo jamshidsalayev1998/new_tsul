@@ -3,6 +3,7 @@
     <?php
         $locale = app()->getLocale();
         $content_locale = 'content_'.$locale;
+        $name_locale ='name_'.$locale;
     ?>
 
     <div class="general">
@@ -12,12 +13,10 @@
                         <div class="left_menu_of_page">
                             <div>БЫСТРЫЕ ССЫЛКИ</div>
                             <div>
-                                <a href="#"><i class="fas fa-angle-double-right text-secondary"></i>menyular 1</a>
-                                <a href="#"><i class="fas fa-angle-double-right text-secondary"></i>menyular 2</a>
-                                <a href="#"><i class="fas fa-angle-double-right text-secondary"></i>menyular 3</a>
-                                <a href="#"><i class="fas fa-angle-double-right text-secondary"></i>menyular 4</a>
-                                <a href="#"><i class="fas fa-angle-double-right text-secondary"></i>menyular 5</a>
-                                <a href="#"><i class="fas fa-angle-double-right text-secondary"></i>menyular 6</a>
+                                @foreach($links as $link)
+                                <a href="@if($link->slug){{$link->slug}}@else # @endif"><i class="fas fa-angle-double-right text-secondary"></i>{{$link->$name_locale}}</a>
+                                @endforeach
+
                             </div>
                         </div>
                     </div>

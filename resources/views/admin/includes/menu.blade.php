@@ -40,7 +40,80 @@
               </p>
             </a>
     </li>
-    <li class="nav-header">Menus</li>
+    <li class="nav-item">
+            <a href="{{route('admin.neww.index')}}" class="nav-link">
+              <i class="nav-icon fas fa-th"></i>
+              <p>
+                News
+              </p>
+            </a>
+    </li>
+    <li class="nav-item">
+            <a href="{{route('admin.media.index')}}" class="nav-link">
+              <i class="nav-icon fas fa-th"></i>
+              <p>
+                Media
+              </p>
+            </a>
+    </li>
+    <li class="nav-item">
+            <a href="{{route('admin.announce.index')}}" class="nav-link">
+              <i class="nav-icon fas fa-th"></i>
+              <p>
+                Announces
+              </p>
+            </a>
+    </li>
+     <li class="nav-item">
+            <a href="{{route('admin.separately.index')}}" class="nav-link">
+              <i class="nav-icon fas fa-th"></i>
+              <p>
+                Separately one new
+              </p>
+            </a>
+    </li>
+    <li class="nav-item">
+            <a href="#" class="nav-link">
+              <i class="nav-icon fas fa-th"></i>
+              <p>
+                Time table
+              </p>
+            </a>
+        <ul class="nav nav-treeview" style="display: none; background-color: #508AD0">
+              <li class="nav-item tool-nav" style="position: relative">
+                <a href="{{route('admin.lesson.timetable.index')}}" class="nav-link">
+                  <p>
+                      Lesson
+                  </p>
+                </a>
+              </li>
+             <li class="nav-item tool-nav" style="position: relative">
+                <a href="" class="nav-link">
+                  <p>
+                      Session
+                  </p>
+                </a>
+              </li>
+
+            </ul>
+    </li>
+    <li class="nav-item">
+            <a href="{{route('admin_young_scientist_new.index')}}" class="nav-link">
+              <i class="nav-icon fas fa-th"></i>
+              <p>
+                Scientists news
+              </p>
+            </a>
+    </li>
+
+<li class="nav-item">
+            <a href="{{route('admin_scientific_article.index')}}" class="nav-link">
+              <i class="nav-icon fas fa-th"></i>
+              <p>
+                Scientists articles
+              </p>
+            </a>
+    </li>    <li class="nav-header">Menus</li>
     <?php
         $menus = 'App\Menu'::where('leap' , 0)->basic()->get();
     ?>
@@ -87,6 +160,9 @@
                       <a href="" style="color: #005ED0 !important;">
                           <i class="fa fa-cogs" aria-hidden="true"></i>
                       </a>
+                      <button class="change_eye_menu" type="button" data-id="{{$child->id}}" style="background-color: transparent; border: none; padding: 0; margin-left: 8px; margin-right: 8px; color: #D0C65A;outline: none;">
+                          <i class="fa @if($child->status)fa-eye @else fa-eye-slash @endif" aria-hidden="true"></i>
+                      </button>
                   </div>
                 <a href="/admin/admin-slug/{{$child->id}}" class="nav-link @if(!$child->has_child()) hrefed @endif">
 {{--                  <i class="far fa-circle nav-icon"></i>--}}

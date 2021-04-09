@@ -2,11 +2,9 @@
 
 namespace App;
 
-use Illuminate\Contracts\Auth\MustVerifyEmail;
-use Illuminate\Foundation\Auth\User as Authenticatable;
-use Illuminate\Notifications\Notifiable;
+use Illuminate\Database\Eloquent\Model;
 
-class SliderImage extends Authenticatable
+class SliderImage extends Model
 {
     protected $table = 'slider_images';
 }

@@ -6,6 +6,7 @@
   <title>AdminLTE 3 | Dashboard</title>
 
   <!-- Google Font: Source Sans Pro -->
+
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
   <!-- Font Awesome -->
   <link rel="stylesheet" href="{{asset('admin_lte/plugins/fontawesome-free/css/all.min.css')}}">
@@ -28,6 +29,9 @@
       <link rel="stylesheet" href="{{asset('admin_lte/plugins/datatables-bs4/css/dataTables.bootstrap4.min.css')}}">
   <link rel="stylesheet" href="{{asset('admin_lte/plugins/datatables-responsive/css/responsive.bootstrap4.min.css')}}">
   <link rel="stylesheet" href="{{asset('admin_lte/plugins/datatables-buttons/css/buttons.bootstrap4.min.css')}}">
+    <link rel="stylesheet" href="{{asset('admin_lte/plugins/select2/css/select2.min.css')}}">
+  <link rel="stylesheet" href="{{asset('admin_lte/plugins/select2-bootstrap4-theme/select2-bootstrap4.min.css')}}">
+    <script src="{{asset('admin_lte/plugins/select2/js/select2.full.min.js')}}"></script>
     @yield('link')
 
     <style>
@@ -48,14 +52,45 @@
             margin-bottom: 0px !important;
         }
     </style>
+    <style>
+            /* [FULL SCREEN SPINNER] */
+        #spinner-back, #spinner-front {
+          position: fixed;
+          width: 100vw;
+          transition: all 1s;
+          visibility: hidden;
+          opacity: 0;
+        }
+        #spinner-back {
+          z-index: 998;
+          height: 100vh;
+          background: rgba(0, 0, 0, 0.7);
+        }
+        #spinner-front {
+          z-index: 999;
+          color: #fff;
+          text-align: center;
+          margin-top: 50vh;
+          transform: translateY(-50%);
+        }
+        #spinner-back.show, #spinner-front.show {
+          visibility: visible;
+          opacity: 1;
+        }
+
+
+     </style>
     @yield('css')
 </head>
 <body class="hold-transition sidebar-mini layout-fixed">
+
+<div id="spinner-back"></div>
+    <div id="spinner-front">
+      <img src="{{asset('images/ajax-loader.gif')}}"/><br>
+      Now loading...
+    </div>
+
 <div class="wrapper">
-
-
-{{--  @yield('header')--}}
-  <!-- /.navbar -->
     @include('admin.includes.header')
 
   <!-- Main Sidebar Container -->
@@ -105,7 +140,10 @@
 </div>
 <!-- ./wrapper -->
 
+
+
 <!-- jQuery -->
+@yield('js_after')
 <script src="{{asset('admin_lte/plugins/jquery/jquery.min.js')}}"></script>
 <!-- jQuery UI 1.11.4 -->
 <script src="{{asset('admin_lte/plugins/jquery-ui/jquery-ui.min.js')}}"></script>
@@ -208,6 +246,50 @@
     $('.hrefed').click(function(){
         window.location.href = $(this).attr('href');
     });
+</script>
+<script>
+    $('.change_eye_menu').click(function () {
+        var id = $(this).attr('data-id');
+        var url = '/admin/admin-change-eye-menu';
+        var csrf = "{{ csrf_token() }}";
+        var formdata = {
+            'menu_id':id,
+            '_token': csrf
+        };
+        var eye_v = $(this).find('i');
+        show_loader();
+        $.ajax({
+            url:url,
+            method: 'POST',
+            data: formdata,
+            success:function (result) {
+                if(eye_v.hasClass('fa-eye')){
+                    eye_v.removeClass('fa-eye');
+                    eye_v.addClass('fa-eye-slash');
+                }
+                else{
+                    eye_v.removeClass('fa-eye-slash');
+                    eye_v.addClass('fa-eye');
+                }
+                hide_loader();
+                // alert(result);
+            }
+
+        })
+    });
+    function show_loader(){
+      document.getElementById("spinner-back").classList.add("show");
+      document.getElementById("spinner-front").classList.add("show");
+    }
+    function hide_loader(){
+      document.getElementById("spinner-back").classList.remove("show");
+      document.getElementById("spinner-front").classList.remove("show");
+    }
+</script>
+<script>
+    /* [ALL YOU NEED] */
+
+
 </script>
 @yield('js')
 </body>

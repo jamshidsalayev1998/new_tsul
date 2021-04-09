@@ -29,7 +29,9 @@
                         <h3 class="card-title">Page create</h3>
                     </div>
                       <div>
-                          <button class="btn btn-dark" type="button"><i class="fas fa-eraser"></i></button>
+                          @if($clear)
+                          <button class="btn btn-dark page-clear-button "  type="button"><i class="fas fa-eraser"></i></button>
+                          @endif
                         <button type="submit" href="{{route('admin.page.store')}}" class="btn btn-success" >saqlash</button>
                     </div>
 
@@ -105,9 +107,23 @@
     </section>
     <!-- /.content -->
   </div>
+    @if($clear)
+    <form action="{{route('admin.slug.clear')}}" class="clear-slug-page" method="post">
+                              @csrf
+                              <input type="text" hidden readonly value="{{$menu->id}}" name="menu_id" >
+                              <input type="text" hidden readonly value="{{$page->id}}" name="page_id" >
+                          </form>
+    @endif
 @endsection
 @section('js')
     <script src="{{asset('admin_lte/plugins/select2/js/select2.full.min.js')}}"></script>
+    <script>
+        $('.page-clear-button').click(function(){
+            if(confirm('Tasdiqlaysizmi? Malumotni qayta tiklashning iloji yoq.')){
+                $('.clear-slug-page').submit();
+            }
+        })
+    </script>
     <script>
         $('#summernote1').summernote();
         $('#summernote2').summernote();

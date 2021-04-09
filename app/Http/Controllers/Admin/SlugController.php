@@ -16,12 +16,14 @@ class SlugController extends Controller
      */
     public function index($id){
         $menu = Menu::find($id);
+        $clear = 0;
         if ($menu->slug){
             if ($menu->dynamik == 0){
                 return redirect('/admin'.$menu->slug);
             }
             $page = Page::where('slug' , str_replace('/general-page/', '',$menu->slug))->first();
             $for_slug =  str_replace('/general-page/', '',$menu->slug);
+            $clear = 1;
         }
         else{
             $page = new Page();
@@ -32,7 +34,8 @@ class SlugController extends Controller
         return view('admin.pages.slugs.index' , [
             'page' => $page,
             'menu' => $menu,
-            'for_slug'  => $for_slug
+            'for_slug'  => $for_slug,
+            'clear' => $clear
         ]);
         return $id;
     }
@@ -94,5 +97,14 @@ class SlugController extends Controller
         $menu->slug = '/general-page/'.$request->slug;
         $menu->update();
         return redirect()->back()->with('success' , 'Malumot ozgartirildi');
+    }
+
+    public function clear(Request $request){
+        $page = Page::find($request->page_id);
+        $menu = Menu::find($request->menu_id);
+        $menu->slug = null;
+        $menu->update();
+        $page->delete();
+        return redirect()->back()->with('success' , 'Malumot ochirildi');
     }
 }

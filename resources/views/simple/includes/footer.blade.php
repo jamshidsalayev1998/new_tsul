@@ -24,19 +24,19 @@ $locale = app()->getLocale();
                             </div>
                         </div>
                         <div>
-                            <h5 class="footer_title_columns">Contact</h5>
+                            <h5 class="footer_title_columns">@lang('index.Контакт')</h5>
                             <div>
                                 <p class="mt-3" style="font-size: 16px; font-weight: 600;">
                                     <i class="fas fa-phone-alt mr-2"></i>
-                                    <span>Tel: {{$about->phone}}</span>
+                                    <span>@lang('index.Тел'): {{$about->phone}}</span>
                                 </p>
                                 <p class="mt-3" style="font-size: 16px; font-weight: 600;">
                                     <i class="fas fa-fax mr-2"></i>
-                                    <span>Faks: {{$about->faks}}</span>
+                                    <span>@lang('index.Факс'): {{$about->faks}}</span>
                                 </p>
                                 <p class="mt-3" style="font-size: 16px; font-weight: 600;">
                                     <i class="fas fa-envelope mr-2"></i>
-                                    <span>e-mail: <a href="#"
+                                    <span>@lang('index.e-mail'): <a href="#"
                                             style="font-size: 16px; font-weight: 600; color: white;">{{$about->email}}</a></span>
                                 </p>
                                 <p>
@@ -68,7 +68,7 @@ $locale = app()->getLocale();
                         </div>
                         <div>
                             <div>
-                                <h5 class="footer_title_columns">Our location </h5>
+                                <h5 class="footer_title_columns">@lang('index.Локация') </h5>
                                 <div class="mt-3">
                                     <script type="text/javascript" charset="utf-8" async src="https://api-maps.yandex.ru/services/constructor/1.0/js/?um=constructor%3Aff74afcb8a7194150c0d50941943a50329548f652033ca20bb5ab6dc1a80a85f&amp;
                                 width=100%&amp;height=200&amp;lang=ru_RU&amp;scroll=true"></script>
@@ -79,12 +79,12 @@ $locale = app()->getLocale();
                 </div>
             </div>
         </footer>
-        <div class="footer_info">
-            <div class="container">
-                <span class="d-block text-center">Внимаиние! если вы нашли ошибку в тексте, выделите её и нажмите
-                    Ctrl+Enter
-                    для уведомления
-                    администрации
-                </span>
-            </div>
-        </div>
+{{--        <div class="footer_info">--}}
+{{--            <div class="container">--}}
+{{--                <span class="d-block text-center">Внимаиние! если вы нашли ошибку в тексте, выделите её и нажмите--}}
+{{--                    Ctrl+Enter--}}
+{{--                    для уведомления--}}
+{{--                    администрации--}}
+{{--                </span>--}}
+{{--            </div>--}}
+{{--        </div>--}}

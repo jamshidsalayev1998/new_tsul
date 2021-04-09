@@ -3,10 +3,10 @@
 namespace App;
 
 use Illuminate\Contracts\Auth\MustVerifyEmail;
-use Illuminate\Foundation\Auth\User as Authenticatable;
+use Illuminate\Database\Eloquent\Model;
 use Illuminate\Notifications\Notifiable;
 
-class SystemCard extends Authenticatable
+class SystemCard extends Model
 {
     protected $table = 'system_cards';
 }

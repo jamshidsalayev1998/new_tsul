@@ -22,9 +22,18 @@ class SlugController extends Controller
         if (Page::where('slug' , $slug)->exists()){
             $menus = Menu::where('leap' , 0)->get();
             $content = Page::where('slug' , $slug)->first();
+            $menu = Menu::where('slug' , '/general-page/'.$slug)->first();
+//            return $menu;
+            if ($menu->has_child()){
+                $links = $menu->childs();
+            }
+            else{
+                $links = Menu::where('parent_id' , $menu->parent_id)->where('leap' , $menu->leap)->get();
+            }
             return view('simple.general_page' , [
                 'content' => $content,
-                'menus' => $menus
+                'menu' => $menu,
+                'links' => $links
             ]);
         }
         else{

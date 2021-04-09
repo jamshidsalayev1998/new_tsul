@@ -44,7 +44,61 @@ jQuery(document).ready(function () {
 
 
 
+    $("#scientific_carousel").owlCarousel({
+        loop:true,
+        margin:10,
+        nav:true,
+        autoPlay:true,
+        dots:true,
+        responsive:{
+            0:{
+                items:1
+            },
+            600:{
+                items:3
+            },
+            1000:{
+                items:4
+            }
+        }
+    });
 
+    $("#news_carousel").owlCarousel({
+        loop:true,
+        margin:10,
+        nav:true,
+        autoPlay:true,
+        dots:false,
+        responsive:{
+            0:{
+                items:1
+            },
+            600:{
+                items:3
+            },
+            1000:{
+                items:4
+            }
+        }
+    });
+    $("#ads_carousel").owlCarousel({
+        loop:true,
+        margin:10,
+        nav:true,
+        autoPlay:true,
+        dots:false,
+        responsive:{
+            0:{
+                items:1
+            },
+            600:{
+                items:3
+            },
+            1000:{
+                items:4
+            }
+        }
+    });
 
 
     // Custom Button
@@ -79,7 +133,7 @@ jQuery(document).ready(function () {
     });
 
     $(".sub_sub_link > a").click(function(){
-        $(".sub_sub_menu").slideToggle(200);
+        $(".sub_sub_menu").slideUp(200);
         if (
             $(this)
                 .parent()
@@ -162,6 +216,8 @@ jQuery(document).ready(function () {
     // accordion
 
 
+
+
     $('.c_main_link > a').click(function(){
         $('.main_links').removeClass("active_link");
         $(this).addClass("active_link");
@@ -181,6 +237,36 @@ jQuery(document).ready(function () {
 
 
 });
+
+
+var video_id = document.getElementById("vm_id");
+var vm_play = document.getElementById("vm_play");
+var vm_play_i = document.getElementById("vm_play_i");
+var vm_play_box = document.querySelector(".vm_play_box");
+
+vm_play?.addEventListener("click", () => {
+    vm_play.style.display = 'none';
+    vm_play_i.style.display = 'none';
+    vm_play_box.style.display = 'none'
+    video_id.setAttribute('controls', 'controls')
+    video_id.play()
+})
+vm_play_i?.addEventListener("click", () => {
+    vm_play.style.display = 'none';
+    vm_play_i.style.display = 'none';
+    vm_play_box.style.display = 'none'
+    video_id.setAttribute('controls', 'controls')
+    video_id.play()
+})
+
+
+var loading_video_gallery = document.querySelectorAll(".loading_video_gallery");
+
+loading_video_gallery[loading_video_gallery?.length-1]?.addEventListener("load", () => {
+    document.querySelector('.video_gallery_loader').style.display = "none"
+    document.getElementById('video_gallery_box_parent_id').style.display = 'block';
+})
+
 
 
 const fc_tabs = document.querySelectorAll('[data-tab-target]')
@@ -212,5 +298,26 @@ fc_tabs.forEach(tab => {
 // });
 
 
+function openCity(evt, cityName) {
+    // Declare all variables
+    var i, tabcontent, tablinks;
+  
+    // Get all elements with class="tabcontent" and hide them
+    tabcontent = document.getElementsByClassName("tabcontent_news");
+    for (i = 0; i < tabcontent.length; i++) {
+      tabcontent[i].style.display = "none";
+    }
+  
+    // Get all elements with class="tablinks" and remove the class "active"
+    tablinks = document.getElementsByClassName("tablinks");
+    for (i = 0; i < tablinks.length; i++) {
+      tablinks[i].className = tablinks[i].className.replace(" active", "");
+    }
+  
+    // Show the current tab, and add an "active" class to the button that opened the tab
+    document.getElementById(cityName).style.display = "block";
+    evt.currentTarget.className += " active";
+  }
+  
 
 

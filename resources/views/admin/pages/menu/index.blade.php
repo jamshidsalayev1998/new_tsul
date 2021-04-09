@@ -18,7 +18,7 @@
                         <h3 class="card-title">Menular</h3>
                     </div>
                       <div>
-                        <button type="submit" class="btn btn-success" data-toggle="modal" data-target=".bd-example-modal-lg">+ yangi</button>
+{{--                        <button type="submit" class="btn btn-success" data-toggle="modal" data-target=".bd-example-modal-lg">+ yangi</button>--}}
                     </div>
 
                   </div>
@@ -26,38 +26,67 @@
               </div>
               <!-- /.card-header -->
               <div class="card-body">
-                  <table class="table table-bordered">
+                  <style>
+
+                  </style>
+                  <table class="table bordered ">
                       <thead>
                       <tr>
-                          <th class="last-td">
-                              #
-                          </th>
-                          <th>
-                              Name uz
-                          </th>
-                          <th>
-                              Name ru
-                          </th>
-                          <th>
-                              Name en
-                          </th>
-                          <th class="last-td">
-                              Slug
-                          </th>
+                          <th>#</th>
+                          <th>Uz</th>
+                          <th>Ru</th>
+                          <th>En</th>
+                          <th></th>
                       </tr>
                       </thead>
                       <tbody>
-                      <?php $i = 0;?>
-                      @foreach($system_cards as $card)
+                      <?php
+                      $i = 0;
+                      ?>
+                      @foreach($menus as $menu)
                           <tr>
                               <td>{{++$i}}</td>
-                              <td>{{$card->name_uz}}</td>
-                              <td>{{$card->name_ru}}</td>
-                              <td>{{$card->name_en}}</td>
-                              <td>{{$card->slug}}</td>
+                              <td>
+                                  <a href="{{route('admin.menu.show' , ['id' => $menu->id])}}">
+                                    {{$menu->name_uz}}
+                                  </a>
+                              </td>
+                              <td>{{$menu->name_ru}}</td>
+                              <td>{{$menu->name_en}}</td>
+                              <td>
+                                  <button class="btn btn-light" data-toggle="modal" data-target="#edit_menu{{$menu->id}}"> <i class="fa fa-edit"></i></button>
+                                  <div class="modal fade " tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true" id="edit_menu{{$menu->id}}">
+                                      <div class="modal-dialog modal-lg">
+                                        <div class="modal-content p-3">
+                                            <form action="{{route('admin.menu.update' , ['id' => $menu->id])}}" method="post">
+                                                @csrf
+                                                @method('PUT')
+                                              <div class="row p-3" >
+                                                  <div class="col-md-12">
+                                                      <label for="">Nomi uz</label>
+                                                      <input type="text" class="form-control" name="name_uz" value="{{$menu->name_uz}}">
+                                                  </div>
+                                                  <div class="col-md-12">
+                                                      <label for="">Nomi ru</label>
+                                                      <input type="text" class="form-control" name="name_ru" value="{{$menu->name_ru}}">
+                                                  </div>
+                                                  <div class="col-md-12">
+                                                      <label for="">Nomi en</label>
+                                                      <input type="text" class="form-control" name="name_en" value="{{$menu->name_en}}">
+                                                  </div>
 
+                                              </div>
+                                                <div class="row" style="display: flex ; justify-content: flex-end">
+                                                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                                                    <button class="btn btn-success">Save</button>
+                                                </div>
+                                                </form>
+                                        </div>
+                                      </div>
+                                    </div>
+                              </td>
                           </tr>
-                      @endforeach
+                          @endforeach
                       </tbody>
                   </table>
               </div>
@@ -76,8 +105,10 @@
     <div class="modal fade bd-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
       <div class="modal-dialog modal-lg">
         <div class="modal-content p-3">
-            <form action="{{route('system_card.store')}}" method="post">
+            <form action="{{route('admin.menu.store')}}" method="post">
                 @csrf
+                <input type="text" hidden readonly value="{{$leap}}">
+                <input type="text" hidden readonly value="{{$parent_id}}">
               <div class="row p-3" >
                   <div class="col-md-12">
                       <label for="">Nomi uz</label>
@@ -91,14 +122,7 @@
                       <label for="">Nomi en</label>
                       <input type="text" class="form-control" name="name_en">
                   </div>
-                  <div class="col-md-12">
-                      <label for="">Link</label>
-                      <input type="text" class="form-control" name="link">
-                  </div>
-                  <div class="col-md-12">
-                      <label for="">Icon</label>
-                      <input type="text" class="form-control" name="icon">
-                  </div>
+
               </div>
                 <div class="row" style="display: flex ; justify-content: flex-end">
                     <button class="btn btn-success">Saqlash</button>
