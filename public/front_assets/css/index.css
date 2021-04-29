@@ -535,7 +535,7 @@ ul.tabs_media li.current {
 
 .tab_news {
     overflow: hidden;
-    border-bottom: 1px solid #EC0B43;
+    border-bottom: 1px solid #ccc;
 }
 
 /* Style the buttons that are used to open the tab content */
@@ -560,7 +560,7 @@ ul.tabs_media li.current {
 
 .tab_news button.active {
     background-color: white;
-    color: #EC0B43;
+    color: #233585;
 }
 
 /* Style the tab content */
@@ -1386,7 +1386,6 @@ ul.tabs_media li.current {
 .video_materials {
     width: 100%;
     height: 250px;
-    /* background-color: #F6F7FD; */
     position: relative;
 }
 
@@ -1527,13 +1526,14 @@ ul.tabs_media li.current {
 }
 
 .menu_icon_items>i {
-    font-size: 28px;
+    font-size: 30px;
     color: #233585;
 }
 
 .menu_icon_items>h5 {
     font-size: 20px;
     color: black;
+    margin-top: 10px;
 }
 
 .menu_icon_items:not(.menu_icon_items:nth-child(1)) {
@@ -1635,11 +1635,13 @@ ul.tabs_media li.current {
 }
 
 .scientific_card_text>span:nth-child(1) {
-    border-left: 4px solid #EC0B43;
+    border-left: 4px solid #233585;
     font-weight: bold;
     display: block;
+    color: #333;
     padding: 1px 3px;
     font-size: 16px;
+    background: linear-gradient(90deg, #E8ECF8 0%, rgba(255, 255, 255, 1) 100%, rgba(246, 247, 253, 1) 100%);
 }
 
 .scientific_card_text>span:nth-child(2) {
@@ -1671,7 +1673,7 @@ ul.tabs_media li.current {
     display: block;
     position: absolute;
     left: 40%;
-    background-color: #EC0B43 !important;
+    background-color: #233585 !important;
     position: absolute;
     border-radius: 50%;
     z-index: 10;
@@ -1694,7 +1696,7 @@ ul.tabs_media li.current {
     display: block;
     position: absolute;
     right: 40%;
-    background-color: #EC0B43 !important;
+    background-color: #233585 !important;
     position: absolute;
     border-radius: 50%;
     z-index: 10;
@@ -1750,7 +1752,8 @@ ul.tabs_media li.current {
 .scientific_articles_items>span:nth-child(1) {
     width: 20%;
     height: 50px;
-    background-color: #EC0B43;
+    /* background-color: #EC0B43; */
+    background-color: #E8ECF8;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -1758,7 +1761,7 @@ ul.tabs_media li.current {
     text-align: center;
     line-height: 16px;
     font-weight: bold;
-    color: white;
+    color: #233585;
 }
 
 .scientific_articles_items>span:nth-child(2) {
@@ -1786,15 +1789,14 @@ ul.tabs_media li.current {
 
 .scientific_articles_title {
     font-size: 25px;
-    /* text-align: center; */
-    border-bottom: 2px solid #EC0B43;
+    border-bottom: 2px solid #ccc;
     padding: 3px 0;
     color: #233585;
 }
 
 .scientific_persons_card_title {
     font-size: 25px;
-    border-bottom: 2px solid #EC0B43;
+    border-bottom: 2px solid #ccc;
     padding: 3px 0;
     color: #233585;
 }
@@ -1834,7 +1836,7 @@ ul.tabs_media li.current {
     font-size: 12px;
     display: flex;
     justify-content: space-between;
-    border-bottom: 1px solid #EC0B43;
+    border-bottom: 1px solid #233585;
 }
 
 .news_card_text>span:nth-child(2) {
@@ -1863,7 +1865,7 @@ ul.tabs_media li.current {
 
 .news_card_box .owl-nav .owl-prev {
     font-size: 34px !important;
-    background-color: #EC0B43 !important;
+    background-color: #233585 !important;
     height: 30px !important;
     width: 30px !important;
     display: block;
@@ -1882,7 +1884,7 @@ ul.tabs_media li.current {
 
 .news_card_box .owl-nav .owl-next {
     font-size: 34px !important;
-    background-color: #EC0B43 !important;
+    background-color: #233585 !important;
     height: 30px !important;
     width: 30px !important;
     display: block;
@@ -1903,15 +1905,17 @@ ul.tabs_media li.current {
     box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.2);
     cursor: pointer;
     background-color: white;
+    padding: 0px 0px 4px 0;
 }
 
 .rectors_card_appeal>h5 {
-    font-size: 17px;
+    font-size: 16px;
     text-align: center;
     padding: 8px 0;
     margin: 0;
     color: #233585;
     font-weight: bold;
+    background-color: #E8ECF8;
 }
 
 .rectors_card_text {
@@ -1922,7 +1926,7 @@ ul.tabs_media li.current {
     display: block;
     font-size: 14px;
     text-align: end;
-    color: #EC0B43;
+    color: blue;
 }
 
 .rectors_card_appeal_img {
@@ -1972,6 +1976,393 @@ ul.tabs_media li.current {
 }
 
 /* <------======== life university ends========------> */
+
+/* <------======== rectors page starts ========------> */
+
+.rectors_page_main {
+    display: flex;
+}
+
+.rectors_page_main>div:nth-child(1) {
+    width: 50%;
+    background-color: #E8ECF8;
+    height: 60vh;
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    padding: 0 20px;
+}
+
+.rectors_page_main>div:nth-child(1) h1 {
+    font-weight: bold;
+    color: #233585;
+    font-size: 40px;
+    text-align: center;
+    width: 100%;
+}
+
+.rectors_page_main>div:nth-child(1) p {
+    font-weight: 500;
+    color: #233585;
+    font-size: 20px;
+    text-align: center;
+    width: 100%;
+    margin-top: 20px;
+}
+
+.rectors_page_main>div:nth-child(2) {
+    width: 50%;
+    height: 60vh;
+}
+
+.rectors_page_main>div:nth-child(2) img {
+    width: 100%;
+    height: 100%;
+}
+
+[data-tab-content] {
+    display: none;
+}
+
+.active[data-tab-content] {
+    display: block;
+}
+
+.rp_tabs {
+    display: flex;
+    justify-content: space-around;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    color: #233585;
+    background-color: #E8ECF8;
+}
+
+.rp_tab {
+    cursor: pointer;
+    padding: 10px;
+    display: block;
+    width: calc(100% / 4);
+    text-align: center;
+}
+
+.rp_tab.active {
+    border-bottom: 2px solid #233585;
+    color: #233585;
+}
+
+
+.rp_tab-content {
+    height: 500px;
+    overflow-y: auto;
+    padding: 10px 10px;
+}
+
+.rp_tab-content::-webkit-scrollbar {
+    width: 2px;
+}
+
+.rp_tab-content::-webkit-scrollbar-thumb {
+    width: 2px;
+    background-color: #ccc;
+}
+
+.short_card_about_rector {
+    display: flex;
+    margin-top: 20px;
+}
+
+.short_card_about_rector > div:nth-child(1){
+    width: 60%;
+    height: 350px;
+    background-color: #233585;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.short_card_about_rector > div:nth-child(2){
+    width: 40%;
+    height: 350px;
+    background-color: white;
+}
+
+.rp_box {
+    display: flex;
+    color: white;
+}
+
+.rp_box > div:nth-child(2) {
+    padding: 0 20px;
+}
+
+.rp_box  h4 {
+    font-size: 20px;
+    text-align: center;
+    border-bottom: 1px solid white;
+    padding: 6px 0;
+}
+.rp_box   h5 {
+    margin-top: 20px;
+    font-size: 16px;
+}
+
+.rp_speeches_items{
+    background-color: white;
+    padding: 10px 20px;
+    border: 1px solid transparent;
+    border-radius: 10px;
+    box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.1);
+    display: block;
+    text-decoration: none !important;
+    cursor: pointer;
+}
+.rp_speeches_items:hover{
+    background-color: white;
+    padding: 10px 20px;
+    border: 1px solid #233585;
+    border-radius: 10px;
+}
+.rp_speeches_items p{
+    display: flex;
+    align-items: center;
+}
+.rp_speeches_items p > i{
+    font-size: 30px;
+    color: #233585;
+    margin-right: 10px;
+}
+.rp_speeches_items p > span{
+    font-size: 17px;
+    color: #233585;
+    font-weight: bold;
+}
+.rp_speeches_items > span {
+    font-size: 14px;
+    text-align: justify;
+    display: -webkit-box;
+    max-width: 100%;
+    -webkit-line-clamp: 4;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+.rp_speeches_items > a {
+    font-size: 14px;
+    text-align: right;
+    display: block;
+    margin-top: 8px;
+}
+
+.rp_speeches_items > a > i {
+    font-size: 12px;
+}
+
+
+.rp_contact h3 {
+    color: #233585;
+    padding: 20px 0;
+}
+
+.rp_contact_details {
+    display: flex;
+    width: 100%;
+}
+
+.rp_contact > p i {
+    color: #233585;
+}
+
+
+.rp_about_img {
+    width: 200px;
+    height: 250px;
+    border-radius: 4px;
+}
+.rp_about_img img{
+    height: 100%;
+    width: 100%;
+    border-radius: 4px;
+}
+
+
+.rp_biograpghy h4 {
+    font-size: 20px;
+    font-weight: 500;
+    color: #233585;
+    text-align: center;
+    margin-top: 20px;
+}
+
+.rp_biograpghy p {
+    font-size: 15px;
+    font-weight: 500;
+    text-align: justify;
+    color: #233585;
+}
+
+.small_rector_page_text {
+    padding: 20px 0;
+    background-color: white;
+}
+
+.small_rector_page_contact {
+    background-color: white;
+}
+
+.small_rector_page_text h4 {
+    text-align: center;
+    color: #233585;
+    font-weight: 500;
+}
+
+.small_rector_page_text h5 {
+    text-align: center;
+    color: #233585;
+    font-weight: 500;
+}
+
+.rp_appeal {
+    display: flex;
+}
+
+.rp_appeal>div:nth-child(1) {
+    width: 50%;
+    height: 350px;
+}
+
+.rp_appeal>div:nth-child(2) {
+    width: 50%;
+    height: 350px;
+    background-color: white;
+    box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.2);
+    padding: 10px 10px;
+    overflow-y: auto;
+}
+
+.rp_appeal>div:nth-child(2)::-webkit-scrollbar-thumb {
+    background-color: #E8ECF8;
+}
+
+.rp_appeal>div:nth-child(2) h4 {
+    color: #233585;
+    text-align: center;
+    font-size: 19px;
+    font-weight: bold;
+}
+
+.rp_appeal>div:nth-child(2) p {
+    text-align: justify;
+    font-size: 15px;
+}
+
+.rp_video_materials {
+    width: 100%;
+    height: 100%;
+    position: relative;
+}
+
+.rp_video_materials video {
+    width: 100% !important;
+    height: 100% !important;
+}
+
+.rp_video_materials video[poster] {
+    width: 100% !important;
+    height: 100% !important;
+    object-fit: cover;
+}
+
+.rp_video_materials video:focus {
+    outline: none;
+}
+
+.rp_vm_play_box {
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    background-color: transparent;
+    z-index: 1;
+}
+
+.rp_vm_play_box i {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    z-index: 1;
+    transform: translate(-50%, -50%);
+    color: white;
+    cursor: pointer;
+}
+
+.rp_vm_play_box button {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    color: white !important;
+    transform: translate(-50%, -50%);
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    border: none;
+    animation: pulse-border 1500ms ease-out infinite;
+}
+
+.rp_vm_play_box[poster] {
+    z-index: 10000;
+}
+
+.rp_vm_play_box button:before {
+    content: "";
+    position: absolute;
+    z-index: 0;
+    left: 50%;
+    top: 50%;
+    transform: translateX(-50%) translateY(-50%);
+    display: block;
+    width: 50px;
+    height: 50px;
+    background: #f82249;
+    border-radius: 50%;
+    animation: rp_pulse-border 1500ms ease-out infinite;
+}
+
+.rp_vm_play_box button:after {
+    content: "";
+    position: absolute;
+    z-index: 1;
+    left: 50%;
+    top: 50%;
+    transform: translateX(-50%) translateY(-50%);
+    display: block;
+    width: 50px;
+    height: 50px;
+    background: #f82249;
+    border-radius: 50%;
+    transition: all 200ms;
+}
+
+.rp_vm_play_box button:hover:after {
+    background-color: darken(#fa183d, 10%);
+}
+
+@keyframes rp_pulse-border {
+    0% {
+        transform: translateX(-50%) translateY(-50%) translateZ(0) scale(1);
+        opacity: 1;
+    }
+    100% {
+        transform: translateX(-50%) translateY(-50%) translateZ(0) scale(1.5);
+        opacity: 0;
+    }
+}
+
+
+
+
+/* <------======== rectors page ends ========------> */
 
 @media (max-width:1500px) and (min-width:1200px) {
     /* <------======= first part starts =======------> */
@@ -2192,6 +2583,23 @@ ul.tabs_media li.current {
 
 /* <----====Sections ends====----> */
 
+.header_for_part {
+    border-bottom: 1px solid #CBCBCB;
+    font-size: 16px;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    padding: 8px 0;
+    text-transform: uppercase;
+    color: #233585;
+}
+
+.header_for_part i {
+    font-size: 40px;
+    color: #233585;
+    margin-right: 15px;
+}
+
 /*
 /*
 /*
@@ -2251,7 +2659,157 @@ ul.tabs_media li.current {
         border-left: 1px solid #233585 !important;
     }
     /* <------========Main menus bottom ends========------> */
+    /* <------======== rectors page starts ========------> */
+    .rectors_page_main>div:nth-child(1) {
+        width: 50%;
+        background-color: #E8ECF8;
+        height: 50vh;
+        display: flex;
+        align-items: center;
+        flex-wrap: wrap;
+        padding: 0 20px;
+    }
+    .rectors_page_main>div:nth-child(1) h1 {
+        font-weight: bold;
+        color: #233585;
+        font-size: 34px;
+        text-align: center;
+        width: 100%;
+    }
+    .rectors_page_main>div:nth-child(1) p {
+        font-weight: 500;
+        color: #233585;
+        font-size: 18px;
+        text-align: center;
+        width: 100%;
+        margin-top: 20px;
+    }
+    .rectors_page_main>div:nth-child(2) {
+        width: 50%;
+        height: 50vh;
+    }
+    .rectors_page_main>div:nth-child(2) img {
+        width: 100%;
+        height: 100%;
+    }
+    /* <------======== rectors page ends ========------> */
 }
+
+/* <------======= eighth part starts =======------> */
+
+.eighth-part {
+    position: relative;
+    color: white;
+}
+
+.footer_contact_links i {
+    font-size: 15px;
+}
+
+.footer_contact_links span {
+    font-size: 15px;
+}
+
+.footer_resources_links a {
+    text-decoration: none;
+    color: white !important;
+    display: inline-block;
+    font-size: 15px;
+}
+
+.footer_resources_links:hover a {
+    text-decoration: underline;
+}
+
+.footer_img_box {
+    width: 100%;
+    height: 300px;
+}
+
+.footer_img_box img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.footer_logo_box {
+    width: 120px;
+    height: 120px;
+    margin: 0 auto;
+}
+
+.footer_logo_box img {
+    width: 100%;
+    height: 100%;
+}
+
+.footer_data_box {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    padding: 50px 0;
+    background-color: rgba(35, 53, 133, 0.9);
+    /* opacity: 0.9; */
+}
+
+.footer_title_columns {
+    padding: 6px 0;
+    font-size: 20px;
+}
+
+.footer_left_box h5 {
+    font-size: 18px;
+    margin-top: 15px;
+}
+
+.footer_box {
+    display: flex;
+    justify-content: space-between;
+}
+
+.footer_box>div:nth-child(1) {
+    width: 30%;
+    border-right: 1px solid #F6F7FD;
+    padding-right: 30px;
+}
+
+.footer_box>div:nth-child(2) {
+    width: 25%;
+}
+
+.footer_box>div:nth-child(3) {
+    width: 25%;
+}
+
+.footer_info {
+    background-color: #2C42A6;
+    color: white;
+}
+
+.footer_info>div {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 6px 0;
+}
+
+.footer_info>div>span:nth-child(2) {
+    font-size: 14px;
+}
+
+.footer_info a {
+    text-decoration: none !important;
+    color: white;
+    margin: 0 6px;
+}
+
+.footer_info a i {
+    font-size: 14px;
+}
+
+/* <------======= eighth part ends =======------> */
 
 @media (max-width: 1500px) {
     .nav_logo_box {
@@ -2461,22 +3019,6 @@ ul.tabs_media li.current {
         left: 50%;
         transform: translate(-50%, -50%);
     }
-    /* <------======= second part ends =======------> */
-    .header_for_part {
-        border-bottom: 1px solid #CBCBCB;
-        font-size: 16px;
-        font-weight: 600;
-        display: flex;
-        align-items: center;
-        padding: 8px 0;
-        text-transform: uppercase;
-    }
-    .header_for_part i {
-        font-size: 40px;
-        color: #233585;
-        margin-right: 15px;
-    }
-    /* <------======= fourth part starts =======------> */
     .card_box_4 {
         position: relative;
     }
@@ -2566,9 +3108,6 @@ ul.tabs_media li.current {
         position: relative;
         border: 1px solid transparent;
     }
-    .cb_6:hover {
-        border: 1px solid #233585;
-    }
     .cb_6:not(.cb_6:nth-child(1)):before {
         content: "";
         height: 40%;
@@ -2578,9 +3117,6 @@ ul.tabs_media li.current {
         top: 50%;
         left: -1.5px;
         transform: translateY(-50%);
-    }
-    .cb_6 {
-        background-color: white;
     }
     .card_box_6>div {
         color: #233585;
@@ -2611,7 +3147,7 @@ ul.tabs_media li.current {
         border-radius: 6px;
         cursor: pointer;
         padding: 12px 0;
-        height: 120px;
+        height: 150px;
         position: relative;
     }
     .link_to_site {
@@ -2630,8 +3166,8 @@ ul.tabs_media li.current {
         font-size: 14px;
     }
     .card_box_7 {
-        width: 60px;
-        height: 60px;
+        width: 100px;
+        height: 100px;
         cursor: pointer;
         object-fit: cover;
         margin: 0 auto;
@@ -2690,104 +3226,6 @@ ul.tabs_media li.current {
         margin-bottom: 7px;
     }
     /* <------======= seventh part ends =======------> */
-    /* <------======= eighth part starts =======------> */
-    .eighth-part {
-        position: relative;
-        color: white;
-    }
-    .footer_img_box {
-        width: 100%;
-        height: 400px;
-    }
-    .footer_img_box img {
-        width: 100%;
-        height: 100%;
-    }
-    .footer_logo_box {
-        width: 250px;
-        height: 100px;
-        margin: 0 auto;
-    }
-    .footer_logo_box img {
-        width: 100%;
-        height: 100%;
-    }
-    .footer_data_box {
-        position: absolute;
-        top: 0;
-        left: 0;
-        right: 0;
-        bottom: 0;
-        padding: 50px 0;
-        background-color: rgba(35, 53, 133, 1);
-        opacity: 0.9;
-    }
-    .footer_about_universty {
-        padding: 10px 10px;
-        box-shadow: 0 0 4px 0px rgba(255, 255, 255, 1);
-        border-radius: 10px;
-        font-size: 18px;
-        margin-top: 30px;
-        text-align: center;
-    }
-    .footer_title_columns {
-        padding: 6px 0;
-        border-bottom: 1px solid white;
-        font-size: 24px;
-    }
-    .footer_left_box h5 {
-        font-size: 18px;
-        margin-top: 15px;
-    }
-    .footer_icons {
-        width: 32px;
-        height: 32px;
-        border-radius: 50%;
-        display: inline-block;
-        background-color: #2C42A6;
-        position: relative;
-        margin-right: 10px;
-        cursor: pointer;
-        transition: all 0.2s ease-in-out;
-    }
-    .footer_icons i {
-        color: white;
-        font-size: 14px;
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-        transition: all 0.2s ease-in-out;
-    }
-    .footer_icons:hover {
-        background-color: white;
-        color: #2C42A6 !important;
-    }
-    .footer_icons:hover i {
-        background-color: white;
-        color: #2C42A6 !important;
-    }
-    .footer_box {
-        display: flex;
-        justify-content: space-between;
-    }
-    .footer_box>div:nth-child(1) {
-        width: 30%;
-        border-right: 1px solid #F6F7FD;
-        padding-right: 30px;
-    }
-    .footer_box>div:nth-child(2) {
-        width: 25%;
-    }
-    .footer_box>div:nth-child(3) {
-        width: 25%;
-    }
-    .footer_info {
-        background-color: #2C42A6;
-        padding: 14px 0;
-        color: white;
-    }
-    /* <------======= eighth part ends =======------> */
 }
 
 /*
@@ -2943,24 +3381,8 @@ ul.tabs_media li.current {
         border-bottom: 1px solid green;
         height: auto;
     }
-    .header_for_part {
-        border-bottom: 1px solid #CBCBCB;
-        font-size: 16px;
-        font-weight: 600;
-        display: flex;
-        align-items: center;
-        padding: 8px 0;
-        text-transform: uppercase;
-    }
-    .header_for_part i {
-        font-size: 40px;
-        color: #233585;
-        margin-right: 15px;
-    }
     /* <------======= third part ends =======------> */
     /* <------========Scientific chapter starts========------> */
-   
-
     .scientific_card_box .owl-nav .owl-prev {
         font-size: 34px !important;
         width: 34px;
@@ -3003,8 +3425,6 @@ ul.tabs_media li.current {
         color: white;
         font-size: 26px;
     }
-   
-   
     /* <------========Scientific chapter ends========------> */
     /* <------======= recotrs card starts =======------> */
     .rectors_card_appeal {
@@ -3079,6 +3499,123 @@ ul.tabs_media li.current {
         cursor: pointer;
     }
     /* <------======= frectors card ends =======------> */
+    /* <------======== rectors page starts ========------> */
+    .rectors_page_main {
+        display: flex;
+    }
+    .rectors_page_main>div:nth-child(1) {
+        width: 50%;
+        background-color: #E8ECF8;
+        height: 40vh;
+        display: flex;
+        align-items: center;
+        flex-wrap: wrap;
+        padding: 0 20px;
+    }
+    .rectors_page_main>div:nth-child(1) h1 {
+        font-weight: bold;
+        color: #233585;
+        font-size: 28px;
+        text-align: center;
+        width: 100%;
+    }
+    .rectors_page_main>div:nth-child(1) p {
+        font-weight: 500;
+        color: #233585;
+        font-size: 16px;
+        text-align: center;
+        width: 100%;
+        margin-top: 20px;
+    }
+    .rectors_page_main>div:nth-child(2) {
+        width: 50%;
+        height: 40vh;
+    }
+    .rectors_page_main>div:nth-child(2) img {
+        width: 100%;
+        height: 100%;
+    }
+    [data-tab-content] {
+        display: none;
+    }
+    .active[data-tab-content] {
+        display: block;
+    }
+    .rp_tabs {
+        display: flex;
+        justify-content: space-around;
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+        color: #233585;
+        background-color: #E8ECF8;
+    }
+    .rp_tab {
+        cursor: pointer;
+        padding: 10px;
+        display: block;
+        width: calc(100% / 4);
+        text-align: center;
+    }
+    .rp_tab.active {
+        border-bottom: 2px solid #233585;
+        color: #233585;
+    }
+    .rp_tab:hover {}
+    .rp_tab-content {
+        height: 500px;
+        overflow-y: auto;
+        padding: 10px 10px;
+    }
+    .short_card_about_rector {
+        display: flex;
+        margin: 20px 0;
+    }
+    .short_card_about_rector>div:nth-child(1) {
+        width: 26%;
+        height: 220px;
+    }
+    .short_card_about_rector>div:nth-child(1) img {
+        width: 100%;
+        height: 100%;
+        /* object-fit: cover; */
+    }
+    .short_card_about_rector>div:nth-child(2) {
+        background-color: white;
+        width: 37%;
+        padding: 10px 20px;
+    }
+    .short_card_about_rector>div:nth-child(2) h4 {
+        color: #233585;
+        font-size: 18px;
+        font-weight: 500;
+        margin-top: 10px;
+    }
+    .short_card_about_rector>div:nth-child(2) h5 {
+        color: #233585;
+        font-size: 16px;
+        font-weight: 500;
+        margin-top: 20px;
+    }
+    .short_card_about_rector>div:nth-child(3) {
+        background-color: white;
+        width: 37%;
+        font-size: 15px;
+    }
+    .rp_biograpghy h4 {
+        font-size: 20px;
+        font-weight: 500;
+        color: #233585;
+        text-align: center;
+        margin-top: 20px;
+    }
+    .rp_biograpghy p {
+        font-size: 15px;
+        font-weight: 500;
+        text-align: justify;
+        color: #233585;
+    }
+    /* <------======== rectors page ends ========------> */
     /* <------======= fourth part starts =======------> */
     .card_box_4 {
         position: relative;
@@ -3296,17 +3833,33 @@ ul.tabs_media li.current {
         position: relative;
         color: white;
     }
+    .footer_contact_links i {
+        font-size: 15px;
+    }
+    .footer_contact_links span {
+        font-size: 15px;
+    }
+    .footer_resources_links a {
+        text-decoration: none;
+        color: white !important;
+        display: inline-block;
+        font-size: 15px;
+    }
+    .footer_resources_links:hover a {
+        text-decoration: underline;
+    }
     .footer_img_box {
         width: 100%;
-        height: 400px;
+        height: 300px;
     }
     .footer_img_box img {
         width: 100%;
         height: 100%;
+        object-fit: cover;
     }
     .footer_logo_box {
-        width: 250px;
-        height: 100px;
+        width: 120px;
+        height: 120px;
         margin: 0 auto;
     }
     .footer_logo_box img {
@@ -3320,71 +3873,52 @@ ul.tabs_media li.current {
         right: 0;
         bottom: 0;
         padding: 50px 0;
-        background-color: rgba(35, 53, 133, 1);
-        opacity: 0.9;
-    }
-    .footer_about_universty {
-        padding: 10px 10px;
-        box-shadow: 0 0 4px 0px rgba(255, 255, 255, 1);
-        border-radius: 10px;
-        font-size: 18px;
-        margin-top: 30px;
+        background-color: rgba(35, 53, 133, 0.9);
+        /* opacity: 0.9; */
     }
     .footer_title_columns {
         padding: 6px 0;
-        border-bottom: 1px solid white;
-        font-size: 24px;
+        font-size: 20px;
     }
     .footer_left_box h5 {
         font-size: 18px;
         margin-top: 15px;
-    }
-    .footer_icons {
-        width: 32px;
-        height: 32px;
-        border-radius: 50%;
-        display: inline-block;
-        background-color: #2C42A6;
-        position: relative;
-        margin-right: 10px;
-        cursor: pointer;
-        transition: all 0.2s ease-in-out;
-    }
-    .footer_icons i {
-        color: white;
-        font-size: 14px;
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-    }
-    .footer_icons:hover {
-        background-color: white;
-        color: #2C42A6 !important;
-    }
-    .footer_icons:hover i {
-        background-color: white;
-        color: #2C42A6 !important;
     }
     .footer_box {
         display: flex;
         justify-content: space-between;
     }
     .footer_box>div:nth-child(1) {
-        width: 35%;
+        width: 30%;
         border-right: 1px solid #F6F7FD;
-        padding-right: 20px;
+        padding-right: 30px;
     }
     .footer_box>div:nth-child(2) {
         width: 25%;
     }
     .footer_box>div:nth-child(3) {
-        width: 30%;
+        width: 25%;
     }
     .footer_info {
         background-color: #2C42A6;
-        padding: 14px 0;
         color: white;
+    }
+    .footer_info>div {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 6px 0;
+    }
+    .footer_info>div>span:nth-child(2) {
+        font-size: 14px;
+    }
+    .footer_info a {
+        text-decoration: none !important;
+        color: white;
+        margin: 0 6px;
+    }
+    .footer_info a i {
+        font-size: 14px;
     }
     /* <------======= eighth part ends =======------> */
     .sections_text_box {
@@ -3567,22 +4101,6 @@ ul.tabs_media li.current {
         cursor: pointer;
         margin-left: 0px;
     }
-    /* <------======= media part ends =======------> */
-    .header_for_part {
-        border-bottom: 1px solid #CBCBCB;
-        font-size: 16px;
-        font-weight: 600;
-        display: flex;
-        align-items: center;
-        padding: 8px 0;
-        text-transform: uppercase;
-    }
-    .header_for_part i {
-        font-size: 40px;
-        color: #233585;
-        margin-right: 15px;
-    }
-    /* <------======= fourth part starts =======------> */
     .four_card_2, .four_card_3 {
         margin-top: 6rem;
     }
@@ -3668,8 +4186,6 @@ ul.tabs_media li.current {
     }
     /* <------======= fourth part ends =======------> */
     /* <------========Scientific chapter starts========------> */
-   
-
     .scientific_card_box .owl-nav .owl-prev {
         font-size: 34px !important;
         width: 34px;
@@ -3712,8 +4228,6 @@ ul.tabs_media li.current {
         color: white;
         font-size: 26px;
     }
-   
-   
     /* <------========Scientific chapter ends========------> */
     /* <------======== life university starts========------> */
     .life_university {
@@ -3792,7 +4306,7 @@ ul.tabs_media li.current {
         content: "";
         height: 30%;
         width: 3px;
-        background-color: #006523;
+        background-color: #233585;
         position: absolute;
         top: 50%;
         right: 0;
@@ -3805,7 +4319,7 @@ ul.tabs_media li.current {
         background-color: #F8F8F8;
     }
     .card_box_6>div {
-        color: #006523;
+        color: #233585;
     }
     .card_box_6 i {
         font-size: 40px;
@@ -3912,22 +4426,199 @@ ul.tabs_media li.current {
         margin-bottom: 7px;
     }
     /* <------======= seventh part ends =======------> */
+    /* <------======== rectors page starts ========------> */
+    .rectors_page_main {
+        display: flex;
+    }
+    .rectors_page_main>div:nth-child(1) {
+        width: 50%;
+        background-color: #E8ECF8;
+        height: 30vh;
+        display: flex;
+        align-items: center;
+        flex-wrap: wrap;
+        padding: 0 20px;
+    }
+    .rectors_page_main>div:nth-child(1) h1 {
+        font-weight: bold;
+        color: #233585;
+        font-size: 26px;
+        text-align: center;
+        width: 100%;
+    }
+    .rectors_page_main>div:nth-child(1) p {
+        font-weight: 500;
+        color: #233585;
+        font-size: 15px;
+        text-align: center;
+        width: 100%;
+        margin-top: 20px;
+    }
+    .rectors_page_main>div:nth-child(2) {
+        width: 50%;
+        height: 30vh;
+    }
+    .rectors_page_main>div:nth-child(2) img {
+        width: 100%;
+        height: 100%;
+    }
+    [data-tab-content] {
+        display: none;
+    }
+    .active[data-tab-content] {
+        display: block;
+    }
+    .rp_tabs {
+        display: flex;
+        justify-content: space-around;
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+        color: #233585;
+        background-color: #E8ECF8;
+    }
+    .rp_tab {
+        cursor: pointer;
+        padding: 10px;
+        display: block;
+        width: calc(100% / 4);
+        text-align: center;
+    }
+    .rp_tab.active {
+        border-bottom: 2px solid #233585;
+        color: #233585;
+    }
+    .rp_tab-content {
+        height: 500px;
+        overflow-y: auto;
+        padding: 10px 10px;
+    }
+    .short_card_about_rector {
+        display: flex;
+        margin: 20px 0;
+    }
+    .short_card_about_rector>div:nth-child(1) {
+        width: 26%;
+        height: 220px;
+    }
+    .short_card_about_rector>div:nth-child(1) img {
+        width: 100%;
+        height: 100%;
+        /* object-fit: cover; */
+    }
+    .short_card_about_rector>div:nth-child(2) {
+        background-color: white;
+        width: 37%;
+        padding: 10px 20px;
+    }
+    .short_card_about_rector>div:nth-child(2) h4 {
+        color: #233585;
+        font-size: 17px;
+        font-weight: 500;
+        margin-top: 10px;
+    }
+    .short_card_about_rector>div:nth-child(2) h5 {
+        color: #233585;
+        font-size: 15px;
+        font-weight: 500;
+        margin-top: 20px;
+    }
+    .short_card_about_rector>div:nth-child(3) {
+        background-color: white;
+        width: 37%;
+        font-size: 15px;
+    }
+    .rp_biograpghy h4 {
+        font-size: 20px;
+        font-weight: 500;
+        color: #233585;
+        text-align: center;
+        margin-top: 20px;
+    }
+    .rp_biograpghy p {
+        font-size: 15px;
+        font-weight: 500;
+        text-align: justify;
+        color: #233585;
+    }
+    .small_rector_page_text {
+        padding: 20px 0;
+        background-color: white;
+    }
+    .small_rector_page_contact {
+        background-color: white;
+    }
+    .small_rector_page_text h4 {
+        text-align: center;
+        color: #233585;
+        font-weight: 500;
+    }
+    .small_rector_page_text h5 {
+        text-align: center;
+        color: #233585;
+        font-weight: 500;
+    }
+    .rp_appeal {
+        display: flex;
+    }
+    .rp_appeal>div:nth-child(1) {
+        width: 50%;
+        height: 350px;
+    }
+    .rp_appeal>div:nth-child(2) {
+        width: 50%;
+        height: 350px;
+        background-color: white;
+        box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.2);
+        padding: 10px 10px;
+        overflow-y: auto;
+    }
+    .rp_appeal>div:nth-child(2)::-webkit-scrollbar-thumb {
+        background-color: #E8ECF8;
+    }
+    .rp_appeal>div:nth-child(2) h4 {
+        color: #233585;
+        text-align: center;
+        font-size: 19px;
+        font-weight: bold;
+    }
+    .rp_appeal>div:nth-child(2) p {
+        text-align: justify;
+        font-size: 15px;
+    }
+    /* <------======== rectors page ends ========------> */
     /* <------======= eighth part starts =======------> */
     .eighth-part {
         position: relative;
         color: white;
     }
+    .footer_contact_links i {
+        font-size: 15px;
+    }
+    .footer_contact_links span {
+        font-size: 15px;
+    }
+    .footer_resources_links a {
+        text-decoration: none;
+        color: white !important;
+        display: inline-block;
+        font-size: 15px;
+    }
+    .footer_resources_links:hover a {
+        text-decoration: underline;
+    }
     .footer_img_box {
         width: 100%;
-        height: 600px;
+        height: 300px;
     }
     .footer_img_box img {
         width: 100%;
         height: 100%;
+        object-fit: cover;
     }
     .footer_logo_box {
-        width: 250px;
-        height: 100px;
+        width: 120px;
+        height: 120px;
         margin: 0 auto;
     }
     .footer_logo_box img {
@@ -3941,73 +4632,55 @@ ul.tabs_media li.current {
         right: 0;
         bottom: 0;
         padding: 50px 0;
-        background-color: rgba(35, 53, 133, 1);
-        opacity: 0.9;
-    }
-    .footer_about_universty {
-        padding: 10px 10px;
-        box-shadow: 0 0 4px 0px rgba(255, 255, 255, 1);
-        border-radius: 10px;
-        font-size: 18px;
-        margin-top: 30px;
+        background-color: rgba(35, 53, 133, 0.9);
     }
     .footer_title_columns {
         padding: 6px 0;
-        border-bottom: 1px solid white;
-        font-size: 24px;
+        font-size: 20px;
+    }
+    .footer_logo_bottom_text {
+        margin: 0 auto;
+        font-size: 15px;
     }
     .footer_left_box h5 {
         font-size: 18px;
         margin-top: 15px;
     }
-    .footer_icons {
-        width: 32px;
-        height: 32px;
-        border-radius: 50%;
-        display: inline-block;
-        background-color: #2C42A6;
-        position: relative;
-        margin-right: 10px;
-        cursor: pointer;
-        transition: all 0.2s ease-in-out;
-    }
-    .footer_icons i {
-        color: white;
-        font-size: 14px;
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-    }
-    .footer_icons:hover {
-        background-color: white;
-        color: #2C42A6 !important;
-    }
-    .footer_icons:hover i {
-        background-color: white;
-        color: #2C42A6 !important;
-    }
     .footer_box {
         display: flex;
-        flex-wrap: wrap;
         justify-content: space-between;
     }
     .footer_box>div:nth-child(1) {
-        width: 100%;
-        padding-right: 20px;
+        width: 30%;
+        border-right: 1px solid #F6F7FD;
+        padding-right: 30px;
     }
     .footer_box>div:nth-child(2) {
-        width: 40%;
-        margin-top: 20px;
+        width: 25%;
     }
     .footer_box>div:nth-child(3) {
-        width: 50%;
-        margin-top: 20px;
+        width: 25%;
     }
     .footer_info {
         background-color: #2C42A6;
-        padding: 14px 0;
         color: white;
+    }
+    .footer_info>div {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 6px 0;
+    }
+    .footer_info>div>span:nth-child(2) {
+        font-size: 14px;
+    }
+    .footer_info a {
+        text-decoration: none !important;
+        color: white;
+        margin: 0 6px;
+    }
+    .footer_info a i {
+        font-size: 14px;
     }
     /* <------======= eighth part ends =======------> */
     /* <------======= sections part starts =======------> */
@@ -4169,10 +4842,8 @@ ul.tabs_media li.current {
         color: #233585;
     }
     /* <------======== life university ends========------> */
-     /* <------========Scientific chapter starts========------> */
-   
-
-     .scientific_card_box .owl-nav .owl-prev {
+    /* <------========Scientific chapter starts========------> */
+    .scientific_card_box .owl-nav .owl-prev {
         font-size: 34px !important;
         width: 34px;
         height: 34px;
@@ -4214,9 +4885,170 @@ ul.tabs_media li.current {
         color: white;
         font-size: 26px;
     }
-   
-   
     /* <------========Scientific chapter ends========------> */
+    /* <------======== rectors page starts ========------> */
+    .rectors_page_main {
+        display: block !important;
+    }
+    .rectors_page_main>div:nth-child(1) {
+        width: 100%;
+        background-color: #E8ECF8;
+        height: 30vh;
+        display: flex;
+        align-items: center;
+        flex-wrap: wrap;
+        padding: 0 20px;
+    }
+    .rectors_page_main>div:nth-child(1) h1 {
+        font-weight: bold;
+        color: #233585;
+        font-size: 26px;
+        text-align: center;
+        width: 100%;
+    }
+    .rectors_page_main>div:nth-child(1) p {
+        font-weight: 500;
+        color: #233585;
+        font-size: 15px;
+        text-align: center;
+        width: 100%;
+        margin-top: 20px;
+    }
+    .rectors_page_main>div:nth-child(2) {
+        width: 100%;
+        height: 40vh;
+    }
+    .rectors_page_main>div:nth-child(2) img {
+        width: 100%;
+        height: 100%;
+    }
+    [data-tab-content] {
+        display: none;
+    }
+    .active[data-tab-content] {
+        display: block;
+    }
+    .rp_tabs {
+        display: block !important;
+        justify-content: space-around;
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+        color: #233585;
+        background-color: #E8ECF8;
+    }
+    .rp_tab {
+        cursor: pointer;
+        padding: 10px;
+        display: block;
+        width: 100%;
+        text-align: left;
+    }
+    .rp_tab.active {
+        border-bottom: 2px solid #233585;
+        color: #233585;
+        background-color: white;
+    }
+    .rp_tab-content {
+        height: auto !important;
+        padding: 10px 10px;
+    }
+    .short_card_about_rector {
+        display: flex;
+        flex-wrap: wrap;
+        margin: 20px 0;
+    }
+    .short_card_about_rector>div:nth-child(1) {
+        width: 50%;
+        height: 220px;
+    }
+    .short_card_about_rector>div:nth-child(1) img {
+        width: 100%;
+        height: 100%;
+        /* object-fit: cover; */
+    }
+    .short_card_about_rector>div:nth-child(2) {
+        background-color: white;
+        width: 50%;
+        padding: 10px 20px;
+    }
+    .short_card_about_rector>div:nth-child(2) h4 {
+        color: #233585;
+        font-size: 17px;
+        font-weight: 500;
+        margin-top: 10px;
+    }
+    .short_card_about_rector>div:nth-child(2) h5 {
+        color: #233585;
+        font-size: 15px;
+        font-weight: 500;
+        margin-top: 20px;
+    }
+    .short_card_about_rector>div:nth-child(3) {
+        background-color: white;
+        width: 100%;
+        font-size: 15px;
+        padding: 4px 10px;
+    }
+    .rp_biograpghy h4 {
+        font-size: 20px;
+        font-weight: 500;
+        color: #233585;
+        text-align: center;
+        margin-top: 20px;
+    }
+    .rp_biograpghy p {
+        font-size: 15px;
+        font-weight: 500;
+        text-align: justify;
+        color: #233585;
+    }
+    .small_rector_page_text {
+        padding: 20px 0;
+        background-color: white;
+    }
+    .small_rector_page_contact {
+        background-color: white;
+    }
+    .small_rector_page_text h4 {
+        text-align: center;
+        color: #233585;
+        font-weight: 500;
+    }
+    .small_rector_page_text h5 {
+        text-align: center;
+        color: #233585;
+        font-weight: 500;
+    }
+    .rp_appeal {
+        display: flex;
+        flex-wrap: wrap;
+    }
+    .rp_appeal>div:nth-child(1) {
+        width: 100%;
+        height: 300px;
+    }
+    .rp_appeal>div:nth-child(2) {
+        width: 100%;
+        height: auto;
+        background-color: white;
+        box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.2);
+        padding: 10px 10px;
+    }
+    .rp_appeal>div:nth-child(2)::-webkit-scrollbar-thumb {
+        background-color: #E8ECF8;
+    }
+    .rp_appeal>div:nth-child(2) h4 {
+        color: #233585;
+        text-align: center;
+        font-size: 19px;
+        font-weight: bold;
+    }
+    .rp_appeal>div:nth-child(2) p {
+        text-align: justify;
+        font-size: 15px;
+    }
+    /* <------======== rectors page ends ========------> */
     /* <------======= media part starts =======------> */
     /* <------======= media image part starts =======------> */
     .main_media_image_box {
@@ -4289,22 +5121,6 @@ ul.tabs_media li.current {
         width: 100%;
         height: 340px;
     }
-    /* <------======= media part ends =======------> */
-    .header_for_part {
-        border-bottom: 1px solid #CBCBCB;
-        font-size: 16px;
-        font-weight: 600;
-        display: flex;
-        align-items: center;
-        padding: 8px 0;
-        text-transform: uppercase;
-    }
-    .header_for_part i {
-        font-size: 40px;
-        color: #233585;
-        margin-right: 15px;
-    }
-    /* <------======= recotrs card starts =======------> */
     .rectors_card_appeal {
         box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.2);
         cursor: pointer;
@@ -4589,9 +5405,24 @@ ul.tabs_media li.current {
         position: relative;
         color: white;
     }
+    .footer_contact_links i {
+        font-size: 15px;
+    }
+    .footer_contact_links span {
+        font-size: 15px;
+    }
+    .footer_resources_links a {
+        text-decoration: none;
+        color: white !important;
+        display: inline-block;
+        font-size: 15px;
+    }
+    .footer_resources_links:hover a {
+        text-decoration: underline;
+    }
     .footer_img_box {
         width: 100%;
-        height: 1000px;
+        height: 400px;
     }
     .footer_img_box img {
         width: 100%;
@@ -4599,7 +5430,7 @@ ul.tabs_media li.current {
         object-fit: cover;
     }
     .footer_logo_box {
-        width: 250px;
+        width: 100px;
         height: 100px;
         margin: 0 auto;
     }
@@ -4614,72 +5445,64 @@ ul.tabs_media li.current {
         right: 0;
         bottom: 0;
         padding: 50px 0;
-        background-color: rgba(35, 53, 133, 1);
-        opacity: 0.9;
-    }
-    .footer_about_universty {
-        padding: 10px 10px;
-        box-shadow: 0 0 4px 0px rgba(255, 255, 255, 1);
-        border-radius: 10px;
-        font-size: 18px;
-        margin-top: 30px;
+        background-color: rgba(35, 53, 133, 0.9);
     }
     .footer_title_columns {
         padding: 6px 0;
-        border-bottom: 1px solid white;
-        font-size: 24px;
+        font-size: 20px;
+    }
+    .footer_logo_bottom_text {
+        margin: 0 auto;
+        font-size: 16px;
+        width: 400px;
+        text-align: center;
     }
     .footer_left_box h5 {
         font-size: 18px;
         margin-top: 15px;
     }
-    .footer_icons {
-        width: 32px;
-        height: 32px;
-        border-radius: 50%;
-        display: inline-block;
-        background-color: #2C42A6;
-        position: relative;
-        margin-right: 10px;
-        cursor: pointer;
-        transition: all 0.2s ease-in-out;
-    }
-    .footer_icons i {
-        color: white;
-        font-size: 14px;
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-    }
-    .footer_icons:hover {
-        background-color: white;
-        color: #2C42A6 !important;
-    }
-    .footer_icons:hover i {
-        background-color: white;
-        color: #2C42A6 !important;
-    }
     .footer_box {
         display: flex;
+        justify-content: center;
+        align-items: center;
         flex-wrap: wrap;
-        justify-content: space-between;
     }
     .footer_box>div:nth-child(1) {
         width: 100%;
+        border-right: none !important;
     }
     .footer_box>div:nth-child(2) {
-        width: 100%;
+        width: 50%;
+        display: flex;
+        justify-content: center;
         margin-top: 10px;
     }
     .footer_box>div:nth-child(3) {
-        width: 100%;
+        width: 50%;
+        display: flex;
+        justify-content: center;
         margin-top: 10px;
     }
     .footer_info {
         background-color: #2C42A6;
-        padding: 14px 0;
         color: white;
+    }
+    .footer_info>div {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 6px 0;
+    }
+    .footer_info>div>span:nth-child(2) {
+        font-size: 14px;
+    }
+    .footer_info a {
+        text-decoration: none !important;
+        color: white;
+        margin: 0 6px;
+    }
+    .footer_info a i {
+        font-size: 14px;
     }
     /* <------======= eighth part ends =======------> */
     /* <------======= sections part starts =======------> */
@@ -4857,19 +5680,14 @@ ul.tabs_media li.current {
         color: #233585;
     }
     /* <------======== life university ends========------> */
-
-
-     /* <------========Scientific chapter starts========------> */
-     .scientific_articles_title {
+    /* <------========Scientific chapter starts========------> */
+    .scientific_articles_title {
         font-size: 20px;
     }
-
-    
-     .scientific_persons_card_title {
+    .scientific_persons_card_title {
         font-size: 20px;
     }
-
-     .scientific_card_box .owl-nav .owl-prev {
+    .scientific_card_box .owl-nav .owl-prev {
         font-size: 34px !important;
         width: 34px;
         height: 34px;
@@ -4911,11 +5729,169 @@ ul.tabs_media li.current {
         color: white;
         font-size: 26px;
     }
-   
-   
     /* <------========Scientific chapter ends========------> */
-
-
+    /* <------======== rectors page starts ========------> */
+    .rectors_page_main {
+        display: block !important;
+    }
+    .rectors_page_main>div:nth-child(1) {
+        width: 100%;
+        background-color: #E8ECF8;
+        height: auto;
+        display: flex;
+        align-items: center;
+        flex-wrap: wrap;
+        padding: 0 20px;
+    }
+    .rectors_page_main>div:nth-child(1) h1 {
+        font-weight: bold;
+        color: #233585;
+        font-size: 20px;
+        text-align: center;
+        width: 100%;
+    }
+    .rectors_page_main>div:nth-child(1) p {
+        font-weight: 500;
+        color: #233585;
+        font-size: 14px;
+        text-align: center;
+        width: 100%;
+        margin-top: 10px;
+    }
+    .rectors_page_main>div:nth-child(2) {
+        width: 100%;
+        height: 40vh;
+    }
+    .rectors_page_main>div:nth-child(2) img {
+        width: 100%;
+        height: 100%;
+    }
+    [data-tab-content] {
+        display: none;
+    }
+    .active[data-tab-content] {
+        display: block;
+    }
+    .rp_tabs {
+        display: block !important;
+        justify-content: space-around;
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+        color: #233585;
+        background-color: #E8ECF8;
+    }
+    .rp_tab {
+        cursor: pointer;
+        padding: 10px;
+        display: block;
+        width: 100%;
+        text-align: left;
+    }
+    .rp_tab.active {
+        border-bottom: 2px solid #233585;
+        color: #233585;
+        background-color: white;
+    }
+    .rp_tab-content {
+        height: auto !important;
+        padding: 10px 10px;
+    }
+    .short_card_about_rector {
+        display: flex;
+        flex-wrap: wrap;
+        margin: 20px 0;
+    }
+    .short_card_about_rector>div:nth-child(1) {
+        width: 50%;
+        height: 220px;
+    }
+    .short_card_about_rector>div:nth-child(1) img {
+        width: 100%;
+        height: 100%;
+        /* object-fit: cover; */
+    }
+    .short_card_about_rector>div:nth-child(2) {
+        background-color: white;
+        width: 50%;
+        padding: 10px 20px;
+    }
+    .short_card_about_rector>div:nth-child(2) h4 {
+        color: #233585;
+        font-size: 17px;
+        font-weight: 500;
+        margin-top: 10px;
+    }
+    .short_card_about_rector>div:nth-child(2) h5 {
+        color: #233585;
+        font-size: 15px;
+        font-weight: 500;
+        margin-top: 20px;
+    }
+    .short_card_about_rector>div:nth-child(3) {
+        background-color: white;
+        width: 100%;
+        font-size: 15px;
+        padding: 4px 10px;
+    }
+    .rp_biograpghy h4 {
+        font-size: 17px;
+        font-weight: 500;
+        color: #233585;
+        text-align: center;
+        margin-top: 20px;
+    }
+    .rp_biograpghy p {
+        font-size: 14px;
+        font-weight: 500;
+        text-align: justify;
+        color: #233585;
+    }
+    .small_rector_page_text {
+        padding: 20px 0;
+        background-color: white;
+    }
+    .small_rector_page_contact {
+        background-color: white;
+    }
+    .small_rector_page_text h4 {
+        text-align: center;
+        color: #233585;
+        font-weight: 500;
+    }
+    .small_rector_page_text h5 {
+        text-align: center;
+        color: #233585;
+        font-weight: 500;
+    }
+    .rp_appeal {
+        display: flex;
+        flex-wrap: wrap;
+    }
+    .rp_appeal>div:nth-child(1) {
+        width: 100%;
+        height: 220px;
+    }
+    .rp_appeal>div:nth-child(2) {
+        width: 100%;
+        height: auto;
+        background-color: white;
+        box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.2);
+        padding: 10px 10px;
+    }
+    
+    .rp_appeal>div:nth-child(2) h4 {
+        color: #233585;
+        text-align: center;
+        font-size: 17px;
+        font-weight: bold;
+    }
+    .rp_appeal>div:nth-child(2) p {
+        text-align: justify;
+        font-size: 14px;
+    }
+  
+    /* <------======== rectors page ends ========------> */
     /* <------======= media part starts =======------> */
     /* <------======= media image part starts =======------> */
     .main_media_image_box {
@@ -5007,22 +5983,6 @@ ul.tabs_media li.current {
     .tab-content {
         padding: 0 4px;
     }
-    /* <------======= media part ends =======------> */
-    .header_for_part {
-        border-bottom: 1px solid #CBCBCB;
-        font-size: 16px;
-        font-weight: 600;
-        display: flex;
-        align-items: center;
-        padding: 8px 0;
-        text-transform: uppercase;
-    }
-    .header_for_part i {
-        font-size: 40px;
-        color: #233585;
-        margin-right: 15px;
-    }
-    /* <------======= recotrs card starts =======------> */
     .rectors_card_appeal {
         box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.2);
         cursor: pointer;
@@ -5291,9 +6251,24 @@ ul.tabs_media li.current {
         position: relative;
         color: white;
     }
+    .footer_contact_links i {
+        font-size: 13px;
+    }
+    .footer_contact_links span {
+        font-size: 13px;
+    }
+    .footer_resources_links a {
+        text-decoration: none;
+        color: white !important;
+        display: inline-block;
+        font-size: 13px;
+    }
+    .footer_resources_links:hover a {
+        text-decoration: underline;
+    }
     .footer_img_box {
         width: 100%;
-        height: 950px;
+        height: 400px;
     }
     .footer_img_box img {
         width: 100%;
@@ -5301,7 +6276,7 @@ ul.tabs_media li.current {
         object-fit: cover;
     }
     .footer_logo_box {
-        width: 250px;
+        width: 100px;
         height: 100px;
         margin: 0 auto;
     }
@@ -5316,72 +6291,66 @@ ul.tabs_media li.current {
         right: 0;
         bottom: 0;
         padding: 50px 0;
-        background-color: rgba(35, 53, 133, 1);
-        opacity: 0.9;
-    }
-    .footer_about_universty {
-        padding: 10px 10px;
-        box-shadow: 0 0 4px 0px rgba(255, 255, 255, 1);
-        border-radius: 10px;
-        font-size: 18px;
-        margin-top: 30px;
+        background-color: rgba(35, 53, 133, 0.9);
+        /* opacity: 0.9; */
     }
     .footer_title_columns {
         padding: 6px 0;
-        border-bottom: 1px solid white;
-        font-size: 24px;
+        font-size: 16px;
     }
-    .footer_left_box h5 {
-        font-size: 18px;
-        margin-top: 15px;
-    }
-    .footer_icons {
-        width: 32px;
-        height: 32px;
-        border-radius: 50%;
-        display: inline-block;
-        background-color: #2C42A6;
-        position: relative;
-        margin-right: 10px;
-        cursor: pointer;
-        transition: all 0.2s ease-in-out;
-    }
-    .footer_icons i {
-        color: white;
+    .footer_logo_bottom_text {
+        margin: 0 auto;
         font-size: 14px;
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-    }
-    .footer_icons:hover {
-        background-color: white;
-        color: #2C42A6 !important;
-    }
-    .footer_icons:hover i {
-        background-color: white;
-        color: #2C42A6 !important;
+        width: 300px;
+        text-align: center;
     }
     .footer_box {
         display: flex;
+        justify-content: center;
+        align-items: center;
         flex-wrap: wrap;
-        justify-content: space-between;
     }
     .footer_box>div:nth-child(1) {
         width: 100%;
+        border-right: none !important;
     }
     .footer_box>div:nth-child(2) {
-        width: 100%;
+        width: 50%;
+        display: flex;
+        justify-content: flex-start;
         margin-top: 10px;
     }
     .footer_box>div:nth-child(3) {
-        width: 100%;
+        width: 50%;
+        display: flex;
+        justify-content: flex-end;
         margin-top: 10px;
     }
     .footer_info {
         background-color: #2C42A6;
-        padding: 14px 0;
         color: white;
+    }
+    .footer_info>div {
+        padding: 6px 0;
+        display: block;
+    }
+    .footer_info>div>span:nth-child(2) {
+        font-size: 14px;
+        display: block;
+        text-align: center;
+        margin-top: 10px;
+    }
+    .footer_info>div>span:nth-child(1) {
+        display: block;
+        text-align: center;
+    }
+    .footer_info a {
+        text-decoration: none !important;
+        color: white;
+        margin: 0 6px;
+    }
+    .footer_info a i {
+        font-size: 14px;
     }
     /* <------======= eighth part ends =======------> */
     /* <------======= elektron universitet markazi page starts =======------> */

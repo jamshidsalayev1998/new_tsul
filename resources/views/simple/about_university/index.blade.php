@@ -18,7 +18,7 @@
                                     <div class="card-block  img_style">
                                         <img src="https://static.sof.uz/crop/8/7/826__90_87317598.jpg" class="mt-5 " alt="Server error!">
                                         <h3 class=" font-weight-bold mt-4">{{$about->$name_locale}}</h3>
-                                        <h5 class="text-muted">15 августа 1991 г.<!--Р-->
+                                        <h5 class="text-muted">
                                             <div class="rektor_icons">
                                                 <hr>
                                                 <a href="#"><i class="fas fa-envelope"><span class="ml-3">{{$about->email}}</span></i></a>

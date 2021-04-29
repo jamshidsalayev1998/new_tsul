@@ -27,6 +27,12 @@ class TimeTableController extends Controller
             'courses' => $courses
         ]);
     }
+    public function index_session(){
+        $courses = Course::all();
+        return view('simple.timetable_session' , [
+            'courses' => $courses
+        ]);
+    }
 
     public function show($id){
 

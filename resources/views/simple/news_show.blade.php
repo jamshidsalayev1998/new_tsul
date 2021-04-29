@@ -39,7 +39,10 @@
                                 <div class="rg_main_left_img">
                                     <img src="{{asset('')}}{{$new->$image_locale}}" alt="">
                                 </div>
+                                <span class="card-text">
+
                                 {!! $new->$content_locale !!}
+                                </span>
                             </div>
                         </div>
                         <div class="last_news_bottom_box">

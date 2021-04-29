@@ -113,7 +113,48 @@
                 Scientists articles
               </p>
             </a>
-    </li>    <li class="nav-header">Menus</li>
+    </li>
+    <li class="nav-item">
+            <a href="{{route('admin_faculty.index')}}" class="nav-link">
+              <i class="nav-icon fas fa-th"></i>
+              <p>
+                Faculties
+              </p>
+            </a>
+    </li>
+    <li class="nav-item">
+            <a href="{{route('admin_section.index')}}" class="nav-link">
+              <i class="nav-icon fas fa-th"></i>
+              <p>
+                Sections
+              </p>
+            </a>
+    </li>
+    <li class="nav-item">
+            <a href="{{route('admin_rector.index')}}" class="nav-link">
+              <i class="nav-icon fas fa-th"></i>
+              <p>
+                Rektor
+              </p>
+            </a>
+    </li>
+    <li class="nav-item">
+            <a href="{{route('admin_center.index')}}" class="nav-link">
+              <i class="nav-icon fas fa-th"></i>
+              <p>
+                Centers
+              </p>
+            </a>
+    </li>
+    <li class="nav-item">
+            <a href="{{route('admin_ustav.index')}}" class="nav-link">
+              <i class="nav-icon fas fa-th"></i>
+              <p>
+                Ustav
+              </p>
+            </a>
+    </li>
+    <li class="nav-header">Menus</li>
     <?php
         $menus = 'App\Menu'::where('leap' , 0)->basic()->get();
     ?>
@@ -176,6 +217,81 @@
                  @foreach($child->childs() as $chch)
                       <li class="nav-item ">
                         <a href="/admin/admin-slug/{{$chch->id}}" class="nav-link ">
+{{--                          <i class="far fa-circle nav-icon"></i>--}}
+                          <p>{{$chch->name_ru}}</p>
+                        </a>
+                      </li>
+                         @endforeach
+                    </ul>
+                      @endif
+              </li>
+                 @endforeach
+            </ul>
+    </li>
+    @endforeach
+    <li class="nav-header">Top Menus</li>
+    <?php
+        $menus_top = 'App\MenuTop'::where('leap' , 0)->basic()->get();
+    ?>
+    @foreach($menus_top as $menu)
+         <li class="nav-item">
+            <a href="#" class="nav-link">
+{{--              <i class="nav-icon fas fa-th"></i>--}}
+{{--                  <i class="fas fa-angle-left right"></i>--}}
+              <p>
+                {{$menu->name_ru}}
+              </p>
+            </a>
+             <ul class="nav nav-treeview" style="display: none; background-color: #508AD0">
+                 @foreach($menu->childs() as $child)
+                     <style>
+                         .tool-box{
+                             position: absolute;
+                             /*width: 80%;*/
+                             /*height: 100px;*/
+                             background-color: black;
+                             left: 10px;
+                             bottom: 100%;
+                             z-index: 10000;
+                             display: none;
+                             padding: 13px;
+                             border-radius: 16px;
+                             opacity: 0.9;
+                             /*display: flex;*/
+                             justify-content: flex-start;
+                         }
+                         .tool-box a{
+                             margin-left: 8px;
+                             margin-left: 8px;
+                         }
+                         .tool-nav:hover .tool-box{
+                             display: flex !important;
+                         }
+                     </style>
+              <li class="nav-item tool-nav" style="position: relative">
+                  <div class="tool-box">
+                      <a href="/admin/admin-slug-top/{{$child->id}}" >
+                          <i class="fa fa-file" aria-hidden="true"></i>
+                      </a>
+                      <a href="" style="color: #005ED0 !important;">
+                          <i class="fa fa-cogs" aria-hidden="true"></i>
+                      </a>
+                      <button class="change_eye_menu" type="button" data-id="{{$child->id}}" style="background-color: transparent; border: none; padding: 0; margin-left: 8px; margin-right: 8px; color: #D0C65A;outline: none;">
+                          <i class="fa @if($child->status)fa-eye @else fa-eye-slash @endif" aria-hidden="true"></i>
+                      </button>
+                  </div>
+                <a href="/admin/admin-slug-top/{{$child->id}}" class="nav-link @if(!$child->has_child()) hrefed @endif">
+{{--                  <i class="far fa-circle nav-icon"></i>--}}
+                  <p>
+                      {{$child->name_ru}}
+                      <i class="fas fa-angle-left right"></i>
+                  </p>
+                </a>
+                  @if($child->has_child())
+                  <ul class="nav nav-treeview" style="display: none;  background-color: #50C1D0">
+                 @foreach($child->childs() as $chch)
+                      <li class="nav-item ">
+                        <a href="/admin/admin-slug-top/{{$chch->id}}" class="nav-link ">
 {{--                          <i class="far fa-circle nav-icon"></i>--}}
                           <p>{{$chch->name_ru}}</p>
                         </a>

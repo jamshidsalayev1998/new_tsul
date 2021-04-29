@@ -43,8 +43,20 @@ class MediaController extends Controller
             $new_name = $this->file_name($this->randomPassword_alpha(10)).'.'.$file_ext;
             $file->move(public_path().'/media' , $new_name);
             $new_media = new Media();
+            $new_media->name = $request->name;
             $new_media->path = 'media/'.$new_name;
-            $new_media->type = 1;
+            if ($file_ext == 'jpg' || $file_ext == 'jpeg' || $file_ext == 'JPG' || $file_ext == 'JPEG' || $file_ext == 'png' || $file_ext == 'PNG'){
+                $new_media->type = 1;
+            }
+            elseif ($file_ext == 'pdf'){
+                $new_media->type = 2;
+            }
+            elseif ($file_ext == 'doc' || $file_ext == 'docx'){
+                $new_media->type = 3;
+            }
+            elseif ($file_ext == 'xls' || $file_ext == 'xlsx'){
+                $new_media->type = 4;
+            }
             $new_media->save();
             return redirect()->back()->with('success' , 'Malumot saqlandi');
         }

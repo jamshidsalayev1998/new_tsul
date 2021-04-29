@@ -57,6 +57,14 @@ class TimeTableController extends Controller
             $file->move(public_path().'/timetable' , $new_name);
             $new_g->timetable_file = 'timetable/'.$new_name;
         }
+        if ($request->hasFile('timetable_session_file')){
+            $file = $request->file('timetable_session_file');
+            $file_ext = $file->getClientOriginalExtension();
+            $new_name = $this->file_name($this->randomPassword_alpha(10)).'.'.$file_ext;
+            $file->move(public_path().'/timetable' , $new_name);
+            $new_g->timetable_session_file = 'timetable/'.$new_name;
+        }
+//        return $new_g;
         $new_g->save();
         return redirect()->back()->with('success' , 'Malumot saqlandi');
 
@@ -80,8 +88,40 @@ class TimeTableController extends Controller
                 $file->move(public_path().'/timetable' , $new_name);
                 $gr->timetable_file = 'timetable/'.$new_name;
             }
+            if ($request->hasFile('timetable_session_file')){
+                if (File::exists(public_path().'/'.$gr->timetable_session_file)){
+                    File::delete(public_path().'/'.$gr->timetable_session_file);
+                }
+                $file = $request->file('timetable_session_file');
+                $file_ext = $file->getClientOriginalExtension();
+                $new_name = $this->file_name($this->randomPassword_alpha(10)).'.'.$file_ext;
+                $file->move(public_path().'/timetable' , $new_name);
+                $gr->timetable_session_file = 'timetable/'.$new_name;
+            }
             $gr->update();
             return redirect()->back()->with('success' , 'Malumot ozgartirildi');
+        }
+    }
+
+    public function group_delete_file($id , $type){
+        $group = Group::find($id);
+        if ($group){
+            if ($type == 1){
+                $tt = 'timetable_file';
+            }
+            else{
+                $tt = 'timetable_session_file';
+
+            }
+            if (File::exists(public_path().'/'.$group->$tt)){
+                File::delete(public_path().'/'.$group->$tt);
+                $group->$tt = null;
+                $group->update();
+            }
+            return redirect()->back()->with('success' , 'Amal bajarildi');
+
+        }
+        else{
         }
     }
 

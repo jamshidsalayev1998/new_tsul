@@ -16,14 +16,13 @@
                 <div class="row">
                     <div>
                         <a href="index.html" class="text-secondary"
-                            style="font-weight:500; font-size: 15px; font-family: Times New roman, sans-serif;">Главная
-                            страница</a>
+                            style="font-weight:500; font-size: 15px; font-family: Times New roman, sans-serif;">@lang('index.Главная страница')</a>
                         <span class="text-secondary" style="font-weight:500"><i class="fas fa-chevron-right"
                                 style="font-size:10px"></i></span>
                         <a href="#" class="text-secondary"
-                            style="font-weight:500;  font-size: 15px; font-family: Times New roman, sans-serif;">Расписание занятий</a>
+                            style="font-weight:500;  font-size: 15px; font-family: Times New roman, sans-serif;">@lang('index.Расписание занятий')</a>
                     </div>
-                    <h1>Расписание занятий</h1>
+                    <h1>@lang('index.Расписание занятий')</h1>
 
                     <div class="tab-own">
                         @foreach($courses as $course)
@@ -34,10 +33,12 @@
                                   <div id="page{{$course->id}}" class="tabcontent">
                                       @foreach($course->get_faculties() as $faculty)
                                       <div class="class-list">
-                                            <h5>@if($course->type_id == 1)Бакалавриат @else Магистратура @endif</h5>
+                                            <h5>@if($course->type_id == 1)@lang('index.Бакалавриат') @else @lang('index.Магистратура') @endif</h5>
                                             <p>{{$faculty->name_uz}}</p>
                                             @foreach($faculty->get_groups($course->id) as $group)
+                                                @if($group->timetable_file)
                                               <a href="{{asset('')}}{{$group->timetable_file}}">{{$group->name}}</a>
+                                              @endif
                                             @endforeach
                                         </div>
                                       @endforeach

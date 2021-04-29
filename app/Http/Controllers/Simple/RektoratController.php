@@ -22,7 +22,10 @@ class RektoratController extends Controller
      */
     public function index(){
         $data = Rektorat::orderBy('id' , 'ASC')->get();
+        $menu = Menu::where('slug' , '/rektorat')->first();
+        $links = Menu::where('leap' , $menu->leap)->where('parent_id' , $menu->parent_id)->where('id' , '<>' , $menu->id)->get();
         return view('simple.rektorat' , [
+            'links' => $links,
             'data' => $data
         ]);
     }

@@ -8,15 +8,15 @@
         $title_locale = 'title_'.$locale;
         $short_info_locale = 'short_info_'.$locale;
         $content_locale = 'content_'.$locale;
-        $news = 'App\Neww'::orderBy('id' , 'DESC')->take(3)->get();
-        $announces = 'App\Announce'::where('event' , 0)->orderBy('id' , 'DESC')->take(4)->get();
-        $announces_event = 'App\Announce'::where('event' , 1)->orderBy('id' , 'DESC')->take(4)->get();
+        $news = 'App\Neww'::orderBy('date' , 'DESC')->get();
+        $announces = 'App\Announce'::where('event' , 0)->orderBy('id' , 'DESC')->get();
+        $announces_event = 'App\Announce'::where('event' , 1)->orderBy('date' , 'DESC')->take(4)->get();
         $sep = 'App\SeperatelyOneNew'::where('status' , 1)->orderBy('id' , 'DESC')->first();
         $men = 'App\Menu'::where('id' , 58)->first();
         $sll = str_replace('/general-page/' , '' , $men->slug);
         $slug = 'App\Page'::where('slug' , $sll)->first();
-        $scientist_news = 'App\YoungScientistsNew'::where('status' , 1)->get();
-        $scientist_articles = 'App\ScientificArticle'::where('status' , 1)->get();
+        $scientist_news = 'App\YoungScientistsNew'::where('status' , 1)->orderBy('id' , 'DESC')->get();
+        $scientist_articles = 'App\ScientificArticle'::where('status' , 1)->orderBy('id' , 'DESC')->get();
 
     ?>
 {{--<!--                    --><?php print_r($slug); die();?>--}}
@@ -33,9 +33,9 @@
                             {{$slider_texts->phone}}
                         </span>
                     </div>
-                    <div style="color: white !important;">
+                    <div class="card-text" style="color: white !important;">
                         {!! $slider_texts->$text_locale !!}
-                        <a href="{{$slider_texts->link}}" class="mc_button">@lang('index.подробнее') <i class="fas fa-arrow-right ml-2"
+                        <a href="/about-university" class="mc_button">@lang('index.подробнее') <i class="fas fa-arrow-right ml-2"
                                 style="font-size: 14px;"></i></a>
                         <div class="owl-dots">
                             <button role="button" class="owl-dot"><span></span></button><button role="button"
@@ -62,7 +62,7 @@
         <section class="main_menus_bottom">
             <div class="main_menus_box d-flex">
                 @foreach($system_cards as $card)
-                    <a href="{{$card->link}}" class="menu_icon_items">
+                    <a href="{{$card->link}}" class="menu_icon_items card-text">
                        {!! $card->icon !!}
                         <h5>{{$card->$name_locale}}</h5>
                     </a>
@@ -78,7 +78,7 @@
                     <div class="col-xl-4 col-lg-6">
                         <div class="header_for_part my-2  wow fadeInDown" data-wow-duration="0.4s"
                             data-wow-delay="0.2s">
-                            <i class="fas fa-video"></i>
+
                             @lang('index.ВИДЕОМАТЕРИАЛЫ')
                         </div>
 
@@ -87,20 +87,20 @@
                                 <i class="fas fa-play" id="vm_play_i"></i>
                                 <button id="vm_play"></button>
                             </div>
-                            <video poster="{{asset('front_assets/assets/img/img2.jpg')}}" id="vm_id">
-                                <source src="assets/tdyu.mp4" type="video/mp4">
+                            <video poster="{{asset('front_assets/assets/img/rolik.png')}}" id="vm_id">
+                                <source src="{{asset('front_assets/assets/tdyu2.mp4')}}" type="video/mp4">
                                 <source src="movie.ogg" type="video/ogg">
                                 Your browser does not support the video tag.
                             </video>
                             <div class="more_links_to_pages d-flex justify-content-end">
-                                <a href="./video_gallery.html">Все видео <i
+                                <a href="/all-videos">@lang('index.Все видео') <i
                                         class="fas fa-arrow-circle-right ml-2"></i></a>
                             </div>
                         </div>
                     </div>
                     <div class="col-xl-8 col-lg-12 third_right_part_mt">
                         <div class="header_for_part my-2 wow fadeInDown" data-wow-duration="0.4s" data-wow-delay="0.2s">
-                            <i class="fas fa-university"></i>
+
                             <div>@lang('index.АНОНС МЕРОПРИЯТИЙ')</div>
                         </div>
                         <div class="row">
@@ -109,14 +109,14 @@
                             ?>
                             @foreach($announces_event as $announce)
                             <div class="col-xl-6 mt-3">
-                                <a href="#!" class="main_anons_items wow fadeInRight" data-wow-duration="0.2s"
+                                <a href="{{route('simple.announces.show' , ['id' => $announce->id])}}" class="main_anons_items wow fadeInRight" data-wow-duration="0.2s"
                                     data-wow-delay="0.2s">
                                     <div class="main_anons_image_box">
                                         <img src="{{asset('')}}{{$announce->$image_locale}}" alt="image not found">
                                     </div>
                                     <div class="main_anons_text_box">
                                         <span>{{date('d.m.Y' , strtotime($announce->date))}}</span>
-                                        <span>
+                                        <span class="card-text">
                                             {{$announce->$short_info_locale}}
                                         </span>
                                     </div>
@@ -124,7 +124,7 @@
                             </div>
                             @endforeach
                             <div class="more_links_to_pages d-flex justify-content-end mt-2">
-                                <a href="#"> Все анонсы <i class="fas fa-arrow-circle-right ml-2"></i></a>
+                                <a href="{{route('simple.announces')}}"> @lang('index.Все анонсы') <i class="fas fa-arrow-circle-right ml-2"></i></a>
                             </div>
                         </div>
                     </div>
@@ -138,7 +138,7 @@
                     @if($slug)
                     <div class="col-xl-3">
                         <div class="rectors_card_appeal">
-                            <h5>RECTOR'S MESSAGE</h5>
+                            <h5> Rektor murojaati</h5>
                             <div class="rectors_card_appeal_img">
                                 <img src="{{asset('front_assets/assets/img/img1.jpg')}}" alt="">
                             </div>
@@ -146,7 +146,7 @@
                                 <span>
                                     <i> {!! $slug->$content_locale !!}</i>
                                 </span>
-                                <a href="#!">
+                                <a href="/general-page/privetstvie-rektora">
                                     Read more <i class="fas fa-arrow-right ml-3"></i>
                                 </a>
                             </div>
@@ -172,7 +172,7 @@
                                         </div>
                                         <div class="news_card_text">
                                             <span>{{$neww->type->$name_locale}} / {{$neww->date}}</span>
-                                            <span>
+                                            <span class="card-text">
                                                 @if($neww->$short_info_locale)
                                                     {{$neww->$short_info_locale}}
                                                     @else
@@ -216,7 +216,7 @@
 
                                 </div>
                                 <div class="more_links_to_pages d-flex justify-content-end" style="margin-top: 0px;">
-                                    <a href="{{route('simple.news')}}">Все новости <i class="fas fa-arrow-circle-right ml-2"></i></a>
+                                    <a href="{{route('simple.news')}}">@lang('index.Все новости') <i class="fas fa-arrow-circle-right ml-2"></i></a>
                                 </div>
                             </div>
                         </div>
@@ -291,7 +291,7 @@
                                 @foreach($scientist_news as $sc)
                                 <div class="scientific_items">
                                     <div class="scientific_card_image">
-                                        <img src="assets/img/img1.jpg" alt="">
+                                        <img src="{{asset('front_assets/assets/img/img1.jpg')}}" alt="">
                                     </div>
                                     <div class="scientific_card_text">
                                         <span>
@@ -313,8 +313,8 @@
                         <div
                             style="box-shadow:0 0 10px 0 rgba(0, 0, 0, 0.2); padding: 10px; border-radius: 6px;  margin-top: 80px; text-align: center;">
                             <i>
-                                With world-class faculty, groundbreaking research opportunities, and a diverse group of
-                                talented students, Tsul is more than just a place to get an education.
+                                @lang('index.With world-class faculty, groundbreaking research opportunities, and a diverse group of
+                                talented students, Tsul is more than just a place to get an education.')
                             </i>
 
                         </div>
@@ -327,7 +327,7 @@
         <section class="sixth-part">
             <div class="container">
                 <div class="header_for_part mt-2">
-                    <i class="fas fa-chart-bar"></i>
+
                     <div>@lang('index.УНИВЕРСИТЕТ В ЦИФРАХ')</div>
                 </div>
             </div>
@@ -358,7 +358,7 @@
                                 <div>
                                     <div><i class="fas fa-user-tag"></i></div>
                                     <h5>@lang('index.КОЛИЧЕСТВО УЧИТЕЛЕЙ')</h5>
-                                    <h3>--</h3>
+                                    <h3>333</h3>
                                 </div>
                             </div>
                         </div>

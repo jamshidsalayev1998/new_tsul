@@ -15,12 +15,11 @@
                 <div class="row">
                     <div>
                         <a href="/" class="text-secondary"
-                            style="font-weight:500; font-size: 15px; font-family: Times New roman, sans-serif;">Главная
-                            страница</a>
+                            style="font-weight:500; font-size: 15px; font-family: Times New roman, sans-serif;">@lang('indeex.Главная страница')</a>
                         <span class="text-secondary" style="font-weight:500"><i class="fas fa-chevron-right"
                                 style="font-size:10px"></i></span>
                         <a href="/rektorat" class="text-secondary"
-                            style="font-weight:500;  font-size: 15px; font-family: Times New roman, sans-serif;">Ректорат</a>
+                            style="font-weight:500;  font-size: 15px; font-family: Times New roman, sans-serif;">@lang('index.Проректоры')</a>
                         <span class="text-secondary" style="font-weight:500">&nbsp; <i class="fas fa-arrows-alt-h"></i>
                             &nbsp;</span>
                         <a href="#" class="text-secondary"
@@ -28,43 +27,13 @@
                     </div>
                     <div class="col-md-3 mt-3">
                         <div class="left_menu_of_page">
-                            <div class="left_side_title_top">БЫСТРЫЕ ССЫЛКИ</div>
+                            <div class="left_side_title_top">@lang('index.БЫСТРЫЕ ССЫЛКИ')</div>
                             <div>
                                 @foreach($links as $link)
                                 <a href="{{route('simple.rektorat.show' , ['id' => $link->id])}}"><i class="fas fa-angle-double-right text-secondary"></i>{{$link->$type_name_locale}}</a>
                                 @endforeach
                             </div>
-                            <div class="left_side_title_top mt-3">НЕ ПРОПУСТИТЕ ВАЖНОЕ</div>
-                            <div class="left_social_box">
-                                <a href="https://twitter.com/tsulofficial" class="left_social_box_items" target="_blank"
-                                    rel="noopener noreferrer">
-                                    <i class="fab fa-twitter" style="color: #03A9F5;"></i>
-                                    <span style="font-size: 13px; font-weight: bold;">21.290</span>
-                                    <span class="font-weight-bold"
-                                        style="font-size: 13px; color: grey;">подписчиков</span>
-                                </a>
-                                <a href="https://www.youtube.com/channel/UCTAhGEQDYohjqmDAsD9yRBg"
-                                    class="left_social_box_items" target="_blank" rel="noopener noreferrer">
-                                    <i class="fab fa-youtube" style="color: #FE0000;"></i>
-                                    <span style="font-size: 13px; font-weight: bold;">21.290</span>
-                                    <span class="font-weight-bold"
-                                        style="font-size: 13px; color: grey;">подписчиков</span>
-                                </a>
-                                <a href="https://t.me/tsulofficial" class="left_social_box_items" target="_blank"
-                                    rel="noopener noreferrer">
-                                    <i class="fab fa-telegram-plane" style="color: #03A9F5;"></i>
-                                    <span style="font-size: 13px; font-weight: bold;">21.290</span>
-                                    <span class="font-weight-bold"
-                                        style="font-size: 13px; color: grey;">подписчиков</span>
-                                </a>
-                                <a href="https://www.fb.com/tsulofficial" class="left_social_box_items" target="_blank"
-                                    rel="noopener noreferrer">
-                                    <i class="fab fa-facebook-f" style="color: #4267B8;"></i>
-                                    <span style="font-size: 13px; font-weight: bold;">21.290</span>
-                                    <span class="font-weight-bold"
-                                        style="font-size: 13px; color: grey;">подписчиков</span>
-                                </a>
-                            </div>
+                            @include('simple.includes.socials_box')
                         </div>
                     </div>
                     <div class="col-md-9 img-info mt-3">
@@ -73,8 +42,7 @@
                                 <img src="{{asset('')}}{{$data->image}}" alt="network error!">
                             </div>
                             <div class="col-md-8 contact-info">
-                                <h3>Контакт</h3>
-                                <h5>Щелкните по нему, чтобы скопировать данные</h5>
+                                <h3>@lang('index.Контакт')</h3>
                                 <a href="tel: (+99871) 233-66-36" id="cp_btn"><i class="fas fa-mobile-alt"><span
                                             id="pwd_spn" class="ml-3"> {{$data->phone1}}</span></i></a>
                                 <br>
@@ -96,7 +64,7 @@
                             <br>
                             {!! $data->$content_locale !!}
                             <br>
-                            <button>назад</button>
+                            <button class="allow-href" data-href="{{route('simple.rektorat.index')}}">@lang('index.назад')</button>
                         </div>
                     </div>
 

@@ -53,9 +53,9 @@
                               </a>
                         </div>
                       </div>
-                  <div class="col-md-12 mt-3">
+                  <div class="col-md-12 mt-3 ">
                       <label for="">Text uz</label>
-                      <textarea id="summernote" name="text_uz" style="width: 100%">{{$slider_texts->text_uz}}</textarea>
+                      <textarea id="summernote"  name="text_uz" style="width: 100%; background-color: #DC9016">{{$slider_texts->text_uz}}</textarea>
                   </div>
                   <div class="col-md-12 mt-3">
                       <label for="">Text ru</label>

@@ -13,5 +13,9 @@ class Faculty extends Model
         return $groups;
     }
 
+    public function administrations(){
+        return $this->hasMany(AdministrationFaculty::class , 'faculty_id');
+    }
+
 
 }

@@ -8,7 +8,7 @@ $locale = app()->getLocale();
 ?>
 <footer class="eighth-part w-100">
             <div class="footer_img_box">
-                <img src="assets/img/img1.jpg" alt="img not found">
+                <img src="{{asset('front_assets/assets/img/img1.jpg')}}" alt="img not found">
             </div>
             <div class="footer_data_box">
                 <div class="container">

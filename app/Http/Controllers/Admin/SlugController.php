@@ -19,7 +19,7 @@ class SlugController extends Controller
         $clear = 0;
         if ($menu->slug){
             if ($menu->dynamik == 0){
-                return redirect('/admin'.$menu->slug);
+                return redirect('/admin'.$menu->admin_slug);
             }
             $page = Page::where('slug' , str_replace('/general-page/', '',$menu->slug))->first();
             $for_slug =  str_replace('/general-page/', '',$menu->slug);

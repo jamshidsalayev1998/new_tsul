@@ -48,6 +48,21 @@
                               padding-right: 13px;
                               outline: none;
                           }
+                          .black-box a{
+                              z-index: 2;
+                              background-color: white;
+                              border: none;
+                              bottom: 0;
+                              right: 50px;
+                              position: absolute;
+                              opacity: 1 !important;
+                              color: black;
+                              padding: 4px;
+                              border-radius: 7px;
+                              padding-left: 13px;
+                              padding-right: 13px;
+                              outline: none;
+                          }
 
                           .media-box{
                               position: relative !important;
@@ -58,14 +73,28 @@
 
                       </style>
                       @foreach($data as $item)
-                      <div class="col-md-3 media-box" style="overflow: hidden; max-height: 200px;">
+                      <div class="col-md-3 media-box" style="overflow: hidden; max-height: 300px;">
                           <div style="width: 100%; height: 100%; position: absolute; background-color: black; opacity: 0.6; display: none" class="black-box">
+                              @if($item->type == 2)
+                              <a href="{{asset('')}}{{$item->path}}" class="btn btn-light"><i class="fa fa-arrow-down" aria-hidden="true"></i></a>
+                              @endif
                               <button onclick="copyToClipboard('#copy_image{{$item->id}}')"><i class="fa fa-clone" aria-hidden="true"></i></button>
                           </div>
+                          @if($item->type == 1)
                           <img style="height: 200px; width: 100%;" src="{{asset('')}}{{$item->path}}" alt="">
+                              @elseif($item->type == 2)
+                          <img style="height: 200px; width: 100%;" src="{{asset('pdf_img.png')}}" alt="">
+                              @else
+                          @endif
+
+
                           <div style="display: none" id="copy_image{{$item->id}}">
+
                             <img  src="{{asset('')}}{{$item->path}}" alt="">
                           </div>
+                          <p>
+                              <b>Name: </b>{{$item->name}}
+                          </p>
                       </div>
                       @endforeach
                   </div>
@@ -95,16 +124,21 @@
                     </div>
                     <div class="modal-body">
                       <div class="form-group">
-                                              <label for="">Image</label>
-                                              <div class="img-box border" style="width: 100%; height: 300px; overflow: hidden">
-                                                  <img src="" alt="" id="imagePreview1" style="width: 100%; height: auto; ">
-                                                  <input type="file" id="imageUpload1" hidden name="image">
-                                              </div>
-                                              <div>
-                                                  <button type="button" class="btn btn-light select-image1" style="right: 0; bottom: 0; position: absolute"><i class="fa fa-edit"></i></button>
-                                              </div>
-                                          </div>
+                          <label for="">Image</label>
+                          <div class="img-box border" style="width: 100%; height: 300px; overflow: hidden">
+                              <img src="" alt="" id="imagePreview1" style="width: 100%; height: auto; ">
+                               <input type="file" id="imageUpload1" hidden name="image">
+                           </div>
+                          <div>
+                          <button type="button" class="btn btn-light select-image1" style="right: 0; bottom: 0; position: absolute"><i class="fa fa-edit"></i></button>
+                            </div>
+                      </div>
+
                     </div>
+                      <div class="form-group p-3">
+                            <label for="">Name</label>
+                            <input type="text" name="name" class="form-control">
+                        </div>
                     <div class="modal-footer justify-content-between">
                       <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
                       <button type="submit" class="btn btn-primary">Upload</button>

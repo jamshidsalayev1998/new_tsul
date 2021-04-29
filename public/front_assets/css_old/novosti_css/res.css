@@ -1,0 +1,69 @@
+@media only screen and (min-width:1500px) {
+    .my-container {
+        width: 1140px;
+    }
+}
+
+@media only screen and (max-width:1290px) {
+    .my-container {
+        margin: 50px auto;
+    }
+}
+
+@media only screen and (max-width:1220px) {
+    .my-col-6-res-full {
+        flex-basis: 100%;
+        max-width: 100%;
+        float: left;
+    }
+    .my-width-farf {
+        width: 50%;
+        flex-basis: 50%;
+        max-width: 50%;
+    }
+    .line-top {
+        width: 100%;
+    }
+    .my-container .my-img_bar {
+        width: 100%;
+    }
+    .my-container .my-midle_img img {
+        width: 100%;
+    }
+    .my-float-right-1 {
+        float: right;
+    }
+    .my-container .my-spn {
+        margin: 15px 0px;
+    }
+}
+
+@media only screen and (max-width:830px) {
+    .my-width-full {
+        width: 117%;
+        flex-basis: 100%;
+        max-width: 105%;
+    }
+    .my-float-right-1 {
+        float: left;
+    }
+    .my-bottom-content-1 {
+        flex-basis: 100%;
+        max-width: 100%;
+        float: left;
+    }
+}
+
+@media only screen and (max-width:450px) {
+    .my-col-3-res-bottom {
+        width: 50%;
+        flex-basis: 50%;
+        max-width: 50%;
+    }
+    .my-icon-bar-top {
+        margin: 10px 0;
+    }
+    .my-icon-bar-top .youtube {
+        float: none;
+    }
+}

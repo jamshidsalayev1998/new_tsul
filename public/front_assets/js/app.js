@@ -37,7 +37,7 @@ jQuery(document).ready(function () {
                 items: 3
             },
             1300: {
-                items: 6
+                items: 4
             }
         }
     });
@@ -55,9 +55,15 @@ jQuery(document).ready(function () {
                 items:1
             },
             600:{
-                items:3
+                items:2
             },
             1000:{
+                items:2
+            },
+            1200: {
+                items:3
+            },
+            1400: {
                 items:4
             }
         }
@@ -74,9 +80,15 @@ jQuery(document).ready(function () {
                 items:1
             },
             600:{
-                items:3
+                items:2
             },
             1000:{
+                items:2
+            },
+            1200: {
+                items:3
+            },
+            1400: {
                 items:4
             }
         }
@@ -92,9 +104,15 @@ jQuery(document).ready(function () {
                 items:1
             },
             600:{
-                items:3
+                items:2
             },
             1000:{
+                items:2
+            },
+            1200: {
+                items:3
+            },
+            1400: {
                 items:4
             }
         }
@@ -258,6 +276,25 @@ vm_play_i?.addEventListener("click", () => {
     video_id.setAttribute('controls', 'controls')
     video_id.play()
 })
+var rp_video_id = document.getElementById("rp_vm_id");
+var rp_vm_play = document.getElementById("rp_vm_play");
+var rp_vm_play_i = document.getElementById("rp_vm_play_i");
+var rp_vm_play_box = document.querySelector(".rp_vm_play_box");
+
+rp_vm_play?.addEventListener("click", () => {
+    rp_vm_play.style.display = 'none';
+    rp_vm_play_i.style.display = 'none';
+    rp_vm_play_box.style.display = 'none'
+    rp_video_id.setAttribute('controls', 'controls')
+    rp_video_id.play()
+})
+rp_vm_play_i?.addEventListener("click", () => {
+    rp_vm_play.style.display = 'none';
+    rp_vm_play_i.style.display = 'none';
+    rp_vm_play_box.style.display = 'none'
+    rp_video_id.setAttribute('controls', 'controls')
+    rp_video_id.play()
+})
 
 
 var loading_video_gallery = document.querySelectorAll(".loading_video_gallery");
@@ -279,6 +316,24 @@ fc_tabs.forEach(tab => {
       tabContent.classList.remove('active')
     })
     fc_tabs.forEach(tab => {
+      tab.classList.remove('active')
+    })
+    tab.classList.add('active')
+    target.classList.add('active')
+  })
+})
+
+
+const rp_tabs = document.querySelectorAll('[data-tab-target]')
+const rp_tabContents = document.querySelectorAll('[data-tab-content]')
+
+rp_tabs.forEach(tab => {
+  tab.addEventListener('click', () => {
+    const target = document.querySelector(tab.dataset.tabTarget)
+    rp_tabContents.forEach(tabContent => {
+      tabContent.classList.remove('active')
+    })
+    rp_tabs.forEach(tab => {
       tab.classList.remove('active')
     })
     tab.classList.add('active')

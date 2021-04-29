@@ -1,0 +1,74 @@
+.Timetable_of_classes {
+  margin-top: 60px;
+  margin-bottom: 60px;
+  font-family: Schlange Sans Light, Open Sans, sans-serif; }
+  .Timetable_of_classes h1 {
+    border-bottom: solid 2px #EEEEEE;
+    color: #555555;
+    font-size: 32px;
+    line-height: 38.4px;
+    vertical-align: baseline;
+    letter-spacing: -0.64px;
+    word-spacing: 0px;
+    margin: 9.6px 0px;
+    padding: 0px 0px 9px;
+    font-weight: 700;
+    text-align: start;
+    text-indent: 0px; }
+  .Timetable_of_classes .tablink {
+    background-color: #EEEEEE;
+    color: #555555;
+    float: left;
+    outline: none;
+    cursor: pointer;
+    padding: 14px 16px;
+    font-size: 17px;
+    width: 16.66%;
+    border: solid 1px #EEEEEE;
+    border-bottom: none; }
+  .Timetable_of_classes .tabcontent {
+    color: black;
+    display: none;
+    padding: 100px 20px;
+    height: 100%;
+    border: solid 1px #EEEEEE;
+    border-radius: 30px;
+    box-shadow: #EEEEEE 0px 2px 8px 0px;
+    background-color: #fff; }
+  .Timetable_of_classes .class-list {
+    border-bottom: dashed 2px #EEEEEE;
+    margin-bottom: 15px; }
+    .Timetable_of_classes .class-list h5 {
+      border-left-style: dotted;
+      border-left-color: red;
+      padding-left: 10px; }
+    .Timetable_of_classes .class-list p {
+      color: #20B27E; }
+    .Timetable_of_classes .class-list a {
+      width: auto;
+      display: inline-block;
+      padding: 8px 10px;
+      margin: 0 0 7px 3px;
+      text-align: center;
+      vertical-align: middle;
+      border-radius: 20px;
+      border: 1px solid #eee;
+      color: #333;
+      text-decoration: none;
+      font-size: 13px;
+      outline: none; }
+      .Timetable_of_classes .class-list a:hover {
+        background-color: #f1f1f1; }
+  @media only screen and (max-width: 375px) and (min-width: 320px) {
+    .Timetable_of_classes h1 {
+      font-size: 24px; }
+    .Timetable_of_classes .tablink {
+      font-size: 13px; }
+    .Timetable_of_classes .class-list h5 {
+      font-size: 16px; }
+    .Timetable_of_classes .class-list p {
+      font-size: 14px; }
+    .Timetable_of_classes .class-list a {
+      font-size: 10px; } }
+
+/*# sourceMappingURL=Timetable_of_classes.css.map */

@@ -1,9 +1,10 @@
+
 var all_languges = document.querySelector(".selecting_box").children;
 var hlb = document.getElementById("hlb");
 var isChanged = false;
 
 // mobile js
-var all_languges_m = document.querySelector(".selecting_box_m").children;
+var all_languges_m = document.querySelector(".selecting_box_m")?.children;
 var hlb_m = document.getElementById("hlb_m");
 var isChanged_m = false;
 
@@ -53,7 +54,7 @@ for (let i = 0; i < all_languges.length; i++) {
 }
 // mobile js
 
-for (let i = 0; i < all_languges_m.length; i++) {
+for (let i = 0; i < all_languges_m?.length; i++) {
     const element = all_languges_m[i];
 
     element.addEventListener("click", () => {
@@ -92,7 +93,7 @@ window.addEventListener('click', () => {
 
 document.onclick = function (event) {
     if (event.target.id === 'search_id' || event.target.id === 'search_id_i') {
-        searching_box.classList.add('openingSearchbox');
+        searching_box?.classList.add('openingSearchbox');
         isChanged = false;
         isClosingLanguage()
 
@@ -108,7 +109,7 @@ document.onclick = function (event) {
 
         if (isChanged) {
             isOpeningLanguage()
-            searching_box.classList.remove('openingSearchbox');
+            searching_box?.classList.remove('openingSearchbox');
         } else {
             isClosingLanguage()
             isChanged = false
@@ -129,7 +130,7 @@ document.onclick = function (event) {
     } else if (event.target.id === 'searchingBox' || event.target.id === 'search_id_input' || event.target.id === 'search_id_input_i' || event.target.id === 'search_id_input_m' || event.target.id === 'search_id_input_i_m') {
         return
     } else {
-        searching_box.classList.remove('openingSearchbox');
+        searching_box?.classList.remove('openingSearchbox');
         if (isChanged) {
             isClosingLanguage();
             isChanged = false

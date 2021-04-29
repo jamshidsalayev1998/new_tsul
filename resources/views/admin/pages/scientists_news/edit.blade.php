@@ -39,11 +39,23 @@
               </div>
               <!-- /.card-header -->
               <div class="card-body">
-                  <form action="{{route('admin_young_scientist_new.update' , ['admin_young_scientist_new' => $data->id])}}" class="scientist_form" method="post">
+                  <form action="{{route('admin_young_scientist_new.update' , ['admin_young_scientist_new' => $data->id])}}" class="scientist_form" method="post" enctype="multipart/form-data">
                       @csrf
                       @method('PUT')
                       <input type="text" name="has"  hidden readonly>
                   <div class="row">
+                      <div class="col-md-4">
+                          <div class="form-group">
+                          <label for="">Image</label>
+                          <div class="img-box border" style="width: 100%; height: 300px; overflow: hidden">
+                              <img src="{{asset('')}}{{$data->image}}" alt="" id="imagePreview1" style="width: 100%; height: auto; ">
+                               <input type="file" id="imageUpload1" hidden name="image">
+                           </div>
+                          <div>
+                          <button type="button" class="btn btn-light select-image1" style="right: 0; bottom: 0; position: absolute"><i class="fa fa-edit"></i></button>
+                            </div>
+                      </div>
+                      </div>
                       <div class="col-md-4">
                           <div class="form-group">
                               <label for="">Date</label>

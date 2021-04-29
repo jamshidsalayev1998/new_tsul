@@ -49,6 +49,13 @@ class YoungScientistsNewController extends Controller
         else{
             $new->date = $request->date;
         }
+        if ($request->hasFile('image')){
+            $file = $request->file('image');
+            $file_ext = $file->getClientOriginalExtension();
+            $new_name = $this->file_name($this->randomPassword_alpha(10)).'.'.$file_ext;
+            $file->move(public_path().'/young_scientists' , $new_name);
+            $new->image = 'young_scientists/'.$new_name;
+        }
         $new->save();
         return redirect(route('admin_young_scientist_new.index'))->with('success' , 'Malumot saqlandi');
     }
@@ -69,6 +76,13 @@ class YoungScientistsNewController extends Controller
         }
         else{
             $new->date = $request->date;
+        }
+        if ($request->hasFile('image')){
+            $file = $request->file('image');
+            $file_ext = $file->getClientOriginalExtension();
+            $new_name = $this->file_name($this->randomPassword_alpha(10)).'.'.$file_ext;
+            $file->move(public_path().'/young_scientists' , $new_name);
+            $new->image = 'young_scientists/'.$new_name;
         }
         $new->update();
         return redirect()->back()->with('success' , 'Malumot saqlandi');

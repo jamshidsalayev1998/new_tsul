@@ -19,7 +19,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="{{asset('front_assets/css/animate.css')}}">
     <link rel="stylesheet" href="{{asset('front_assets/jamshid/jamshid.css')}}">
-     <link rel="stylesheet" href="{{asset('front_assets/css/pop-up/style.css')}}">
+     <link rel="stylesheet" href="{{asset('front_assets/css/pop-up/pop_up.css')}}">
      <link rel="stylesheet" href="{{asset('front_assets/css/animate.css-main/animate.css')}}">
 {{--    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>--}}
     @yield('links')
@@ -60,6 +60,13 @@
 <script src="{{asset('front_assets/js/nav.js')}}"></script>
 <sript src="{{asset('front_assets/jamshid/jamshid.js')}}"></sript>
 @yield('js')
+<script>
+    $('.allow-href').click(function(){
+        if($(this).attr('data-href')){
+            window.location.href=$(this).attr('data-href');
+        }
+    })
+</script>
 <script>
     wow = new WOW({
         animateClass: 'animated',

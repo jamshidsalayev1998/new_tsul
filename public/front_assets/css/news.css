@@ -169,7 +169,7 @@
     display: flex;
     align-items: center;
     margin-top: 20px;
-    box-shadow: 0 0 8px 10px white;
+    box-shadow: 0 0 8px 0px rgba(0, 0, 0, 0.2);
     padding: 2px;
 }
 
@@ -212,6 +212,9 @@
     align-items: center;
     margin-top: 10px;
     cursor: pointer;
+    box-shadow: 0 0 8px 0 rgba(0, 0, 0, 0.2);
+    border-top-left-radius: 50px;
+    border-bottom-left-radius: 50px;
 }
 
 .last_news_card_item:hover {

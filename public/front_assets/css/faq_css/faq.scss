@@ -1,38 +1,55 @@
 $tsul-color: #0A2355;
+$tsul-lighter: #2C42A6;
 $accardion-color: #bdc3c7;
 $white: #ffffff;
-$bg-color: #F6F7FD;
+$faq-bg-color: #F6F7FD;
 $black: #000;
 $content-color:#2f3542;
 
-.content{
-    background-color: $bg-color;
-    h1{
+.faq{
+    background-color: $faq-bg-color;
+    margin-top: 60px;
+    margin-bottom: 60px;
+   .accordion-style{
+    h2{
         text-align: center;
         text-transform: uppercase;
         color: $content-color;
+        font-size: 26px;
     }
+    h3{
+        text-align: justify; 
+        font-size: 18px; 
+          
+            i{
+                color: $white;
+                margin-right: 10px;
+               
+            }
+        }
+   }
+    
     .accordion {
       
         .ui-accordion-header { 
-        border: 0px solid $bg-color;
+        border: 0px solid $faq-bg-color;
         padding: 10px;
-        background: $accardion-color;
+        background: $tsul-lighter;
         cursor: pointer;
         outline: none;
         color: $white;
         &:hover{
-            background: #C0C6CA;
-            color: $black;
+            background: $tsul-color;
+            color: $white;
             i{
-                color: $black;
+                color: $white;
                 
             }
         }
     }
     
     .ui-accordion-content {
-        border: 0px solid $bg-color;
+        border: 0px solid $faq-bg-color;
         margin: 0 0 10px 0;
         padding: 5px;
         font-size: 14px;
@@ -43,30 +60,124 @@ $content-color:#2f3542;
     }
    
     
-    h3{
-    text-align: justify;       
-    
-        i{
-            color: $white;
-            margin-right: 10px;
-           
-        }
-    }
+   
     
     }
-}
-/*Click rotate*/
-.rotate {
+
+    /*Click rotate*/
+.faq-rotate {
     -moz-transition: all .5s linear;
     -webkit-transition: all .5s linear;
     transition: all .5s linear;
 }
-.rotate.down {
+.faq-rotate.down {
     -moz-transform:rotate(-90deg);
     -webkit-transform:rotate-(90deg);
     transform:rotate(-90deg);
 }
-/*End Click rotate*/
+
+    /*Media*/
+$pc: 1440px;
+$laptop: 1200px;
+$laptop-l: 1023px;
+$tablet: 767px;
+$phone-l: 425px;
+$phone-m: 375px;
+$phone-s: 320px;
+
+@media only screen and(max-width:$laptop) and(min-width:$laptop-l){
+    .accordion-style{
+        h2{
+            font-size: 24px;
+        }
+        h3{
+            font-size: 17px; 
+              
+                i{
+                    color: $white;
+                    margin-right: 10px;
+                    font-size: 17px;
+                   
+                }
+            }
+       }
+   
+}
+@media only screen and(max-width:$laptop-l) and(min-width:$tablet){
+    .accordion-style{
+        h2{
+            font-size: 22px;
+        }
+        h3{
+            font-size: 16px; 
+              
+                i{
+                    color: $white;
+                    margin-right: 10px;
+                    font-size: 16px;
+                   
+                }
+            }
+       }
+    
+}
+@media only screen and(max-width:$tablet) and(min-width:$phone-l){
+    .accordion-style{
+        h2{
+            font-size: 20px;
+        }
+        h3{
+            font-size: 15px; 
+              
+                i{
+                    color: $white;
+                    margin-right: 10px;
+                    font-size: 15px;
+                   
+                }
+            }
+       }
+}
+@media only screen and(max-width:$phone-l) and(min-width:$phone-m){
+    .accordion-style{
+        h2{
+            font-size: 18px;
+        }
+        h3{
+            font-size: 14px; 
+              
+                i{
+                    color: $white;
+                    margin-right: 10px;
+                    font-size: 14px;
+                   
+                }
+            }
+       }
+}
+@media only screen and(max-width:$phone-m) and(min-width:$phone-s){
+    .accordion-style{
+        h2{
+            font-size: 17px;
+        }
+        h3{
+            font-size: 13px; 
+              
+                i{
+                    color: $white;
+                    margin-right: 10px;
+                    font-size: 13px;
+                   
+                }
+            }
+       }
+   
+}
+/*End media*/
+}
+
+
+
 
 
 

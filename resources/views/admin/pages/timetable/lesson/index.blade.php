@@ -1,5 +1,15 @@
 @extends('admin.layouts.master')
 @section('content')
+
+    <style>
+        .delete-file{
+            background-color: transparent;
+            border-radius: 5px;
+        }
+        .delete-file:hover {
+            background-color: #E2E6EA;
+        }
+    </style>
     <div class="content-wrapper">
     <!-- Content Header (Page header) -->
 
@@ -73,6 +83,10 @@
                                                       <label for="">Time table</label>
                                                       <input type="file" class="form-control" name="timetable_file">
                                                   </div>
+                                                  <div class="form-group">
+                                                      <label for="">Session</label>
+                                                      <input type="file" class="form-control" name="timetable_session_file">
+                                                  </div>
                                               </div>
                                               <div class="modal-footer">
                                                 <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
@@ -96,7 +110,8 @@
                                       <th>
                                           Faculty
                                       </th>
-                                      <th class="last-td"></th>
+                                      <th class="last-td">Lesson</th>
+                                      <th class="last-td">Session</th>
                                       <th class="last-td"></th>
                                       <th class="last-td"></th>
 
@@ -110,7 +125,20 @@
                                           <td>{{$group->name}}</td>
                                           <td>{{$group->faculty->name_uz}}</td>
                                           <td>
-                                              <a class="btn btn-light" href="{{asset('')}}{{$group->timetable_file}}"><i class="fa fa-file" aria-hidden="true"></i></a>
+                                              @if($group->timetable_file)
+                                               <div style="display: flex">
+                                                    <a class="btn btn-light" href="{{asset('')}}{{$group->timetable_file}}"><i class="fa fa-file" aria-hidden="true"></i></a>
+                                                  <button type="button" class="delete-file" data-id="{{$group->id}}" data-type="1" style="color: red; padding: 7px; border:none; "><i class="fa fa-times-circle" aria-hidden="true"></i></button>
+                                               </div>
+                                              @endif
+                                          </td>
+                                          <td>
+                                               @if($group->timetable_session_file)
+                                                   <div style="display: flex">
+                                                    <a class="btn btn-light" href="{{asset('')}}{{$group->timetable_session_file}}"><i class="fa fa-file" aria-hidden="true"></i></a>
+                                                  <button type="button" class="delete-file" data-id="{{$group->id}}" data-type="2" style="color: red; padding: 7px; border:none; background-color: transparent"><i class="fa fa-times-circle" aria-hidden="true"></i></button>
+                                               </div>
+                                              @endif
                                           </td>
                                           <td>
                                               <button class="btn btn-light" data-toggle="modal" data-target="#edit_group{{$group->id}}"><i class="fa fa-edit"></i></button>
@@ -142,6 +170,10 @@
                                                               <div class="form-group">
                                                                   <label for="">Time table</label>
                                                                   <input type="file" class="form-control" name="timetable_file" placeholder="ds">
+                                                              </div>
+                                                              <div class="form-group">
+                                                                  <label for="">Session</label>
+                                                                  <input type="file" class="form-control" name="timetable_session_file" placeholder="ds">
                                                               </div>
                                                           </div>
                                                           <div class="modal-footer">
@@ -197,6 +229,17 @@
             if(confirm('O`chirishni tasdiqlaysizmi')){
                 // alert('.form-card-delete-'+id);
                 $('.form-card-delete-'+id).submit();
+            }
+        })
+    </script>
+
+    <script>
+        $('.delete-file').click(function(){
+            var id = $(this).attr('data-id');
+            var type = $(this).attr('data-type');
+            if(confirm("Faylni o`chirasizmi ? ")){
+                var url = '/admin/timetable-delete-file/'+id+'/'+type;
+                window.location.href = url;
             }
         })
     </script>

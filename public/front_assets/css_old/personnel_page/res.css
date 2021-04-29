@@ -1,0 +1,59 @@
+@media only screen and (min-width:1500px) {
+    .my-container {
+        width: 1140px;
+    }
+}
+
+@media only screen and (max-width:1290px) {
+    .my-container {
+        margin: 70px auto;
+    }
+}
+
+@media only screen and (max-width:1190px) {
+    .my-col-4-res {
+        flex-basis: 50%;
+        max-width: 50%;
+    }
+    .my-user-img img {
+        height: 427.812px;
+    }
+    .my-float_right {
+        float: right;
+    }
+    .my-float_left {
+        float: left;
+    }
+    .my-margin-cart_3 {
+        margin: 0;
+    }
+}
+
+@media only screen and (max-width:1192px) {
+    .my-tex-bar .my-paragrif-bar {
+        height: 200px;
+    }
+}
+
+@media only screen and (max-width:1090px) {
+    .my-user-img img {
+        height: 100%;
+    }
+    .my-col-4-res {
+        flex-basis: 100%;
+        max-width: 100%;
+    }
+    .my-img-cart {
+        width: 100%;
+    }
+}
+
+@media only screen and (max-width:1085px) {
+    .my-col-4-res-biograf {
+        flex-basis: 100%;
+        max-width: 100%;
+    }
+    .my-img-cart {
+        width: 100%;
+    }
+}

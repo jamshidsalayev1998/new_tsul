@@ -39,11 +39,23 @@
               </div>
               <!-- /.card-header -->
               <div class="card-body">
-                  <form action="{{route('admin_young_scientist_new.store')}}" class="scientist_form" method="post">
+                  <form action="{{route('admin_young_scientist_new.store')}}" class="scientist_form" method="post" enctype="multipart/form-data">
                       @csrf
                       <input type="text" name="data_id" hidden readonly>
                       <input type="text" name="has"  hidden readonly>
                   <div class="row">
+                      <div class="col-md-4">
+                          <div class="form-group">
+                          <label for="">Image</label>
+                          <div class="img-box border" style="width: 100%; height: 300px; overflow: hidden">
+                              <img src="" alt="" id="imagePreview1" style="width: 100%; height: auto; ">
+                               <input type="file" id="imageUpload1" hidden name="image">
+                           </div>
+                          <div>
+                          <button type="button" class="btn btn-light select-image1" style="right: 0; bottom: 0; position: absolute"><i class="fa fa-edit"></i></button>
+                            </div>
+                      </div>
+                      </div>
                       <div class="col-md-4">
                           <div class="form-group">
                               <label for="">Date</label>
@@ -391,7 +403,55 @@
     </script>
 
     <script>
-        function readURL1(input) {
+        // function readURL1(input) {
+        //     if (input.files && input.files[0]) {
+        //         var reader = new FileReader();
+        //         reader.onload = function(e) {
+        //             $('#imagePreview1').attr('src' , e.target.result);
+        //         }
+        //         reader.readAsDataURL(input.files[0]);
+        //     }
+        // }
+        // $("#imageUpload1").change(function() {
+        //     readURL1(this);
+        // });
+        // $('.select-image1').click(function(){
+        //     $("#imageUpload1").click();
+        // });
+
+
+        // function readURL2(input) {
+        //     if (input.files && input.files[0]) {
+        //         var reader = new FileReader();
+        //         reader.onload = function(e) {
+        //             $('#imagePreview2').attr('src' , e.target.result);
+        //         }
+        //         reader.readAsDataURL(input.files[0]);
+        //     }
+        // }
+        // $("#imageUpload2").change(function() {
+        //     readURL2(this);
+        // });
+        // $('.select-image2').click(function(){
+        //     $("#imageUpload2").click();
+        // });
+
+        // function readURL3(input) {
+        //     if (input.files && input.files[0]) {
+        //         var reader = new FileReader();
+        //         reader.onload = function(e) {
+        //             $('#imagePreview3').attr('src' , e.target.result);
+        //         }
+        //         reader.readAsDataURL(input.files[0]);
+        //     }
+        // }
+        // $("#imageUpload3").change(function() {
+        //     readURL3(this);
+        // });
+        // $('.select-image3').click(function(){
+        //     $("#imageUpload3").click();
+        // });
+         function readURL1(input) {
             if (input.files && input.files[0]) {
                 var reader = new FileReader();
                 reader.onload = function(e) {
@@ -405,39 +465,6 @@
         });
         $('.select-image1').click(function(){
             $("#imageUpload1").click();
-        });
-
-
-        function readURL2(input) {
-            if (input.files && input.files[0]) {
-                var reader = new FileReader();
-                reader.onload = function(e) {
-                    $('#imagePreview2').attr('src' , e.target.result);
-                }
-                reader.readAsDataURL(input.files[0]);
-            }
-        }
-        $("#imageUpload2").change(function() {
-            readURL2(this);
-        });
-        $('.select-image2').click(function(){
-            $("#imageUpload2").click();
-        });
-
-        function readURL3(input) {
-            if (input.files && input.files[0]) {
-                var reader = new FileReader();
-                reader.onload = function(e) {
-                    $('#imagePreview3').attr('src' , e.target.result);
-                }
-                reader.readAsDataURL(input.files[0]);
-            }
-        }
-        $("#imageUpload3").change(function() {
-            readURL3(this);
-        });
-        $('.select-image3').click(function(){
-            $("#imageUpload3").click();
         });
     </script>
 @endsection

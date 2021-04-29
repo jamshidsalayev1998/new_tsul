@@ -51,7 +51,7 @@ class RektoratController extends Controller
         return implode($pass); //turn the array into a string
     }
     public function store(Request $request){
-        return $request;
+//        return $request;
         $rektorat = new Rektorat();
         $rektorat->full_name_uz = $request->full_name_uz;
         $rektorat->full_name_ru = $request->full_name_ru;

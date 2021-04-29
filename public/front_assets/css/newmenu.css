@@ -116,6 +116,20 @@ h1, h2, h3, h4, h5, h6, p, span, a {
     text-align: center;
 }
 
+.symbols_box {
+    background-color: #2C42A6;
+    border-right:1px solid #233585;
+    text-decoration: none !important;
+    display: flex;
+    align-items: center;
+    height: 100%;
+    padding: 0 8px;
+}
+
+.symbols_box img {
+    width: 30px;
+    height: auto;
+}
 
 
 .main_links {
@@ -361,13 +375,15 @@ h1, h2, h3, h4, h5, h6, p, span, a {
     
 .bottom_nav .main_links >  a {
     color: black;
-    padding: 16px 0px;
-    display: block;
-    font-size: 14px;
+    font-size: 15px;
     font-weight: 500;
-    width: 200px;
+    width: 180px;
+    height: 60px;
     margin: 0 2px;
-    vertical-align: middle;
+    line-height: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
     
     
