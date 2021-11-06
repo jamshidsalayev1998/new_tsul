@@ -18,8 +18,10 @@ class RektorController extends Controller
 {
     public function index(){
         $rektor = Rektor::where('status' , 1)->first();
+        $menu = Menu::where('slug' , '/rektor')->first();
         return view('admin.pages.rektor.index' , [
-            'data' => $rektor
+            'data' => $rektor,
+            'menu' => $menu
         ]);
     }
 

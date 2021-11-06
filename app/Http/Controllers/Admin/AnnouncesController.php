@@ -62,7 +62,11 @@ class AnnouncesController extends Controller
         $new->short_info_ru = $request->short_info_ru;
         $new->short_info_en = $request->short_info_en;
         $new->event = $request->event;
+        if ($request->date){
+
         $new->date = $request->date;
+        }
+        $new->date = date('Y-m-d');
         $new->type_id = $request->type_id;
         if (isset($request->hashtags)){
 
@@ -111,7 +115,6 @@ class AnnouncesController extends Controller
         return $request;
     }
     public function update(Request $request , $id){
-//        return $request;
         $new =  Announce::find($id);
         $new->content_uz = $request->content_uz;
         $new->content_ru = $request->content_ru;

@@ -66,9 +66,9 @@
                                   <label for="">Name</label>
                                   <input type="text" class="form-control" name="name_uz">
                                   <label for="">Content</label>
-                                  <div id="toolbar-container1"></div>
-                                  <div id="editor1" data-text="editor_text1" class="border" ></div>
-                                  <textarea name="content_uz" hidden rows="11"  cols="30" id="editor_text1" class="form-control"></textarea>
+{{--                                  <div id="toolbar-container1"></div>--}}
+{{--                                  <div id="editor1" data-text="editor_text1" class="border" ></div>--}}
+                                  <textarea name="content_uz"  rows="11"  cols="30" id="editor_text1" class="form-control summernote1"></textarea>
                                   <label for="">Students</label>
                                   <div id="toolbar-container4"></div>
                                   <div id="editor4" data-text="editor_text4" class="border" ></div>
@@ -86,9 +86,9 @@
                                   <label for="">Name</label>
                                   <input type="text" class="form-control" name="name_ru">
                                   <label for="">Content</label>
-                                  <div id="toolbar-container2"></div>
-                                  <div id="editor2" data-text="editor_text2" class="border" ></div>
-                                  <textarea name="content_ru" hidden rows="11"  cols="30" id="editor_text2" class="form-control"></textarea>
+{{--                                  <div id="toolbar-container2"></div>--}}
+{{--                                  <div id="editor2" data-text="editor_text2" class="border" ></div>--}}
+                                  <textarea name="content_ru"  rows="11"  cols="30" id="editor_text2" class="form-control summernote2"></textarea>
                                   <label for="">Students</label>
                                    <div id="toolbar-container5"></div>
                                   <div id="editor5" data-text="editor_text5" class="border" ></div>
@@ -106,9 +106,9 @@
                                   <label for="">Name</label>
                                   <input type="text" class="form-control" name="name_en">
                                   <label for="">Content</label>
-                                  <div id="toolbar-container3"></div>
-                                  <div id="editor3" data-text="editor_text3" class="border" ></div>
-                                  <textarea name="content_en" hidden rows="11"  cols="30" id="editor_text3" class="form-control"></textarea>
+{{--                                  <div id="toolbar-container3"></div>--}}
+{{--                                  <div id="editor3" data-text="editor_text3" class="border" ></div>--}}
+                                  <textarea name="content_en"  rows="11"  cols="30" id="editor_text3" class="form-control summernote3"></textarea>
                                   <label for="">Students</label>
                                   <div id="toolbar-container6"></div>
                                   <div id="editor6" data-text="editor_text6" class="border" ></div>
@@ -152,6 +152,10 @@
     <script src="{{asset('js/faculties_create.js')}}"></script>
 
     <script>
-
+        $(document).ready(function(){
+            $('.summernote1').summernote();
+            $('.summernote2').summernote();
+            $('.summernote3').summernote();
+        })
     </script>
 @endsection

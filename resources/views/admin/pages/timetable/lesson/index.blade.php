@@ -189,7 +189,7 @@
                                               <button type="button" class="btn btn-light form-delete" data-id="{{$group->id}}">
                                                   <i class="fa fa-trash"></i>
                                               </button>
-                                              <form action="#" class="form-card-delete-{{$group->id}}" method="post">
+                                              <form action="{{route('admin.lesson.group.delete')}}" class="form-card-delete-{{$group->id}}" method="post">
                                                   @method('DELETE')
                                                   @csrf
                                                   <input type="text" hidden readonly value="{{$group->id}}" name="id">

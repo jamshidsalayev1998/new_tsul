@@ -10,8 +10,8 @@
     <div class="top-icons">
         <a href="https://www.fb.com/tsulofficial" target="_blank"><i class="fab fa-facebook-f"></i></a>
         <a href="https://t.me/tsulofficial" target="_blank"><i class="fab fa-telegram-plane"></i></a>
-        <a href="#" target="_blank"><i class="fab fa-instagram"></i></a>
-        <a href="https://twitter.com/tsulofficial" target="_blank"><i class="fab fa-twitter"></i></a>
+        <a href="https://www.instagram.com/accounts/login/" target="_blank"><i class="fab fa-instagram"></i></a>
+        <a href="https://twitter.com/tashkentlaw" target="_blank"><i class="fab fa-twitter"></i></a>
         <a href="https://www.youtube.com/channel/UCTAhGEQDYohjqmDAsD9yRBg" target="_blank"><i class="fab fa-youtube"></i></a>
     </div>
 
@@ -58,7 +58,7 @@
                             <ul>
                                 <h6><a href="#">{{$mn->$name_locale}}</a></h6>
                                 @foreach($mn->childs() as $mn_ch)
-                                <h5><a href="@if($mn_ch->slug){{$mn_ch->slug}}@else#@endif">{{$mn_ch->$name_locale}}</a></h5>
+                                    @if($mn_ch->has_child()) <h5> @else <h5> @endif <a href="@if($mn_ch->slug){{$mn_ch->slug}}@else#@endif">@if(!$mn_ch->has_child())<i class="fas fa-caret-right"></i>@endif {{$mn_ch->$name_locale}}</a> @if($mn_ch->has_child()) </h5>@else </li> @endif
                                 @foreach($mn_ch->childs() as $mn_ch_ch)
                                   <li><a href="@if($mn_ch_ch->slug){{$mn_ch_ch->slug}}@else#@endif"><i class="fas fa-caret-right"></i>{{$mn_ch_ch->$name_locale}}</a></li>
                                  @endforeach
@@ -74,7 +74,7 @@
 
 
                 <!--Open secon menu panel-->
-              <div class="col-xl-12  mb-4 fixed-footer">
+              <div class="col-xl-12  pb-4 pt-1 fixed-footer" style="background-color: #0A2355">
                 <button class="button-open animate__animated animate__fadeInUp" onclick="openForm()">
 
                     <div class="top-menu-linksNoactiveOne fixed-bottom d-flex">
@@ -119,7 +119,7 @@
             <a href="https://www.fb.com/tsulofficial" target="_blank"><i class="fab fa-facebook-f"></i></a>
             <a href="https://t.me/tsulofficial" target="_blank"><i class="fab fa-telegram-plane"></i></a>
             <a href="#" target="_blank"><i class="fab fa-instagram"></i></a>
-            <a href="https://twitter.com/tsulofficial" target="_blank"><i class="fab fa-twitter"></i></a>
+            <a href="https://twitter.com/tashkentlaw" target="_blank"><i class="fab fa-twitter"></i></a>
             <a href="https://www.youtube.com/channel/UCTAhGEQDYohjqmDAsD9yRBg" target="_blank"><i class="fab fa-youtube"></i></a>
         </div>
 

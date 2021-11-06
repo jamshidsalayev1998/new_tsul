@@ -1,8 +1,5 @@
 @extends('simple.layouts.master')
-@section('links')
-    <link rel="stylesheet" href="{{asset('front_assets/css/faculty_and_center.css')}}">
-    @endsection
-@section('content')
+@section('title')
     <?php
         $locale = app()->getLocale();
         $content_locale = 'content_'.$locale;
@@ -19,6 +16,13 @@
         $professional_development_locale = 'professional_development_'.$locale;
         $labor_activity_locale = 'labor_activity_'.$locale;
     ?>
+    {{$data->$name_locale}}
+    @endsection
+@section('links')
+    <link rel="stylesheet" href="{{asset('front_assets/css/faculty_and_center.css')}}">
+    @endsection
+@section('content')
+
   <div class="faculty_and_center py-3">
                 <div class="container">
                     <div class="row">

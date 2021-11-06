@@ -5,6 +5,7 @@ $locale = app()->getLocale();
         $short_desc_locale = 'short_description_'.$locale;
         $full_inf_locale = 'full_information_'.$locale;
         $address_locale = 'address_'.$locale;
+        $logo_locale = 'front_assets/assets/img/logo_university/TDYU_'.$locale.'_white.png';
 ?>
 <footer class="eighth-part w-100">
             <div class="footer_img_box">
@@ -15,8 +16,8 @@ $locale = app()->getLocale();
                     <div class="footer_box">
                         <div>
                             <div>
-                                <div class="footer_logo_box">
-                                    <img src="{{asset('front_assets/assets/img/logo_university/TDYU_UZ_white.png')}}" alt="">
+                                <div style="height: auto !important; width:auto;" class="footer_logo_box">
+                                    <img src="{{asset($logo_locale)}}" alt="">
                                 </div>
                                 <h5 class="footer_about_universty">
                                     {!! $about->$short_desc_locale !!}

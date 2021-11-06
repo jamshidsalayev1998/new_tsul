@@ -18,7 +18,7 @@
       <div class="container-fluid">
         <div class="row">
           <div class="col-12">
-              <form action="{{route('admin_center.update' , ['admin_center' => $data->id])}}" class="scientist_form" method="post">
+              <form action="{{route('admin_center.update' , ['admin_center' => $data->id])}}" class="form_news" method="post">
                   @csrf
                   @method('PUT')
             <div class="card">
@@ -28,7 +28,7 @@
                         <h3 class="card-title">Faculty edit</h3>
                     </div>
                       <div>
-                        <button type="button" class="btn btn-success saqlash_button" >saqlash</button>
+                        <button type="submit" class="btn btn-success saqlash_button" >saqlash</button>
                     </div>
 
                   </div>
@@ -69,9 +69,9 @@
                                   <label for="">short info</label>
                                   <textarea name="short_info_uz"  rows="3"  cols="30" id="editor_text4" class="form-control">{{$data->short_info_uz}}</textarea>
                                   <label for="">Content</label>
-                                  <div id="toolbar-container1"></div>
+{{--                                  <div id="toolbar-container1"></div>--}}
                                   <div id="editor1" data-text="editor_text1" class="border" >{!! $data->content_uz !!}</div>
-                                  <textarea name="content_uz" hidden rows="11"  cols="30" id="editor_text1" class="form-control">{{$data->content_uz}}</textarea>
+                                  <textarea name="content_uz" hidden  rows="11"  cols="30" id="editor_text1" class="form-control summernote1">{{$data->content_uz}}</textarea>
                               </div>
                               <div class="tab-pane fade" id="custom-tabs-four-2" role="tabpanel" aria-labelledby="custom-tabs-four-2-tab">
                                   <label for="">Name</label>
@@ -79,9 +79,9 @@
                                   <label for="">short info</label>
                                   <textarea name="short_info_ru"  rows="3"  cols="30" id="editor_text5" class="form-control">{{$data->short_info_ru}}</textarea>
                                   <label for="">Content</label>
-                                   <div id="toolbar-container2"></div>
+{{--                                   <div id="toolbar-container2"></div>--}}
                                   <div id="editor2" data-text="editor_text2" class="border" >{!! $data->content_ru !!}</div>
-                                  <textarea name="content_ru" hidden rows="11"  cols="30" id="editor_text2" class="form-control">{{$data->content_ru}}</textarea>
+                                  <textarea name="content_ru" hidden rows="11"  cols="30" id="editor_text2" class="form-control summernote2">{{$data->content_ru}}</textarea>
                               </div>
                               <div class="tab-pane fade" id="custom-tabs-four-3" role="tabpanel" aria-labelledby="custom-tabs-four-3-tab">
                                   <label for="">Name</label>
@@ -89,9 +89,9 @@
                                   <label for="">short info</label>
                                   <textarea name="short_info_en"  rows="3"  cols="30" id="editor_text6" class="form-control">{{$data->short_info_en}}</textarea>
                                   <label for="">Content</label>
-                                    <div id="toolbar-container3"></div>
+{{--                                    <div id="toolbar-container3"></div>--}}
                                   <div id="editor3" data-text="editor_text3" class="border" >{!! $data->content_en !!}</div>
-                                  <textarea name="content_en" hidden rows="11"  cols="30" id="editor_text3" class="form-control">{{$data->content_en}}</textarea>
+                                  <textarea name="content_en" hidden  rows="11"  cols="30" id="editor_text3" class="form-control summernote3">{{$data->content_en}}</textarea>
                               </div>
                             </div>
                           </div>
@@ -117,14 +117,20 @@
     <!-- /.content -->
   </div>
 @endsection
+@section('js_after')
+    <script src="{{asset('admin_lte/ckeditor5/build/ckeditor.js')}}"></script>
+    <script src="{{asset('admin_lte/ckeditor5/ckeditor5_connect.js')}}"></script>
+@endsection
 @section('js')
-    <script>
-
-    </script>
+    <script src="{{asset('admin_lte/ckeditor5/correcting.js')}}"></script>
     <script src="{{asset('admin_lte/ckeditor5/build/ckeditor.js')}}"></script>
     <script src="{{asset('js/faculties_create.js')}}"></script>
 
     <script>
-
+        //  $(document).ready(function(){
+        //     $('.summernote1').summernote();
+        //     $('.summernote2').summernote();
+        //     $('.summernote3').summernote();
+        // })
     </script>
 @endsection

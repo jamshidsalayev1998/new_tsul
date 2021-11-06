@@ -10,6 +10,8 @@
         $title_locale = 'title_'.$locale;
         $image_locale = 'image_'.$locale;
         $name_locale ='name_'.$locale;
+        $short_info_locale ='short_info_'.$locale;
+        $logo_locale = 'front_assets/assets/img/logo_university/_TDYU_'.$locale.'_white_primary.png';
         $i = 0;
     ?>
 
@@ -19,25 +21,25 @@
                     <div class="col-xl-12">
                         <div>
                             <a href="/" class="text-secondary"
-                                style="font-weight:500; font-size: 15px;">Главная страница</a>
+                                style="font-weight:500; font-size: 15px;">@lang('index.Главная страница')</a>
                             <span class="text-secondary" style="font-weight:500">&nbsp; > &nbsp;</span>
                             <a href="{{route('simple.news')}}" class="text-secondary"
-                                style="font-weight:500;  font-size: 15px;">Новости</a>
+                                style="font-weight:500;  font-size: 15px;">@lang('index.Новости')</a>
                         </div>
                     </div>
                     <div class="col-xl-9">
                         <div class="row">
                             <div class="col-xl-12 my-3">
-                                 @foreach($types as $type)
-                                    <button class="btn_link_menu">{{$type->$name_locale}}</button>
-                                 @endforeach
+{{--                                 @foreach($types as $type)--}}
+{{--                                    <button class="btn_link_menu">{{$type->$name_locale}}</button>--}}
+{{--                                 @endforeach--}}
                             </div>
                             <div>
                                 <div style="width: 100%; align-items: center"  class="text-center">
                                     <h3 ><b>{{$new->$title_locale}}</b></h3>
                                 </div>
-                                <div class="rg_main_left_img">
-                                    <img src="{{asset('')}}{{$new->$image_locale}}" alt="">
+                                <div class="rg_main_left_img text-center">
+                                    <img style="width: auto!important;" src="{{asset('')}}{{$new->$image_locale}}" alt="">
                                 </div>
                                 <span class="card-text">
 
@@ -46,62 +48,58 @@
                             </div>
                         </div>
                         <div class="last_news_bottom_box">
-                            <h5>Последние новости</h5>
+                            <h5>@lang('index.Последние новости')</h5>
                             <div class="row border-top">
                                 @foreach($others as $other)
                                 <div class="col-lg-4 mt-3 last_news_bottom_card">
-                                    <div>
-                                        <img src="{{asset('')}}{{$other->$image_locale}}" alt="">
+                                    <a href="{{route('simple.news.show' , ['id' => $other->id])}}">
+                                    <div class="text-center">
+                                        <img style="width: auto!important;" src="{{asset('')}}{{$other->$image_locale}}" alt="">
                                     </div>
-                                    <button class="btn_link_menu mt-2">Образование</button>
-                                    <h6 class="last_news_bottom_card_text">
-                                        Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                                        Vero tempora mollitia amet nemo reprehenderit laborum eos officia
+{{--                                    <button class="btn_link_menu mt-2">Образование</button>--}}
+                                    <h6 class="last_news_bottom_card_text mt-2">
+                                        {{$other->$short_info_locale}}
                                     </h6>
-                                    <span class="text-secondary text-end d-block"
-                                        style="font-size: 13px; font-weight: 500;">28.12.2021</span>
+                                    <span class="text-secondary text-end d-block" style="font-size: 13px; font-weight: 500;">28.12.2021</span>
+                                    </a>
                                 </div>
                                 @endforeach
 
                                 <p class="text-end mt-2">
-                                    <a href="{{route('simple.news')}}" style="font-weight: 500; color: #006523; font-size: 14px;">Все
-                                        новости</a>
+                                    <a href="{{route('simple.news')}}" style="font-weight: 500; color: #006523; font-size: 14px;">@lang('index.Все новости')</a>
                                 </p>
                             </div>
                         </div>
                     </div>
                     <div class="col-xl-3 ">
                         <div class="social_box mt-3">
-                            <h5>НЕ ПРОПУСТИТЕ ВАЖНОЕ</h5>
-                            <div>
-                                <div class="d-flex w-100 justify-content-center ">
-                                    <div class="text-center">
-                                        <div><i class="fab fa-twitter"></i></div>
-                                        <h6 class="m-0 p-0">21,290</h6>
-                                        <span class="text-secondary font-weight-bold font-size-13">подписчиков</span>
-                                    </div>
-                                    <div class="text-center">
-                                        <div><i class="fab fa-youtube"></i></div>
-                                        <h6 class="m-0 p-0">21,290</h6>
-                                        <span class="text-secondary font-weight-bold font-size-13">подписчиков</span>
-                                    </div>
-                                </div>
-                                <div class="d-flex mt-2 justify-content-center ">
-                                    <div class="text-center">
-                                        <div><i class="fab fa-telegram-plane"></i></div>
-                                        <h6 class="m-0 p-0">21,290</h6>
-                                        <span class="text-secondary font-weight-bold font-size-13">подписчиков</span>
-                                    </div>
-                                    <div class="text-center">
-                                        <div><i class="fab fa-facebook-f"></i></div>
-                                        <h6 class="m-0 p-0">21,290</h6>
-                                        <span class="text-secondary font-weight-bold font-size-13">подписчиков</span>
-                                    </div>
-                                </div>
+                            <h5>@lang('index.НЕ ПРОПУСТИТЕ ВАЖНОЕ')</h5>
+                            <div class="left_social_box">
+                                <a href="https://twitter.com/tsulofficial" class="left_social_box_items" target="_blank" rel="noopener noreferrer">
+                                    <i class="fab fa-twitter" style="color: #03A9F5;"></i>
+                                    <span class="card-text" style="font-size: 13px; font-weight: bold;">@lang('index.tw')</span>
+                                    <span class="font-weight-bold" style="font-size: 13px; color: grey;">@lang('index.подписчиков')</span>
+                                </a>
+                                <a href="https://www.youtube.com/channel/UCTAhGEQDYohjqmDAsD9yRBg" class="left_social_box_items" target="_blank" rel="noopener noreferrer">
+                                    <i class="fab fa-youtube" style="color: #FE0000;"></i>
+                                    <span class="card-text" style="font-size: 13px; font-weight: bold;">@lang('index.yb')</span>
+                                    <span class="font-weight-bold" style="font-size: 13px; color: grey;">@lang('index.подписчиков')</span>
+                                </a>
+                                <a href="https://t.me/tsulofficial" class="left_social_box_items" target="_blank" rel="noopener noreferrer">
+                                    <i class="fab fa-telegram-plane" style="color: #03A9F5;"></i>
+                                    <span class="card-text" style="font-size: 13px; font-weight: bold;">@lang('index.tg')</span>
+                                    <span class="font-weight-bold" style="font-size: 13px; color: grey;">@lang('index.подписчиков')</span>
+                                </a>
+                                <a href="https://www.fb.com/tsulofficial" class="left_social_box_items" target="_blank" rel="noopener noreferrer">
+                                    <i class="fab fa-facebook-f" style="color: #4267B8;"></i>
+                                    <span class="card-text" style="font-size: 13px; font-weight: bold;">@lang('index.fb')</span>
+                                    <span class="font-weight-bold" style="font-size: 13px; color: grey;">@lang('index.подписчиков')</span>
+                                </a>
+
                             </div>
                         </div>
                         <div class="rg_anons mt-3">
-                            <h5>Анонсы</h5>
+                            <h5>@lang('index.Анонсы')</h5>
                             <div>
                                 @foreach($announces as $anc)
                                 <div>
@@ -118,92 +116,11 @@
 
                             </div>
                             <p class="text-end">
-                                <a href="#" class="text-dark" style="font-weight: 500;">Все анонсы</a>
+                                <a href="#" class="text-dark" style="font-weight: 500;">@lang('index.Все анонсы')</a>
                             </p>
                         </div>
-{{--                        <div class="rg_last_news">--}}
-{{--                            <h5>Последние статье</h5>--}}
-{{--                            <div>--}}
-{{--                                <a href="#" style="text-decoration: none; color: black;">--}}
-{{--                                    <div class="rg_news_box">--}}
-{{--                                        <div class="lg_news_img_box">--}}
-{{--                                            <img src="assets/img/img1.jpg" alt="">--}}
-{{--                                        </div>--}}
-{{--                                        <div class="lg_news_text_box">--}}
-{{--                                            <div> Lorem ipsum dolor sit amet consectetur adipisicing elit.--}}
-{{--                                                Rerum rem odit deserunt officia minima modi, quisquam fuga,--}}
-{{--                                                dignissimos dolorem commodi amet consequatur provident facere--}}
-{{--                                                cupiditate voluptates esse temporibus porro earum!</div>--}}
-{{--                                        </div>--}}
-{{--                                    </div>--}}
-{{--                                </a>--}}
-{{--                                <a href="#" style="text-decoration: none; color: black;">--}}
-{{--                                    <div class="rg_news_box border-top">--}}
-{{--                                        <div class="lg_news_img_box">--}}
-{{--                                            <img src="assets/img/img1.jpg" alt="">--}}
-{{--                                        </div>--}}
-{{--                                        <div class="lg_news_text_box">--}}
-{{--                                            <div> Lorem ipsum dolor sit amet consectetur adipisicing elit.--}}
-{{--                                                Rerum rem odit deserunt officia minima modi, quisquam fuga,--}}
-{{--                                                dignissimos dolorem commodi amet consequatur provident facere--}}
-{{--                                                cupiditate voluptates esse temporibus porro earum!</div>--}}
-{{--                                        </div>--}}
-{{--                                    </div>--}}
-{{--                                </a>--}}
-{{--                                <a href="#" style="text-decoration: none; color: black;">--}}
-{{--                                    <div class="rg_news_box border-top">--}}
-{{--                                        <div class="lg_news_img_box">--}}
-{{--                                            <img src="assets/img/img1.jpg" alt="">--}}
-{{--                                        </div>--}}
-{{--                                        <div class="lg_news_text_box">--}}
-{{--                                            <div> Lorem ipsum dolor sit amet consectetur adipisicing elit.--}}
-{{--                                                Rerum rem odit deserunt officia minima modi, quisquam fuga,--}}
-{{--                                                dignissimos dolorem commodi amet consequatur provident facere--}}
-{{--                                                cupiditate voluptates esse temporibus porro earum!</div>--}}
-{{--                                        </div>--}}
-{{--                                    </div>--}}
-{{--                                </a>--}}
-{{--                            </div>--}}
-{{--                            <p class="text-end">--}}
-{{--                                <a href="#" class="text-dark" style="font-weight: 500;">Все статье</a>--}}
-{{--                            </p>--}}
-{{--                        </div>--}}
-                        <div class="bottom_youtube_box border">
-                            <div class="d-flex align-items-center">
-                                <span style="font-size: 18px; font-weight: bold;">
-                                    YouTube
-                                </span>
-                                <i class="fab fa-youtube ml-2" style="color:#FF0000; font-size: 34px;"></i>
-                            </div>
-                            <div class="d-flex align-items-center mt-2">
-                                <div class="youtube_profile">
-                                    <span class="yt_icon_check"><i class="fas fa-check"></i></span>
-                                    <img src="assets/img/img1.jpg" alt="">
-                                </div>
-                                <div class="ml-2">
-                                    <h6 class="m-0 p-0 font-weight-bold">29,290</h6>
-                                    <span class="text-secondary" style="font-weight: 500;">подписчиков</span>
-                                </div>
-                            </div>
-                            <div class="youtube_video_box">
-                                <div>
-                                    <iframe src="https://www.youtube.com/embed/tgbNymZ7vqY">
-                                    </iframe>
-                                </div>
-                                <div>
-                                    <iframe src="https://www.youtube.com/embed/tgbNymZ7vqY">
-                                    </iframe>
-                                </div>
-                                <div>
-                                    <iframe src="https://www.youtube.com/embed/tgbNymZ7vqY">
-                                    </iframe>
-                                </div>
-                                <div>
-                                    <iframe src="https://www.youtube.com/embed/tgbNymZ7vqY">
-                                    </iframe>
-                                </div>
-                            </div>
-                        </div>
+
+                        @include('simple.includes.youtube_box')
                     </div>
                 </div>
             </div>

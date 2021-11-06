@@ -26,7 +26,8 @@ class SectionController extends Controller
         $links = Menu::where('leap', $menu->leap)->where('parent_id', $menu->parent_id)->get();
         return view('simple.sections', [
             'data' => $faculties,
-            'links' => $links
+            'links' => $links,
+            'menu' => $menu
         ]);
     }
 

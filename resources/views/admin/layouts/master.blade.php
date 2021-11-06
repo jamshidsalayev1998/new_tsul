@@ -213,7 +213,7 @@
             $(document).ready(function() {
               $(document).Toasts('create', {
                 class: 'bg-success',
-                title: 'INTALIM',
+                title: '',
                 subtitle: '',
                 body: '{{session('success')}}.'
               })
@@ -251,6 +251,35 @@
     $('.change_eye_menu').click(function () {
         var id = $(this).attr('data-id');
         var url = '/admin/admin-change-eye-menu';
+        var csrf = "{{ csrf_token() }}";
+        var formdata = {
+            'menu_id':id,
+            '_token': csrf
+        };
+        var eye_v = $(this).find('i');
+        show_loader();
+        $.ajax({
+            url:url,
+            method: 'POST',
+            data: formdata,
+            success:function (result) {
+                if(eye_v.hasClass('fa-eye')){
+                    eye_v.removeClass('fa-eye');
+                    eye_v.addClass('fa-eye-slash');
+                }
+                else{
+                    eye_v.removeClass('fa-eye-slash');
+                    eye_v.addClass('fa-eye');
+                }
+                hide_loader();
+                // alert(result);
+            }
+
+        })
+    });
+     $('.change_eye_menu_top').click(function () {
+        var id = $(this).attr('data-id');
+        var url = '/admin/admin-change-eye-top-menu';
         var csrf = "{{ csrf_token() }}";
         var formdata = {
             'menu_id':id,

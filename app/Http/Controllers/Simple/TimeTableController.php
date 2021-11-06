@@ -23,8 +23,10 @@ class TimeTableController extends Controller
      */
     public function index(){
         $courses = Course::all();
+        $menu = Menu::where('slug' , '/timetable-lesson')->first();
         return view('simple.timetable' , [
-            'courses' => $courses
+            'courses' => $courses,
+            'menu' => $menu
         ]);
     }
     public function index_session(){

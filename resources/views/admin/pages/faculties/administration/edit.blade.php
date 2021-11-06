@@ -80,17 +80,17 @@
                                                 <input type="text" class="form-control" name="reception_days_uz" value="{{$data->reception_days_uz}}">
                                           </div>
                                       </div>
+{{--                                      <div class="col-md-12">--}}
+{{--                                          <div class="form-group">--}}
+{{--                                              <label for="">Mehnat faoliyati uz</label>--}}
+{{--                                                <div id="toolbar-container1"></div>--}}
+{{--                                                  <div id="editor1" data-text="editor_text1" class="border" >{!! $data->labor_activity_uz !!}</div>--}}
+{{--                                                  <textarea name="labor_activity_uz" hidden rows="11"  cols="30" id="editor_text1" class="form-control">{{$data->labor_activity_uz}}</textarea>--}}
+{{--                                          </div>--}}
+{{--                                      </div>--}}
                                       <div class="col-md-12">
                                           <div class="form-group">
-                                              <label for="">Mehnat faoliyati uz</label>
-                                                <div id="toolbar-container1"></div>
-                                                  <div id="editor1" data-text="editor_text1" class="border" >{!! $data->labor_activity_uz !!}</div>
-                                                  <textarea name="labor_activity_uz" hidden rows="11"  cols="30" id="editor_text1" class="form-control">{{$data->labor_activity_uz}}</textarea>
-                                          </div>
-                                      </div>
-                                      <div class="col-md-12">
-                                          <div class="form-group">
-                                              <label for="">Malaka oshirish uz</label>
+                                              <label for="">Talim profili uz</label>
                                                 <div id="toolbar-container2"></div>
                                                   <div id="editor2" data-text="editor_text2" class="border" >{!! $data->professional_development_uz !!}</div>
                                                   <textarea name="professional_development_uz" hidden rows="11"  cols="30" id="editor_text2" class="form-control">{{$data->professional_development_uz}}</textarea>
@@ -140,17 +140,17 @@
                                                 <input type="text" class="form-control" name="reception_days_ru" value="{{$data->reception_days_ru}}">
                                           </div>
                                       </div>
+{{--                                      <div class="col-md-12">--}}
+{{--                                          <div class="form-group">--}}
+{{--                                              <label for="">Mehnat faoliyati ru</label>--}}
+{{--                                                <div id="toolbar-container5"></div>--}}
+{{--                                                  <div id="editor5" data-text="editor_text5" class="border" >{!! $data->labor_activity_ru !!}</div>--}}
+{{--                                                  <textarea name="labor_activity_ru" hidden rows="11"  cols="30" id="editor_text5" class="form-control">{{$data->labor_activity_ru}}</textarea>--}}
+{{--                                          </div>--}}
+{{--                                      </div>--}}
                                       <div class="col-md-12">
                                           <div class="form-group">
-                                              <label for="">Mehnat faoliyati ru</label>
-                                                <div id="toolbar-container5"></div>
-                                                  <div id="editor5" data-text="editor_text5" class="border" >{!! $data->labor_activity_ru !!}</div>
-                                                  <textarea name="labor_activity_ru" hidden rows="11"  cols="30" id="editor_text5" class="form-control">{{$data->labor_activity_ru}}</textarea>
-                                          </div>
-                                      </div>
-                                      <div class="col-md-12">
-                                          <div class="form-group">
-                                              <label for="">Malaka oshirish ru</label>
+                                              <label for="">Talim profili ru</label>
                                                 <div id="toolbar-container6"></div>
                                                   <div id="editor6" data-text="editor_text6" class="border" >{!! $data->professional_development_ru !!}</div>
                                                   <textarea name="professional_development_ru" hidden rows="11"  cols="30" id="editor_text6" class="form-control">{{$data->professional_development_ru}}</textarea>
@@ -200,17 +200,17 @@
                                                 <input type="text" class="form-control" name="reception_days_en" value="{{$data->reception_days_en}}">
                                           </div>
                                       </div>
+{{--                                      <div class="col-md-12">--}}
+{{--                                          <div class="form-group">--}}
+{{--                                              <label for="">Mehnat faoliyati en</label>--}}
+{{--                                                <div id="toolbar-container9"></div>--}}
+{{--                                                  <div id="editor9" data-text="editor_text9" class="border" >{!! $data->labor_activity_en !!}</div>--}}
+{{--                                                  <textarea name="labor_activity_en" hidden rows="11"  cols="30" id="editor_text9" class="form-control">{{$data->labor_activity_en}}</textarea>--}}
+{{--                                          </div>--}}
+{{--                                      </div>--}}
                                       <div class="col-md-12">
                                           <div class="form-group">
-                                              <label for="">Mehnat faoliyati en</label>
-                                                <div id="toolbar-container9"></div>
-                                                  <div id="editor9" data-text="editor_text9" class="border" >{!! $data->labor_activity_en !!}</div>
-                                                  <textarea name="labor_activity_en" hidden rows="11"  cols="30" id="editor_text9" class="form-control">{{$data->labor_activity_en}}</textarea>
-                                          </div>
-                                      </div>
-                                      <div class="col-md-12">
-                                          <div class="form-group">
-                                              <label for="">Malaka oshirish en</label>
+                                              <label for="">Talim profili</label>
                                                 <div id="toolbar-container10"></div>
                                                   <div id="editor10" data-text="editor_text10" class="border" >{!! $data->professional_development_en !!}</div>
                                                   <textarea name="professional_development_en" hidden rows="11"  cols="30" id="editor_text10" class="form-control">{{$data->professional_development_en}}</textarea>

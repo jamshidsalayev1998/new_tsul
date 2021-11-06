@@ -34,7 +34,7 @@
                             <h4> <a href="{{route('simple.rektorat.show' , ['id' => $item->id])}}">{{$item->$full_name_locale}}</a> </h4>
                             <hr>
                             <p>Ученое звание:</p>
-                            <h5>{{$item->$academic_title_locale}}.</h5>
+                            <h5>{{$item->$academic_title_locale}}</h5>
 
 
                             <p>Ученая степень:</p>

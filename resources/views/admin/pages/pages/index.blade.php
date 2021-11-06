@@ -26,7 +26,7 @@
               </div>
               <!-- /.card-header -->
               <div class="card-body">
-                  <table class="table table-bordered">
+                  <table class="table table-bordered connect-datatable">
                       <thead>
                       <tr>
                           <th class="last-td">
@@ -53,7 +53,7 @@
                                   <a target="_blank" class="btn btn-light" href="/general-page/{{$item->slug}}"><i class="fa fa-eye"></i></a>
                               </td>
                               <td>
-                                  <a class="btn btn-light" href=""><i class="fa fa-edit"></i></a>
+                                  <a class="btn btn-light" href="{{route('admin.page.edit' , ['id' => $item->id])}}"><i class="fa fa-edit"></i></a>
 
                               </td>
                               <td class="last-td">

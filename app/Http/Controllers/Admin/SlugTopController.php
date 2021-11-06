@@ -20,7 +20,7 @@ class SlugTopController extends Controller
         $clear = 0;
         if ($menu->slug){
             if ($menu->dynamik == 0){
-                return redirect('/admin'.$menu->slug);
+                return redirect('/admin'.$menu->admin_slug);
             }
             $page = Page::where('slug' , str_replace('/general-page/', '',$menu->slug))->first();
             $for_slug =  str_replace('/general-page/', '',$menu->slug);
@@ -31,6 +31,7 @@ class SlugTopController extends Controller
             $for_slug = $this->clear_slug($menu->name_ru);
             $for_slug = 'top-menu-'.$this->cry_lat($for_slug);
         }
+//        return $page;
 
         return view('admin.pages.slugs.index_top' , [
             'page' => $page,

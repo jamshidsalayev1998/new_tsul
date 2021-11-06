@@ -491,7 +491,7 @@ $menus = 'App\Menu'::where('leap' , 0)->basic()->get();
                     <div class="sidebar-footer">
                         <a href="https://www.fb.com/tsulofficial" target="_blank">
                             <i class="fab fa-facebook text-white"></i>
-                            <span class="badge badge-pill badge-warning notification">3</span>
+                            <span class="badge badge-pill badge-warning notification">@lang('index.myb')</span>
                         </a>
                         <a href="https://t.me/tsulofficial" target="_blank">
                             <i class="fab fa-telegram text-white"></i>

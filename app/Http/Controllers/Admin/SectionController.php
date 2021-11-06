@@ -210,4 +210,10 @@ class SectionController extends Controller
         return $faculty;
     }
 
+    public function destroy($id){
+        $section = Section::find($id);
+        $section->delete();
+        return redirect()->back()->with('success' , 'O`chirildi');
+    }
+
 }

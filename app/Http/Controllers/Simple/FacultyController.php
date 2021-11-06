@@ -20,11 +20,12 @@ class FacultyController extends Controller
      */
     public function index(){
         $faculties = Faculty::all();
-        $menu = Menu::where('slug' , '/all-faculties')->first();
+        $menu = Menu::where('slug' , '/all-study-programs')->first();
         $links = Menu::where('leap' , $menu->leap)->where('parent_id' , $menu->parent_id)->get();
         return view('simple.all_faculties' , [
             'data' => $faculties,
-            'links' => $links
+            'links' => $links,
+            'menu' => $menu
         ]);
     }
 

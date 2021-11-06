@@ -22,7 +22,7 @@ class NewwController extends Controller
     public function index(){
         $news = Neww::orderBy('id' , 'DESC')->get();
         $types = NewwType::all();
-        $announces = Announce::all();
+        $announces = Announce::orderBy('date' , 'DESC')->get();
         return view('simple.news' , [
             'data' => $news,
             'announces' => $announces,
@@ -34,7 +34,7 @@ class NewwController extends Controller
         $new = Neww::find($id);
         $others = Neww::where('id' , '<>' , $id)->orderBy('id' , 'DESC')->get();
         $types = NewwType::all();
-        $announces = Announce::orderBy('id' , 'DESC')->get();
+        $announces = Announce::orderBy('date' , 'DESC')->get();
         return view('simple.news_show' , [
             'types' => $types,
             'new' => $new,

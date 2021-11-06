@@ -43,6 +43,7 @@
                           </th>
                           <th class="last-td"></th>
                           <th class="last-td"></th>
+                          <th class="last-td"></th>
 
 
                       </tr>
@@ -60,6 +61,13 @@
                               </td>
                               <td>
                                   <a class="btn btn-light" href="{{route('section.administration.index' , ['id' => $item->id])}}"><i class="fa fa-users" aria-hidden="true"></i></a>
+                              </td>
+                              <td>
+                                  <button class="btn btn-danger form-delete" data-id="{{$item->id}}"><i class="fa fa-trash"></i></button>
+                                  <form class="form-card-delete-{{$item->id}}" action="{{route('admin_section.destroy' , ['admin_section' => $item->id])}}" method="post">
+                                      @csrf
+                                      @method('DELETE')
+                                  </form>
                               </td>
                           </tr>
                       @endforeach

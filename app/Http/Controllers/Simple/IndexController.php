@@ -6,9 +6,12 @@ use App\Http\Controllers\Controller;
 use App\Menu;
 use App\SliderImage;
 
+use Mail;
+
 use App\SliderText;
 use App\SystemCard;
 use Illuminate\Http\Request;
+use App\Mail\OrderCall;
 
 class IndexController extends Controller
 {
@@ -36,4 +39,43 @@ class IndexController extends Controller
             'about' => $about
         ]);
     }
+
+    public function xarid(){
+
+        return view('simple.xarid' , [
+
+        ]);
+    }
+
+    public function using_services(Request $request){
+
+        $fio = $request->fio;
+        $phone = $request->phone;
+        $email = $request->email;
+        $to = "b.shamsutdinov@tsul.uz";
+        $subject = "Mail From website";
+        $txt ="Fio = ". $fio . "\r\n  Phone = " . $phone;
+        Mail::to($to)->send(new OrderCall($phone , $fio));
+
+        return redirect()->back();
+
+    }
+
 }
+
+
+// <?php
+// //get data from form
+
+// $fio = $_POST['fio'];
+// $phone= $_POST['phone'];
+// $to = "nazirovrafiqjon98@gmail.com";
+// $subject = "Mail From website";
+// $txt ="Fio = ". $fio . "\r\n  Phone = " . $phone;
+// $headers = "From: noreply@tsul.uz";
+// if($email!=NULL){
+//     mail($to,$subject,$txt,$headers);
+// }
+// //redirect
+// header("Location:tsul.uz");
+// ?>

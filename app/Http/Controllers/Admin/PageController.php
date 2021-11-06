@@ -17,7 +17,7 @@ class PageController extends Controller
      * @return void
      */
     public function index(){
-        $data = Page::all();
+        $data = Page::orderBy('id' , 'DESC')->get();
         return view('admin.pages.pages.index' , [
             'data' => $data
         ]);
@@ -28,6 +28,26 @@ class PageController extends Controller
         return view('admin.pages.pages.create' , [
             'menus' => $menus
         ]);
+    }
+
+    public function destroy(Request $request){
+        $page = Page::find($request->id);
+        if($page){
+            $page->delete();
+        }
+        return redirect()->back()->with('success' , 'Malumot ochirildi');
+    }
+
+    public function edit($id){
+        $page = Page::find($id);
+        if($page){
+            return view('admin.pages.pages.edit' , [
+                'data' => $page
+            ]);
+        }
+        else{
+            return redirect()->back();
+        }
     }
 
     public function store(Request $request){
@@ -81,5 +101,18 @@ class PageController extends Controller
                 $slug = str_replace('@' , '-' , $slug);
                 $slug = str_replace('!' , '-' , $slug);
                 return $slug;
+    }
+
+    public function update(Request $request , $id){
+        $page = Page::find($id);
+        if($page){
+            $page->content_uz = $request->content_uz;
+            $page->content_ru = $request->content_ru;
+            $page->content_en = $request->content_en;
+            $page->title = $request->title;
+            $page->slug = $request->slug;
+            $page->update();
+        }
+        return redirect()->back()->with('success' , 'Malumotlar o`zgartirildi');
     }
 }

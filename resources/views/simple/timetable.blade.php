@@ -1,9 +1,6 @@
 @extends('simple.layouts.master')
-@section('links')
-    <link rel="stylesheet" href="{{asset('front_assets/css/Timetable_of_classes/Timetable_of_classes.css')}}">
-    @endsection
-@section('content')
-    <?php
+@section('title')
+       <?php
         $locale = app()->getLocale();
         $content_locale = 'content_'.$locale;
         $title_locale = 'title_'.$locale;
@@ -11,6 +8,13 @@
         $name_locale ='name_'.$locale;
         $i = 0;
     ?>
+    {{$menu->$name_locale}}
+    @endsection
+@section('links')
+    <link rel="stylesheet" href="{{asset('front_assets/css/Timetable_of_classes/Timetable_of_classes.css')}}">
+    @endsection
+@section('content')
+
     <div class="Timetable_of_classes">
             <div class="container">
                 <div class="row">
@@ -27,14 +31,14 @@
                     <div class="tab-own">
                         @foreach($courses as $course)
                             <button class="tablink" @if($loop->first) style="border-top-left-radius:30px" @elseif($loop->last) style="border-top-right-radius:30px" @endif onclick="openPage('page{{$course->id}}', this, 'white')" @if($loop->first) id="defaultOpen" @endif>
-                                {{$course->name}} курс</button>
+                                {{$course->name}} @lang('index.курс')</button>
                         @endforeach
                              @foreach($courses as $course)
                                   <div id="page{{$course->id}}" class="tabcontent">
                                       @foreach($course->get_faculties() as $faculty)
                                       <div class="class-list">
                                             <h5>@if($course->type_id == 1)@lang('index.Бакалавриат') @else @lang('index.Магистратура') @endif</h5>
-                                            <p>{{$faculty->name_uz}}</p>
+                                            <p>{{$faculty->$name_locale}}</p>
                                             @foreach($faculty->get_groups($course->id) as $group)
                                                 @if($group->timetable_file)
                                               <a href="{{asset('')}}{{$group->timetable_file}}">{{$group->name}}</a>

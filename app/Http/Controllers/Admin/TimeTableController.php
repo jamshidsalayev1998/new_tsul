@@ -125,5 +125,13 @@ class TimeTableController extends Controller
         }
     }
 
+    public function group_delete(Request $request){
+        $group = Group::find($request->id);
+        if($group){
+            $group->delete();
+        }
+        return redirect()->back()->with('success' , 'Malumot ochirildi');
+    }
+
 
 }

@@ -142,19 +142,19 @@
                           <div class="card-body">
                             <div class="tab-content" id="custom-tabs-four-tabContent">
                               <div class="tab-pane fade show active" id="custom-tabs-four-short4" role="tabpanel" aria-labelledby="custom-tabs-four-short4-tab">
-                                  <div id="toolbar-container1"></div>
-                                  <div id="editor1" data-text="editor_text1" class="border">{!! $data->content_uz !!}</div>
-                                  <textarea name="content_uz" hidden rows="11"  cols="30" id="editor_text1" class="form-control">{{$data->content_uz}}</textarea>
+{{--                                  <div id="toolbar-container1"></div>--}}
+{{--                                  <div id="editor1" data-text="editor_text1" class="border">{!! $data->content_uz !!}</div>--}}
+                                  <textarea name="content_uz"  rows="11"  cols="30" id="editor_text1" class="form-control summernote1">{{$data->content_uz}}</textarea>
                               </div>
                               <div class="tab-pane fade" id="custom-tabs-four-short5" role="tabpanel" aria-labelledby="custom-tabs-four-short5-tab">
-                                   <div id="toolbar-container2"></div>
-                                  <div id="editor2" data-text="editor_text2" class="border">{!! $data->content_ru !!}</div>
-                                  <textarea name="content_ru" hidden rows="11"  cols="30" id="editor_text2" class="form-control">{{$data->content_ru}}</textarea>
+{{--                                   <div id="toolbar-container2"></div>--}}
+{{--                                  <div id="editor2" data-text="editor_text2" class="border">{!! $data->content_ru !!}</div>--}}
+                                  <textarea name="content_ru"  rows="11"  cols="30" id="editor_text2" class="form-control summernote2">{{$data->content_ru}}</textarea>
                               </div>
                               <div class="tab-pane fade" id="custom-tabs-four-short6" role="tabpanel" aria-labelledby="custom-tabs-four-short6-tab">
-                                  <div id="toolbar-container3"></div>
-                                  <div id="editor3" data-text="editor_text3" class="border">{!! $data->content_en !!}</div>
-                                  <textarea name="content_en" hidden rows="11" id="editor_text3"  cols="30" class="form-control">{{$data->content_en}}</textarea>
+{{--                                  <div id="toolbar-container3"></div>--}}
+{{--                                  <div id="editor3" data-text="editor_text3" class="border">{!! $data->content_en !!}</div>--}}
+                                  <textarea name="content_en"  rows="11" id="editor_text3"  cols="30" class="form-control summernote3">{{$data->content_en}}</textarea>
                               </div>
                             </div>
                           </div>
@@ -179,210 +179,18 @@
   </div>
 @endsection
 @section('js_after')
-    <script src="{{asset('admin_lte/ckeditor5/build/ckeditor.js')}}"></script>
-    <script>
-        DecoupledDocumentEditor
-			.create( document.querySelector( '#editor1' ), {
-				toolbar: {
-					items: [
-						'heading',
-						'|',
-						'fontSize',
-						'fontFamily',
-						'|',
-						'fontColor',
-						'fontBackgroundColor',
-						'|',
-						'bold',
-						'italic',
-						'underline',
-						'strikethrough',
-						'|',
-						'alignment',
-						'|',
-						'numberedList',
-						'bulletedList',
-						'|',
-						'outdent',
-						'indent',
-						'|',
-						'todoList',
-						'link',
-						'blockQuote',
-						'insertTable',
-						'mediaEmbed',
-						'|',
-						'undo',
-						'redo'
-					]
-				},
-				language: 'en',
-				image: {
-					toolbar: [
-						'imageTextAlternative',
-						'imageStyle:full',
-						'imageStyle:side'
-					]
-				},
-				table: {
-					contentToolbar: [
-						'tableColumn',
-						'tableRow',
-						'mergeTableCells',
-						'tableCellProperties',
-						'tableProperties'
-					]
-				},
-				licenseKey: '',
-			} )
-			.then( editor => {
-				window.editor = editor;
-				// Set a custom container for the toolbar.
-				document.querySelector( '#toolbar-container1' ).appendChild( editor.ui.view.toolbar.element );
-				document.querySelector( '.ck-toolbar' ).classList.add( 'ck-reset_all' );
-			} )
-			.catch( error => {
-				console.error( 'Oops, something went wrong!' );
-				console.error( 'Please, report the following error on https://github.com/ckeditor/ckeditor5/issues with the build id and the error stack trace:' );
-				console.warn( 'Build id: 12wnwvrp0o4v-pqf1ta5h7q1c' );
-				console.error( error );
-			} );
-        DecoupledDocumentEditor
-            .create( document.querySelector( '#editor2' ), {
-                toolbar: {
-                    items: [
-                        'heading',
-                        '|',
-                        'fontSize',
-                        'fontFamily',
-                        '|',
-                        'fontColor',
-                        'fontBackgroundColor',
-                        '|',
-                        'bold',
-                        'italic',
-                        'underline',
-                        'strikethrough',
-                        '|',
-                        'alignment',
-                        '|',
-                        'numberedList',
-                        'bulletedList',
-                        '|',
-                        'outdent',
-                        'indent',
-                        '|',
-                        'todoList',
-                        'link',
-                        'blockQuote',
-                        'insertTable',
-                        'mediaEmbed',
-                        '|',
-                        'undo',
-                        'redo'
-                    ]
-                },
-                language: 'en',
-                image: {
-                    toolbar: [
-                        'imageTextAlternative',
-                        'imageStyle:full',
-                        'imageStyle:side'
-                    ]
-                },
-                table: {
-                    contentToolbar: [
-                        'tableColumn',
-                        'tableRow',
-                        'mergeTableCells',
-                        'tableCellProperties',
-                        'tableProperties'
-                    ]
-                },
-                licenseKey: '',
-            } )
-            .then( editor => {
-                window.editor = editor;
-                // Set a custom container for the toolbar.
-                document.querySelector( '#toolbar-container2' ).appendChild( editor.ui.view.toolbar.element );
-                document.querySelector( '.ck-toolbar' ).classList.add( 'ck-reset_all' );
-            } )
-            .catch( error => {
-                console.error( 'Oops, something went wrong!' );
-                console.error( 'Please, report the following error on https://github.com/ckeditor/ckeditor5/issues with the build id and the error stack trace:' );
-                console.warn( 'Build id: 12wnwvrp0o4v-pqf1ta5h7q1c' );
-                console.error( error );
-            } );
-        DecoupledDocumentEditor
-			.create( document.querySelector( '#editor3' ), {
-				toolbar: {
-					items: [
-						'heading',
-						'|',
-						'fontSize',
-						'fontFamily',
-						'|',
-						'fontColor',
-						'fontBackgroundColor',
-						'|',
-						'bold',
-						'italic',
-						'underline',
-						'strikethrough',
-						'|',
-						'alignment',
-						'|',
-						'numberedList',
-						'bulletedList',
-						'|',
-						'outdent',
-						'indent',
-						'|',
-						'todoList',
-						'link',
-						'blockQuote',
-						'insertTable',
-						'mediaEmbed',
-						'|',
-						'undo',
-						'redo'
-					]
-				},
-				language: 'en',
-				image: {
-					toolbar: [
-						'imageTextAlternative',
-						'imageStyle:full',
-						'imageStyle:side'
-					]
-				},
-				table: {
-					contentToolbar: [
-						'tableColumn',
-						'tableRow',
-						'mergeTableCells',
-						'tableCellProperties',
-						'tableProperties'
-					]
-				},
-				licenseKey: '',
-			} )
-			.then( editor => {
-				window.editor = editor;
-				// Set a custom container for the toolbar.
-				document.querySelector( '#toolbar-container3' ).appendChild( editor.ui.view.toolbar.element );
-				document.querySelector( '.ck-toolbar' ).classList.add( 'ck-reset_all' );
-			} )
-			.catch( error => {
-				console.error( 'Oops, something went wrong!' );
-				console.error( 'Please, report the following error on https://github.com/ckeditor/ckeditor5/issues with the build id and the error stack trace:' );
-				console.warn( 'Build id: 12wnwvrp0o4v-pqf1ta5h7q1c' );
-				console.error( error );
-			} );
-	</script>
+    <script src="{{asset('js/faculties_create.js')}}"></script>
+
 
 @endsection
 @section('js')
+    <script>
+ $(document).ready(function(){
+            $('.summernote1').summernote();
+            $('.summernote2').summernote();
+            $('.summernote3').summernote();
+        })
+    </script>
     <script>
         $('.saqlash_button').click(function(){
             var data_text = $('#editor1').attr('data-text');

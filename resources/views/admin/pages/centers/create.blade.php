@@ -18,7 +18,7 @@
       <div class="container-fluid">
         <div class="row">
           <div class="col-12">
-              <form action="{{route('admin_center.store')}}" class="scientist_form" method="post">
+              <form action="{{route('admin_center.store')}}" class="form_news" method="post">
                   @csrf
             <div class="card">
               <div class="card-header w-100" style="position:sticky; top: 50px; background-color: white; z-index: 1000">
@@ -68,7 +68,6 @@
                                   <label for="">Short info</label>
                                    <textarea name="short_info_uz"  rows="3"  cols="30" class="form-control"></textarea>
                                   <label for="">content</label>
-                                  <div id="toolbar-container1"></div>
                                   <div id="editor1" data-text="editor_text1" class="border" ></div>
                                   <textarea name="content_uz" hidden rows="11"  cols="30" id="editor_text1" class="form-control"></textarea>
                               </div>
@@ -78,7 +77,6 @@
                                   <label for="">Short info</label>
                                   <textarea name="short_info_ru"  rows="3"  cols="30" class="form-control"></textarea>
                                   <label for="">content</label>
-                                   <div id="toolbar-container2"></div>
                                   <div id="editor2" data-text="editor_text2" class="border" ></div>
                                   <textarea name="content_ru" hidden rows="11"  cols="30" id="editor_text2" class="form-control"></textarea>
                               </div>
@@ -88,7 +86,6 @@
                                   <label for="">Short info</label>
                                   <textarea name="short_info_en"  rows="3"  cols="30" class="form-control"></textarea>
                                   <label for="">content</label>
-                                   <div id="toolbar-container3"></div>
                                   <div id="editor3" data-text="editor_text3" class="border" ></div>
                                   <textarea name="content_en" hidden rows="11"  cols="30" id="editor_text3" class="form-control"></textarea>
                               </div>
@@ -113,14 +110,21 @@
     <!-- /.content -->
   </div>
 @endsection
-@section('js')
-    <script>
-
-    </script>
+@section('js_after')
     <script src="{{asset('admin_lte/ckeditor5/build/ckeditor.js')}}"></script>
-    <script src="{{asset('js/faculties_create.js')}}"></script>
+    <script src="{{asset('admin_lte/ckeditor5/ckeditor5_connect.js')}}"></script>
+@endsection
+@section('js')
+
+    <script src="{{asset('admin_lte/ckeditor5/correcting.js')}}"></script>
+{{--    <script src="{{asset('admin_lte/ckeditor5/build/ckeditor.js')}}"></script>--}}
+    {{--    <script src="{{asset('js/faculties_create.js')}}"></script>--}}
 
     <script>
-
+        // $(document).ready(function(){
+        //            $('.summernote1').summernote();
+        //            $('.summernote2').summernote();
+        //            $('.summernote3').summernote();
+        //        })
     </script>
 @endsection

@@ -18,7 +18,7 @@ class MenuTop extends Model
     }
 
     public function childs(){
-        $childs = MenuTop::where('parent_id' , $this->id)->get();
+        $childs = MenuTop::where('parent_id' , $this->id)->orderBy('order' , 'ASC')->get();
         return $childs;
     }
     public function has_child(){

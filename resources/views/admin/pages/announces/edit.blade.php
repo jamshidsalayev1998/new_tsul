@@ -265,224 +265,26 @@
 @endsection
 @section('js_after')
 <script src="{{asset('admin_lte/ckeditor5/build/ckeditor.js')}}"></script>
-    <script>
-        DecoupledDocumentEditor
-			.create( document.querySelector( '#editor1' ), {
-				toolbar: {
-					items: [
-						'heading',
-						'|',
-						'fontSize',
-						'fontFamily',
-						'|',
-						'fontColor',
-						'fontBackgroundColor',
-						'|',
-						'bold',
-						'italic',
-						'underline',
-						'strikethrough',
-						'|',
-						'alignment',
-						'|',
-						'numberedList',
-						'bulletedList',
-						'|',
-						'outdent',
-						'indent',
-						'|',
-						'todoList',
-						'link',
-						'blockQuote',
-						'insertTable',
-						'mediaEmbed',
-						'|',
-						'undo',
-						'redo'
-					]
-				},
-				language: 'en',
-				image: {
-					toolbar: [
-						'imageTextAlternative',
-						'imageStyle:full',
-						'imageStyle:side'
-					]
-				},
-				table: {
-					contentToolbar: [
-						'tableColumn',
-						'tableRow',
-						'mergeTableCells',
-						'tableCellProperties',
-						'tableProperties'
-					]
-				},
-				licenseKey: '',
-			} )
-			.then( editor => {
-				window.editor = editor;
-				// Set a custom container for the toolbar.
-				document.querySelector( '#toolbar-container1' ).appendChild( editor.ui.view.toolbar.element );
-				document.querySelector( '.ck-toolbar' ).classList.add( 'ck-reset_all' );
-			} )
-			.catch( error => {
-				console.error( 'Oops, something went wrong!' );
-				console.error( 'Please, report the following error on https://github.com/ckeditor/ckeditor5/issues with the build id and the error stack trace:' );
-				console.warn( 'Build id: 12wnwvrp0o4v-pqf1ta5h7q1c' );
-				console.error( error );
-			} );
-        DecoupledDocumentEditor
-            .create( document.querySelector( '#editor2' ), {
-                toolbar: {
-                    items: [
-                        'heading',
-                        '|',
-                        'fontSize',
-                        'fontFamily',
-                        '|',
-                        'fontColor',
-                        'fontBackgroundColor',
-                        '|',
-                        'bold',
-                        'italic',
-                        'underline',
-                        'strikethrough',
-                        '|',
-                        'alignment',
-                        '|',
-                        'numberedList',
-                        'bulletedList',
-                        '|',
-                        'outdent',
-                        'indent',
-                        '|',
-                        'todoList',
-                        'link',
-                        'blockQuote',
-                        'insertTable',
-                        'mediaEmbed',
-                        '|',
-                        'undo',
-                        'redo'
-                    ]
-                },
-                language: 'en',
-                image: {
-                    toolbar: [
-                        'imageTextAlternative',
-                        'imageStyle:full',
-                        'imageStyle:side'
-                    ]
-                },
-                table: {
-                    contentToolbar: [
-                        'tableColumn',
-                        'tableRow',
-                        'mergeTableCells',
-                        'tableCellProperties',
-                        'tableProperties'
-                    ]
-                },
-                licenseKey: '',
-            } )
-            .then( editor => {
-                window.editor = editor;
-                // Set a custom container for the toolbar.
-                document.querySelector( '#toolbar-container2' ).appendChild( editor.ui.view.toolbar.element );
-                document.querySelector( '.ck-toolbar' ).classList.add( 'ck-reset_all' );
-            } )
-            .catch( error => {
-                console.error( 'Oops, something went wrong!' );
-                console.error( 'Please, report the following error on https://github.com/ckeditor/ckeditor5/issues with the build id and the error stack trace:' );
-                console.warn( 'Build id: 12wnwvrp0o4v-pqf1ta5h7q1c' );
-                console.error( error );
-            } );
-        DecoupledDocumentEditor
-			.create( document.querySelector( '#editor3' ), {
-				toolbar: {
-					items: [
-						'heading',
-						'|',
-						'fontSize',
-						'fontFamily',
-						'|',
-						'fontColor',
-						'fontBackgroundColor',
-						'|',
-						'bold',
-						'italic',
-						'underline',
-						'strikethrough',
-						'|',
-						'alignment',
-						'|',
-						'numberedList',
-						'bulletedList',
-						'|',
-						'outdent',
-						'indent',
-						'|',
-						'todoList',
-						'link',
-						'blockQuote',
-						'insertTable',
-						'mediaEmbed',
-						'|',
-						'undo',
-						'redo'
-					]
-				},
-				language: 'en',
-				image: {
-					toolbar: [
-						'imageTextAlternative',
-						'imageStyle:full',
-						'imageStyle:side'
-					]
-				},
-				table: {
-					contentToolbar: [
-						'tableColumn',
-						'tableRow',
-						'mergeTableCells',
-						'tableCellProperties',
-						'tableProperties'
-					]
-				},
-				licenseKey: '',
-			} )
-			.then( editor => {
-				window.editor = editor;
-				// Set a custom container for the toolbar.
-				document.querySelector( '#toolbar-container3' ).appendChild( editor.ui.view.toolbar.element );
-				document.querySelector( '.ck-toolbar' ).classList.add( 'ck-reset_all' );
-			} )
-			.catch( error => {
-				console.error( 'Oops, something went wrong!' );
-				console.error( 'Please, report the following error on https://github.com/ckeditor/ckeditor5/issues with the build id and the error stack trace:' );
-				console.warn( 'Build id: 12wnwvrp0o4v-pqf1ta5h7q1c' );
-				console.error( error );
-			} );
-	</script>
+    <script src="{{asset('admin_lte/ckeditor5/ckeditor5_connect.js')}}"></script>
 @endsection
 @section('js')
-    <script>
-        $('.saqlash_button').click(function(){
-            var data_text = $('#editor1').attr('data-text');
-            var text = $('#editor1').html();
-            $('#'+data_text).html(text);
-            var data_text = $('#editor2').attr('data-text');
-            var text = $('#editor2').html();
-            $('#'+data_text).html(text);
-            var data_text = $('#editor3').attr('data-text');
-            var text = $('#editor3').html();
-            $('#'+data_text).html(text);
-            if(confirm('Saqlaysizmi? ')){
-                $('.form_news').submit();
-            }
-        });
-    </script>
+    <script src="{{asset('admin_lte/ckeditor5/correcting.js')}}"></script>
+{{--    <script>--}}
+{{--        $('.saqlash_button').click(function(){--}}
+{{--            var data_text = $('#editor1').attr('data-text');--}}
+{{--            var text = $('#editor1').html();--}}
+{{--            $('#'+data_text).html(text);--}}
+{{--            var data_text = $('#editor2').attr('data-text');--}}
+{{--            var text = $('#editor2').html();--}}
+{{--            $('#'+data_text).html(text);--}}
+{{--            var data_text = $('#editor3').attr('data-text');--}}
+{{--            var text = $('#editor3').html();--}}
+{{--            $('#'+data_text).html(text);--}}
+{{--            if(confirm('Saqlaysizmi? ')){--}}
+{{--                $('.form_news').submit();--}}
+{{--            }--}}
+{{--        });--}}
+{{--    </script>--}}
     <script src="{{asset('admin_lte/plugins/select2/js/select2.full.min.js')}}"></script>
     <script>
         $('#summernote1').summernote();

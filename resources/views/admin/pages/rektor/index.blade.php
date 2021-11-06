@@ -18,7 +18,7 @@
       <div class="container-fluid">
         <div class="row">
           <div class="col-12">
-              <form action="{{route('admin_rector.update' , ['admin_rector' => $data->id])}}" class="scientist_form" method="post" enctype="multipart/form-data">
+              <form action="{{route('admin_rector.update' , ['admin_rector' => $data->id])}}" class="form_news" method="post" enctype="multipart/form-data">
                   @csrf
                   @method('PUT')
             <div class="card">
@@ -287,7 +287,12 @@
     <!-- /.content -->
   </div>
 @endsection
+@section('js_after')
+<script src="{{asset('admin_lte/ckeditor5/build/ckeditor.js')}}"></script>
+    <script src="{{asset('admin_lte/ckeditor5/ckeditor5_connect.js')}}"></script>
+@endsection
 @section('js')
+    <script src="{{asset('admin_lte/ckeditor5/correcting.js')}}"></script>
     <script>
          function readURL1(input) {
             if (input.files && input.files[0]) {
@@ -321,8 +326,8 @@
             $("#imageUpload2").click();
         });
     </script>
-    <script src="{{asset('admin_lte/ckeditor5/build/ckeditor.js')}}"></script>
-    <script src="{{asset('js/faculties_create.js')}}"></script>
+{{--    <script src="{{asset('admin_lte/ckeditor5/build/ckeditor.js')}}"></script>--}}
+{{--    <script src="{{asset('js/faculties_create.js')}}"></script>--}}
 
     <script>
 

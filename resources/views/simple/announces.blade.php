@@ -24,9 +24,9 @@
                             <div>
                                 <h4>@lang('index.АНОНС МЕРОПРИЯТИЙ')</h4>
                                 <div>
-                                    @foreach($types as $type)
-                                    <button class="content_top_btn">{{$type->$name_locale}}</button>
-                                    @endforeach
+{{--                                    @foreach($types as $type)--}}
+{{--                                    <button class="content_top_btn">{{$type->$name_locale}}</button>--}}
+{{--                                    @endforeach--}}
 
                                 </div>
                             </div>
@@ -34,27 +34,35 @@
                         <div class="col-xl-6 col-lg-6 col-md-12 mt-2">
                             <div class="content_top_social_box">
                                 <div>
-                                    <h5 class="content_top_title_of_socials">Не пропустите важное</h5>
+                                    <h5 class="content_top_title_of_socials">@lang('index.НЕ ПРОПУСТИТЕ ВАЖНОЕ')</h5>
                                     <div class="content_top_line_socials">
                                         <div>
+                                            <a href="https://t.me/tsulofficial">
                                             <i class="fab fa-telegram-plane" style="color: #03A9F5;"></i>
-                                            <h6>21,290</h6>
-                                            <span>подписчиков</span>
+                                            <h6>@lang('index.tg')</h6>
+                                            <span>@lang('index.подписчиков')</span>
+                                            </a>
                                         </div>
                                         <div>
+                                            <a href="https://www.fb.com/tsulofficial">
                                             <i class="fab fa-facebook-f" style="color: #4267B6;"></i>
-                                            <h6>21,290</h6>
-                                            <span>читателей</span>
+                                            <h6>@lang('index.fb')</h6>
+                                            <span>@lang('index.подписчиков')</span>
+                                            </a>
                                         </div>
                                         <div>
+                                            <a href="https://twitter.com/tsulofficial">
                                             <i class="fab fa-twitter" style="color: #03A9F5;"></i>
-                                            <h6>21,290</h6>
-                                            <span class="text-secondary">подписчиков</span>
+                                            <h6>@lang('index.tw')</h6>
+                                            <span class="text-secondary">@lang('index.подписчиков')</span>
+                                            </a>
                                         </div>
                                         <div>
+                                            <a href="https://www.youtube.com/channel/UCTAhGEQDYohjqmDAsD9yRBg">
                                             <i class="fab fa-youtube" style="color: #FE0000;"></i>
-                                            <h6>21,290</h6>
-                                            <span>подписчиков</span>
+                                            <h6>@lang('index.yb')</h6>
+                                            <span>@lang('index.подписчиков')</span>
+                                                </a>
                                         </div>
                                     </div>
                                 </div>
@@ -97,7 +105,7 @@
                                              @if($item->type)
                                             <button class="card_button_links mt-2">{{$item->type->$name_locale}}</button>
                                             @endif
-                                            <a href="{{route('simple.announces.show' , ['id' => $item->id])}}" class="news_small_cards_text ">{{$item->$title_locale}}
+                                            <a href="{{route('simple.announces.show' , ['id' => $item->id])}}" >{{$item->$title_locale}}
                                             </a>
                                             <span class="text-end text-secondary mt-1 d-block"
                                                 style="font-size: 13px; font-weight: 600;">{{date('d.m.Y' , strtotime($item->date))}}</span>
@@ -145,6 +153,7 @@
                                         <hr class="bottom_line_effect">
                                         @foreach($announces as $announce)
                                         <div class="anons_in_news_card_item">
+
                                             <div>
                                                 <span>
                                                     {{date('d' , strtotime($announce->date))}}<br />{{$announce->get_month_short_name($locale)}}

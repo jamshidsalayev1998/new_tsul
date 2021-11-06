@@ -18,7 +18,7 @@ class Menu extends Model
     }
 
     public function childs(){
-        $childs = Menu::where('parent_id' , $this->id)->orderBy('id' , 'ASC')->get();
+        $childs = Menu::where('parent_id' , $this->id)->orderBy('order' , 'ASC')->get();
         return $childs;
     }
     public function has_child(){

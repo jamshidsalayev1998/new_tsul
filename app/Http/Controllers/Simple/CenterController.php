@@ -25,7 +25,8 @@ class CenterController extends Controller
         $links = Menu::where('leap' , $menu->leap)->where('parent_id' , $menu->parent_id)->get();
         return view('simple.all_centers' , [
             'data' => $faculties,
-            'links' => $links
+            'links' => $links,
+            'menu' => $menu
         ]);
     }
 

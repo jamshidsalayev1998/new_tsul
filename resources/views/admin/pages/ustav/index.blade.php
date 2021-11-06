@@ -45,8 +45,8 @@
                               <td><a href="/{{$item->file_ru}}">{{$item->name_ru}} <i class="fa fa-download"></i></a></td>
                               <td><a href="/{{$item->file_en}}">{{$item->name_en}} <i class="fa fa-download"></i></a></td>
                               <td>
-                                  <button class="btn btn-danger" type="button"><i class="fa fa-trash"></i></button>
-                                  <form action="{{route('admin_ustav.destroy' , ['admin_ustav' => $item->id])}}" method="post">
+                                  <button class="btn btn-danger form-delete" data-id="{{$item->id}}" type="button"><i class="fa fa-trash"></i></button>
+                                  <form class="form-card-delete-{{$item->id}}" action="{{route('admin_ustav.destroy' , ['admin_ustav' => $item->id])}}" method="post">
                                       @csrf
                                       @method('DELETE')
                                   </form>

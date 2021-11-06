@@ -1,14 +1,18 @@
 @extends('simple.layouts.master')
-@section('links')
-    <link rel="stylesheet" href="{{asset('front_assets/css/faculty_and_center.css')}}">
-    @endsection
-@section('content')
+@section('title')
     <?php
         $locale = app()->getLocale();
         $content_locale = 'content_'.$locale;
         $name_locale ='name_'.$locale;
         $short_info_locale = 'short_info_'.$locale;
     ?>
+    {{$menu->$name_locale}}
+    @endsection
+@section('links')
+    <link rel="stylesheet" href="{{asset('front_assets/css/faculty_and_center.css')}}">
+    @endsection
+@section('content')
+
     <div class="all_faculty mt-4 mb-5">
             <div class="container">
                 <div class="row">

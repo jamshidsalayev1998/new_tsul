@@ -28,7 +28,7 @@
                         <h3 class="card-title">Faculty edit</h3>
                     </div>
                       <div>
-                        <button type="button" class="btn btn-success saqlash_button" >saqlash</button>
+                        <button type="submit" class="btn btn-success saqlash_button" >saqlash</button>
                     </div>
 
                   </div>
@@ -67,61 +67,38 @@
                                   <label for="">Name</label>
                                   <input type="text" class="form-control" name="name_uz" value="{{$data->name_uz}}">
                                   <label for="">Content</label>
-                                  <div id="toolbar-container1"></div>
+{{--                                  <div id="toolbar-container1"></div>--}}
                                   <div id="editor1" data-text="editor_text1" class="border" >{!! $data->content_uz !!}</div>
-                                  <textarea name="content_uz" hidden rows="11"  cols="30" id="editor_text1" class="form-control">{{$data->content_uz}}</textarea>
+                                  <textarea name="content_uz" hidden rows="11"  cols="30" id="editor_text1" class="form-control summernote1">{{$data->content_uz}}</textarea>
                                   <label for="">Short info</label>
 {{--                                  <div id="toolbar-container4"></div>--}}
-{{--                                  <div id="editor4" data-text="editor_text4" class="border" >{!! $data->students_uz !!}</div>--}}
-                                  <textarea name="students_uz"  rows="3"  cols="30" id="editor_text4" class="form-control">{{$data->students_uz}}</textarea>
-                                  <label for="">teachers</label>
-                                  <div id="toolbar-container7"></div>
-                                  <div id="editor7" data-text="editor_text7" class="border" >{!! $data->teachers_uz !!}</div>
-                                  <textarea name="teachers_uz" hidden rows="11"  cols="30" id="editor_text7" class="form-control">{{$data->teachers_uz}}</textarea>
-                                  <label for="">directions</label>
-                                   <div id="toolbar-container10"></div>
-                                  <div id="editor10" data-text="editor_text10" class="border" >{!! $data->directions_uz !!}</div>
-                                  <textarea name="directions_uz" hidden rows="11"  cols="30" id="editor_text10" class="form-control">{{$data->directions_uz}}</textarea>
+                                  <div id="editor2" data-text="editor_text2" class="border" >{!! $data->students_uz !!}</div>
+                                  <textarea name="students_uz" hidden rows="3"  cols="30" id="editor_text2" class="form-control">{{$data->students_uz}}</textarea>
                               </div>
                               <div class="tab-pane fade" id="custom-tabs-four-2" role="tabpanel" aria-labelledby="custom-tabs-four-2-tab">
                                   <label for="">Name</label>
                                   <input type="text" class="form-control" name="name_ru" value="{{$data->name_ru}}">
                                   <label for="">Content</label>
-                                  <div id="toolbar-container2"></div>
-                                  <div id="editor2" data-text="editor_text2" class="border" >{!! $data->content_ru !!}</div>
-                                  <textarea name="content_ru" hidden rows="11"  cols="30" id="editor_text2" class="form-control">{{$data->content_ru}}</textarea>
+{{--                                  <div id="toolbar-container2"></div>--}}
+                                  <div id="editor3" data-text="editor_text3" class="border" >{!! $data->content_ru !!}</div>
+                                  <textarea name="content_ru" hidden rows="11"  cols="30" id="editor_text3" class="form-control summernote2">{{$data->content_ru}}</textarea>
                                   <label for="">Short info</label>
 {{--                                   <div id="toolbar-container5"></div>--}}
-{{--                                  <div id="editor5" data-text="editor_text5" class="border" >{!! $data->students_ru !!}</div>--}}
-                                  <textarea name="students_ru"  rows="3"  cols="30" id="editor_text5" class="form-control">{{$data->students_ru}}</textarea>
-                                  <label for="">teachers</label>
-                                  <div id="toolbar-container8"></div>
-                                  <div id="editor8" data-text="editor_text8" class="border" >{!! $data->teachers_ru !!}</div>
-                                  <textarea name="teachers_ru" hidden rows="11"  cols="30" id="editor_text8" class="form-control">{{$data->teachers_ru}}</textarea>
-                                  <label for="">directions</label>
-                                   <div id="toolbar-container11"></div>
-                                  <div id="editor11" data-text="editor_text11" class="border" >{!! $data->directions_ru !!}</div>
-                                  <textarea name="directions_ru" hidden rows="11"  cols="30" id="editor_text11" class="form-control">{{$data->directions_ru}}</textarea>
+                                  <div id="editor4" data-text="editor_text4" class="border" >{!! $data->students_ru !!}</div>
+                                  <textarea name="students_ru" hidden rows="3"  cols="30" id="editor_text4" class="form-control">{{$data->students_ru}}</textarea>
+
                               </div>
                               <div class="tab-pane fade" id="custom-tabs-four-3" role="tabpanel" aria-labelledby="custom-tabs-four-3-tab">
                                   <label for="">Name</label>
                                   <input type="text" class="form-control" name="name_en" value="{{$data->name_en}}">
                                   <label for="">Content</label>
-                                   <div id="toolbar-container3"></div>
-                                  <div id="editor3" data-text="editor_text3" class="border" >{!! $data->content_en !!}</div>
-                                  <textarea name="content_en" hidden rows="11"  cols="30" id="editor_text3" class="form-control">{{$data->content_en}}</textarea>
+{{--                                   <div id="toolbar-container3"></div>--}}
+                                  <div id="editor5" data-text="editor_text5" class="border" >{!! $data->content_en !!}</div>
+                                  <textarea name="content_en" hidden rows="11"  cols="30" id="editor_text5" class="form-control summernote3">{{$data->content_en}}</textarea>
                                   <label for="">Short info</label>
 {{--                                   <div id="toolbar-container6"></div>--}}
-{{--                                  <div id="editor6" data-text="editor_text6" class="border" >{!! $data->students_en !!}</div>--}}
-                                  <textarea name="students_en"  rows="3"  cols="30" id="editor_text6" class="form-control">{{$data->students_en}}</textarea>
-                                  <label for="">teachers</label>
-                                   <div id="toolbar-container9"></div>
-                                  <div id="editor9" data-text="editor_text9" class="border" >{!! $data->teachers_en !!}</div>
-                                  <textarea name="teachers_en" hidden rows="11"  cols="30" id="editor_text9" class="form-control">{{$data->teachers_en}}</textarea>
-                                  <label for="">directions</label>
-                                   <div id="toolbar-container12"></div>
-                                  <div id="editor12" data-text="editor_text12" class="border" >{!! $data->directions_en !!}</div>
-                                  <textarea name="directions_en" hidden rows="11"  cols="30" id="editor_text12" class="form-control">{{$data->directions_en}}</textarea>
+                                  <div id="editor6" data-text="editor_text6" class="border" >{!! $data->students_en !!}</div>
+                                  <textarea name="students_en" hidden rows="3"  cols="30" id="editor_text6" class="form-control">{{$data->students_en}}</textarea>
                               </div>
                             </div>
                           </div>
@@ -146,14 +123,10 @@
     <!-- /.content -->
   </div>
 @endsection
-@section('js')
-    <script>
-
-    </script>
+@section('js_after')
     <script src="{{asset('admin_lte/ckeditor5/build/ckeditor.js')}}"></script>
-    <script src="{{asset('js/faculties_create.js')}}"></script>
-
-    <script>
-
-    </script>
+    <script src="{{asset('admin_lte/ckeditor5/ckeditor5_connect.js')}}"></script>
+@endsection
+@section('js')
+<script src="{{asset('admin_lte/ckeditor5/correcting.js')}}"></script>
 @endsection

@@ -1,4 +1,5 @@
 @extends('simple.layouts.master')
+
 @section('content')
     <?php
         $locale = app()->getLocale();
@@ -17,7 +18,7 @@
                     </div>
                 </div>
                 <div >
-                    <img src="{{asset('')}}{{$data->main_image}}" alt="">
+                    <img style="width: 100%; object-fit:cover; "  src="{{asset('')}}{{$data->main_image}}" alt="">
 {{--                    <img src="https://storage.kun.uz/source/6/gC5S-URN34eqAzqeINO6zWUnfOeUPgWn.jpg" alt="">--}}
                     <span>
                         <h4>{{$data->$full_name_locale}}</h4>
@@ -55,7 +56,7 @@
                     <ul class="rp_tabs">
                         <li data-tab-target="#biograpghy" class="active rp_tab">@lang('index.Biograpghy')</li>
                         <li data-tab-target="#duties_of_rector" class="rp_tab">@lang('index.Duties of the rector'):</li>
-                        <li data-tab-target="#Speeches_and_publications" class="rp_tab">@lang('index.Speeches and publications')</li>
+                        <!-- <li data-tab-target="#Speeches_and_publications" class="rp_tab">@lang('index.Speeches and publications')</li> -->
                     </ul>
 
                     <div class="rp_tab-content">
@@ -340,7 +341,7 @@
                 <div class="short_card_about_rector">
                     <div>
                         <div class="rp_about_img" style="margin-left: 0 !important;">
-                            <img src="{{asset('front_assets/assets/img/main_rector_old.jpg')}}" alt="" >
+                            <img style="width: 100%;  object-fit: cover;" src="{{asset('front_assets/assets/img/main_rector_old.jpg')}}" alt="" >
                         </div>
                     </div>
                     <div class="d-flex align-items-center justify-content-center">

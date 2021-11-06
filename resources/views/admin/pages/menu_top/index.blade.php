@@ -47,7 +47,7 @@
                           <tr>
                               <td>{{++$i}}</td>
                               <td>
-                                  <a href="{{route('admin.menu.show' , ['id' => $menu->id])}}">
+                                  <a href="{{route('admin.menu_top.show' , ['id' => $menu->id])}}">
                                     {{$menu->name_uz}}
                                   </a>
                               </td>

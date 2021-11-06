@@ -90,6 +90,15 @@ class UstavController extends Controller
 
     public function destroy($id){
         $us = Ustav::find($id);
+        if (File::exists(public_path().'/'.$us->file_uz)){
+            File::delete(public_path().'/'.$us->file_uz);
+        }
+        if (File::exists(public_path().'/'.$us->file_ru)){
+            File::delete(public_path().'/'.$us->file_ru);
+        }
+        if (File::exists(public_path().'/'.$us->file_en)){
+            File::delete(public_path().'/'.$us->file_en);
+        }
         $us->delete();
         return redirect()->back()->with('success' , 'Malumot ochirildi');
     }

@@ -1,15 +1,19 @@
 @extends('simple.layouts.master')
-@section('links')
-    <link rel="stylesheet" href="{{asset('front_assets/css/faculty_and_center.css')}}">
-    @endsection
-@section('content')
-    <?php
+@section('title')
+     <?php
         $locale = app()->getLocale();
         $content_locale = 'content_'.$locale;
         $name_locale ='name_'.$locale;
         $short_info_locale = 'short_info_'.$locale;
         $students_locale = 'students_'.$locale;
     ?>
+    {{$menu->$name_locale}}
+    @endsection
+@section('links')
+    <link rel="stylesheet" href="{{asset('front_assets/css/faculty_and_center.css')}}">
+    @endsection
+@section('content')
+
     <div class="all_faculty mt-4 mb-5">
             <div class="container">
                 <div class="row">
@@ -70,6 +74,7 @@
                         <h3 class="border-bottom pb-2" style="color: #233585;">@lang('index.Bo`limlar')</h3>
                         <div class="ac_item_box">
                             @foreach($data as $item)
+                                @if($item->id && $item->$name_locale)
                             <a href="{{route('simple.section.show' , ['id' => $item->id , 'name' => $item->$name_locale])}}" class="all_center_items">
                                 <div class="all_center_items_icon"><i class="fas fa-gavel"></i></div>
                                 <div class="all_center_items_text_card">
@@ -78,11 +83,14 @@
                                     <div class="border-bottom pb-1">
                                         <span class="font-weight-bold ac_title_1"><i class="fas fa-align-center"></i>@lang('index.Bo`lim haqida'):</span>
                                         <span>
-                                           {{$item->$students_locale}}
+                                           {!! $item->$students_locale !!}
                                         </span>
                                     </div>
                                 </div>
-                            </a>
+
+{{--                                @else--}}
+{{--                                    fdfsd {{$item}}--}}
+                                @endif
                             @endforeach
 
                         </div>

@@ -8,8 +8,10 @@ use App\Http\Controllers\Controller;
 use App\Menu;
 use App\Neww;
 use App\NewwType;
+use App\ScientificArticle;
 use App\SliderImage;
 use App\SliderText;
+use App\YoungScientistsNew;
 use Illuminate\Http\Request;
 
 class AnnouncesController extends Controller
@@ -19,6 +21,26 @@ class AnnouncesController extends Controller
      *
      * @return void
      */
+    public function all_young_scientists_show($id){
+        $y = YoungScientistsNew::where('id' , '!=' , $id)->orderBy('date' , 'DESC')->get();
+        $y_b = ScientificArticle::orderBy('date' , 'DESC')->get();
+        $alone = YoungScientistsNew::find($id);
+        return view('simple.young_scientist_show' , [
+            'new' => $alone,
+            'others' => $y,
+            'announces' => $y_b,
+        ]);
+    }
+    public function all_young_articles_show($id){
+        $y = ScientificArticle::where('id' , '!=' , $id)->orderBy('date' , 'DESC')->get();
+        $y_b = YoungScientistsNew::orderBy('date' , 'DESC')->get();
+        $alone = ScientificArticle::find($id);
+        return view('simple.young_scientist_show' , [
+            'new' => $alone,
+            'others' => $y,
+            'announces' => $y_b,
+        ]);
+    }
     public function index(){
         $data = Announce::active()->orderBy('date' , 'DESC')->get();
         $types = NewwType::all();
