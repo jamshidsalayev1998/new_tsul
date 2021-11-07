@@ -43,7 +43,7 @@
                       @foreach($data as $item)
                           <tr>
                               <td>{{++$i}}</td>
-                              <td>{{$item->fio}}</td>
+                              <td><a href="{{route('teachers.show' , ['teacher' => $item->id])}}">{{$item->fio}}</a></td>
                           </tr>
                       @endforeach
                       </tbody>

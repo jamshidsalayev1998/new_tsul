@@ -26,18 +26,18 @@
 
                             </div>
                             <!-- /.card-header -->
-                            <form action="{{route('teachers.store')}}" id="teacher_info" method="post" class="form_news" enctype="multipart/form-data">
+                            <form action="{{route('teachers.update' , ['teacher' => $data->id])}}" id="teacher_info" method="post" class="form_news" enctype="multipart/form-data">
                                 @csrf
-                                @method('POST')
+                                @method('PUT')
                                 <div class="card-body">
                                     <div class="row">
                                         <div class="col-md-4 form-group">
                                             <label for="">F.I.O</label>
-                                            <input type="text" class="form-control" name="fio">
+                                            <input type="text" class="form-control" name="fio" value="{{$data->fio}}">
                                         </div>
                                         <div class="col-md-4 form-group">
                                             <label for="">Ilmiy darajasi</label>
-                                            <input type="text" class="form-control" name="degree">
+                                            <input type="text" class="form-control" name="degree" value="{{$data->degree}}">
                                         </div>
                                         <div class="col-md-4 form-group">
                                             <label for="">Rasm</label>
@@ -82,7 +82,7 @@
                                                     <div class="form-group">
                                                         <label for="">Umumiy ma'lumotlarni kiriting UZ</label>
                                                         <div id="toolbar-container1"></div>
-                                                        <div id="editor1" data-text="editor_text1" class="border"></div>
+                                                        <div id="editor1" data-text="editor_text1" class="border">{!! $data->general_info_uz !!}</div>
                                                         <textarea name="general_info_uz" hidden id="editor_text1"
                                                                   cols="30"
                                                                   rows="10"></textarea>
@@ -93,7 +93,7 @@
                                                     <div class="form-group">
                                                         <label for="">Kontakt malumotlarini kiriting UZ</label>
                                                         <div id="toolbar-container2"></div>
-                                                        <div id="editor2" data-text="editor_text2" class="border"></div>
+                                                        <div id="editor2" data-text="editor_text2" class="border">{!! $data->contact_info_uz !!}</div>
                                                         <textarea name="contact_info_uz" hidden id="editor_text2"
                                                                   cols="30"
                                                                   rows="10"></textarea>
@@ -123,7 +123,7 @@
                                                     <div class="form-group">
                                                         <label for="">Umumiy ma'lumotlarni kiriting RU</label>
                                                         <div id="toolbar-container3"></div>
-                                                        <div id="editor3" data-text="editor_text3" class="border"></div>
+                                                        <div id="editor3" data-text="editor_text3" class="border">{!! $data->general_info_ru !!}</div>
                                                         <textarea name="general_info_ru" hidden id="editor_text3"
                                                                   cols="30"
                                                                   rows="10"></textarea>
@@ -134,7 +134,7 @@
                                                     <div class="form-group">
                                                         <label for="">Kontakt malumotlarini kiriting RU</label>
                                                         <div id="toolbar-container4"></div>
-                                                        <div id="editor4" data-text="editor_text4" class="border"></div>
+                                                        <div id="editor4" data-text="editor_text4" class="border">{!! $data->contact_info_ru !!}</div>
                                                         <textarea name="contact_info_ru" hidden id="editor_text4"
                                                                   cols="30"
                                                                   rows="10"></textarea>
@@ -164,7 +164,7 @@
                                                     <div class="form-group">
                                                         <label for="">Umumiy ma'lumotlarni kiriting EN</label>
                                                         <div id="toolbar-container5"></div>
-                                                        <div id="editor5" data-text="editor_text5" class="border"></div>
+                                                        <div id="editor5" data-text="editor_text5" class="border">{!! $data->general_info_en !!}</div>
                                                         <textarea name="general_info_en" hidden id="editor_text5"
                                                                   cols="30"
                                                                   rows="10"></textarea>
@@ -175,7 +175,7 @@
                                                     <div class="form-group">
                                                         <label for="">Kontakt malumotlarini kiriting EN</label>
                                                         <div id="toolbar-container6"></div>
-                                                        <div id="editor6" data-text="editor_text6" class="border"></div>
+                                                        <div id="editor6" data-text="editor_text6" class="border">{!! $data->contact_info_en !!}</div>
                                                         <textarea name="contact_info_en" hidden id="editor_text6"
                                                                   cols="30"
                                                                   rows="10"></textarea>

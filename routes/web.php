@@ -236,5 +236,6 @@ Route::group(
             'middleware' => ['kafedra_admin']
         ], function () {
         Route::resource('teachers', 'TeacherController');
+        Route::resource('articles', 'ArticleController');
     });
 });

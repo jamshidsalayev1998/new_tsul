@@ -14,6 +14,7 @@ use App\SliderText;
 use App\Kafedra;
 use App\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
 
@@ -44,6 +45,7 @@ class KafedraAdminController extends Controller
     public function store(Request $request)
     {
 //        return $request;
+
         Validator::make($request->all(), [
             'fio' => ['required', 'string'],
             'kafedra_id' => ['required', 'exists:kafedra,id']
