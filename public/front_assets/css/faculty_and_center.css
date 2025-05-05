@@ -20,31 +20,40 @@ h1, h2, h3, h4, h5, h6, p, span, b {
     list-style-type: none;
     margin: 0;
     padding: 0;
-    background-color: #233585;
+    background-color:  #EEEEEE;
     color: white;
-    border: 1px solid #2c42A6;
+    border: 1px solid #233585;
+    border-bottom: none;
+    border-top-left-radius: 7px;
+    border-top-right-radius: 7px;
 }
 
 .fc_tab {
     cursor: pointer;
     padding: 10px;
-    background-color: #2C42A6;
+    background-color: #fff;
+    color: #2C42A6;
+    font-weight: 400;
     display: block;
     width: calc(100% / 4);
     text-align: center;
 }
 
 .fc_tab.active {
-    background-color: white;
-    color: #233585;
+    background-color: #2c42A6;
+    color: #fff;
+    font-weight: bolder;
 }
 
-.fc_tab:hover {}
 
 .fc_tab-content {
+    border: 1px solid #2C42A6;
+    border-top: 1px solid;
     border-left: 1px solid #2c42A6;
     border-right: 1px solid #2c42A6;
     border-bottom: 1px solid #2c42A6;
+    border-top-left-radius: 7px;
+    border-top-right-radius: 7px;
 }
 
 .about_fc_card {
@@ -83,13 +92,18 @@ h1, h2, h3, h4, h5, h6, p, span, b {
 .header_fc_content h5 {
     font-size: 24px;
     font-weight: 500;
-    font-family: 'Times New Roman', sans-serif;
+    font-family: Arial, Helvetica, sans-serif !important; 
     color: #233585;
 }
 
 .header_fc_content p {
-    font-size: 16px;
-    font-family: 'Times New Roman', sans-serif;
+    font-size: medium;
+    font-family: Arial, Helvetica, sans-serif !important; 
+    text-align: justify;
+}
+.header_fc_content span {
+    font-size: 20px;
+    font-family: Arial, Helvetica, sans-serif !important; 
     text-align: justify;
 }
 
@@ -131,7 +145,7 @@ h1, h2, h3, h4, h5, h6, p, span, b {
     left: 12px;
     font-style: normal;
     font-size: 1.625em;
-    font-family: sans-serif;
+    font-family: Arial, Helvetica, sans-serif !important; 
     color: #233585;
 }
 
@@ -419,7 +433,7 @@ h1, h2, h3, h4, h5, h6, p, span, b {
         transform: translateY(-50%);
         font-style: normal;
         font-size: 14px;
-        font-family: sans-serif;
+        font-family: Arial, Helvetica, sans-serif !important; 
         color: #006523;
     }
     .faculty_and_centers_list_text>ul {

@@ -13,23 +13,23 @@
   <div class="rectors_page pb-5">
             <div class="rectors_page_main">
                 <div>
-                    <div>
+                    <!-- <div>
                         {!! $data->$main_rektor_word_locale !!}
-                    </div>
+                    </div> -->
                 </div>
-                <div >
-                    <img style="width: 100%; object-fit:cover; "  src="{{asset('')}}{{$data->main_image}}" alt="">
-{{--                    <img src="https://storage.kun.uz/source/6/gC5S-URN34eqAzqeINO6zWUnfOeUPgWn.jpg" alt="">--}}
-                    <span>
-                        <h4>{{$data->$full_name_locale}}</h4>
-                        <h5>@lang('index.Доктор юридических наук, профессор')</h5>
+                <div>
+                    <img style="width: 100%; height: auto;"  src="{{asset('')}}{{$data->main_image}}" alt="">
+                    <span class="col-12">
+                        <h4 class="col-12 col-md-12 col-lg-6">{{$data->$full_name_locale}}</h4>
+                        <h5 class="col-12 col-md-12 col-lg-6">@lang('index.Huquqshunos, 1-darajali adliya maslahatchisi')</h5>
                     </span>
                 </div>
             </div>
 <div class="container mt-5">
     <div class="my-3 py-1"
-                    style="margin: 0 auto; border-bottom: 1px solid #233585; font-size: 24px; color: #233585; font-weight: 500;">
-                    @lang('index.Rektor murojati')</div>
+                    style="padding-top: 56px !important; margin: 20px auto; border-bottom: 1px solid #233585; font-size: 24px; color: #233585; font-weight: 500;">
+                       {{--     @lang('index.Rektor murojati') --}}
+    </div>
                 <div class="rp_appeal">
                     <div>
                         <div class="rp_video_materials wow fadeIn" data-wow-duration="0.2s" data-wow-delay="0.2s">
@@ -37,8 +37,8 @@
                                 <i class="fas fa-play" id="rp_vm_play_i"></i>
                                 <button id="rp_vm_play"></button>
                             </div>
-                            <video poster="{{asset('front_assets/assets/img/rolik.png')}}" id="rp_vm_id">
-                                <source src="{{asset('front_assets/assets/tdyu3.mp4')}}" type="video/mp4">
+                            <video poster="{{asset('video/new_rolik-image.jpg')}}" id="rp_vm_id">
+                                <source src="{{asset('video/new_rolik.mp4')}}" type="video/mp4">
                                 <source src="movie.ogg" type="video/ogg">
                                 Your browser does not support the video tag.
                             </video>
@@ -340,8 +340,8 @@
       <div class="container">
                 <div class="short_card_about_rector">
                     <div>
-                        <div class="rp_about_img" style="margin-left: 0 !important;">
-                            <img style="width: 100%;  object-fit: cover;" src="{{asset('front_assets/assets/img/main_rector_old.jpg')}}" alt="" >
+                        <div class="rp_about_img bg-none" style="margin-left: 0 !important;">
+                            <img style="width: 100%;  object-fit: contain;" src="{{asset('images/rektor/zughhczadq44_51_11_25_12.jpg')}}" alt="" >
                         </div>
                     </div>
                     <div class="d-flex align-items-center justify-content-center">

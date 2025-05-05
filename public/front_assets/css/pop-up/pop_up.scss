@@ -1,5 +1,5 @@
-.wrap{
-  $tsul: #0A2355;
+.pop-upup{
+$tsul: #0A2355;
 $tsul-lighter: #2C42A6;
 $tsul-menu:#233585;
 $black: #000;
@@ -7,11 +7,12 @@ $white: #fff;
 $pop-up-bg: $tsul;
 $text-colors: white;
 $icon-colors: white;
-$text-top-bottom-f-size: 20px;
-$icon-f-size:20px;
+$text-top-bottom-f-size: 24px;
+$icon-f-size:24px;
 $menu-focus: 18px;
-$menu-header-links: 20px; 
-$menu-body-links: 16px;
+$menu-header-links: 22px; 
+$menu-body-links: 17px;
+$menu-text-line-height: 110%;
 /* The popup form - hidden by default */
 .form-popup {
   display: none;
@@ -33,7 +34,7 @@ $menu-body-links: 16px;
   padding: 0px;
   background-color: $pop-up-bg;
   img{
-    padding-top: 20px;
+    padding-top: 10px;
     padding-bottom: 5px;
     width: 120px;
     display: block;
@@ -101,12 +102,18 @@ $menu-body-links: 16px;
     top: 20px;
     left: 20px;
     text-align: center;
+   
     
     a{
       i{
         font-size: $icon-f-size;
         color: $icon-colors;
         padding-right: 10px;
+        filter: brightness(1);
+         
+    &:hover{
+      filter: brightness(0.7);
+    }
       }
       }
     }
@@ -250,18 +257,24 @@ $menu-body-links: 16px;
   overflow: hidden;
 ul{
   h6{
+    margin: 0px 0px 4px;
     a{
       font-size: $menu-header-links;
       text-decoration: none;
       color: $text-colors;
       filter: brightness(1);
+      letter-spacing: 0.5px;
+      line-height: $menu-text-line-height;
     }
   }
   h5{
+    margin: 0;
     a{
       font-size: $menu-focus;
     text-decoration: none;
     color: $text-colors;
+    letter-spacing: 0.5px;
+    line-height: $menu-text-line-height;
     filter: brightness(0.9);
     &:hover{
       filter: brightness(0.8);
@@ -281,6 +294,8 @@ ul{
       font-size: $menu-body-links;
       text-decoration: none;
       color: $text-colors;
+      letter-spacing: 0.5px;
+      line-height: $menu-text-line-height;
       filter: brightness(0.8);
       &:hover{
         filter: brightness(0.9);
@@ -301,21 +316,28 @@ ul{
   overflow: hidden;
 ul{
   h6{
+    margin: 0px 0px 4px;
     a{
       font-size: $menu-header-links;
       text-decoration: none;
     color: $text-colors;
+    letter-spacing: 0.5px;
+    line-height: $menu-text-line-height;
     filter: brightness(1);
   
     }
   }
   h5{
+    margin: 0;
+    margin-top: 4px;
     a{
       font-size: $menu-focus;
     text-decoration: none;
     color: $text-colors;
     filter: brightness(0.9);
     margin-left: 10px;
+    letter-spacing: 0.5px;
+    line-height: $menu-text-line-height;
     
     }
   }
@@ -324,6 +346,8 @@ ul{
   li{
     margin-left: 0px;
     list-style: none;
+    letter-spacing: 0.5px;
+    line-height: $menu-text-line-height;
     &:hover{
       background-color: #10295B;
       border-radius: 2px;
@@ -333,6 +357,8 @@ ul{
       text-decoration: none;
       color: $text-colors;
       margin-left: 20px;
+      letter-spacing: 0.5px;
+      line-height: $menu-text-line-height;
       filter: brightness(0.8);
       &:hover{
         filter: brightness(0.9);
@@ -343,13 +369,20 @@ ul{
     }
     
   }
+  .fixed-footer{
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    text-align: center;
+  }
 }
 
 @media only screen and(max-width: 2030px)and(min-width: 1440px){
 $text-top-bottom-f-size: 16px;
-$icon-f-size:16px;
-$menu-focus: 15px;
-$menu-header-links: 16px; 
+$icon-f-size:18px;
+$menu-focus: 13px;
+$menu-header-links: 14px; 
 $menu-body-links: 13px;
 
 /* The popup form - hidden by default */
@@ -359,9 +392,9 @@ $menu-body-links: 13px;
 .form-container {
  
   img{
-    padding-top: 20px;
+    padding-top: 5px;
     padding-bottom: 5px;
-    width: 110px;
+    width: 80px;
     display: block;
     margin-left: auto;
     margin-right: auto;
@@ -529,11 +562,11 @@ ul{
 }
 @media only screen and(max-width: 1440px)and(min-width: 1260px){
 
-  $text-top-bottom-f-size: 14px;
-  $icon-f-size:14px;
-  $menu-focus: 13px;
-  $menu-header-links: 14px; 
-  $menu-body-links: 12px;
+  $text-top-bottom-f-size: 12px;
+  $icon-f-size:12px;
+  $menu-focus: 11px;
+  $menu-header-links: 12px; 
+  $menu-body-links: 10px;
   
   /* The popup form - hidden by default */
   .form-popup {
@@ -556,9 +589,9 @@ ul{
     padding: 0px;
     background-color: $pop-up-bg;
     img{
-      padding-top: 20px;
+      padding-top: 10px;
       padding-bottom: 5px;
-      width: 100px;
+      width: 80px;
       display: block;
       margin-left: auto;
       margin-right: auto;
@@ -841,11 +874,11 @@ ul{
   }
   }
   @media only screen and(max-width: 1260px)and(min-width: 1024px){
-    $text-top-bottom-f-size: 13px;
-    $icon-f-size:13px;
-    $menu-focus: 12px;
-    $menu-header-links: 13px; 
-    $menu-body-links: 11px; 
+    $text-top-bottom-f-size: 12px;
+    $icon-f-size:12px;
+    $menu-focus: 11px;
+    $menu-header-links: 12px; 
+    $menu-body-links: 10px; 
     /* The popup form - hidden by default */
     .form-popup {
      

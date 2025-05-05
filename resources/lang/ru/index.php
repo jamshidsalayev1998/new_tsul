@@ -1,5 +1,24 @@
 <?php
 return [
+
+    'Huquqshunos, 1-darajali adliya maslahatchisi' => 'Доктор юридических наук, профессор',
+
+    // Start Teacher section langs
+    'Biography and CV' => "Биография и резюме",
+    'Articles' => "Статьи",
+    'Contacts' => "Контакты",
+    'Additional info' => 'Дополнительная информация',
+    'Our teachers' => 'Наши учителя',
+    'All teachers list' => 'Список всех учителей',
+    'Language' => 'Язык',
+    'Experience' => 'Опыт',
+
+    // Requestment
+
+    'Participate' => 'Принимать участие',
+
+    // End Teacher section langs
+
     'Markaz ma`muryati' => 'Администрация центра',
 
     'Extra' => 'дополнительный',
@@ -9,7 +28,7 @@ return [
     'Наука' => 'Наука',
     'NewsM' => 'Новости',
     'Mobile-logo' => 'ТАШКЕНТСКИЙ ГОСУДАРСТВЕННЫЙ ЮРИДИЧЕСКИЙ УНИВЕРСИТЕТ',
-    
+
     //EUM
     'domens enter' => 'открыть',
     'Subdomens tsul'=>'Вся проделанная работа',
@@ -54,7 +73,7 @@ return [
     'КОЛИЧЕСТВО ВЫПУСКНИКОВ' => 'КОЛИЧЕСТВО ВЫПУСКНИКОВ',
     'Контакт' => 'Контакт',
     'Локация' => 'Локация',
-    'Тел' => 'Тел',
+    'Тел' => 'Телефон доверия',
     'Факс' => 'Факс',
     'e-mail' => 'электронная почта',
     'Главная страница' => 'Главная страница',
@@ -330,6 +349,8 @@ return [
     'Kafedralar' => 'Кафедры',
     'Read more' => 'Подробнее',
     'Talim profillari' => 'Talim dasturi',
-    'Rektor murojaati' => 'Приветствие ректора'
+    'Rektor murojaati' => 'Приветствие ректора',
+    "Qabul bo‘limi" => "Отдел приема"
+
 
 ];

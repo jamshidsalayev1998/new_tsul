@@ -12,5 +12,9 @@ class NewwType extends Model
     {
         return $query->where('status', 1);
     }
+    public function scopeIsset($query)
+    {
+        return $query->where('is_deleted', 0);
+    }
 
 }

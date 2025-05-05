@@ -46,7 +46,7 @@
                                 <div class="left_side_title_top">БЫСТРЫЕ ССЫЛКИ</div>
                                 <div>
                                     @foreach($other_centers as $link)
-                                    <a href="{{route('simple.center.show' , ['id' => $link->id , 'name' => $link->$name_locale])}}"><i class="fas fa-angle-double-right text-secondary"></i>{{$link->$name_locale}}</a>
+                                    <a href="{{route('simple.section.show' , ['id' => $link->id , 'name' => $link->$name_locale])}}"><i class="fas fa-angle-double-right text-secondary"></i>{{$link->$name_locale}}</a>
                                     @endforeach
 
                                 </div>

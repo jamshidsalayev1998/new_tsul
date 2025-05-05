@@ -68,4 +68,17 @@ class KafedraAdminController extends Controller
         return redirect()->back()->with('success' , 'Malumot qoshildi');
 
     }
+
+    public function destroy($id){
+        $admin = KafedraAdmin::find($id);
+        if ($admin){
+            $user = User::find($admin->user_id);
+            if ($user){
+                $user->delete();
+            }
+            $admin->delete();
+        }
+        return redirect()->back()->with('success' , 'Malumot ochirildi');
+
+    }
 }

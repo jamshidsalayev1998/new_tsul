@@ -17,6 +17,7 @@ class IndexController extends Controller
         if (Auth::user()->role == 1){
             return redirect(route('teachers.index'));
         }
+        return redirect(route('admin.slider.index'));
         return view('admin.pages.dashboard.index');
     }
 }

@@ -222,7 +222,7 @@
       .administration .info-card img {
         width: 60%;
         height: 60%;
-        margin-left: 74px; }
+        /* margin-left: 74px; } */
       .administration .info-card .img-info h4 a {
         font-size: 20px; }
       .administration .info-card .img-info h5 {
@@ -236,7 +236,7 @@
       .administration .info-card img {
         width: 60%;
         height: 60%;
-        margin-left: 55px; }
+        /* margin-left: 55px; } */
       .administration .info-card .img-info h4 a {
         font-size: 17px; }
       .administration .info-card .img-info h5 {

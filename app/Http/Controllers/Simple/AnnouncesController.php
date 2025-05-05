@@ -41,29 +41,63 @@ class AnnouncesController extends Controller
             'announces' => $y_b,
         ]);
     }
-    public function index(){
-        $data = Announce::active()->orderBy('date' , 'DESC')->get();
+    public function index(Request $request){
+        $data = Announce::active()->orderBy('date' , 'DESC')->paginate(6);
         $types = NewwType::all();
-        $news = Neww::orderBy('date' , 'DESC')->get();
+        $news = Neww::orderBy('date' , 'DESC')->paginate(8);
+
+        if($request->ajax()){
+
+            $news = view('simple.announces_news_scroll', [
+                'news'=> $news
+            ])->render();
+
+            $announces = view('simple.announces_scroll', [
+                'data'=> $data
+            ])->render();
+
+            return response()->json([
+                'news' => $news,
+                'announces' => $announces
+            ]);
+        }
+
         return view('simple.announces' , [
             'data' => $data,
-            'announces' => $news,
+            'news' => $news,
             'types' => $types
         ]);
         return $data;
-
     }
 
-    public function show($id){
+    public function show(Request $request, $id){
+
         $data = Announce::find($id);
-        $other = Announce::where('id' , '<>' , $data->id)->orderBy('id' , 'DESC')->get();
+//        return $data;
+        $other = Announce::where('id' , '<>' , $data->id)->orderBy('id' , 'DESC')->paginate(6);
         $types = NewwType::all();
-        $news = Neww::orderBy('id' , 'DESC')->get();
+        $news = Neww::orderBy('id' , 'DESC')->paginate(8);
+        if($request->ajax()){
+
+            $news = view('simple.announce_show_news_scroll', [
+                'news'=> $news
+            ])->render();
+
+            $announces = view('simple.announce_show_scroll', [
+                'others'=> $other
+            ])->render();
+
+            return response()->json([
+                'news' => $news,
+                'announces' => $announces
+            ]);
+        }
+
         return view('simple.announce_show' , [
             'new' => $data,
             'others' => $other,
             'types' => $types,
-            'announces' => $news
+            'news' => $news
         ]);
     }
 

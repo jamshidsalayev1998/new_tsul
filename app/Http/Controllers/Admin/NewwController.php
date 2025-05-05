@@ -19,14 +19,14 @@ class NewwController extends Controller
      * @return void
      */
     public function index(){
-        $news  = Neww::all();
+        $news  = Neww::orderBy('date' , 'DESC')->get();
         return view('admin.pages.news.index' , [
             'news' => $news
         ]);
     }
 
     public function create(){
-        $types = NewwType::all();
+        $types = NewwType::isset()->get();
         $hashtags = Hashtag::all();
         return view('admin.pages.news.create' , [
             'types' => $types,
@@ -39,7 +39,7 @@ class NewwController extends Controller
         return $name2;
     }
     public function edit($id){
-        $types = NewwType::all();
+        $types = NewwType::isset()->get();
         $hashtags = Hashtag::all();
         $new =  Neww::find($id);
         return view('admin.pages.news.edit' , [
@@ -50,6 +50,26 @@ class NewwController extends Controller
     }
     public function store(Request $request){
 //        return $request;
+        $request_array = $request->all();
+        foreach ($request_array as $key => $value) {
+            if ($value == "<p><br data-cke-filler=\"true\"></p>"){
+                $request_array[$key] = null;
+            }
+        }
+        $request->merge($request_array);
+        $request->validate([
+            'content_uz' => ['required'],
+            'content_ru' => ['required'],
+            'content_en' => ['required'],
+            'title_uz' => ['required'],
+            'title_ru' => ['required'],
+            'title_en' => ['required'],
+            'short_info_uz' => ['required'],
+            'short_info_ru' => ['required'],
+            'short_info_en' => ['required'],
+            'date' => ['required' , 'date'],
+            'type_id' => ['required'],
+        ]);
         $new = new Neww();
         $new->content_uz = $request->content_uz;
         $new->content_ru = $request->content_ru;
@@ -100,16 +120,36 @@ class NewwController extends Controller
             $has_image = 1;
         }
         if (!$has_image){
-            $new->image_uz = '/images/default-news-image.png';
-            $new->image_ru = '/images/default-news-image.png';
-            $new->image_en = '/images/default-news-image.png';
+            $new->image_uz = 'images/default-news-image.png';
+            $new->image_ru = 'images/default-news-image.png';
+            $new->image_en = 'images/default-news-image.png';
         }
         $new->save();
-        return redirect()->back()->with('success' , 'Malumot saqlandi');
+        return redirect(route('admin.neww.index'))->with('success' , 'Malumot saqlandi');
         return $request;
     }
     public function update(Request $request , $id){
 //        return $request;
+        $request_array = $request->all();
+        foreach ($request_array as $key => $value) {
+            if ($value == "<p><br data-cke-filler=\"true\"></p>"){
+                $request_array[$key] = null;
+            }
+        }
+        $request->merge($request_array);
+        $request->validate([
+            'content_uz' => ['required'],
+            'content_ru' => ['required'],
+            'content_en' => ['required'],
+            'title_uz' => ['required'],
+            'title_ru' => ['required'],
+            'title_en' => ['required'],
+            'short_info_uz' => ['required'],
+            'short_info_ru' => ['required'],
+            'short_info_en' => ['required'],
+            'date' => ['required' , 'date'],
+            'type_id' => ['required'],
+        ]);
         $new =  Neww::find($id);
         $new->content_uz = $request->content_uz;
         $new->content_ru = $request->content_ru;
@@ -150,7 +190,7 @@ class NewwController extends Controller
         }
 
         $new->update();
-        return redirect()->back()->with('success' , 'Malumot ozgartirildi');
+        return redirect(route('admin.neww.index'))->with('success' , 'Malumot ozgartirildi');
         return $request;
     }
 

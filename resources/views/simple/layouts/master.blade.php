@@ -17,17 +17,25 @@
     <link rel="stylesheet" href="{{asset('front_assets/css/index.css')}}">
     <link rel="stylesheet" href="{{asset('front_assets/css/newmenu.css')}}">
     <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap" rel="stylesheet">    
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="{{asset('front_assets/css/animate.css')}}">
     <link rel="stylesheet" href="{{asset('front_assets/jamshid/jamshid.css')}}">
      <link rel="stylesheet" href="{{asset('front_assets/css/pop-up/pop_up.css')}}">
      <link rel="stylesheet" href="{{asset('front_assets/css/animate.css-main/animate.css')}}">
      <!-- loaderTSUL css -->
      <link rel="stylesheet" href="{{asset('front_assets/css/loaderTSUL.css')}}">
+     <link rel="stylesheet" href="{{asset('front_assets/css/teacher2.css')}}">
 
 {{--    <link rel="stylesheet" href="{{asset('front_assets/css/general_page_content_bekzod.css')}}">--}}
 {{--    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>--}}
     @yield('links')
+   
+       <!-- bootstrap5 dataTables css cdn -->
+       <link
+      rel="stylesheet"
+      href="//cdn.datatables.net/1.11.3/css/jquery.dataTables.min.css"
+    />
+
 
 </head>
 
@@ -65,12 +73,45 @@
 <script src="{{asset('front_assets/special_feature/js/jquery.cookie.min.js')}}"></script>
 <script src="{{asset('front_assets/js/wow.js')}}"></script>
 <sript src="{{asset('front_assets/jamshid/jamshid.js')}}"></sript>
+<sript src="{{asset('front_assets/js/teacher2.js')}}"></sript>
+
 
 <!-- Loader js files -->
 <sript src="{{asset('front_assets/js/loaderTSUL.js')}}"></sript>
 
+    <!-- bootstrap5 dataTables js cdn -->
+    <script src="//cdn.datatables.net/1.11.3/js/jquery.dataTables.min.js"></script>
+
 @yield('js')
-<script>
+<script>    
+$(document).ready(function () {   
+
+        $('#datatable').DataTable({
+            "lengthMenu": [[20, 30, 50, -1], [20, 30, 50, "@lang('index.All')"]],          
+            'ordering': false,
+            "pagingType": "full_numbers",
+        "language":{
+            sEmptyTable: "no data is founded",
+            sInfo: "",
+            sInfoEmpty: "",
+            sInfoFiltered: "",
+            sInfoPostFix: "",
+            sInfoThousands: ".",
+            sLengthMenu: "_MENU_",
+            sLoadingRecords: "@lang('index.Loading datas')",
+            sProcessing: "@lang('index.loading')",
+            sSearch: "@lang('index.Search')",
+            sZeroRecords: "@lang('index.Nothing found')",
+            oPaginate: {
+            sFirst: "@lang('index.Prev')",
+            sPrevious: "@lang('index.back')",
+            sNext: "@lang('index.next')",
+            sLast: "@lang('index.last')"},
+}
+        });
+
+      });
+
     $('.allow-href').click(function(){
         if($(this).attr('data-href')){
             window.location.href=$(this).attr('data-href');

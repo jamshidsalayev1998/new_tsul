@@ -27,6 +27,10 @@ $locale = app()->getLocale();
                         <div>
                             <h5 class="footer_title_columns">@lang('index.Контакт')</h5>
                             <div>
+                                 <p class="mt-3" style="font-size: 16px; font-weight: 600;">
+                                    <i class="fas fa-phone-alt mr-2"></i>
+                                    <span>Kommutator: +998 71-236-28-06</span>
+                                </p>
                                 <p class="mt-3" style="font-size: 16px; font-weight: 600;">
                                     <i class="fas fa-phone-alt mr-2"></i>
                                     <span>@lang('index.Тел'): {{$about->phone}}</span>
@@ -37,7 +41,7 @@ $locale = app()->getLocale();
                                 </p>
                                 <p class="mt-3" style="font-size: 16px; font-weight: 600;">
                                     <i class="fas fa-envelope mr-2"></i>
-                                    <span>@lang('index.e-mail'): <a href="#"
+                                    <span>@lang('index.e-mail'): <a class="owlItems" href="#"
                                             style="font-size: 16px; font-weight: 600; color: white;">{{$about->email}}</a></span>
                                 </p>
                                 <p>

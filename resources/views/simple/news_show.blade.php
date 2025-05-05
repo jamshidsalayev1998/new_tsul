@@ -2,7 +2,10 @@
 @section('links')
     <link rel="stylesheet" href="{{asset('front_assets/css/news.css')}}">
     <link rel="stylesheet" href="{{asset('front_assets/css/reg_map.css')}}">
-    @endsection
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+@endsection
+
 @section('content')
     <?php
         $locale = app()->getLocale();
@@ -14,7 +17,16 @@
         $logo_locale = 'front_assets/assets/img/logo_university/_TDYU_'.$locale.'_white_primary.png';
         $i = 0;
     ?>
-
+    <style>
+        .ck-media__wrapper div iframe{
+            position: relative !important;
+            min-width: 50vw !important;
+            height: 50vh !important;
+        }
+        .ck-widget {
+            justify-content: center !important;
+        }
+    </style>
     <div class="rg_page border-top pt-3">
             <div class="container">
                 <div class="row">
@@ -30,9 +42,9 @@
                     <div class="col-xl-9">
                         <div class="row">
                             <div class="col-xl-12 my-3">
-{{--                                 @foreach($types as $type)--}}
-{{--                                    <button class="btn_link_menu">{{$type->$name_locale}}</button>--}}
-{{--                                 @endforeach--}}
+                                 @foreach($types as $type)
+                                    <button class="btn_link_menu">{{$type->$name_locale}}</button>
+                                 @endforeach
                             </div>
                             <div>
                                 <div style="width: 100%; align-items: center"  class="text-center">
@@ -49,25 +61,17 @@
                         </div>
                         <div class="last_news_bottom_box">
                             <h5>@lang('index.Последние новости')</h5>
-                            <div class="row border-top">
-                                @foreach($others as $other)
-                                <div class="col-lg-4 mt-3 last_news_bottom_card">
-                                    <a href="{{route('simple.news.show' , ['id' => $other->id])}}">
-                                    <div class="text-center">
-                                        <img style="width: auto!important;" src="{{asset('')}}{{$other->$image_locale}}" alt="">
-                                    </div>
-{{--                                    <button class="btn_link_menu mt-2">Образование</button>--}}
-                                    <h6 class="last_news_bottom_card_text mt-2">
-                                        {{$other->$short_info_locale}}
-                                    </h6>
-                                    <span class="text-secondary text-end d-block" style="font-size: 13px; font-weight: 500;">28.12.2021</span>
-                                    </a>
+                            <div id="news-data" class="row border-top">
+                                <div class="row" id="news-data">
+                                    @include('simple.news_show_scroll')
                                 </div>
-                                @endforeach
 
                                 <p class="text-end mt-2">
                                     <a href="{{route('simple.news')}}" style="font-weight: 500; color: #006523; font-size: 14px;">@lang('index.Все новости')</a>
                                 </p>
+                            </div>
+                            <div class="ajax-load text-center p-3" style="display:none">
+                                <p><img src="{{asset('images/ajax-loader.gif')}}">Load More Post...</p>
                             </div>
                         </div>
                     </div>
@@ -100,20 +104,8 @@
                         </div>
                         <div class="rg_anons mt-3">
                             <h5>@lang('index.Анонсы')</h5>
-                            <div>
-                                @foreach($announces as $anc)
-                                <div>
-                                    <div>
-                                        {{date('d' , strtotime($anc->date))}}<br> <br> {{$anc->get_month_short_name($locale)}}
-                                    </div>
-                                    <div>
-                                        <a href="{{route('simple.announces.show' , ['id' => $anc->id])}}">
-                                            {{$anc->$title_locale}}
-                                        </a>
-                                    </div>
-                                </div>
-                                @endforeach
-
+                            <div id="announces-data">
+                                @include('simple.news_show_announces_scroll')
                             </div>
                             <p class="text-end">
                                 <a href="#" class="text-dark" style="font-weight: 500;">@lang('index.Все анонсы')</a>
@@ -125,4 +117,41 @@
                 </div>
             </div>
         </div>
+    <script>
+        function loadMoreData(page) {
+            console.log('sss');
+            $.ajax({
+                url: '?page=' + page,
+                type: 'get',
+                beforeSend: function () {
+                    $(".ajax-load").show();
+                }
+            })
+                .done(function (data) {
+                    if (data.news == "" && data.announces == "") {
+                        $('.ajax-load').html("No more Newss Found!");
+                        return;
+                    }
+                    $('.ajax-load').hide();
+                    $('#news-data').append(data.news);
+                    $('#announces-data').append(data.announces);
+                })
+                // Call back function
+                .fail(function (jqXHR, ajaxOptions, thrownError) {
+                    alert("Server not responding.....");
+                });
+        }
+
+        //function for Scroll Event
+        var page = 1;
+        $(window).scroll(function () {
+            if ($(window).scrollTop() + $(window).height() >= $(document).height()) {
+                page++;
+                loadMoreData(page);
+            }
+        });
+    </script>
+@endsection
+@section('title')
+{{$new->$title_locale}}
 @endsection

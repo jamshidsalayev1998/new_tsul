@@ -1,10 +1,34 @@
 <?php
 $locale = app()->getLocale();
 $name_locale = 'name_' . $locale;
-$menus = 'App\Menu'::where('leap', 0)->orderBy('order' , 'ASC')->basic()->active()->get();
-$menus_top_all = 'App\MenuTop'::where('leap', 0)->orderBy('order' , 'ASC')->basic()->active()->get();
-$menus_top = 'App\MenuTop'::where('leap', 0)->orderBy('order' , 'ASC')->basic()->active()->take(2)->get();
-$menus_top_last = 'App\MenuTop'::where('leap', 0)->orderBy('id', 'DESC')->basic()->active()->take(3)->get()->reverse();
+$menus = ('App\Menu')
+    ::where('leap', 0)
+    ->orderBy('order', 'ASC')
+    ->basic()
+    ->active()
+    ->get();
+$menus_top_all = ('App\MenuTop')
+    ::where('leap', 0)
+    ->orderBy('order', 'ASC')
+    ->basic()
+    ->active()
+    ->get();
+$menus_top = ('App\MenuTop')
+    ::where('leap', 0)
+    ->orderBy('order', 'ASC')
+    ->basic()
+    ->active()
+    ->take(2)
+    ->get();
+$menus_top_last = ('App\MenuTop')
+    ::where('leap', 0)
+    ->orderBy('id', 'DESC')
+    ->basic()
+    ->active()
+    ->take(3)
+    ->get()
+    ->reverse();
+$logo_locale = 'front_assets/assets/img/logo_university/logo_'.$locale.'.png';
 ?>
 <style>
     .tooltip {
@@ -56,7 +80,8 @@ $menus_top_last = 'App\MenuTop'::where('leap', 0)->orderBy('id', 'DESC')->basic(
         <div class="logo_box" style="z-index: 100">
             <a href="/">
                 <div>
-                    <img src="{{asset('front_assets/assets/img/logo_university/_Sign logo_EN_primary.png')}}" alt="">
+                    <!-- <img src="{{asset('front_assets/assets/img/logo_university/_Sign logo_EN_primary.png')}}" alt=""> -->
+                    <img src="{{asset($logo_locale)}}" alt="">
                 </div>
             </a>
         </div>
@@ -139,13 +164,88 @@ padding: 15px;
 </script>
 
 
-                    <a href="https://www.fb.com/tsulofficial"><i class="fab fa-facebook-f"></i></a>
+                    <!-- <a href="https://www.fb.com/tsulofficial"><i class="fab fa-facebook-f"></i></a>
                     <a href="https://t.me/tsulofficial"><i class="fab fa-telegram-plane"></i></a>
                     <a href="https://www.instagram.com/tsulofficial/"><i class="fab fa-instagram"></i></a>
                     <a href="https://twitter.com/tashkentlaw"><i class="fab fa-twitter"></i></a>
                     <a href="https://www.youtube.com/channel/UCTAhGEQDYohjqmDAsD9yRBg"><i
-                            class="fab fa-youtube"></i></a>
+                            class="fab fa-youtube"></i></a> -->
 
+
+                            <!-- <div class="d-flex justify-content-start align-items-center">
+                                <span class="pl-2" style="color: white !important;">
+                            +998 71 233-42-09
+                            </span></div> -->
+                            <!-- <div class="d-flex justify-content-start align-items-center">
+                                <a href="tel:+998712331395" class="pl-2" style="color: white !important; width:auto !important; border-radius:0 !important; background:transparent !important;">
+                            @lang('index.Qabul bo‘limi'): +998 71 233-13-95
+                            </a></div> -->
+                            <div class="d-flex justify-content-start align-items-center">
+    <a href="tel:+998712331395" class="pl-2" style="color: white !important; width:auto !important; border-radius:0 !important; background:transparent !important;">
+        @lang('index.Qabul bo‘limi'): +998 71 233-13-95
+    </a>
+
+    <div class="ml-3">
+        <button class="btn btn-white btn-sm" data-bs-toggle="modal" data-bs-target="#rateModal">
+            Saytni baholash <i class="fas fa-star" data-value="1"></i>
+        </button>
+    </div>
+</div>
+
+<!-- Modal -->
+<div style="z-index: 10000;" class="modal fade" id="rateModal" tabindex="-1" aria-labelledby="rateModalLabel" aria-hidden="true">
+  <div class="modal-dialog" style="max-width: 800px; width: 100%;">
+    <form class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="rateModalLabel">Saytni baholash</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Yopish"></button>
+      </div>
+      <div class="modal-body">
+        <!-- Yulduzcha baholash -->
+        <div class="mb-3 text-center">
+            Qanday baho berasiz:
+          <span class="star-rating">
+            <i class="fas fa-star" data-value="1"></i>
+            <i class="fas fa-star" data-value="2"></i>
+            <i class="fas fa-star" data-value="3"></i>
+            <i class="fas fa-star" data-value="4"></i>
+            <i class="fas fa-star" data-value="5"></i>
+          </span>
+          <input type="hidden" name="rating" id="rating" value="0">
+        </div>
+
+        <!-- F.I.O -->
+        <div class="mb-3">
+          <label for="fullName" class="form-label">Ismingiz</label>
+          <input type="text" class="form-control" id="fullName" name="fullName" required>
+        </div>
+
+        <!-- Izoh -->
+        <div class="mb-3">
+          <label for="comment" class="form-label">Sayt haqida fikringiz va qanday qo'shimchalar kerakligi haqida izoh</label>
+          <textarea class="form-control" id="comment" name="comment" rows="3"></textarea>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button type="submit" class="btn btn-primary">Yuborish</button>
+      </div>
+    </form>
+  </div>
+</div>
+
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+<script>
+  document.querySelectorAll('.star-rating i').forEach(star => {
+    star.addEventListener('click', function () {
+      const rating = this.getAttribute('data-value');
+      document.getElementById('rating').value = rating;
+      document.querySelectorAll('.star-rating i').forEach(s => {
+        s.classList.toggle('text-warning', s.getAttribute('data-value') <= rating);
+      });
+    });
+  });
+</script>
                             <!-- top icon pop up contact form -->
                             <!-- <a  onclick="openForm()"><i class="fas fa-phone"></i></a>    -->
 
@@ -171,7 +271,7 @@ padding: 15px;
                 <div>
                     @foreach($menus_top as $m_t)
                         <span class="main_links">
-                        <a href="@if($m_t->slug){{$m_t->slug}} @else # @endif">{{$m_t->$name_locale}}</a>
+                        <a class="owlItems" href="@if($m_t->slug){{$m_t->slug}} @else # @endif">{{$m_t->$name_locale}}</a>
                         <div class="mega_menu_custom" style="padding-top: 10px;">
                             @if($m_t->has_child())
                                 <div class="top_dropbox_box">
@@ -192,13 +292,13 @@ padding: 15px;
                 <div>
                     @foreach($menus_top_last as $m_t)
                         <span class="main_links">
-                        <a href="@if($m_t->slug){{$m_t->slug}} @else # @endif">{{$m_t->$name_locale}}</a>
+                        <a  href="@if($m_t->slug){{$m_t->slug}} @else # @endif" class="owlItems">{{$m_t->$name_locale}}</a>
                         <div class="mega_menu_custom" style="padding-top: 10px;">
                             @if($m_t->has_child())
                                 <div class="top_dropbox_box">
                                 @foreach($m_t->childs() as $m_t_ch)
-                                        <a href="@if($m_t_ch->slug){{$m_t_ch->slug}} @else # @endif"
-                                           class="nav_dropdown_links"><i
+                                        <a  href="@if($m_t_ch->slug){{$m_t_ch->slug}} @else # @endif"
+                                           class="nav_dropdown_links owlItems"><i
                                                 class="fas fa-caret-right mr-2 text-secondary"></i>{{$m_t_ch->$name_locale}}</a>
                                     @endforeach
                             </div>
@@ -209,16 +309,15 @@ padding: 15px;
 
                 </div>
 
-                <div class="m-2">
+                <div class="m-2 right-features-box">
 
-                <div class="text-center m-0 p-0 mb-1" style="border-radius: 10px;
-    background-color: #2C42A6;">
-                    <!-- //Start using services  modal -->
+                <!-- <div class="text-center m-0 p-0 mb-1" style="border-radius: 10px;
+    background-color: #2C42A6;">                    
                     <span class="align-items-center px-3">
                        <span class="fw-3 text-white" style="font-size: small;" type="button" class="btn btn-primary" data-mdb-toggle="modal" data-mdb-target="#PC_modal">@lang('index.Xizmatlardan foydalanish')
                        </span>
                        </span>
-                </div>
+                </div> -->
 
                     <div class="p-0 m-0 d-flex h-100 align-items-center">
 
@@ -315,7 +414,7 @@ padding: 15px;
                 </div>
 
     <!--Using services modal -->
-<div class="modal top fade" id="PC_modal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true" data-mdb-backdrop="true" data-mdb-keyboard="true">
+<!-- <div class="modal top fade d-none" id="PC_modal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true" data-mdb-backdrop="true" data-mdb-keyboard="true">
   <div class="modal-dialog modal-dialog-centered">
     <div class="modal-content">
       <div class="modal-header">
@@ -325,33 +424,25 @@ padding: 15px;
 
 
     <form  action="{{route('simple.services')}}" method="post" class="m-4">
-      @csrf
-  <!-- fio -->
+      @csrf 
         <div class="form-outline mb-4">
             <input name="fio" type="text" required="true" id="form6Example1" class="form-control" />
             <label class="form-label" for="form6Example1">@lang('index.Ism va familyangiz')</label>
           </div>
 
-  <!-- Phone -->
+  
        <div class="form-outline mb-4">
             <input name="phone" type="number" required="true" id="form6Example6" class="form-control" />
             <label class="form-label" for="form6Example6">@lang('index.Telifon raqamingiz')</label>
         </div>
 
-
-  <!-- Email input -->
-      <!-- <div class="form-outline mb-4">
-        <input name="email" type="email" required="true" id="form6Example5" class="form-control" />
-        <label class="form-label" for="form6Example5">@lang('index.Email')</label>
-      </div> -->
-
-  <!-- Submit button -->
+ 
       <button type="submit"  class="btn" style="background-color:#1d39c4; color: white; text-transform: lowercase">@lang('index.Yuborish')</button>
     </form>
 
     </div>
   </div>
-</div>
+</div> -->
 
 
 <script>
@@ -373,25 +464,19 @@ myModal.addEventListener('shown.mdb.modal', () => {
         <div class="bottom_nav">
             <div class="left_bottom_nav">
                 <span class="main_links" style="">
-                        <a class="open-button" onclick="openFormTwo()"><i class="fas fa-th"></i></a>
+                        <a  class="open-button" onclick="openFormTwo()"><i class="fas fa-th"></i></a>
                       </span>
-                <?php
-                $i = 1;
-                ?>
+                <?php $i = 1; ?>
                 @foreach($menus as $menu)
-                    <?php
-                    $i++;
-                    ?>
+                    <?php $i++; ?>
                     @if($i < 5)
                         <span class="main_links">
 
-                    <a href="#">{{$menu->$name_locale}}</a>
+                    <a class="owlItems" href="#">{{$menu->$name_locale}}</a>
                     <div class="mega_menu_custom" style="padding-top: 33px;">
                         <div class="bottom_dropbox_box"
                              style=" ">
-                                    <?php
-                            $j = 0;
-                            ?>
+                                    <?php $j = 0; ?>
                             @foreach($menu->childs() as $child)
                                 @if($child->status)
                                     <div class="text-left mx-3">
@@ -427,22 +512,16 @@ myModal.addEventListener('shown.mdb.modal', () => {
                 @endforeach
             </div>
             <div class="right_bottom_nav">
-                <?php
-                $i = 1;
-                ?>
+                <?php $i = 1; ?>
                 @foreach($menus as $menu)
-                    <?php
-                    $i++;
-                    ?>
+                    <?php $i++; ?>
                     @if($i >= 5)
                         <span class="main_links">
-                    <a href="#">{{$menu->$name_locale}}</a>
+                    <a class="owlItems" href="#">{{$menu->$name_locale}}</a>
                     <div class="mega_menu_custom text-left" style="padding-top: 33px;">
                         <div class=" bottom_dropbox_box"
                              style=" ">
-                                    <?php
-                            $j = 0;
-                            ?>
+                                    <?php $j = 0; ?>
                             @foreach($menu->childs() as $child)
                                 <div class="text-left mx-3">
                                             <div class="mt-2" style="max-width: 250px">
@@ -627,20 +706,20 @@ myModal.addEventListener('shown.mdb.modal', () => {
                             <span>@lang('index.Extra')</span>
                         </li>
 <!-- //button using services  modal -->
-                        <li>
+                        <!-- <li>
                             <a href="#">
                             <i class="fas fa-envelope-open-text"></i>
                                 <span data-mdb-toggle="modal" data-mdb-target="#MB_modal">@lang('index.Xizmatlardan foydalanish')</span>
                             </a>
-                        </li>
+                        </li> -->
                         <!--Using services  mobile modal -->
 <div class="modal top fade" id="MB_modal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true" data-mdb-backdrop="true" data-mdb-keyboard="true">
   <div class="modal-dialog modal-dialog-centered modal-sm">
     <div class="modal-content">
-      <div class="modal-header">
+      <!-- <div class="modal-header">
         <h5 class="modal-title fw-bold" id="exampleModalLabel" style="color:#1d39c4;">@lang('index.Xizmatlardan foydalanish')</h5>
         <button type="button" class="btn-close text-danger" data-mdb-dismiss="modal" style="font-size:small !important;"></button>
-      </div>
+      </div> -->
 
 
     <form  action="{{route('simple.services')}}" method="post" class="m-4">

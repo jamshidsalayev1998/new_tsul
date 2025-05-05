@@ -1,7 +1,25 @@
 <?php
 return [
-    'Markaz ma`muryati' => 'Center administration',
+    'Huquqshunos, 1-darajali adliya maslahatchisi' => 'Doctor of Law, Professor',
 
+    // Start Teacher section langs
+    'Biography and CV' => "Biography and CV",
+    'Articles' => "Articles",
+    'Contacts' => "Contacts",
+    'Additional info' => 'Additional info',
+    'Language' => 'Language',
+    'Experience' => 'Experience',
+    'Our teachers' => 'Our teachers',
+    'All teachers list' => 'All teachers list',
+    'All' => 'All',
+
+
+    //Requestment
+    'Participate' => 'Participate',
+
+    // End Teacher section langs
+
+    'Markaz ma`muryati' => 'Center administration',
     'Extra' => 'Extra',
     'Онлайн' => 'Online',
     'Платформа кабинет' => 'Cabinet platform',
@@ -10,7 +28,7 @@ return [
     'NewsM' => 'News',
     'Mobile-logo' => 'TASHKENT STATE UNIVERSITY OF LAW',
 
-    
+
     //EUM
     'domens enter' => 'open',
     'Subdomens tsul'=>'All the work done',
@@ -32,7 +50,7 @@ return [
     // single doctorate gallery
     'Doktorantura 2020-2021' => 'Doctorate 2020-2021',
 
-    
+
      //Xizmatlardan foydalanish
      'Xizmatlardan foydalanish' => 'Using of services',
      'Pullik xizmatlardan foydalanish' => 'Using of paid services',
@@ -56,7 +74,7 @@ return [
     'КОЛИЧЕСТВО ВЫПУСКНИКОВ' => 'NUMBER OF GRADUATES',
     'Контакт' => 'Contact',
     'Локация' => 'Location',
-    'Тел' => 'Tel',
+    'Тел' => 'Helpline',
     'Факс' => 'Fax',
     'e-mail' => 'e-mail',
     'Главная страница' => 'Home page',
@@ -84,7 +102,7 @@ return [
     'Project kadr tsul' => '“Kadr.tsul.uz”',
     'kadr info' => '"Kadr.tsul.uz" System of control and statistics of personnel on structural subdivisions',
     'Project topic tsul' => '"Topic.tsul.uz"',
-    'topic info' => 'Topic.tsul.uz system serves to automate the learning process. In this system, the student selects a department, 
+    'topic info' => 'Topic.tsul.uz system serves to automate the learning process. In this system, the student selects a department,
     subject and teacher to defend his / her dissertation using his / her passport data. The student has the opportunity to choose a topic once.',
     'Project contingent tsul' => '“Contingent.tsul.uz”',
     'contingent info' => 'Contingent.tsul.uz is a system of forming the student base on a single platform.',
@@ -313,6 +331,8 @@ return [
         'Kafedralar' => 'Departments',
         'Read more' => 'Read more',
     'Talim profillari' => 'Educational programs',
-    'Rektor murojaati' => 'Rector greetings'
+    'Rektor murojaati' => 'Rector greetings',
+    "Qabul bo‘limi" => "Admissions Office"
+
 
 ];

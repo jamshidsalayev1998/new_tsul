@@ -143,5 +143,10 @@ return [
         'title'                 => 'Nomi',
         'username'              => 'Nickname',
         'year'                  => 'Yil',
+        'fio' => 'Ism familiya',
+        'degree' => 'Ilmiy darajasi',
+        'image' => 'Rasm',
+        'name_uz' => 'Nomi(UZ)',
+        'link' => 'Ssilka',
     ],
 ];

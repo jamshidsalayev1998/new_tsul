@@ -193,7 +193,18 @@
       text-decoration: none;
       color: white;
       filter: brightness(1); }
+
+    .h6-parent {
+      font-size: 16px;
+      text-decoration: none;
+      color: white;
+      filter: brightness(1); }
     .pop-upup .panelTwo ul h5 a {
+      font-size: 14px;
+      text-decoration: none;
+      color: white;
+      filter: brightness(0.9); }
+    .h5-parent {
       font-size: 14px;
       text-decoration: none;
       color: white;
@@ -208,5 +219,11 @@
         filter: brightness(0.8); }
         .pop-upup .panelTwo li a:hover {
           filter: brightness(0.9); }
+        .line-height{
+            line-height: 95%;
+        }
+        .ul-childs{
+            margin-bottom: 3px;
+        }
 
 /*# sourceMappingURL=style.css.map */

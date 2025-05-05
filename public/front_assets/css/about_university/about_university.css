@@ -32,6 +32,13 @@
     color: #0A2355; }
   .about_university .ob-info h5 {
     color: #0A2355; }
+
+    .rn_line {
+      color: #434343;
+      box-shadow: 0 4px 2px -2px #8c8c8c;
+
+    }
+    
   @media only screen and (max-width: 1440px) {
     .about_university .rektor_icons i {
       font-size: 20px; }

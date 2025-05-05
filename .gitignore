@@ -10,3 +10,8 @@ Homestead.json
 Homestead.yaml
 npm-debug.log
 yarn-error.log
+
+/public
+/public_old
+app_old/AdministrationSection.php
+app_old/AboutUniversity.php

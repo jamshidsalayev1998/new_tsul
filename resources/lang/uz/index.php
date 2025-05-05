@@ -1,5 +1,34 @@
 <?php
 return [
+    'Huquqshunos, 1-darajali adliya maslahatchisi' => 'Yuridik fanlari doktori, professor',
+    // Start Teacher section langs
+    'Biography and CV' => "Biografiya va CV",
+    'Articles' => "Maqolalar",
+    'Contacts' => "Bog'lanish",
+    'Additional info' => 'Qo`shimcha ma`lumotlar',
+    'Language' => 'Til',
+    'Experience' => 'Tajriba',
+    'Our teachers' => 'Bizning o`qituvchilar',
+    'All teachers list' => 'O`qituvchilar ro`yxati',
+    'Last name first name' => 'Familiya ismi sharifi',
+    'Academic degree' => 'Ilmiy daraja',
+    'Kafedra' => 'Kafedra',
+    'Nothing found' => 'Bunday ma`lumot yo`q',
+    'Prev' => 'dastlabki',
+    'back' => 'orqaga',
+    'next' => 'keyingi',
+    'last' => 'oxirgi',
+    'loading' => 'Yuklanmoqda..',
+    'Search' => 'Qidirish',
+    'Loading datas' => 'Ma`lumotlar yuklanmoqda..',
+    'All' => 'Barchasi',
+
+    //Requestment
+
+    'Participate' => 'So`rovnomada qatnashmoq',
+
+    // End Teacher section langs
+
     'Markaz ma`muryati' => 'Markaz ma`muryati',
     'yb' => '1,150',
     'tw' => '271',
@@ -21,8 +50,8 @@ return [
 
     //EUM
     'domens enter' => 'kirish',
-    'Subdomens tsul'=>'Barcha qilingan ishlar',
-    'Subdomens info'=>'Elektron unversitet markazi tomonidan qilingan barcha ishlar',
+    'Subdomens tsul' => 'Barcha qilingan ishlar',
+    'Subdomens info' => 'Elektron unversitet markazi tomonidan qilingan barcha ishlar',
 
     //Faculties
     'Faculties' => 'Barcha fakultetlar',
@@ -31,7 +60,7 @@ return [
     'Xususiy huquq' => '“Xususiy huquq” fakulteti',
     'ommaviy huquq' => '“Ommaviy huquq” fakulteti',
     'jinoiy odil sudlov' => '“Jinoiy odil sudlov” fakulteti',
-    'xalqaro huququ va qiyosiy ququqshunoslik'=> '“Xalqaro huquq va qiyosiy huquqshunoslik” fakulteti',
+    'xalqaro huququ va qiyosiy ququqshunoslik' => '“Xalqaro huquq va qiyosiy huquqshunoslik” fakulteti',
     'magistratura va sirtqi talim' => '“Magistratura va sirtqi ta’lim fakultеti',
     //Pop up top menu contact
     'pop-up-contact' => 'Bog\'lanish',
@@ -43,12 +72,11 @@ return [
     //Xizmatlardan foydalanish
     'Xizmatlardan foydalanish' => 'Xizmatlardan foydalanish',
     'Pullik xizmatlardan foydalanish' => 'Pullik xizmatlardan foydalanish',
-    'Email'=> 'Email',
+    'Email' => 'Email',
     'Telifon raqamingiz' => 'Telefon raqamingiz',
     'Ism va familyangiz' => 'Ism va familiyangiz',
     'Yuborish' => 'Yuborish',
 
-    
 
     'подробнее' => 'Batafsil',
     'ВИДЕОМАТЕРИАЛЫ' => 'VIDEOLAVHALAR',
@@ -65,7 +93,7 @@ return [
     'КОЛИЧЕСТВО ВЫПУСКНИКОВ' => 'BITIRGANLAR SONI',
     'Контакт' => 'Aloqa',
     'Локация' => 'Joylashuv',
-    'Тел' => 'Tel',
+    'Тел' => 'Ishonch telefoni',
     'Факс' => 'Faks',
     'e-mail' => 'e-mail',
     'Главная страница' => 'Bosh sahifa',
@@ -94,7 +122,7 @@ return [
     'Project topic tsul' => '"Topic.tsul.uz"',
     'topic info' => 'Topic.tsul.uz tizimi  o`quv jarayonini avtomatlashtirishga hizmat qiladi. Bu tizimda talaba o’z shaxsini tasdiqlovchi (pasport)
      ma`lumotlari yordamida bitiruv malakaviy ishini himoya qilish uchun kafedra , mavzusi va o`qituvchini tanlaydi. Talaba bir marta mavzu tanlash imkoniyatiga ega. ',
-     'Project contingent tsul' => '“Contingent.tsul.uz”',
+    'Project contingent tsul' => '“Contingent.tsul.uz”',
     'contingent info' => '“Contingent.tsul.uz” Talabalarning bazasini yagona platformada shakilantirish tizimi.',
     'Qabul tsul' => '“Qabul.centertsul.uz”',
     'Qabul info' => '“Qabul.centertsul.uz” Toshkent davlat yuridik universiteti huzuridagi yuridik kadrlarni xalqaro standartlar boʼyicha professional oʼqitish markaziga talabgorlarni
@@ -107,7 +135,7 @@ Toshkent davlat yuridik universiteti huzuridagi Yuridik kadrlarni xalqaro standa
     'Doc info' => '“Doc.tsul.uz” Xujjatlarni nazorat qilish va xodimlarga biriktirish elektron tizimini joriy etish.',
     'Reception tsul' => '“Reception.tsul.uz”',
     'Reception info' => 'Reception.tsul.uz xodimlar bilan uchrashuvchi furaqolarni kelib ketishini nazorat qilish',
-    'Attestatsiya tsul'=> '“Attestat.tsul.uz”',
+    'Attestatsiya tsul' => '“Attestat.tsul.uz”',
     'Attestatsiya info' => 'Attestat.tsul.uz Universitet xodimlarini attestatsiyadan o\'tkazish bo\'yicha savollarni generatsiya qilish',
 
     'WEB-сайты' => 'Web saytlar',
@@ -245,13 +273,13 @@ Toshkent davlat yuridik universiteti huzuridagi Yuridik kadrlarni xalqaro standa
     'a1' => 'TDYUda bakalavriat ta’lim yo‘nalishi quyidagi soha mutaxassisliklari bo‘yicha amalga oshiriladi:
 
     -  Davlat-huquqiy faoliyati;
-    
+
     -  Fuqarolik-huquqiy faoliyati;
-    
+
     -  Tadbirkorlik-huquqiy faoliyati;
-    
+
     -  Jinoiy-huquqiy faoliyat;
-    
+
     -  Xalqaro-huquqiy faoliyat.',
     'a2' => 'TDYU o‘quv rejasi fan va ta’limning quyidagi yo‘nalishlari bo‘yicha o‘quv modullarini o‘z ichiga oladi:
 
@@ -264,20 +292,20 @@ Toshkent davlat yuridik universiteti huzuridagi Yuridik kadrlarni xalqaro standa
     'a3' => 'TDYUda ta’lim davlat va rus tillarida olib boriladi.
 
     Shuningdek, TDYUda yuridik fanlar bo‘yicha fakultativ mashg‘ulotlar ingliz, nemis va frantsuz tillarida olib boriladi.
-    
+
     TDYUda Yapon tili markazi faoliyat yuritadi. Bu markazda talabalar 1-kursdan boshlab yapon tili va huquqini o‘rganish imkoniyatiga egalar. Tahsil bepul amalga oshiriladi.',
     'a4' => 'Toshkent davlat yuridik universitetida o‘qitishning modul tizimi sharoitlarida talabalar bilimini nazorat qilish tartibi va baholash mezonlari to‘g‘risidagi nizom (2016 yil 22 aprel, ro‘yxat raqami 2780) asosida o‘quv jarayoni tashkil etilgan bo‘lib, oliy ta’lim tizimida ilk bor Toshkent davlat yuridik universitetida talabalar bilimini baholashning yangi zamonaviy tizimi yo‘lga qo‘yilgan. Talabalar bilimi bevosita joriy nazorat, oraliq nazorat va yakuniy nazorat orqali aniqlanadi.
 
     Talabalarning bilim saviyasi va o‘zlashtirish darajasini davlat ta’lim standartlariga muvofiqligini ta’minlash uchun universitetda joriy, oraliq va yakuniy nazorat turlari o‘tkaziladi.
-    
+
     Talabaning har bir modul bo‘yicha o‘zlashtirish darajasi talabalarning bilim, malaka va ko‘nikmalarini baholashning reyting tizimi asosida ballarda aks ettiriladi.
-    
+
     Talabaning semestr mobaynidagi har bir modul bo‘yicha o‘zlashtirishi 100 ballik tizim asosida butun sonlar bilan baholanadi. 100 ball nazorat turlari bo‘yicha quyidagicha taqsimlanadi:
-    
+
     joriy nazorat — 30 ball;
-    
+
     oraliq nazorat — 20 ball;
-    
+
     yakuniy nazorat — 50 ball.',
     'a5' => 'TDYU keng qamrovli ilmiy fond va boy yuridik kutubxonaga ega. Talabalar o‘qish jarayonida o‘quv manbalaridan bevosita foydalanish imkoniyatiga ega.
 
@@ -291,48 +319,51 @@ Toshkent davlat yuridik universiteti huzuridagi Yuridik kadrlarni xalqaro standa
     'a8' => 'Oliy ta’limdan keyingi ta’lim TDYUda O‘zbekiston Respublikasi Prezidentining 2012 yil 24 iyuldagi № UP-4456 “Oliy toifadagi ilmiy va ilmiy-pedagogik kadrlarni tayyorlash va attestatsiyadan o‘tkazish tizimini kelgusi takomillashtirish to‘g‘risida”gi buyrug‘i hamda 2012 yil 28 dekabrdagi Vazirlar Mahkamasining № 365 “Oliy toifadagi ilmiy va ilmiy-pedagogik kadrlarni oliy ta’limdan keyingi ta’limini amalga oshirish va attestatsiyadan o‘tkazish tizimini takomillashtirish chora-tadbirlari haqida”gi Qaroriga muvofiq uch yil muddatda quyidagicha amalga oshiriladi: Katta ilmiy xodim-izlanuvchilar instituti – oliy toifadagi ilmiy va ilmiy-pedagogik kadrlarni mutaxassisligi bo‘yicha oliy ta’limdan keyingi ta’lim shakli bo‘lib, oliy ta’lim muassasasida fan doktori ilmiy darajasini olish uchun ixtisoslikni chuqur o‘rganish va ishlab chiqarishdan ajralgan holda doktorlik dissertatsiyasini tayyorlash va himoya qilish maqsadida ilmiy izlanishlar olib borish uchun tashkil qilinadi;
     Mustaqil izlanuvchilik -  oliy toifadagi ilmiy va ilmiy-pedagogik kadrlarni mutaxassisligi bo‘yicha oliy ta’limdan keyingi ta’lim shakli bo‘lib, oliy ta’lim muassasasida fan doktori ilmiy darajasini olish uchun ixtisoslikni chuqur o‘rganish va ishlab chiqarishdan ajralmagan holda doktorlik dissertatsiyasini tayyorlash va himoya qilish maqsadida ilmiy izlanishlar olib borish uchun tashkil qilinadi.
     Oliy ta’limdan keyingi ta’lim institutlarining katta ilmiy xodim-izlanuvchi lavozimiga qabul 2012 yil 28 dekabrdagi № 365 Vazirlar Mahkamasining Qaroridagi 2-Ilovaga muvofiq TDYUda tuziladigan maxsus komissiya tomonidan tanlov asosida amalga oshiriladi.
-    
+
     TDYU qabul kvotalariga muvofiq har yili 1 sentyabrdan kechiktirmagan holda ommaviy axborot vositalarida xohlovchilardan katta ilmiy xodim-izlanuvchi sifatida tahsil olish uchun hujjat qabul qilish to‘g‘risida e’lon beradi. E’londa hujjat qabul qilish muddati, talab qilinadigan hujjatlar hamda topshiriladigan imtihonlar ro‘yxati, o‘qish uchun to‘lov shartlari (byudjet va to‘lov-kontrakt shartlari) va boshqa zaruriy ma’lumotlarni ko‘rsatadi.
-    
+
     Hujjatlar 15 oktyabrdan 15 noyabrgacha qabul qilinadi.
-    
+
     Oliy ta’limdan keyingi ta’lim institutlarida o‘qish uchun xohlovchilarni tanlov asosida saralash kirish imtihonlari natijalari asosida amalga oshiriladi. Kirish imtihonlari 1 dekabrdan 20 dekabrgacha bo‘lgan davrda o‘tkaziladi.
-    
+
     Oliy ta’limdan keyingi ta’lim institutlariga katta ilmiy xodim-izlanuvchi sifatida kiradigan yoki mustaqil izlanuvchi sifatida rasmiylashtiriladigan shaxslar katta ilmiy xodim va mustaqil tadqiqotchilarga qo‘yiladigan davlat talablariga munosib bo‘lishlari shart. ',
     'a9' => 'O‘zbekiston Respublikasi Prezidentining 2013 yil 28 iyundagi “Yuridik kadrlar tayyorlash tizimini yanada takomillashtirish chora-tadbirlari to‘g‘risida”gi PQ–1990-son qaroriga asosan Toshkent davlat yuridik instituti Toshkent davlat yuridik universiteti etib qayta tashkil etilib, “Yurisprudensiya” mutaxassisligi bo‘yicha yuridik kadrlarni tayyorlash, qayta tayyorlash bo‘yicha bazaviy davlat oliy ta’lim va ilmiy-metodik muassasasi etib belgilangan.
 
     Toshkent davlat yuridik universitetida O‘zbekiston Respublikasida ilk bor oliy ta’lim tizimida umume’tirof etilgan xalqaro ta’lim standartlari va talablariga muvofiq ravishda o‘qitishning modulli tizimi asosida o‘quv jarayoni tashkil etilgan. Mazkur tizim doirasida ilg‘or ta’lim texnologiyalarini qo‘llagan holda, talabalarda amaliy ko‘nikmalarni shakllantirishga alohida e’tibor qaratilgan.
-    
+
     O‘qitishning modul tizimi sharoitlarida har bir yo‘nalish bo‘yicha o‘quv jarayoni nazariy tayyorgarlikning huquqni qo‘llash faoliyati bilan uzviy bog‘liqligi, talabalarda tahliliy fikrlash, yangi bilimlarni mustaqil ravishda egallash va ulardan foydalanish ko‘nikmasini shakllantirishni ta’minlaydigan o‘qitishning zamonaviy shakl va metodlari, pedagogik, axborot-kommunikatsiya, innovatsion texnologiyalar asosida tashkil etilgan.
-    
+
     Shuningdek, ta’lim berishda davlat qurilishi va boshqaruvi, sud-huquq tizimini modernizatsiya qilish, bozor islohotlarini chuqurlashtirishning huquqiy asoslarini rivojlantirishning dolzarb huquqiy muammolari bo‘yicha kompleks ilmiy tadqiqotlar o‘tkazish, ushbu sohadagi xalqaro tajribani o‘rganish huquqni qo‘llash amaliyotiga, o‘quv jarayoniga ilmiy ishlanmalar natijalarini samarali joriy etishni ta’minlashga alohida e’tibor berilgan.
-    
+
     Jumladan, talabalarning yuridik yozma ko‘nikmasi, kompyuter savodxonligi, xorijiy tillarni egallashi, tahlil qilish qobiliyati va yuridik faoliyatning tegishli sohalarini boshqarish ko‘nikmalarini rivojlantirishga katta ahamiyat berilgan.
-    
+
     Universitet tuzilmasida O‘quv-uslubiy boshqarma tomonidan DTS, malaka talablari va o‘quv rejalarga muvofiq holda o‘quv jarayoni tizimli yo‘lga qo‘yilgan.',
     'a10' => 'Chet el fuqarolarining TDYU bakalavriat va magistraturaga qabul qilinishi Vazirlar Mahkamasining 2008 yil 4 avgustdagi № 169 “O‘zbekiston Respublikasi ta’lim muassasalariga chet el fuqarolarining qabul qilinishi va unda tahsil olishi tartibini takomillashtirish to‘g‘risida”gi Qaroriga hamda O‘zbekiston Respublikasining xalqaro shartnomalariga asosan amalga oshiriladi.',
     'a11' => 'TDYUga O‘zbekistonning boshqa oliy ta’lim muassasasidan yoki xorijiy oliy ta’lim muassasasidan o‘qishni o‘tkazish O‘zbekiston Respublikasi Vazirlar Mahkamasining
     2017 yil 20 iyundagi 393-son qarori bilan tasdiqlangan Oliy ta’lim muassasalari talabalari o‘qishini ko‘chirish, qayta tiklash va o‘qishdan chetlashtirish tartibi to‘g‘risidagi nizomga asosan amalga oshiriladi.
-    
+
     Oliy ta’lim muassasalari talabalarining o‘qishini ko‘chirish bo‘yicha arizalarni topshirish va ko‘rib chiqish quyidagicha amalga oshiriladi:
-    
+
     o‘qishini ko‘chirish bo‘yicha arizalarni taqdim etish — har yili 15 iyuldan
-    
+
     5 avgustga qadar amalga oshiriladi;
-    
+
     arizalarni oliy ta’lim muassasasi, tegishli vazirlik (idora) yoki Idoralararo komissiya tomonidan ko‘rib chiqib, qaror qabul qilish — har yili
-    
+
     5 avgustdan 30 avgustga qadar amalga oshiriladi.
-    
+
     Talabalar o‘qishini ko‘chirish uzrli sabablarga ko‘ra (bir hududdan ikkinchi hududga doimiy yashash uchun yoki turmushga chiqish munosabati bilan ko‘chib o‘tganda, turmush o‘rtog‘i yoki ota-onasi harbiy xizmat o‘tash joyini o‘zgartirganda, yoxud ota-onasi (turmush o‘rtog‘i) xorijdagi davlat xizmatidan qaytganda) bahorgi semestrda o‘quv mashg‘ulotlari boshlanishidan oldin ham amalga oshirilishi mumkin. Bunda:
-    
+
     o‘qishini ko‘chirish bo‘yicha ariza topshirish — har yili 20 dekabrdan keyingi yilning 20 yanvariga qadar;
-    
+
     o‘qishini ko‘chirish bo‘yicha arizani ko‘rib chiqib, qaror qabul qilish — har yili
     25 yanvardan 15 fevralga qadar amalga oshiriladi.',
 
     'Kafedralar' => 'Kafedralar',
     'Read more' => 'Batafsil',
-    'Talim profillari' => 'Talim dasturi'
+    'Talim profillari' => 'Talim dasturi',
+    "Qabul bo‘limi" => "Qabul bo‘limi"
+
+
 
 ];

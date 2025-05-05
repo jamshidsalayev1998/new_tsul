@@ -2,7 +2,9 @@
 @section('links')
     <link rel="stylesheet" href="{{asset('front_assets/css/news.css')}}">
     <link rel="stylesheet" href="{{asset('front_assets/css/reg_map.css')}}">
-    @endsection
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+@endsection
 @section('content')
     <?php
         $locale = app()->getLocale();
@@ -47,26 +49,14 @@
                         </div>
                         <div class="last_news_bottom_box">
                             <h5>@lang('index.Последние новости')</h5>
-                            <div class="row border-top ">
-                                @foreach($others as $other)
-                                <div class="col-lg-4 mt-3 last_news_bottom_card">
-                                    <a href="{{route('simple.announces.show' , ['id' => $other->id])}}">
-                                    <div>
-                                        <img src="{{asset('')}}{{$other->$image_locale}}" alt="">
-                                    </div>
-{{--                                    <button class="btn_link_menu mt-2">Образование</button>--}}
-                                    <h6 class="last_news_bottom_card_text mt-2">
-                                        {{$other->$short_info_locale}}
-                                    </h6>
-                                    <span class="text-secondary text-end d-block"
-                                        style="font-size: 13px; font-weight: 500;">{{$other->date}}</span>
-                                    </a>
-                                </div>
-                                @endforeach
-
+                            <div id="announces-data" class="row border-top ">
+                              @include('simple.announce_show_scroll')
                                 <p class="text-end mt-2">
                                     <a href="{{route('simple.news')}}" style="font-weight: 500; color: #006523; font-size: 14px;">@lang('index.Все новости')</a>
                                 </p>
+                            </div>
+                            <div class="ajax-load text-center p-3" style="display:none">
+                                <p><img src="{{asset('images/ajax-loader.gif')}}">Load More Post...</p>
                             </div>
 
                         </div>
@@ -100,20 +90,8 @@
                         </div>
                         <div class="rg_anons mt-3">
                             <h5>@lang('index.Анонсы')</h5>
-                            <div>
-                                @foreach($announces as $anc)
-                                <div>
-                                    <div>
-                                        {{date('d' , strtotime($anc->date))}}<br> <br> {{$anc->get_month_short_name($locale)}}
-                                    </div>
-                                    <div>
-                                        <a href="{{route('simple.announces.show' , ['id' => $anc->id])}}">
-                                            {{$anc->$title_locale}}
-                                        </a>
-                                    </div>
-                                </div>
-                                @endforeach
-
+                            <div id="news-data">
+                                @include('simple.announce_show_news_scroll')
                             </div>
                             <p class="text-end">
                                 <a href="{{route('simple.announces')}}" class="text-dark" style="font-weight: 500;">@lang('index.Все анонсы')</a>
@@ -125,4 +103,39 @@
                 </div>
             </div>
         </div>
+    <script>
+        function loadMoreData(page) {
+            $.ajax({
+                url: '?page=' + page,
+                type: 'get',
+                beforeSend: function () {
+                    $(".ajax-load").show();
+                }
+            })
+                .done(function (data) {
+                    console.log(data);
+                    if (data.news == "" && data.announces == "") {
+                        $('.ajax-load').html("No more Announces Found!");
+                        return;
+                    }
+
+                    $('.ajax-load').hide();
+                    $('#news-data').append(data.news);
+                    $('#announces-data').append(data.announces);
+                })
+                // Call back function
+                .fail(function (jqXHR, ajaxOptions, thrownError) {
+                    alert("Server not responding.....");
+                });
+        }
+
+        //function for Scroll Event
+        var page = 1;
+        $(window).scroll(function () {
+            if ($(window).scrollTop() + $(window).height() >= $(document).height()) {
+                page++;
+                loadMoreData(page);
+            }
+        });
+    </script>
 @endsection

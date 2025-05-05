@@ -4,6 +4,7 @@ jQuery(document).ready(function () {
         margin: 10,
         nav: false,
         dots: true,
+        autoplay:true,
         autoPlay: 1000,
         items: 10,
         responsive: {

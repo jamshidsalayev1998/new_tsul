@@ -1,7 +1,7 @@
 
 
 .btn_link_menu {
-    background-color: #006523;
+    background-color: #233585;
     color: white;
     padding: 3px 20px;
     border-radius: 4px;
@@ -81,7 +81,7 @@
 }
 
 .rg_btn_registration {
-    background-color: #006523;
+    background-color: #233585;
     padding: 6px 20px;
     font-size: 14px;
     color: white;
@@ -93,7 +93,7 @@
 }
 
 .rg_btn_registration:active {
-    background-color: #0a461f;
+    background-color: #233585;
 }
 
 .rg_time_contact {
@@ -119,7 +119,7 @@
     left: 0;
     width: 30%;
     height: 3px;
-    background-color: #006523;
+    background-color: #233585;
 }
 
 .social_box > div  i {
@@ -176,7 +176,7 @@
     left: 0;
     width: 30%;
     height: 3px;
-    background-color: #006523;
+    background-color: #233585;
 }
 
 .rg_anons > div > div {
@@ -187,7 +187,7 @@
 
 .rg_anons > div > div > div:nth-child(1) {
     padding: 12px 14px;
-    background-color: #006523;
+    background-color: #233585;
     color: white;
     font-weight: bold;
     line-height: 10px;
@@ -232,7 +232,7 @@
     left: 0;
     width: 30%;
     height: 3px;
-    background-color: #006523;
+    background-color: #233585;
 }
 
 
@@ -301,7 +301,7 @@
     left: 0;
     width: 200px;
     height: 3px;
-    background-color: #006523;
+    background-color: #233585;
 }
 
 
@@ -337,7 +337,7 @@
     right: 0;
     width:20px;
     height: 20px;
-    background-color: #006523;
+    background-color: #233585;
     z-index: 10;
     border-radius: 50%;
 }

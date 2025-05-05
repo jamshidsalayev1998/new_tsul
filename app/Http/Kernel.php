@@ -71,5 +71,7 @@ class Kernel extends HttpKernel
         'localeViewPath'          => \Mcamara\LaravelLocalization\Middleware\LaravelLocalizationViewPath::class,
         'tohttps' => \App\Http\Middleware\HttpsProtocol::class,
         'kafedra_admin' => \App\Http\Middleware\DepartmentAdmin::class,
+        'superadmin' => \App\Http\Middleware\Superadmin::class,
+        'restrict.ip' => \App\Http\Middleware\RestrictIp::class,
     ];
 }

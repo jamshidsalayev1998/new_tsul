@@ -4,8 +4,10 @@ namespace App\Http\Controllers\Simple;
 use App\AboutUniversity;
 use App\Http\Controllers\Controller;
 use App\Menu;
+use App\Requestment;
 use App\SliderImage;
 
+use App\Teacher;
 use Mail;
 
 use App\SliderText;
@@ -25,11 +27,16 @@ class IndexController extends Controller
         $slider_images = SliderImage::where('status' , 1)->get();
         $slider_texts = SliderText::where('status' , 1)->first();
         $system_cards = SystemCard::all();
+        $teachers = Teacher::inRandomOrder()->limit(10)->get();
+        $requestment = Requestment::with('questions')->where('isActive', 1)->first();
+
         return view('simple.index' , [
             'slider_images' => $slider_images,
             'slider_texts' => $slider_texts,
             'system_cards' => $system_cards,
-            'menus' => $menus
+            'menus' => $menus,
+            'other_teachers' => $teachers,
+            'requestment' => $requestment
         ]);
     }
 

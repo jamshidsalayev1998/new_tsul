@@ -1,5 +1,6 @@
 <?php
 
+use App\User;
 use Illuminate\Support\Facades\Route;
 use App\Menu;
 
@@ -18,7 +19,13 @@ use App\Menu;
 //    return view('welcome');
 //});
 
-Auth::routes(['register' => false]);
+// Auth::routes(['register' => false , 'middleware' => ['restrict.ip']]);
+
+Route::middleware('restrict.ip')->group(function () {
+    Auth::routes([
+        'register' => false, // Disable the registration routes
+    ]);
+});
 
 Route::get('/home', 'HomeController@index')->name('home');
 Route::get('/clear', function () {
@@ -51,10 +58,10 @@ Route::group(
 
     Route::get('/about-university', 'IndexController@about_university')->name('simple.about.university');
     Route::get('/news', 'NewwController@index')->name('simple.news');
-    Route::get('/news/{id}', 'NewwController@show')->name('simple.news.show');
+    Route::get('/news/{id}/{type?}/{slug?}', 'NewwController@show')->name('simple.news.show');
 
     Route::get('/announces', 'AnnouncesController@index')->name('simple.announces');
-    Route::get('/announces/{id}', 'AnnouncesController@show')->name('simple.announces.show');
+    Route::get('/announces/{id}/{slug?}', 'AnnouncesController@show')->name('simple.announces.show');
 
     Route::get('/rektorat', 'RektoratController@index')->name('simple.rektorat.index');
     Route::get('/rektor', 'RektorController@index')->name('simple.rektor.index');
@@ -104,8 +111,13 @@ Route::group(
         return view('simple.faq');
     });
     Route::post('services', 'IndexController@using_services')->name('simple.services');
-});
+    Route::get('teacher/{id}/{slug}', 'TeacherController@show')->name('simple.teacher.show');
+    Route::get('all-teachers/{degree_id?}/{department_id?}/{show_count?}', 'TeacherController@index')->name('simple.teacher.index');
+    Route::get('teacher/articles/{id}/{slug}', 'TeacherController@articles_show')->name('simple.teacher_articles.show');
+    Route::get('requestment/{id}', 'RequestmentController@index')->name('simple.requestment');
 
+    Route::post('requestments', 'RequestmentController@store')->name('simple.requestments.store');
+});
 Route::group(
     [
         'prefix' => 'admin',
@@ -113,8 +125,24 @@ Route::group(
         'middleware' => ['auth']
     ], function () {
     Route::get('/', 'IndexController@index')->name('admin.index');
+});
+Route::group(
+    [
+        'prefix' => 'admin',
+        'namespace' => 'Admin',
+        'middleware' => ['auth', 'superadmin']
+    ], function () {
+
+    Route::group(['prefix' => 'news'], function () {
+        Route::resource('category', 'NewsCategoryController');
+    });
+
     Route::get('/slider', 'SliderController@index')->name('admin.slider.index');
+    Route::get('/slider/create', 'SliderController@create')->name('admin.slider.create');
+    Route::get('/slider/{id}/edit', 'SliderController@edit')->name('admin.slider.edit');
+    Route::delete('/slider/{id}', 'SliderController@delete')->name('admin.slider.delete');
     Route::post('/slider-store', 'SliderController@store')->name('admin.slider.store');
+    Route::put('/slider/{id}', 'SliderController@update')->name('admin.slider.update');
 
     Route::get('/system-cards', 'SystemCardController@index')->name('admin.system_card.index');
     Route::delete('/system-card-delete', 'SystemCardController@destroy')->name('system_card.delete');
@@ -157,7 +185,7 @@ Route::group(
 
 
     Route::post('/admin-change-eye-menu', 'MenuController@change_eye_menu')->name('admin.change.eye.menu');
-    Route::post('/admin-change-eye-top-menu', 'MenuTopController@change_eye_menu')->name('admin.change.eye.menu_top');
+    Route::post('/admin-change-eye-top-menadmin-neww-createu', 'MenuTopController@change_eye_menu')->name('admin.change.eye.menu_top');
 
     Route::get('admin-neww', 'NewwController@index')->name('admin.neww.index');
     Route::get('admin-neww-create', 'NewwController@create')->name('admin.neww.create');
@@ -233,9 +261,41 @@ Route::group(
     Route::resource('kafedra_admin', 'KafedraAdminController');
     Route::group(
         [
-            'middleware' => ['kafedra_admin']
+            'prefix' => 'superadmin',
         ], function () {
-        Route::resource('teachers', 'TeacherController');
-        Route::resource('articles', 'ArticleController');
+        Route::get('teachers', 'AdminTeacherController@index')->name('superadmin.teachers.index');
+        Route::get('teachers/{id}', 'AdminTeacherController@show')->name('superadmin.teachers.show');
+        Route::delete('teachers/{id}', 'AdminTeacherController@destroy')->name('superadmin.teachers.destroy');
+        Route::get('teachers-banner', 'AdminTeacherController@banner_index')->name('superadmin.teachers.banner');
+        Route::post('teachers-banner', 'AdminTeacherController@banner_store')->name('superadmin.teachers.banner.store');
+        Route::get('teachers-banner/{id}', 'AdminTeacherController@banner_edit')->name('superadmin.teachers.banner.edit');
+        Route::delete('teachers-banner/{id}', 'AdminTeacherController@banner_destroy')->name('superadmin.teachers.banner.destroy');
+        Route::put('teachers-banner/{id}', 'AdminTeacherController@banner_update')->name('superadmin.teachers.banner.update');
+        Route::get('teachers-banner-create', 'AdminTeacherController@banner_create')->name('superadmin.teachers.banner.create');
+        Route::get('teachers-banner-status-change/{id}', 'AdminTeacherController@banner_change_stats')->name('superadmin.teachers.banner.change_status');
+        Route::resource('requestment' , 'RequestmentController');
+        Route::resource('requestment_question' , 'RequestmentQuestionController' , ['only' => ['index' , 'show' , 'destroy' , 'update' , 'edit' , 'store']]);
+        Route::get('requestment_question/create/{requestment_id}' , 'RequestmentQuestionController@create')->name('requestment_question.create');
+        Route::get('requestment/{id}/status', 'RequestmentController@status')->name('simple.requestment.status');
+        Route::get('requestment/{id}/result', 'RequestmentController@result')->name('simple.requestment.result');
+
     });
+    Route::resource('kafedra_admin', 'KafedraAdminController');
+
 });
+Route::group(
+    [
+        'prefix' => 'admin',
+        'namespace' => 'Admin',
+        'middleware' => ['kafedra_admin']
+    ], function () {
+    Route::resource('teachers', 'TeacherController');
+    Route::resource('articles', 'ArticleController');
+});
+
+//Route::get('/jjjj' , function (){
+//    $user = \App\User::first();
+//    $user->password = \Illuminate\Support\Facades\Hash::make('editor_2023#');
+//    $user->update();
+//    return $user;
+//});

@@ -36,15 +36,19 @@ class ArticleController extends Controller
     public function store(Request $request)
     {
 //        return $request;
-        Validator::make($request->all(), [
+        $request->validate([
             'name_uz' => ['required', 'string'],
-            'link' => ['required', 'string'],
+            'link' => ['required', 'string']
         ]);
+//        Validator::make($request->all(), [
+//            'name_uz' => ['required', 'string'],
+//            'link' => ['required', 'string'],
+//        ]);
         $new_article = new Article();
         $new_article->teacher_id = $request->teacher_id;
         $new_article->name_uz = $request->name_uz;
-        $request->name_ru ? $new_article->name_ru = $request->name_ru : $new_article->name_ru = $request->name_uz;
-        $request->name_en ? $new_article->name_en = $request->name_en : $new_article->name_en = $request->name_uz;
+        $request->name_ru != '' ? $new_article->name_ru = $request->name_ru : $new_article->name_ru = $request->name_uz;
+        $request->name_en != ''? $new_article->name_en = $request->name_en : $new_article->name_en = $request->name_uz;
         $new_article->link = $request->link;
         $new_article->short_info = $request->short_info;
         $new_article->description = $request->description;
@@ -60,6 +64,13 @@ class ArticleController extends Controller
             $article->delete();
             return redirect()->back()->with('success', 'Malumot ochirildi');
         }
+    }
+
+    public function show($id) {
+        $article = Article::find($id);
+        return view('admin.pages.teachers.articles.show' , [
+            'data' => $article
+        ]);
     }
 
 

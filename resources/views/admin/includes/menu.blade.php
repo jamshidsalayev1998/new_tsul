@@ -194,6 +194,22 @@
             </p>
         </a>
     </li>
+    <li class="nav-item">
+        <a href="{{route('superadmin.teachers.index')}}" class="nav-link">
+            <i class="nav-icon fas fa-th"></i>
+            <p>
+                Teachers page
+            </p>
+        </a>
+    </li>
+    <li class="nav-item">
+        <a href="{{route('requestment.index')}}" class="nav-link">
+            <i class="nav-icon fas fa-th"></i>
+            <p>
+                Requestment
+            </p>
+        </a>
+    </li>
     <li class="nav-header">Menus</li>
     <?php
     $menus = 'App\Menu'::where('leap', 0)->basic()->get();

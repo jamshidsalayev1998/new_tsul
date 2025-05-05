@@ -178,7 +178,7 @@ a {
 
 a:hover {
     color: #003f70;
-    text-decoration: underline
+    /* text-decoration: underline */
 }
 
 a:not([href]):not([tabindex]), a:not([href]):not([tabindex]):focus, a:not([href]):not([tabindex]):hover {
@@ -201,6 +201,10 @@ pre {
 
 figure {
     margin: 0 0 1rem
+}
+figure img {
+width: 100%;
+
 }
 
 img {
@@ -8290,8 +8294,8 @@ a.text-dark:focus, a.text-dark:hover {
     display: none!important
 }
 
-img {
-    max-width: 100%;
+img {    
+    width: 30px;
     height: auto;
     -webkit-user-select: none;
     -moz-user-select: none;
