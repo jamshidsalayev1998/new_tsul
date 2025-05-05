@@ -15,7 +15,7 @@ class CreateFeedbackTable extends Migration
     {
         Schema::create('feedback', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('user_id')->nullable()->constrained()->onDelete('set null');
+            $table->integer('user_id')->nullable();
             $table->string('name');
             $table->string('email')->nullable();
             $table->tinyInteger('rating')->unsigned();
