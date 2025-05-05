@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\FeedbackController;
 use App\User;
 use Illuminate\Support\Facades\Route;
 use App\Menu;
@@ -252,6 +253,7 @@ Route::group(
     Route::delete('admin_center-administration-delete/{id}', 'CenterController@administration_delete')->name('center.administration.delete');
     Route::post('admin_center-administration-store', 'CenterController@administration_store')->name('center.administration.store');
 
+
     Route::resource('admin_rector', 'RektorController');
     Route::resource('admin_ustav', 'UstavController');
     Route::resource('admin_ilmiy_nashr', 'IlmiyNashrController');
@@ -292,6 +294,8 @@ Route::group(
     Route::resource('teachers', 'TeacherController');
     Route::resource('articles', 'ArticleController');
 });
+Route::post('feedback-store', [FeedbackController::class , 'store'])->name('feedback.store');
+    
 
 //Route::get('/jjjj' , function (){
 //    $user = \App\User::first();
