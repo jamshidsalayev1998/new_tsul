@@ -29,8 +29,8 @@ class AppServiceProvider extends ServiceProvider
 //        if(env('APP_ENV') != 'locale'){
 //            URL::forceScheme('https');
 //        }
-//        if (App::environment('production')) {
+       if (App::environment('production')) {
              $this->app['request']->server->set('HTTPS', true);
-//        }
+       }
     }
 }

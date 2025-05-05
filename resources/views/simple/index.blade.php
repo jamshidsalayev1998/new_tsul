@@ -600,6 +600,24 @@ overflow: hidden;">
             </div>
         </section>
     </div>
+
+    @if(session('success'))
+    <div class="alert alert-success alert-dismissible fade show" role="alert" id="success-alert">
+        {{ session('success') }}
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Yopish"></button>
+    </div>
+
+    <script>
+        // 3 sekunddan keyin alertni yopish
+        setTimeout(function () {
+            let alert = document.getElementById('success-alert');
+            if (alert) {
+                let bsAlert = new bootstrap.Alert(alert);
+                bsAlert.close();
+            }
+        }, 3000); // 3000 ms = 3 sekund
+    </script>
+@endif
 @endsection
 
 
@@ -627,5 +645,7 @@ overflow: hidden;">
         })
     </script>
 @endsection
+
+
 
 

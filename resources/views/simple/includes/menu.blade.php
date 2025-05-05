@@ -1,34 +1,11 @@
 <?php
 $locale = app()->getLocale();
 $name_locale = 'name_' . $locale;
-$menus = ('App\Menu')
-    ::where('leap', 0)
-    ->orderBy('order', 'ASC')
-    ->basic()
-    ->active()
-    ->get();
-$menus_top_all = ('App\MenuTop')
-    ::where('leap', 0)
-    ->orderBy('order', 'ASC')
-    ->basic()
-    ->active()
-    ->get();
-$menus_top = ('App\MenuTop')
-    ::where('leap', 0)
-    ->orderBy('order', 'ASC')
-    ->basic()
-    ->active()
-    ->take(2)
-    ->get();
-$menus_top_last = ('App\MenuTop')
-    ::where('leap', 0)
-    ->orderBy('id', 'DESC')
-    ->basic()
-    ->active()
-    ->take(3)
-    ->get()
-    ->reverse();
-$logo_locale = 'front_assets/assets/img/logo_university/logo_'.$locale.'.png';
+$menus = ('App\Menu')::where('leap', 0)->orderBy('order', 'ASC')->basic()->active()->get();
+$menus_top_all = ('App\MenuTop')::where('leap', 0)->orderBy('order', 'ASC')->basic()->active()->get();
+$menus_top = ('App\MenuTop')::where('leap', 0)->orderBy('order', 'ASC')->basic()->active()->take(2)->get();
+$menus_top_last = ('App\MenuTop')::where('leap', 0)->orderBy('id', 'DESC')->basic()->active()->take(3)->get()->reverse();
+$logo_locale = 'front_assets/assets/img/logo_university/logo_' . $locale . '.png';
 ?>
 <style>
     .tooltip {
@@ -71,17 +48,17 @@ $logo_locale = 'front_assets/assets/img/logo_university/logo_'.$locale.'.png';
 </style>
 <div id="header_pc">
     <div class="searching_box">
-                <form id="searchingBox">
-                    <input type="search" id="search_id_input">
-                    <button> <i class="fas fa-search" id="search_id_input_i"></i></button>
-                </form>
-            </div>
+        <form id="searchingBox">
+            <input type="search" id="search_id_input">
+            <button> <i class="fas fa-search" id="search_id_input_i"></i></button>
+        </form>
+    </div>
     <header class="tsul_header">
         <div class="logo_box" style="z-index: 100">
             <a href="/">
                 <div>
-                    <!-- <img src="{{asset('front_assets/assets/img/logo_university/_Sign logo_EN_primary.png')}}" alt=""> -->
-                    <img src="{{asset($logo_locale)}}" alt="">
+                    <!-- <img src="{{ asset('front_assets/assets/img/logo_university/_Sign logo_EN_primary.png') }}" alt=""> -->
+                    <img src="{{ asset($logo_locale) }}" alt="">
                 </div>
             </a>
         </div>
@@ -92,7 +69,7 @@ $logo_locale = 'front_assets/assets/img/logo_university/logo_'.$locale.'.png';
 
 
 
-<!-- <style>
+                    <!-- <style>
 /* The popup form - hidden by default */
 .rn_form-popup {
   display: none;
@@ -159,9 +136,7 @@ padding: 15px;
 
 </style> -->
 
-<script>
-
-</script>
+                    <script></script>
 
 
                     <!-- <a href="https://www.fb.com/tsulofficial"><i class="fab fa-facebook-f"></i></a>
@@ -172,84 +147,91 @@ padding: 15px;
                             class="fab fa-youtube"></i></a> -->
 
 
-                            <!-- <div class="d-flex justify-content-start align-items-center">
+                    <!-- <div class="d-flex justify-content-start align-items-center">
                                 <span class="pl-2" style="color: white !important;">
                             +998 71 233-42-09
                             </span></div> -->
-                            <!-- <div class="d-flex justify-content-start align-items-center">
+                    <!-- <div class="d-flex justify-content-start align-items-center">
                                 <a href="tel:+998712331395" class="pl-2" style="color: white !important; width:auto !important; border-radius:0 !important; background:transparent !important;">
                             @lang('index.Qabul bo‘limi'): +998 71 233-13-95
                             </a></div> -->
-                            <div class="d-flex justify-content-start align-items-center">
-    <a href="tel:+998712331395" class="pl-2" style="color: white !important; width:auto !important; border-radius:0 !important; background:transparent !important;">
-        @lang('index.Qabul bo‘limi'): +998 71 233-13-95
-    </a>
+                    <div class="d-flex justify-content-start align-items-center">
+                        <a href="tel:+998712331395" class="pl-2"
+                            style="color: white !important; width:auto !important; border-radius:0 !important; background:transparent !important;">
+                            @lang('index.Qabul bo‘limi'): +998 71 233-13-95
+                        </a>
 
-    <div class="ml-3">
-        <button class="btn btn-white btn-sm" data-bs-toggle="modal" data-bs-target="#rateModal">
-            Saytni baholash <i class="fas fa-star" data-value="1"></i>
-        </button>
-    </div>
-</div>
+                        <div class="ml-3">
+                            <button class="btn btn-white btn-sm" data-bs-toggle="modal" data-bs-target="#rateModal">
+                                Saytni baholash <i class="fas fa-star" data-value="1"></i>
+                            </button>
+                        </div>
+                    </div>
 
-<!-- Modal -->
-<div style="z-index: 10000;" class="modal fade" id="rateModal" tabindex="-1" aria-labelledby="rateModalLabel" aria-hidden="true">
-  <div class="modal-dialog" style="max-width: 800px; width: 100%;">
-    <form class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="rateModalLabel">Saytni baholash</h5>
-        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Yopish"></button>
-      </div>
-      <div class="modal-body">
-        <!-- Yulduzcha baholash -->
-        <div class="mb-3 text-center">
-            Qanday baho berasiz:
-          <span class="star-rating">
-            <i class="fas fa-star" data-value="1"></i>
-            <i class="fas fa-star" data-value="2"></i>
-            <i class="fas fa-star" data-value="3"></i>
-            <i class="fas fa-star" data-value="4"></i>
-            <i class="fas fa-star" data-value="5"></i>
-          </span>
-          <input type="hidden" name="rating" id="rating" value="0">
-        </div>
+                    <!-- Modal -->
+                    <div style="z-index: 10000;" class="modal fade" id="rateModal" tabindex="-1"
+                        aria-labelledby="rateModalLabel" aria-hidden="true">
+                        <div class="modal-dialog" style="max-width: 800px; width: 100%;">
+                            <form class="modal-content" id="feedback-form" method="POST" action="{{ route('feedback.store') }}">
+                                @csrf
+                                @method('POST')
+                                <div class="modal-header">
+                                    <h5 class="modal-title" id="rateModalLabel">Saytni baholash</h5>
+                                    <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                        aria-label="Yopish"></button>
+                                </div>
+                                <div class="modal-body">
+                                    <!-- Yulduzcha baholash -->
+                                    <div class="mb-3 text-center">
+                                        Qanday baho berasiz:
+                                        <span class="star-rating">
+                                            <i class="fas fa-star" data-value="1"></i>
+                                            <i class="fas fa-star" data-value="2"></i>
+                                            <i class="fas fa-star" data-value="3"></i>
+                                            <i class="fas fa-star" data-value="4"></i>
+                                            <i class="fas fa-star" data-value="5"></i>
+                                        </span>
+                                        <input type="hidden" name="rating" id="rating" value="0">
+                                    </div>
 
-        <!-- F.I.O -->
-        <div class="mb-3">
-          <label for="fullName" class="form-label">Ismingiz</label>
-          <input type="text" class="form-control" id="fullName" name="fullName" required>
-        </div>
+                                    <!-- F.I.O -->
+                                    <div class="mb-3">
+                                        <label for="name" class="form-label">Ismingiz</label>
+                                        <input type="text" class="form-control" id="name" name="name"
+                                            required>
+                                    </div>
 
-        <!-- Izoh -->
-        <div class="mb-3">
-          <label for="comment" class="form-label">Sayt haqida fikringiz va qanday qo'shimchalar kerakligi haqida izoh</label>
-          <textarea class="form-control" id="comment" name="comment" rows="3"></textarea>
-        </div>
-      </div>
-      <div class="modal-footer">
-        <button type="submit" class="btn btn-primary">Yuborish</button>
-      </div>
-    </form>
-  </div>
-</div>
+                                    <!-- Izoh -->
+                                    <div class="mb-3">
+                                        <label for="message" class="form-label">Sayt haqida fikringiz va qanday
+                                            qo'shimchalar kerakligi haqida izoh</label>
+                                        <textarea class="form-control" id="message" name="message" rows="3"></textarea>
+                                    </div>
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="submit" id="rateModalSubmitModal" class="btn btn-primary">Yuborish</button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
 
 
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-<script>
-  document.querySelectorAll('.star-rating i').forEach(star => {
-    star.addEventListener('click', function () {
-      const rating = this.getAttribute('data-value');
-      document.getElementById('rating').value = rating;
-      document.querySelectorAll('.star-rating i').forEach(s => {
-        s.classList.toggle('text-warning', s.getAttribute('data-value') <= rating);
-      });
-    });
-  });
-</script>
-                            <!-- top icon pop up contact form -->
-                            <!-- <a  onclick="openForm()"><i class="fas fa-phone"></i></a>    -->
+                    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+                    <script>
+                        document.querySelectorAll('.star-rating i').forEach(star => {
+                            star.addEventListener('click', function() {
+                                const rating = this.getAttribute('data-value');
+                                document.getElementById('rating').value = rating;
+                                document.querySelectorAll('.star-rating i').forEach(s => {
+                                    s.classList.toggle('text-warning', s.getAttribute('data-value') <= rating);
+                                });
+                            });
+                        });
+                    </script>
+                    <!-- top icon pop up contact form -->
+                    <!-- <a  onclick="openForm()"><i class="fas fa-phone"></i></a>    -->
 
-<!--
+                    <!--
 <div class="rn_form-popup" id="myForm">
   <div class="rn_form-container">
   <div class="d-flex text-center" style="position: relative;">
@@ -269,50 +251,52 @@ padding: 15px;
 
                 </div>
                 <div>
-                    @foreach($menus_top as $m_t)
+                    @foreach ($menus_top as $m_t)
                         <span class="main_links">
-                        <a class="owlItems" href="@if($m_t->slug){{$m_t->slug}} @else # @endif">{{$m_t->$name_locale}}</a>
-                        <div class="mega_menu_custom" style="padding-top: 10px;">
-                            @if($m_t->has_child())
-                                <div class="top_dropbox_box">
-                                @foreach($m_t->childs() as $m_t_ch)
-                                        <a href="@if($m_t_ch->slug){{$m_t_ch->slug}} @else # @endif"
-                                           class="nav_dropdown_links"><i
-                                                class="fas fa-caret-right mr-2 text-secondary"></i>{{$m_t_ch->$name_locale}}</a>
-                                    @endforeach
+                            <a class="owlItems"
+                                href="@if ($m_t->slug) {{ $m_t->slug }} @else # @endif">{{ $m_t->$name_locale }}</a>
+                            <div class="mega_menu_custom" style="padding-top: 10px;">
+                                @if ($m_t->has_child())
+                                    <div class="top_dropbox_box">
+                                        @foreach ($m_t->childs() as $m_t_ch)
+                                            <a href="@if ($m_t_ch->slug) {{ $m_t_ch->slug }} @else # @endif"
+                                                class="nav_dropdown_links"><i
+                                                    class="fas fa-caret-right mr-2 text-secondary"></i>{{ $m_t_ch->$name_locale }}</a>
+                                        @endforeach
+                                    </div>
+                                @endif
                             </div>
-                            @endif
-                        </div>
-                    </span>
+                        </span>
                     @endforeach
 
                 </div>
             </div>
             <div class="right_top_nav">
                 <div>
-                    @foreach($menus_top_last as $m_t)
+                    @foreach ($menus_top_last as $m_t)
                         <span class="main_links">
-                        <a  href="@if($m_t->slug){{$m_t->slug}} @else # @endif" class="owlItems">{{$m_t->$name_locale}}</a>
-                        <div class="mega_menu_custom" style="padding-top: 10px;">
-                            @if($m_t->has_child())
-                                <div class="top_dropbox_box">
-                                @foreach($m_t->childs() as $m_t_ch)
-                                        <a  href="@if($m_t_ch->slug){{$m_t_ch->slug}} @else # @endif"
-                                           class="nav_dropdown_links owlItems"><i
-                                                class="fas fa-caret-right mr-2 text-secondary"></i>{{$m_t_ch->$name_locale}}</a>
-                                    @endforeach
+                            <a href="@if ($m_t->slug) {{ $m_t->slug }} @else # @endif"
+                                class="owlItems">{{ $m_t->$name_locale }}</a>
+                            <div class="mega_menu_custom" style="padding-top: 10px;">
+                                @if ($m_t->has_child())
+                                    <div class="top_dropbox_box">
+                                        @foreach ($m_t->childs() as $m_t_ch)
+                                            <a href="@if ($m_t_ch->slug) {{ $m_t_ch->slug }} @else # @endif"
+                                                class="nav_dropdown_links owlItems"><i
+                                                    class="fas fa-caret-right mr-2 text-secondary"></i>{{ $m_t_ch->$name_locale }}</a>
+                                        @endforeach
+                                    </div>
+                                @endif
                             </div>
-                            @endif
-                        </div>
-                    </span>
+                        </span>
                     @endforeach
 
                 </div>
 
                 <div class="m-2 right-features-box">
 
-                <!-- <div class="text-center m-0 p-0 mb-1" style="border-radius: 10px;
-    background-color: #2C42A6;">                    
+                    <!-- <div class="text-center m-0 p-0 mb-1" style="border-radius: 10px;
+    background-color: #2C42A6;">
                     <span class="align-items-center px-3">
                        <span class="fw-3 text-white" style="font-size: small;" type="button" class="btn btn-primary" data-mdb-toggle="modal" data-mdb-target="#PC_modal">@lang('index.Xizmatlardan foydalanish')
                        </span>
@@ -324,50 +308,50 @@ padding: 15px;
 
                         <div class="language_box">
                             <div id="hlb" class="head_language_box">
-                                <span id="selected_language">{{LaravelLocalization::getCurrentLocaleName()}}</span>
+                                <span id="selected_language">{{ LaravelLocalization::getCurrentLocaleName() }}</span>
                                 <span id="animating_icons_lang" class="animating_language_icon"><i
                                         class="fas fa-chevron-down"></i></span>
                             </div>
                             <div id="selecting_box_id" class="selecting_box">
-                                @foreach(LaravelLocalization::getSupportedLocales() as $localeCode => $properties)
-                                    @if(app()->getLocale() != $localeCode)
+                                @foreach (LaravelLocalization::getSupportedLocales() as $localeCode => $properties)
+                                    @if (app()->getLocale() != $localeCode)
                                         <span class="select-language-j" hreflang="{{ $localeCode }}"
-                                              data-href="{{preg_replace("/^http:/i", "https:", LaravelLocalization::getLocalizedURL($localeCode, null, [], true))  }}">{{ $properties['native'] }}</span>
-                                        {{--                                            <span class="select-language-j" hreflang="{{ $localeCode }}" data-href="{{LaravelLocalization::getLocalizedURL($localeCode, null, [], true)  }}">{{ $properties['native'] }}</span>--}}
+                                            data-href="{{ preg_replace('/^http:/i', 'https:', LaravelLocalization::getLocalizedURL($localeCode, null, [], true)) }}">{{ $properties['native'] }}</span>
+                                        {{--                                            <span class="select-language-j" hreflang="{{ $localeCode }}" data-href="{{LaravelLocalization::getLocalizedURL($localeCode, null, [], true)  }}">{{ $properties['native'] }}</span> --}}
                                     @endif
                                 @endforeach
                             </div>
                         </div>
 
-                        <span id="search_id" class="search_box  px-3"><i id="search_id_i"
-                                                                         class="fas fa-search"></i>
-                                                                        </span>
+                        <span id="search_id" class="search_box  px-3"><i id="search_id_i" class="fas fa-search"></i>
+                        </span>
                         <a href="/symbols" class="symbols_box">
-                            <img src="{{asset('front_assets/assets/img/gerb1.png')}}" width="30px" height="100%" alt="">
+                            <img src="{{ asset('front_assets/assets/img/gerb1.png') }}" width="30px"
+                                height="100%" alt="">
                         </a>
 
-                        <span class="d-flex align-items-center px-3 "
-                              style="height: 100%;">
+                        <span class="d-flex align-items-center px-3 " style="height: 100%;">
                             <div class="maxsusimkoniyat" style="font-size: 18px;">
                                 <a href="dropdown" data-toggle="dropdown" aria-expanded="false"><i
                                         class="fa fa-eye text-white" style="font-size: 15px;"></i></a>
                                 <div class="dropdown-menu styledDrop dropdown-menu-right specialViewArea no-propagation"
-                                     x-placement="bottom-end"
-                                     style="position: absolute; transform: translate3d(97px, 40px, 0px); top: 0px; left: 0px; will-change: transform;">
+                                    x-placement="bottom-end"
+                                    style="position: absolute; transform: translate3d(97px, 40px, 0px); top: 0px; left: 0px; will-change: transform;">
                                     <div class="appearance">
                                         <p class="specialTitle">Ko'rinish</p>
                                         <div class="squareAppearances">
                                             <div class="squareBox spcNormal" data-toggle="tooltip"
-                                                 data-placement="bottom" title="" data-title="Обычный режим">A
+                                                data-placement="bottom" title="" data-title="Обычный режим">A
                                             </div>
                                         </div>
                                         <div class="squareAppearances">
                                             <div class="squareBox spcWhiteAndBlack" data-toggle="tooltip"
-                                                 data-placement="bottom" title="">A</div>
+                                                data-placement="bottom" title="">A</div>
                                         </div>
                                         <div class="squareAppearances">
                                             <div class="squareBox spcDark" data-toggle="tooltip"
-                                                 data-placement="bottom" title="" data-original-title="Темный режим">
+                                                data-placement="bottom" title=""
+                                                data-original-title="Темный режим">
                                                 A
                                             </div>
                                         </div>
@@ -378,17 +362,14 @@ padding: 15px;
                                             <div class="sliderText">Kattalashtirish <span class="range">0</span>%
                                             </div>
                                             <div id="fontSizer"
-                                                 class="defaultSlider ui-slider ui-slider-horizontal ui-widget ui-widget-content ui-corner-all">
-                                                <div
-                                                    class="ui-slider-range ui-widget-header ui-corner-all ui-slider-range-min"
+                                                class="defaultSlider ui-slider ui-slider-horizontal ui-widget ui-widget-content ui-corner-all">
+                                                <div class="ui-slider-range ui-widget-header ui-corner-all ui-slider-range-min"
                                                     style="width: 0%;"></div><span
                                                     class="ui-slider-handle ui-state-default ui-corner-all"
                                                     tabindex="0" style="left: 0%;"></span>
-                                                <div
-                                                    class="ui-slider-range ui-corner-all ui-widget-header ui-slider-range-min"
+                                                <div class="ui-slider-range ui-corner-all ui-widget-header ui-slider-range-min"
                                                     style="width: 0%;"></div>
-                                                <div
-                                                    class="ui-slider-range ui-corner-all ui-widget-header ui-slider-range-min"
+                                                <div class="ui-slider-range ui-corner-all ui-widget-header ui-slider-range-min"
                                                     style="width: 0%;"></div>
                                             </div>
                                         </div>
@@ -413,8 +394,8 @@ padding: 15px;
 
                 </div>
 
-    <!--Using services modal -->
-<!-- <div class="modal top fade d-none" id="PC_modal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true" data-mdb-backdrop="true" data-mdb-keyboard="true">
+                <!--Using services modal -->
+                <!-- <div class="modal top fade d-none" id="PC_modal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true" data-mdb-backdrop="true" data-mdb-keyboard="true">
   <div class="modal-dialog modal-dialog-centered">
     <div class="modal-content">
       <div class="modal-header">
@@ -423,20 +404,20 @@ padding: 15px;
       </div>
 
 
-    <form  action="{{route('simple.services')}}" method="post" class="m-4">
-      @csrf 
+    <form  action="{{ route('simple.services') }}" method="post" class="m-4">
+      @csrf
         <div class="form-outline mb-4">
             <input name="fio" type="text" required="true" id="form6Example1" class="form-control" />
             <label class="form-label" for="form6Example1">@lang('index.Ism va familyangiz')</label>
           </div>
 
-  
+
        <div class="form-outline mb-4">
             <input name="phone" type="number" required="true" id="form6Example6" class="form-control" />
             <label class="form-label" for="form6Example6">@lang('index.Telifon raqamingiz')</label>
         </div>
 
- 
+
       <button type="submit"  class="btn" style="background-color:#1d39c4; color: white; text-transform: lowercase">@lang('index.Yuborish')</button>
     </form>
 
@@ -445,15 +426,15 @@ padding: 15px;
 </div> -->
 
 
-<script>
-const myModal = document.getElementById('myModal')
-const myInput = document.getElementById('myInput')
+                <script>
+                    const myModal = document.getElementById('myModal')
+                    const myInput = document.getElementById('myInput')
 
-myModal.addEventListener('shown.mdb.modal', () => {
-  myInput.focus()
-})
-</script>
-<!-- //End Using services  modal -->
+                    myModal.addEventListener('shown.mdb.modal', () => {
+                        myInput.focus()
+                    })
+                </script>
+                <!-- //End Using services  modal -->
 
             </div>
         </div>
@@ -464,88 +445,87 @@ myModal.addEventListener('shown.mdb.modal', () => {
         <div class="bottom_nav">
             <div class="left_bottom_nav">
                 <span class="main_links" style="">
-                        <a  class="open-button" onclick="openFormTwo()"><i class="fas fa-th"></i></a>
-                      </span>
+                    <a class="open-button" onclick="openFormTwo()"><i class="fas fa-th"></i></a>
+                </span>
                 <?php $i = 1; ?>
-                @foreach($menus as $menu)
+                @foreach ($menus as $menu)
                     <?php $i++; ?>
-                    @if($i < 5)
+                    @if ($i < 5)
                         <span class="main_links">
 
-                    <a class="owlItems" href="#">{{$menu->$name_locale}}</a>
-                    <div class="mega_menu_custom" style="padding-top: 33px;">
-                        <div class="bottom_dropbox_box"
-                             style=" ">
+                            <a class="owlItems" href="#">{{ $menu->$name_locale }}</a>
+                            <div class="mega_menu_custom" style="padding-top: 33px;">
+                                <div class="bottom_dropbox_box" style=" ">
                                     <?php $j = 0; ?>
-                            @foreach($menu->childs() as $child)
-                                @if($child->status)
-                                    <div class="text-left mx-3">
-                                                <div class="@if($child->has_child()) mt-2 @endif"
-                                                     style="max-width: 250px">
+                                    @foreach ($menu->childs() as $child)
+                                        @if ($child->status)
+                                            <div class="text-left mx-3">
+                                                <div class="@if ($child->has_child()) mt-2 @endif"
+                                                    style="max-width: 250px">
 
-                                                     @if($child->has_child())
+                                                    @if ($child->has_child())
                                                         <h6 class="font-weight-bold text-secondary menu-h "
-                                                            data-href="@if($child->slug){{$child->slug}}@else#@endif">{{$child->$name_locale}}</h6>
+                                                            data-href="@if ($child->slug) {{ $child->slug }}@else# @endif">
+                                                            {{ $child->$name_locale }}</h6>
                                                     @else
-                                                        <a href="@if($child->slug) {{$child->slug}}@else # @endif"
-                                                           class="nav_dropdown_links"><i
-                                                                class="fas fa-caret-right mr-2 text-secondary"></i>{{$child->$name_locale}}</a>
+                                                        <a href="@if ($child->slug) {{ $child->slug }}@else # @endif"
+                                                            class="nav_dropdown_links"><i
+                                                                class="fas fa-caret-right mr-2 text-secondary"></i>{{ $child->$name_locale }}</a>
                                                     @endif
-                                                    @foreach($child->childs() as $chch)
-                                                        <a href="@if($chch->slug) {{$chch->slug}}@else # @endif"
-                                                           class="nav_dropdown_links"><i
-                                                                class="fas fa-caret-right mr-2 text-secondary"></i>{{$chch->$name_locale}}</a>
+                                                    @foreach ($child->childs() as $chch)
+                                                        <a href="@if ($chch->slug) {{ $chch->slug }}@else # @endif"
+                                                            class="nav_dropdown_links"><i
+                                                                class="fas fa-caret-right mr-2 text-secondary"></i>{{ $chch->$name_locale }}</a>
                                                     @endforeach
 
                                                     <?php $j++; ?>
                                                 </div>
                                             </div>
-                                @endif
-                            @endforeach
+                                        @endif
+                                    @endforeach
 
-                        </div>
+                                </div>
 
-                    </div>
-                </span>
-
+                            </div>
+                        </span>
                     @endif
                 @endforeach
             </div>
             <div class="right_bottom_nav">
                 <?php $i = 1; ?>
-                @foreach($menus as $menu)
+                @foreach ($menus as $menu)
                     <?php $i++; ?>
-                    @if($i >= 5)
+                    @if ($i >= 5)
                         <span class="main_links">
-                    <a class="owlItems" href="#">{{$menu->$name_locale}}</a>
-                    <div class="mega_menu_custom text-left" style="padding-top: 33px;">
-                        <div class=" bottom_dropbox_box"
-                             style=" ">
+                            <a class="owlItems" href="#">{{ $menu->$name_locale }}</a>
+                            <div class="mega_menu_custom text-left" style="padding-top: 33px;">
+                                <div class=" bottom_dropbox_box" style=" ">
                                     <?php $j = 0; ?>
-                            @foreach($menu->childs() as $child)
-                                <div class="text-left mx-3">
+                                    @foreach ($menu->childs() as $child)
+                                        <div class="text-left mx-3">
                                             <div class="mt-2" style="max-width: 250px">
-                                                @if($child->has_child())
+                                                @if ($child->has_child())
                                                     <h6 class="font-weight-bold text-secondary menu-h"
-                                                        data-href="@if($child->slug){{$child->slug}}@else#@endif">{{$child->$name_locale}}</h6>
+                                                        data-href="@if ($child->slug) {{ $child->slug }}@else# @endif">
+                                                        {{ $child->$name_locale }}</h6>
                                                 @else
-                                                    <a href="@if($child->slug) {{$child->slug}}@else # @endif"
-                                                       class="nav_dropdown_links"><i
-                                                            class="fas fa-caret-right mr-2 text-secondary"></i>{{$child->$name_locale}}</a>
+                                                    <a href="@if ($child->slug) {{ $child->slug }}@else # @endif"
+                                                        class="nav_dropdown_links"><i
+                                                            class="fas fa-caret-right mr-2 text-secondary"></i>{{ $child->$name_locale }}</a>
                                                 @endif
-                                                @foreach($child->childs() as $chch)
-                                                    <a href="@if($chch->slug) {{$chch->slug}}@else # @endif"
-                                                       class="nav_dropdown_links"><i
-                                                            class="fas fa-caret-right mr-2 text-secondary"></i>{{$chch->$name_locale}}</a>
+                                                @foreach ($child->childs() as $chch)
+                                                    <a href="@if ($chch->slug) {{ $chch->slug }}@else # @endif"
+                                                        class="nav_dropdown_links"><i
+                                                            class="fas fa-caret-right mr-2 text-secondary"></i>{{ $chch->$name_locale }}</a>
                                                 @endforeach
 
                                                 <?php $j++; ?>
                                             </div>
                                         </div>
-                            @endforeach
-                        </div>
-                    </div>
-                </span>
+                                    @endforeach
+                                </div>
+                            </div>
+                        </span>
                     @endif
                 @endforeach
             </div>
@@ -569,84 +549,80 @@ myModal.addEventListener('shown.mdb.modal', () => {
     </div>
     <div class="mobile_menu d-flex">
         <div>
-                    <span id="show-sidebar" style="font-size: 20px; cursor: pointer;"><i
-                            class="fas fa-bars text-white"></i></span>
+            <span id="show-sidebar" style="font-size: 20px; cursor: pointer;"><i
+                    class="fas fa-bars text-white"></i></span>
         </div>
         <div class="p-0 m-0 d-flex h-100 align-items-center">
             <div class="language_box_m">
                 <div id="hlb_m" class="head_language_box" style="z-index: 2800;">
-                    <span id="selected_language_m">{{LaravelLocalization::getCurrentLocaleName()}}</span>
+                    <span id="selected_language_m">{{ LaravelLocalization::getCurrentLocaleName() }}</span>
                     <span id="animating_icons_lang_m" class="animating_language_icon"><i
                             class="fas fa-chevron-down"></i></span>
                 </div>
                 <div id="selecting_box_id_m" class="selecting_box_m">
-                    @foreach(LaravelLocalization::getSupportedLocales() as $localeCode => $properties)
-                        @if(app()->getLocale() != $localeCode)
+                    @foreach (LaravelLocalization::getSupportedLocales() as $localeCode => $properties)
+                        @if (app()->getLocale() != $localeCode)
                             <span class="select-language-j" hreflang="{{ $localeCode }}"
-                                  data-href="{{ LaravelLocalization::getLocalizedURL($localeCode, null, [], true) }}">{{ $properties['native'] }}</span>
+                                data-href="{{ LaravelLocalization::getLocalizedURL($localeCode, null, [], true) }}">{{ $properties['native'] }}</span>
                         @endif
                     @endforeach
                 </div>
             </div>
-            <span id="search_id_m" class="search_box  px-3"><i id="search_id_i_m"
-                                                               class="fas fa-search"></i></span>
+            <span id="search_id_m" class="search_box  px-3"><i id="search_id_i_m" class="fas fa-search"></i></span>
             <span class="d-flex align-items-center px-3 " style="height: 100%; background-color: #2C42A6;">
-                        <div class="maxsusimkoniyat" style="font-size: 18px;">
-                            <a href="dropdown" data-toggle="dropdown" aria-expanded="false"><i
-                                    class="fa fa-eye text-white" style="font-size: 15px;"></i></a>
-                            <div class="dropdown-menu styledDrop dropdown-menu-right specialViewArea no-propagation"
-                                 x-placement="bottom-end"
-                                 style="position: absolute; transform: translate3d(97px, 40px, 0px); top: 0px; left: 0px; will-change: transform;">
-                                <div class="appearance">
-                                    <p class="specialTitle">Ko'rinish</p>
-                                    <div class="squareAppearances">
-                                        <div class="squareBox spcNormal" data-toggle="tooltip" data-placement="bottom"
-                                             title="" data-title="Обычный режим">A
-                                        </div>
-                                    </div>
-                                    <div class="squareAppearances">
-                                        <div class="squareBox spcWhiteAndBlack" data-toggle="tooltip"
-                                             data-placement="bottom" title="">A</div>
-                                    </div>
-                                    <div class="squareAppearances">
-                                        <div class="squareBox spcDark" data-toggle="tooltip" data-placement="bottom"
-                                             title="" data-original-title="Темный режим">
-                                            A
-                                        </div>
-                                    </div>
+                <div class="maxsusimkoniyat" style="font-size: 18px;">
+                    <a href="dropdown" data-toggle="dropdown" aria-expanded="false"><i class="fa fa-eye text-white"
+                            style="font-size: 15px;"></i></a>
+                    <div class="dropdown-menu styledDrop dropdown-menu-right specialViewArea no-propagation"
+                        x-placement="bottom-end"
+                        style="position: absolute; transform: translate3d(97px, 40px, 0px); top: 0px; left: 0px; will-change: transform;">
+                        <div class="appearance">
+                            <p class="specialTitle">Ko'rinish</p>
+                            <div class="squareAppearances">
+                                <div class="squareBox spcNormal" data-toggle="tooltip" data-placement="bottom"
+                                    title="" data-title="Обычный режим">A
                                 </div>
-                                <div class="appearance">
-                                    <p class="specialTitle">Shirift o'lchami</p>
-                                    <div class="block blocked">
-                                        <div class="sliderText">Kattalashtirish <span class="range">0</span>%
-                                        </div>
-                                        <div id="fontSizer"
-                                             class="defaultSlider ui-slider ui-slider-horizontal ui-widget ui-widget-content ui-corner-all">
-                                            <div
-                                                class="ui-slider-range ui-widget-header ui-corner-all ui-slider-range-min"
-                                                style="width: 0%;"></div><span
-                                                class="ui-slider-handle ui-state-default ui-corner-all" tabindex="0"
-                                                style="left: 0%;"></span>
-                                            <div
-                                                class="ui-slider-range ui-corner-all ui-widget-header ui-slider-range-min"
-                                                style="width: 0%;"></div>
-                                            <div
-                                                class="ui-slider-range ui-corner-all ui-widget-header ui-slider-range-min"
-                                                style="width: 0%;"></div>
-                                        </div>
-                                    </div>
-                                    <br>
-                                    <!-- <p class="specialTitle">Masshtab</p>
+                            </div>
+                            <div class="squareAppearances">
+                                <div class="squareBox spcWhiteAndBlack" data-toggle="tooltip" data-placement="bottom"
+                                    title="">A</div>
+                            </div>
+                            <div class="squareAppearances">
+                                <div class="squareBox spcDark" data-toggle="tooltip" data-placement="bottom"
+                                    title="" data-original-title="Темный режим">
+                                    A
+                                </div>
+                            </div>
+                        </div>
+                        <div class="appearance">
+                            <p class="specialTitle">Shirift o'lchami</p>
+                            <div class="block blocked">
+                                <div class="sliderText">Kattalashtirish <span class="range">0</span>%
+                                </div>
+                                <div id="fontSizer"
+                                    class="defaultSlider ui-slider ui-slider-horizontal ui-widget ui-widget-content ui-corner-all">
+                                    <div class="ui-slider-range ui-widget-header ui-corner-all ui-slider-range-min"
+                                        style="width: 0%;"></div><span
+                                        class="ui-slider-handle ui-state-default ui-corner-all" tabindex="0"
+                                        style="left: 0%;"></span>
+                                    <div class="ui-slider-range ui-corner-all ui-widget-header ui-slider-range-min"
+                                        style="width: 0%;"></div>
+                                    <div class="ui-slider-range ui-corner-all ui-widget-header ui-slider-range-min"
+                                        style="width: 0%;"></div>
+                                </div>
+                            </div>
+                            <br>
+                            <!-- <p class="specialTitle">Masshtab</p>
                                     <div class="block">
                                         <div class="sliderZoom">Kattalashtirish <span class="range">0</span>%</div>
                                         <div id="zoomSizer" class="defaultSlider ui-slider ui-slider-horizontal ui-widget ui-widget-content ui-corner-all"><div class="ui-slider-range ui-widget-header ui-corner-all ui-slider-range-min" style="width: 0%;"></div><span class="ui-slider-handle ui-state-default ui-corner-all" tabindex="0" style="left: 0%;"></span><div class="ui-slider-range ui-corner-all ui-widget-header ui-slider-range-min" style="width: 0%;"></div></div>
                                     </div> -->
 
-                                </div>
-                                <div class="clearfix"></div>
-                            </div>
                         </div>
-                    </span>
+                        <div class="clearfix"></div>
+                    </div>
+                </div>
+            </span>
         </div>
     </div>
     <div class="page-wrapper chiller-theme ">
@@ -658,8 +634,8 @@ myModal.addEventListener('shown.mdb.modal', () => {
 
                     <div class="user-pic">
                         <img class="img-responsive img-rounded"
-                             src="{{asset('front_assets/assets/img/logo_university/logo_white.png')}}"
-                             alt="User picture">
+                            src="{{ asset('front_assets/assets/img/logo_university/logo_white.png') }}"
+                            alt="User picture">
                     </div>
                     <div class="user-info">
                         @lang('index.Mobile-logo')
@@ -667,30 +643,35 @@ myModal.addEventListener('shown.mdb.modal', () => {
                 </div>
                 <div class="sidebar-menu pt-4">
                     <ul>
-                        @foreach($menus as $menu)
+                        @foreach ($menus as $menu)
                             <li class="sidebar-dropdown">
                                 <a href="#">
                                     <i class="fas fa-university"></i>
-                                    <span>{{$menu->$name_locale}}</span>
+                                    <span>{{ $menu->$name_locale }}</span>
                                 </a>
-                                @if($menu->has_child())
+                                @if ($menu->has_child())
                                     <div class="sidebar-submenu">
                                         <ul>
-                                            @foreach($menu->childs() as $child)
-                                            <li class="sub_sub_link">
-                                                <a href="@if($child->slug && (!$child->has_child())){{$child->slug}} @else {{'#'}}@endif">
-                                                    <i class="fas fa-caret-right mr-0"></i>
-                                                        {{$child->$name_locale}}
+                                            @foreach ($menu->childs() as $child)
+                                                <li class="sub_sub_link">
+                                                    <a
+                                                        href="@if ($child->slug && !$child->has_child()) {{ $child->slug }} @else {{ '#' }} @endif">
+                                                        <i class="fas fa-caret-right mr-0"></i>
+                                                        {{ $child->$name_locale }}
                                                     </a>
-                                                    @if($child->has_child())
+                                                    @if ($child->has_child())
                                                         <div class="sub_sub_menu">
                                                             <span>
-                                                                <a href="@if($child->slug){{$child->slug}}@endif">-  {{$child->$name_locale}}</a>
+                                                                <a
+                                                                    href="@if ($child->slug) {{ $child->slug }} @endif">-
+                                                                    {{ $child->$name_locale }}</a>
                                                             </span>
-                                                            @foreach($child->childs() as $chch)
+                                                            @foreach ($child->childs() as $chch)
                                                                 <span>
-                                                        <a href="@if($chch->slug){{$chch->slug}}@else # @endif">- {{$chch->$name_locale}}</a>
-                                                    </span>
+                                                                    <a
+                                                                        href="@if ($chch->slug) {{ $chch->slug }}@else # @endif">-
+                                                                        {{ $chch->$name_locale }}</a>
+                                                                </span>
                                                             @endforeach
 
                                                         </div>
@@ -705,7 +686,7 @@ myModal.addEventListener('shown.mdb.modal', () => {
                         <li class="header-menu m-0 p-0">
                             <span>@lang('index.Extra')</span>
                         </li>
-<!-- //button using services  modal -->
+                        <!-- //button using services  modal -->
                         <!-- <li>
                             <a href="#">
                             <i class="fas fa-envelope-open-text"></i>
@@ -713,56 +694,62 @@ myModal.addEventListener('shown.mdb.modal', () => {
                             </a>
                         </li> -->
                         <!--Using services  mobile modal -->
-<div class="modal top fade" id="MB_modal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true" data-mdb-backdrop="true" data-mdb-keyboard="true">
-  <div class="modal-dialog modal-dialog-centered modal-sm">
-    <div class="modal-content">
-      <!-- <div class="modal-header">
+                        <div class="modal top fade" id="MB_modal" tabindex="-1"
+                            aria-labelledby="exampleModalLabel" aria-hidden="true" data-mdb-backdrop="true"
+                            data-mdb-keyboard="true">
+                            <div class="modal-dialog modal-dialog-centered modal-sm">
+                                <div class="modal-content">
+                                    <!-- <div class="modal-header">
         <h5 class="modal-title fw-bold" id="exampleModalLabel" style="color:#1d39c4;">@lang('index.Xizmatlardan foydalanish')</h5>
         <button type="button" class="btn-close text-danger" data-mdb-dismiss="modal" style="font-size:small !important;"></button>
       </div> -->
 
 
-    <form  action="{{route('simple.services')}}" method="post" class="m-4">
-      @csrf
-  <!-- fio -->
-        <div class="form-outline mb-4">
-            <input name="fio" type="text" required="true" id="form6Example1" class="form-control" />
-            <label class="form-label" for="form6Example1">@lang('index.Ism va familyangiz')</label>
-          </div>
+                                    <form action="{{ route('simple.services') }}" method="post" class="m-4">
+                                        @csrf
+                                        <!-- fio -->
+                                        <div class="form-outline mb-4">
+                                            <input name="fio" type="text" required="true" id="form6Example1"
+                                                class="form-control" />
+                                            <label class="form-label" for="form6Example1">@lang('index.Ism va familyangiz')</label>
+                                        </div>
 
-  <!-- Phone -->
-       <div class="form-outline mb-4">
-            <input name="phone" type="number" required="true" id="form6Example6" class="form-control" />
-            <label class="form-label" for="form6Example6">@lang('index.Telifon raqamingiz')</label>
-        </div>
-
-
-  <!-- Email input -->
-      <div class="form-outline mb-4">
-        <input name="email" type="email" required="true" id="form6Example5" class="form-control" />
-        <label class="form-label" for="form6Example5">@lang('index.Email')</label>
-      </div>
-
-  <!-- Submit button -->
-      <button type="submit"  class="btn" style="background-color:#1d39c4; color: white; text-transform: lowercase">@lang('index.Yuborish')</button>
-    </form>
-
-    <script>
-const myModal = document.getElementById('myModal')
-const myInput = document.getElementById('myInput')
-
-myModal.addEventListener('shown.mdb.modal', () => {
-  myInput.focus()
-})
-</script>
-
-    </div>
-  </div>
-</div>
+                                        <!-- Phone -->
+                                        <div class="form-outline mb-4">
+                                            <input name="phone" type="number" required="true" id="form6Example6"
+                                                class="form-control" />
+                                            <label class="form-label" for="form6Example6">@lang('index.Telifon raqamingiz')</label>
+                                        </div>
 
 
+                                        <!-- Email input -->
+                                        <div class="form-outline mb-4">
+                                            <input name="email" type="email" required="true" id="form6Example5"
+                                                class="form-control" />
+                                            <label class="form-label" for="form6Example5">@lang('index.Email')</label>
+                                        </div>
 
-<!-- //End Using services mobile modal -->
+                                        <!-- Submit button -->
+                                        <button type="submit" class="btn"
+                                            style="background-color:#1d39c4; color: white; text-transform: lowercase">@lang('index.Yuborish')</button>
+                                    </form>
+
+                                    <script>
+                                        const myModal = document.getElementById('myModal')
+                                        const myInput = document.getElementById('myInput')
+
+                                        myModal.addEventListener('shown.mdb.modal', () => {
+                                            myInput.focus()
+                                        })
+                                    </script>
+
+                                </div>
+                            </div>
+                        </div>
+
+
+
+                        <!-- //End Using services mobile modal -->
 
                         <li>
                             <a href="#">
