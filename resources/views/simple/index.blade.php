@@ -11,15 +11,15 @@
     $description_locale = 'description_' . $locale;
     $short_info_locale = 'short_info_' . $locale;
     $content_locale = 'content_' . $locale;
-    $news = 'App\Neww'::orderBy('date', 'DESC')->get();
-    $announces = 'App\Announce'::where('event', 0)->orderBy('id', 'DESC')->get();
+    $news = 'App\Neww'::orderBy('date', 'DESC')->get()->take(4);
+    $announces = 'App\Announce'::where('event', 0)->orderBy('id', 'DESC')->get()->take(4);
     $announces_event = 'App\Announce'::where('event', 1)->orderBy('date', 'DESC')->take(4)->get();
     $sep = 'App\SeperatelyOneNew'::where('status', 1)->orderBy('id', 'DESC')->first();
     $men = 'App\Menu'::where('id', 58)->first();
     $sll = str_replace('/general-page/', '', $men->slug);
     $slug = 'App\Page'::where('slug', $sll)->first();
-    $scientist_news = 'App\YoungScientistsNew'::where('status', 1)->orderBy('id', 'DESC')->get();
-    $scientist_articles = 'App\ScientificArticle'::where('status', 1)->orderBy('id', 'DESC')->get();
+    $scientist_news = 'App\YoungScientistsNew'::where('status', 1)->orderBy('id', 'DESC')->get()->take(4);
+    $scientist_articles = 'App\ScientificArticle'::where('status', 1)->orderBy('id', 'DESC')->get()->take(4);
     ?>
     @if($locale == 'uz')
         TDYU
