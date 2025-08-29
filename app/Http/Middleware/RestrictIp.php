@@ -2,6 +2,7 @@
 
 namespace App\Http\Middleware;
 
+use App;
 use Closure;
 use Illuminate\Http\Request;
 
@@ -26,14 +27,20 @@ class RestrictIp
      */
     public function handle(Request $request, Closure $next)
     {
-        $clientIp = $this->getIpMK();
-        
-        foreach ($this->allowedIps as $allowedIp) {
-            if ($this->ipInRange($clientIp, $allowedIp)) {
-                return $next($request);
+        if (App::environment('production')) {
+
+            $clientIp = $this->getIpMK();
+
+            foreach ($this->allowedIps as $allowedIp) {
+                if ($this->ipInRange($clientIp, $allowedIp)) {
+                    return $next($request);
+                }
             }
+            abort(403, 'Unauthorized action for .' . $clientIp);
+        } else {
+            return $next($request);
+
         }
-        abort(403, 'Unauthorized action for .' . $clientIp);
 
     }
 

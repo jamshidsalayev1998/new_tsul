@@ -371,7 +371,22 @@
         </li>
     @endforeach
 @endif
-
+<li class="nav-item">
+    <a href="{{route('admin.feedbacks.index')}}" class="nav-link">
+        <i class="nav-icon fas fa-th"></i>
+        <p>
+            Feedbacks
+        </p>
+    </a>
+</li>
+<li class="nav-item">
+    <a href="{{route('admin.feedbacks.ratingStats')}}" class="nav-link">
+        <i class="nav-icon fas fa-th"></i>
+        <p>
+            ratingStats
+        </p>
+    </a>
+</li>
 @if(Auth::user()->role == 1)
     <li class="nav-item">
         <a href="{{route('teachers.index')}}" class="nav-link">

@@ -295,7 +295,7 @@ Route::group(
     Route::resource('articles', 'ArticleController');
 });
 Route::post('feedback-store', [FeedbackController::class , 'store'])->name('feedback.store');
-    
+
 
 //Route::get('/jjjj' , function (){
 //    $user = \App\User::first();
