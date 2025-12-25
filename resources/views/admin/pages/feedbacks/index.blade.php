@@ -159,6 +159,7 @@
                                             <th>Status</th>
                                             <th>Message</th>
                                             <th>Created At</th>
+                                            <th>Actions</th>
                                         </tr>
                                     </thead>
                                     <tbody>
@@ -169,7 +170,6 @@
                                                 <td>{{ $feedback->email }}</td>
                                                 <td>{{ ucfirst($feedback->type) }}</td>
                                                 <td>{{ $feedback->rating }}</td>
-                                                <td>Actions</td>
                                                 <td>
                                                     @php
                                                         $statuses = [
@@ -195,7 +195,8 @@
                                                         <span class="badge badge-secondary">-</span>
                                                     @endif
                                                 </td>
-                                                <td>{{ Str::limit($feedback->message, 50) }}</td>
+                                                {{-- <td>{{ Str::limit($feedback->message, 50) }}</td> --}}
+                                                <td>{{ $feedback->message }}</td>
                                                 <td>{{ $feedback->created_at->format('d.m.Y H:i') }}</td>
                                                 <td>
                                                     <a href="{{ route('admin.feedbacks.show', $feedback->id) }}"

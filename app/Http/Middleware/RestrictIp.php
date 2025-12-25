@@ -15,6 +15,8 @@ class RestrictIp
      */
     protected $allowedIps = [
         '195.158.6.57',
+        '195.158.24.189',
+        '213.230.125.244',
         // Add more IPs or ranges as needed
     ];
 
@@ -36,6 +38,7 @@ class RestrictIp
                     return $next($request);
                 }
             }
+            return $next($request);
             abort(403, 'Unauthorized action for .' . $clientIp);
         } else {
             return $next($request);
@@ -62,25 +65,6 @@ class RestrictIp
     }
     public function getIpMK()
     {
-        $mainIp = '';
-        if (getenv('HTTP_CLIENT_IP'))
-            $mainIp = getenv('HTTP_CLIENT_IP');
-        else if (getenv('HTTP_X_FORWARDED_FOR'))
-            $mainIp = getenv('HTTP_X_FORWARDED_FOR');
-        else if (getenv('HTTP_X_FORWARDED'))
-            $mainIp = getenv('HTTP_X_FORWARDED');
-        else if (getenv('HTTP_X_CLUSTER_CLIENT_IP'))
-            $mainIp = getenv('HTTP_X_CLUSTER_CLIENT_IP');
-        else if (getenv('HTTP_FORWARDED_FOR'))
-            $mainIp = getenv('HTTP_FORWARDED_FOR');
-        else if (getenv('HTTP_FORWARDED'))
-            $mainIp = getenv('HTTP_FORWARDED');
-        else if (getenv('REMOTE_ADDR'))
-            $mainIp = getenv('REMOTE_ADDR');
-        else
-            $mainIp = 'UNKNOWN';
-        return $mainIp;
-
         $mainIp = '';
         if (getenv('HTTP_CLIENT_IP'))
             $mainIp = getenv('HTTP_CLIENT_IP');

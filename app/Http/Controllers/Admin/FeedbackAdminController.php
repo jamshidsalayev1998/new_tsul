@@ -10,10 +10,12 @@ class FeedbackAdminController extends Controller
 {
     public function index(Request $request)
     {
+        // return "Das";
         $feedbacks = Feedback::query()->filter($request->only(['name', 'email', 'type', 'message', 'rating', 'status']))->orderBy('id', 'DESC')->paginate(10);
         $ratings = [1, 2, 3, 4, 5];
         $types = ['feedback', 'complaint', 'suggestion'];
         $stats = Feedback::getStatistics();
+        // return $stats;
         return view('admin.pages.feedbacks.index', compact('feedbacks', 'stats'));
     }
 
