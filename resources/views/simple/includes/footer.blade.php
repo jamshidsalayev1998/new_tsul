@@ -74,10 +74,10 @@ $locale = app()->getLocale();
                         <div>
                             <div>
                                 <h5 class="footer_title_columns">@lang('index.Локация') </h5>
-                                <div class="mt-3">
+                                {{-- <div class="mt-3">
                                     <script type="text/javascript" charset="utf-8" async src="https://api-maps.yandex.ru/services/constructor/1.0/js/?um=constructor%3Aff74afcb8a7194150c0d50941943a50329548f652033ca20bb5ab6dc1a80a85f&amp;
                                 width=100%&amp;height=200&amp;lang=ru_RU&amp;scroll=true"></script>
-                                </div>
+                                </div> --}}
                             </div>
                         </div>
                     </div>

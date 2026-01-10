@@ -2,6 +2,7 @@
 
 namespace App\Http\Middleware;
 
+use App;
 use Closure;
 use Illuminate\Http\Request;
 
@@ -14,6 +15,8 @@ class RestrictIp
      */
     protected $allowedIps = [
         '195.158.6.57',
+        '195.158.24.189',
+        '213.230.125.244',
         // Add more IPs or ranges as needed
     ];
 
@@ -26,14 +29,21 @@ class RestrictIp
      */
     public function handle(Request $request, Closure $next)
     {
-        $clientIp = $this->getIpMK();
-        
-        foreach ($this->allowedIps as $allowedIp) {
-            if ($this->ipInRange($clientIp, $allowedIp)) {
-                return $next($request);
+        if (App::environment('production')) {
+
+            $clientIp = $this->getIpMK();
+
+            foreach ($this->allowedIps as $allowedIp) {
+                if ($this->ipInRange($clientIp, $allowedIp)) {
+                    return $next($request);
+                }
             }
+            return $next($request);
+            abort(403, 'Unauthorized action for .' . $clientIp);
+        } else {
+            return $next($request);
+
         }
-        abort(403, 'Unauthorized action for .' . $clientIp);
 
     }
 
@@ -55,25 +65,6 @@ class RestrictIp
     }
     public function getIpMK()
     {
-        $mainIp = '';
-        if (getenv('HTTP_CLIENT_IP'))
-            $mainIp = getenv('HTTP_CLIENT_IP');
-        else if (getenv('HTTP_X_FORWARDED_FOR'))
-            $mainIp = getenv('HTTP_X_FORWARDED_FOR');
-        else if (getenv('HTTP_X_FORWARDED'))
-            $mainIp = getenv('HTTP_X_FORWARDED');
-        else if (getenv('HTTP_X_CLUSTER_CLIENT_IP'))
-            $mainIp = getenv('HTTP_X_CLUSTER_CLIENT_IP');
-        else if (getenv('HTTP_FORWARDED_FOR'))
-            $mainIp = getenv('HTTP_FORWARDED_FOR');
-        else if (getenv('HTTP_FORWARDED'))
-            $mainIp = getenv('HTTP_FORWARDED');
-        else if (getenv('REMOTE_ADDR'))
-            $mainIp = getenv('REMOTE_ADDR');
-        else
-            $mainIp = 'UNKNOWN';
-        return $mainIp;
-
         $mainIp = '';
         if (getenv('HTTP_CLIENT_IP'))
             $mainIp = getenv('HTTP_CLIENT_IP');
