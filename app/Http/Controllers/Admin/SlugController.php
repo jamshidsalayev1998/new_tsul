@@ -214,7 +214,6 @@ class SlugController extends Controller
 
     public function store(Request $request)
     {
-        return $request;
         try {
             // Validate incoming request
             $validated = $request->validate([
