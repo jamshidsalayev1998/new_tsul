@@ -18,41 +18,46 @@ class NewwController extends Controller
      *
      * @return void
      */
-    public function index(){
-        $news  = Neww::orderBy('date' , 'DESC')->get();
-        return view('admin.pages.news.index' , [
+    public function index()
+    {
+        $news = Neww::orderBy('date', 'DESC')->get();
+        return view('admin.pages.news.index', [
             'news' => $news
         ]);
     }
 
-    public function create(){
+    public function create()
+    {
         $types = NewwType::isset()->get();
         $hashtags = Hashtag::all();
-        return view('admin.pages.news.create' , [
+        return view('admin.pages.news.create', [
             'types' => $types,
             'hashtags' => $hashtags
         ]);
     }
 
-    public function file_name($name){
-        $name2 = $name.date('s').'_'.date('i').'_'.date('h').'_'.date('d').'_'.date('m');
+    public function file_name($name)
+    {
+        $name2 = $name . date('s') . '_' . date('i') . '_' . date('h') . '_' . date('d') . '_' . date('m');
         return $name2;
     }
-    public function edit($id){
+    public function edit($id)
+    {
         $types = NewwType::isset()->get();
         $hashtags = Hashtag::all();
-        $new =  Neww::find($id);
-        return view('admin.pages.news.edit' , [
+        $new = Neww::find($id);
+        return view('admin.pages.news.edit', [
             'types' => $types,
             'hashtags' => $hashtags,
             'data' => $new
         ]);
     }
-    public function store(Request $request){
-//        return $request;
+    public function store(Request $request)
+    {
+        //        return $request;
         $request_array = $request->all();
         foreach ($request_array as $key => $value) {
-            if ($value == "<p><br data-cke-filler=\"true\"></p>"){
+            if ($value == "<p><br data-cke-filler=\"true\"></p>") {
                 $request_array[$key] = null;
             }
         }
@@ -61,14 +66,17 @@ class NewwController extends Controller
             'content_uz' => ['required'],
             'content_ru' => ['required'],
             'content_en' => ['required'],
-            'title_uz' => ['required'],
-            'title_ru' => ['required'],
-            'title_en' => ['required'],
+            'title_uz' => ['required', 'string', 'max:255'],
+            'title_ru' => ['required', 'string', 'max:255'],
+            'title_en' => ['required', 'string', 'max:255'],
             'short_info_uz' => ['required'],
             'short_info_ru' => ['required'],
             'short_info_en' => ['required'],
-            'date' => ['required' , 'date'],
+            'date' => ['required', 'date'],
             'type_id' => ['required'],
+            'image_uz' => ['nullable', 'image', 'mimes:jpeg,png,jpg,gif,svg', 'max:2048'],
+            'image_ru' => ['nullable', 'image', 'mimes:jpeg,png,jpg,gif,svg', 'max:2048'],
+            'image_en' => ['nullable', 'image', 'mimes:jpeg,png,jpg,gif,svg', 'max:2048'],
         ]);
         $new = new Neww();
         $new->content_uz = $request->content_uz;
@@ -82,57 +90,58 @@ class NewwController extends Controller
         $new->short_info_en = $request->short_info_en;
         $new->date = $request->date;
         $new->type_id = $request->type_id;
-        if (isset($request->hashtags)){
+        if (isset($request->hashtags)) {
 
         }
         $has_image = 0;
-        if ($request->hasFile('image_uz')){
+        if ($request->hasFile('image_uz')) {
             $file = $request->file('image_uz');
             $file_name = $file->getClientOriginalName();
-            $file->move(public_path().'/images/news' , $file_name);
-            $new->image_uz = 'images/news/'.$file_name;
-            $new->image_ru = 'images/news/'.$file_name;
-            $new->image_en = 'images/news/'.$file_name;
+            $file->move(public_path() . '/images/news', $file_name);
+            $new->image_uz = 'images/news/' . $file_name;
+            $new->image_ru = 'images/news/' . $file_name;
+            $new->image_en = 'images/news/' . $file_name;
             $has_image = 1;
         }
-        if ($request->hasFile('image_ru')){
+        if ($request->hasFile('image_ru')) {
             $file = $request->file('image_ru');
             $file_name = $file->getClientOriginalName();
-            $file->move(public_path().'/images/news' , $file_name);
-            if($new->image_uz == null){
-                $new->image_uz = 'images/news/'.$file_name;
+            $file->move(public_path() . '/images/news', $file_name);
+            if ($new->image_uz == null) {
+                $new->image_uz = 'images/news/' . $file_name;
             }
-            $new->image_ru = 'images/news/'.$file_name;
-            $new->image_en = 'images/news/'.$file_name;
+            $new->image_ru = 'images/news/' . $file_name;
+            $new->image_en = 'images/news/' . $file_name;
             $has_image = 1;
         }
-        if ($request->hasFile('image_en')){
+        if ($request->hasFile('image_en')) {
             $file = $request->file('image_en');
             $file_name = $file->getClientOriginalName();
-            $file->move(public_path().'/images/news' , $file_name);
-            if($new->image_uz == null){
-                $new->image_uz = 'images/news/'.$file_name;
+            $file->move(public_path() . '/images/news', $file_name);
+            if ($new->image_uz == null) {
+                $new->image_uz = 'images/news/' . $file_name;
             }
-            if($new->image_ru == null){
-                $new->image_ru = 'images/news/'.$file_name;
+            if ($new->image_ru == null) {
+                $new->image_ru = 'images/news/' . $file_name;
             }
-            $new->image_en = 'images/news/'.$file_name;
+            $new->image_en = 'images/news/' . $file_name;
             $has_image = 1;
         }
-        if (!$has_image){
+        if (!$has_image) {
             $new->image_uz = 'images/default-news-image.png';
             $new->image_ru = 'images/default-news-image.png';
             $new->image_en = 'images/default-news-image.png';
         }
         $new->save();
-        return redirect(route('admin.neww.index'))->with('success' , 'Malumot saqlandi');
+        return redirect(route('admin.neww.index'))->with('success', 'Malumot saqlandi');
         return $request;
     }
-    public function update(Request $request , $id){
-//        return $request;
+    public function update(Request $request, $id)
+    {
+        //        return $request;
         $request_array = $request->all();
         foreach ($request_array as $key => $value) {
-            if ($value == "<p><br data-cke-filler=\"true\"></p>"){
+            if ($value == "<p><br data-cke-filler=\"true\"></p>") {
                 $request_array[$key] = null;
             }
         }
@@ -141,16 +150,19 @@ class NewwController extends Controller
             'content_uz' => ['required'],
             'content_ru' => ['required'],
             'content_en' => ['required'],
-            'title_uz' => ['required'],
-            'title_ru' => ['required'],
-            'title_en' => ['required'],
+            'title_uz' => ['required', 'string', 'max:255'],
+            'title_ru' => ['required', 'string', 'max:255'],
+            'title_en' => ['required', 'string', 'max:255'],
             'short_info_uz' => ['required'],
             'short_info_ru' => ['required'],
             'short_info_en' => ['required'],
-            'date' => ['required' , 'date'],
+            'date' => ['required', 'date'],
             'type_id' => ['required'],
+            'image_uz' => ['nullable', 'image', 'mimes:jpeg,png,jpg,gif,svg', 'max:2048'],
+            'image_ru' => ['nullable', 'image', 'mimes:jpeg,png,jpg,gif,svg', 'max:2048'],
+            'image_en' => ['nullable', 'image', 'mimes:jpeg,png,jpg,gif,svg', 'max:2048'],
         ]);
-        $new =  Neww::find($id);
+        $new = Neww::find($id);
         $new->content_uz = $request->content_uz;
         $new->content_ru = $request->content_ru;
         $new->content_en = $request->content_en;
@@ -162,54 +174,55 @@ class NewwController extends Controller
         $new->short_info_en = $request->short_info_en;
         $new->date = $request->date;
         $new->type_id = $request->type_id;
-        if (isset($request->hashtags)){
+        if (isset($request->hashtags)) {
 
         }
-        if ($request->hasFile('image_uz')){
+        if ($request->hasFile('image_uz')) {
             $file = $request->file('image_uz');
             $file_name = $file->getClientOriginalName();
-            $file->move(public_path().'/images/news' , $file_name);
-            $new->image_uz = 'images/news/'.$file_name;
+            $file->move(public_path() . '/images/news', $file_name);
+            $new->image_uz = 'images/news/' . $file_name;
             $has_image = 1;
         }
-        if ($request->hasFile('image_ru')){
+        if ($request->hasFile('image_ru')) {
             $file = $request->file('image_ru');
             $file_name = $file->getClientOriginalName();
-            $file->move(public_path().'/images/news' , $file_name);
+            $file->move(public_path() . '/images/news', $file_name);
 
-            $new->image_ru = 'images/news/'.$file_name;
+            $new->image_ru = 'images/news/' . $file_name;
             $has_image = 1;
         }
-        if ($request->hasFile('image_en')){
+        if ($request->hasFile('image_en')) {
             $file = $request->file('image_en');
             $file_name = $file->getClientOriginalName();
-            $file->move(public_path().'/images/news' , $file_name);
+            $file->move(public_path() . '/images/news', $file_name);
 
-            $new->image_en = 'images/news/'.$file_name;
+            $new->image_en = 'images/news/' . $file_name;
             $has_image = 1;
         }
 
         $new->update();
-        return redirect(route('admin.neww.index'))->with('success' , 'Malumot ozgartirildi');
+        return redirect(route('admin.neww.index'))->with('success', 'Malumot ozgartirildi');
         return $request;
     }
 
-    public function destroy(Request $request){
+    public function destroy(Request $request)
+    {
         $news = Neww::find($request->id);
         $news->delete();
-        return redirect()->back()->with('success' , 'Malumot ochirildi');
+        return redirect()->back()->with('success', 'Malumot ochirildi');
         return $request;
     }
 
-    public function change_status($id){
+    public function change_status($id)
+    {
         $new = Neww::find($id);
-        if ($new){
-            if ($new->status){
+        if ($new) {
+            if ($new->status) {
                 $new->status = 0;
                 $new->update();
                 return 0;
-            }
-            else{
+            } else {
                 $new->status = 1;
                 $new->update();
                 return 1;
