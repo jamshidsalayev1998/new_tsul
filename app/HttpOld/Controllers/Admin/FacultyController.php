@@ -18,24 +18,20 @@ class FacultyController extends Controller
      *
      * @return void
      */
-    public function index()
-    {
+    public function index(){
         $faculties = Faculty::all();
-        return view('admin.pages.faculties.index', [
+        return view('admin.pages.faculties.index' , [
             'data' => $faculties
         ]);
     }
-    public function create()
-    {
+    public function create(){
         return view('admin.pages.faculties.create');
     }
-    public function file_name($name)
-    {
-        $name2 = $name . date('s') . '_' . date('i') . '_' . date('h') . '_' . date('d') . '_' . date('m');
-        return $name2;
-    }
-    public function randomPassword_alpha($count)
-    {
+    public function file_name($name){
+            $name2 =$name.date('s').'_'.date('i').'_'.date('h').'_'.date('d').'_'.date('m');
+            return $name2;
+     }
+     public function randomPassword_alpha($count) {
         $alphabet = 'abcdefghjkmnpqrstuvwxyz';
         $pass = array(); //remember to declare $pass as an array
         $alphaLength = strlen($alphabet) - 1; //put the length -1 in cache
@@ -45,8 +41,7 @@ class FacultyController extends Controller
         }
         return implode($pass); //turn the array into a string
     }
-    public function store(Request $request)
-    {
+    public function store(Request $request){
         $new = new Faculty();
         $new->type_id = $request->type_id;
         $new->name_uz = $request->name_uz;
@@ -65,11 +60,10 @@ class FacultyController extends Controller
         $new->directions_ru = $request->directions_ru;
         $new->directions_en = $request->directions_en;
         $new->save();
-        return redirect(route('admin_faculty.index'))->with('success', 'Malumot saqlandi');
+        return redirect(route('admin_faculty.index'))->with('success' , 'Malumot saqlandi');
         return $request;
     }
-    public function update(Request $request, $id)
-    {
+    public function update(Request $request , $id){
         $new = Faculty::find($id);
         $new->type_id = $request->type_id;
         $new->name_uz = $request->name_uz;
@@ -88,44 +82,40 @@ class FacultyController extends Controller
         $new->directions_ru = $request->directions_ru;
         $new->directions_en = $request->directions_en;
         $new->update();
-        return redirect(route('admin_faculty.index'))->with('success', 'Malumot ozgartirildi');
+        return redirect(route('admin_faculty.index'))->with('success' , 'Malumot ozgartirildi');
         return $request;
     }
 
-    public function administration_index($id)
-    {
+    public function administration_index($id){
         $faculty = Faculty::find($id);
-        if ($faculty) {
-            $admin = AdministrationFaculty::where('faculty_id', $faculty->id)->get();
-            return view('admin.pages.faculties.administration.index', [
+        if ($faculty){
+            $admin = AdministrationFaculty::where('faculty_id' , $faculty->id)->get();
+            return view('admin.pages.faculties.administration.index' , [
                 'data' => $admin,
                 'faculty' => $faculty
             ]);
         }
     }
 
-    public function administration_create($id)
-    {
+    public function administration_create($id){
         $faculty = Faculty::find($id);
-        if ($faculty) {
-            return view('admin.pages.faculties.administration.create', [
+        if ($faculty){
+            return view('admin.pages.faculties.administration.create' , [
                 'faculty' => $faculty
             ]);
         }
     }
 
-    public function administration_edit($id)
-    {
+    public function administration_edit($id){
         $adm = AdministrationFaculty::find($id);
-        if ($adm) {
-            return view('admin.pages.faculties.administration.edit', [
+        if ($adm){
+            return view('admin.pages.faculties.administration.edit' , [
                 'data' => $adm
             ]);
         }
     }
 
-    public function administration_store(Request $request)
-    {
+    public function administration_store(Request $request){
         $new = new AdministrationFaculty();
         $new->phone = $request->phone;
         $new->email = $request->email;
@@ -153,20 +143,19 @@ class FacultyController extends Controller
         $new->scientific_activity_ru = $request->scientific_activity_ru;
         $new->scientific_activity_en = $request->scientific_activity_en;
         $new->faculty_id = $request->faculty_id;
-        if ($request->hasFile('image')) {
+        if ($request->hasFile('image')){
             $file = $request->file('image');
             $file_ext = $file->getClientOriginalExtension();
-            $new_name = $this->file_name($this->randomPassword_alpha(10)) . '.' . $file_ext;
-            $file->move(public_path() . '/images/administration_faculty', $new_name);
-            $new->image = 'images/administration_faculty/' . $new_name;
+            $new_name = $this->file_name($this->randomPassword_alpha(10)).'.'.$file_ext;
+            $file->move(public_path().'/images/administration_faculty' , $new_name);
+            $new->image = 'images/administration_faculty/'.$new_name;
         }
         $new->save();
-        return redirect()->back()->with('success', 'Malumot saqlandi');
+        return redirect()->back()->with('success' , 'Malumot saqlandi');
         return $request;
     }
 
-    public function administration_update(Request $request, $id)
-    {
+    public function administration_update(Request $request , $id){
         $new = AdministrationFaculty::find($id);
         $new->phone = $request->phone;
         $new->email = $request->email;
@@ -193,32 +182,29 @@ class FacultyController extends Controller
         $new->scientific_activity_uz = $request->scientific_activity_uz;
         $new->scientific_activity_ru = $request->scientific_activity_ru;
         $new->scientific_activity_en = $request->scientific_activity_en;
-        if ($request->hasFile('image')) {
+        if ($request->hasFile('image')){
             $file = $request->file('image');
             $file_ext = $file->getClientOriginalExtension();
-            $new_name = $this->file_name($this->randomPassword_alpha(10)) . '.' . $file_ext;
-            $file->move(public_path() . '/images/administration_faculty', $new_name);
-            $new->image = 'images/administration_faculty/' . $new_name;
+            $new_name = $this->file_name($this->randomPassword_alpha(10)).'.'.$file_ext;
+            $file->move(public_path().'/images/administration_faculty' , $new_name);
+            $new->image = 'images/administration_faculty/'.$new_name;
         }
         $new->update();
-        return redirect()->back()->with('success', 'Malumot saqlandi');
+        return redirect()->back()->with('success' , 'Malumot saqlandi');
         return $request;
     }
 
-    public function administration_delete($id)
-    {
-        $adm = AdministrationFaculty::find($id);
-        ;
-        if ($adm) {
+    public function administration_delete($id){
+        $adm = AdministrationFaculty::find($id);;
+        if ($adm){
             $adm->delete();
-            return redirect()->back()->with('success', 'Malumot ochirildi');
+            return redirect()->back()->with('success' , 'Malumot ochirildi');
         }
     }
 
-    public function edit($id)
-    {
+    public function edit($id){
         $faculty = Faculty::find($id);
-        return view('admin.pages.faculties.edit', [
+        return view('admin.pages.faculties.edit' , [
             'data' => $faculty
         ]);
         return $faculty;
