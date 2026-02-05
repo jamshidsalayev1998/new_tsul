@@ -1,0 +1,32 @@
+.badge {
+    padding: 5px 10px;
+    border-radius: 12px;
+    font-size: 13px;
+    font-weight: 500;
+    display: inline-block;
+}
+
+.badge-new {
+    background-color: #007bff;
+    color: #fff;
+}
+
+.badge-viewed {
+    background-color: #6c757d;
+    color: #fff;
+}
+
+.badge-processing {
+    background-color: #ffc107;
+    color: #212529;
+}
+
+.badge-resolved {
+    background-color: #28a745;
+    color: #fff;
+}
+
+.badge-archived {
+    background-color: #17a2b8;
+    color: #fff;
+}

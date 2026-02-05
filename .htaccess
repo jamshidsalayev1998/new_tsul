@@ -1,0 +1,14 @@
+<IfModule mod_rewrite.c>
+    <IfModule mod_negotiation.c>
+        Options -MultiViews -Indexes
+    </IfModule>
+
+    RewriteEngine on
+    
+    # Return a 404 for web.config requests before other rules
+    RewriteRule ^web\.config$ - [R=404,L]
+
+    RewriteCond %{HTTPS} !^public
+    RewriteRule ^(.*)$ public/$1 [L]
+</IfModule>
+
