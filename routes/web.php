@@ -129,6 +129,8 @@ Route::group(
     ],
     function () {
         Route::get('/', 'IndexController@index')->name('admin.index');
+        Route::get('/profile/password', 'ProfileController@editPassword')->name('admin.profile.password.edit');
+        Route::post('/profile/password', 'ProfileController@updatePassword')->name('admin.profile.password.update');
     }
 );
 Route::group(
@@ -309,12 +311,39 @@ Route::group(
                 Route::get('requestment/{id}/status', 'RequestmentController@status')->name('simple.requestment.status');
                 Route::get('requestment/{id}/result', 'RequestmentController@result')->name('simple.requestment.result');
 
+                Route::resource('roles', 'RoleController');
+                Route::resource('permissions', 'PermissionController');
+                Route::resource('users', 'UserManagementController');
+                Route::post('users/{id}/reset-password', 'UserManagementController@resetPassword')->name('users.reset_password');
+
+                Route::prefix('feedbacks')->name('admin.feedbacks.')->group(function () {
+                    Route::get('/', 'FeedbackAdminController@index')->name('index');
+                    Route::get('/{id}', 'FeedbackAdminController@show')->name('show');
+                    Route::put('/{id}/status', 'FeedbackAdminController@updateStatus')->name('updateStatus');
+                    Route::get('/stats/rating', 'FeedbackAdminController@ratingStats')->name('ratingStats');
+                });
+
             }
         );
-        Route::resource('kafedra_admin', 'KafedraAdminController');
-
     }
 );
+
+Route::group(
+    [
+        'prefix' => 'admin',
+        'namespace' => 'Admin',
+        'middleware' => ['auth']
+    ],
+    function () {
+        // Departmental Modules
+        Route::resource('youth-sport', 'YouthSportController')->middleware('role:youth-sport-admin|super-admin');
+        Route::resource('scientific', 'ScientificEventController')->middleware('role:legal-research-admin|super-admin');
+        Route::resource('international', 'InternationalOpportunityController')->middleware('role:international-admin|super-admin');
+
+        Route::resource('kafedra_admin', 'KafedraAdminController');
+    }
+);
+
 Route::group(
     [
         'prefix' => 'admin',
@@ -327,11 +356,3 @@ Route::group(
     }
 );
 Route::post('feedback-store', [FeedbackController::class, 'store'])->name('feedback.store');
-
-
-//Route::get('/jjjj' , function (){
-//    $user = \App\User::first();
-//    $user->password = \Illuminate\Support\Facades\Hash::make('editor_2023#');
-//    $user->update();
-//    return $user;
-//});
