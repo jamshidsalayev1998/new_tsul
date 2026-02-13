@@ -1,0 +1,72 @@
+$tsul-color: #0A2355;
+$accardion-color: #bdc3c7;
+$white: #ffffff;
+$bg-color: #F6F7FD;
+$black: #000;
+$content-color:#2f3542;
+
+.content{
+    background-color: $bg-color;
+    h1{
+        text-align: center;
+        text-transform: uppercase;
+        color: $content-color;
+    }
+    .accordion {
+      
+        .ui-accordion-header { 
+        border: 0px solid $bg-color;
+        padding: 10px;
+        background: $accardion-color;
+        cursor: pointer;
+        outline: none;
+        color: $white;
+        &:hover{
+            background: #C0C6CA;
+            color: $black;
+            i{
+                color: $black;
+                
+            }
+        }
+    }
+    
+    .ui-accordion-content {
+        border: 0px solid $bg-color;
+        margin: 0 0 10px 0;
+        padding: 5px;
+        font-size: 14px;
+        background: $white;
+        color: $content-color;
+        text-align: justify;
+        
+    }
+   
+    
+    h3{
+    text-align: justify;       
+    
+        i{
+            color: $white;
+            margin-right: 10px;
+           
+        }
+    }
+    
+    }
+}
+/*Click rotate*/
+.rotate {
+    -moz-transition: all .5s linear;
+    -webkit-transition: all .5s linear;
+    transition: all .5s linear;
+}
+.rotate.down {
+    -moz-transform:rotate(-90deg);
+    -webkit-transform:rotate-(90deg);
+    transform:rotate(-90deg);
+}
+/*End Click rotate*/
+
+
+

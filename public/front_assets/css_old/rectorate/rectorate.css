@@ -1,0 +1,206 @@
+.rectorate {
+  margin-top: 60px;
+  margin-bottom: 60px;
+  /*Media*/
+  /*End media*/ }
+  .rectorate .img-info .contact {
+    display: flex;
+    border: solid 1px #E6E6E6;
+    border-radius: 7px;
+    background-color: #fff; }
+  .rectorate .img-info .img-card {
+    width: 100%; }
+  .rectorate .img-info img {
+    width: 100%;
+    height: auto;
+    object-fit: fill;
+    border-radius: 7px; }
+  .rectorate .img-info .contact-info h3 {
+    text-align: center;
+    font-size: 28px;
+    color: #0A2355;
+    margin-bottom: 25px; }
+  .rectorate .img-info .contact-info h5 {
+    color: #929499;
+    font-size: 18px;
+    margin-bottom: 30px; }
+  .rectorate .img-info .contact-info span {
+    cursor: pointer;
+    color: #2C42A6;
+    font-size: 18px; }
+    .rectorate .img-info .contact-info span:hover {
+      color: #0A2355; }
+  .rectorate .img-info .contact-info a {
+    color: #2C42A6; }
+  .rectorate .more-info {
+    margin-top: 30px; }
+    .rectorate .more-info h2 {
+      text-align: center;
+      font-size: 30px; }
+    .rectorate .more-info h3 {
+      text-align: center;
+      font-size: 26px; }
+    .rectorate .more-info p {
+      font-size: 16px;
+      text-align: justify; }
+    .rectorate .more-info button {
+      background-color: #2C42A6;
+      color: #fff;
+      border-radius: 5px;
+      font-size: 15px;
+      border: none;
+      width: 60px;
+      height: auto; }
+      .rectorate .more-info button:hover {
+        background-color: #0A2355;
+        color: #fff; }
+  @media only screen and (max-width: 1440px) and (min-width: 1200px) {
+    .rectorate .img-info .contact-info h3 {
+      font-size: 34px;
+      margin-bottom: 24px; }
+    .rectorate .img-info .contact-info h5 {
+      font-size: 20px;
+      margin-bottom: 25px; }
+    .rectorate .img-info .contact-info span {
+      font-size: 20px; }
+    .rectorate .more-info {
+      margin-top: 20px; }
+      .rectorate .more-info h2 {
+        font-size: 28px; }
+      .rectorate .more-info h3 {
+        font-size: 24px; }
+      .rectorate .more-info p {
+        font-size: 18px; }
+      .rectorate .more-info button {
+        font-size: 16px;
+        width: 55px; } }
+  @media only screen and (max-width: 1200px) and (min-width: 1023px) {
+    .rectorate .img-info .contact-info h3 {
+      font-size: 25px;
+      margin-bottom: 22px; }
+    .rectorate .img-info .contact-info h5 {
+      font-size: 15px;
+      margin-bottom: 24px; }
+    .rectorate .img-info .contact-info span {
+      font-size: 16px; }
+    .rectorate .more-info {
+      margin-top: 24px; }
+      .rectorate .more-info h2 {
+        font-size: 25px; }
+      .rectorate .more-info h3 {
+        font-size: 21px; }
+      .rectorate .more-info p {
+        font-size: 14px; }
+      .rectorate .more-info button {
+        font-size: 13px;
+        width: 50px; } }
+  @media only screen and (max-width: 1023px) and (min-width: 767px) {
+    .rectorate .img-info .contact {
+      display: flex; }
+    .rectorate .img-info img {
+      margin-top: 20px;
+      width: 100%; }
+    .rectorate .img-info .contact-info h3 {
+      font-size: 22px;
+      margin-bottom: 20px; }
+    .rectorate .img-info .contact-info h5 {
+      font-size: 14px;
+      margin-bottom: 20px; }
+    .rectorate .img-info .contact-info span {
+      font-size: 14px; }
+    .rectorate .more-info {
+      margin-top: 22px; }
+      .rectorate .more-info h2 {
+        font-size: 23px; }
+      .rectorate .more-info h3 {
+        font-size: 20px; }
+      .rectorate .more-info p {
+        font-size: 13px; }
+      .rectorate .more-info button {
+        font-size: 13px;
+        width: 50px; } }
+  @media only screen and (max-width: 767px) and (min-width: 425px) {
+    .rectorate .img-info .contact {
+      display: block; }
+    .rectorate .img-info img {
+      margin-left: 42px;
+      margin-top: 10px;
+      width: 75%;
+      height: 75%; }
+    .rectorate .img-info .contact-info h3 {
+      font-size: 22px;
+      margin-bottom: 20px; }
+    .rectorate .img-info .contact-info h5 {
+      font-size: 14px;
+      margin-bottom: 20px; }
+    .rectorate .img-info .contact-info span {
+      font-size: 14px; }
+    .rectorate .more-info {
+      margin-top: 22px; }
+      .rectorate .more-info h2 {
+        font-size: 23px; }
+      .rectorate .more-info h3 {
+        font-size: 20px; }
+      .rectorate .more-info p {
+        font-size: 13px; }
+      .rectorate .more-info button {
+        font-size: 13px;
+        width: 50px; } }
+  @media only screen and (max-width: 425px) and (min-width: 375px) {
+    .rectorate .img-info .contact {
+      display: block; }
+    .rectorate .img-info img {
+      margin-left: 45px;
+      margin-top: 8px;
+      width: 70%;
+      height: 70%; }
+    .rectorate .img-info .contact-info h3 {
+      text-align: start;
+      font-size: 22px;
+      margin-bottom: 20px; }
+    .rectorate .img-info .contact-info h5 {
+      font-size: 14px;
+      margin-bottom: 20px; }
+    .rectorate .img-info .contact-info span {
+      font-size: 14px; }
+    .rectorate .more-info {
+      margin-top: 18px; }
+      .rectorate .more-info h2 {
+        font-size: 20px; }
+      .rectorate .more-info h3 {
+        font-size: 18px; }
+      .rectorate .more-info p {
+        font-size: 13px; }
+      .rectorate .more-info button {
+        font-size: 12px;
+        width: 40px; } }
+  @media only screen and (max-width: 375px) and (min-width: 320px) {
+    .rectorate .img-info .contact {
+      display: block; }
+    .rectorate .img-info img {
+      margin-left: 42px;
+      margin-top: 8px;
+      width: 66%;
+      height: 66%; }
+    .rectorate .img-info .contact-info h3 {
+      text-align: start;
+      font-size: 20px;
+      margin-bottom: 15px; }
+    .rectorate .img-info .contact-info h5 {
+      font-size: 12px;
+      margin-bottom: 15px; }
+    .rectorate .img-info .contact-info span {
+      font-size: 12px; }
+    .rectorate .more-info {
+      margin-top: 15px; }
+      .rectorate .more-info h2 {
+        font-size: 18px; }
+      .rectorate .more-info h3 {
+        font-size: 16px; }
+      .rectorate .more-info p {
+        font-size: 13px; }
+      .rectorate .more-info button {
+        font-size: 10px;
+        width: 40px; } }
+
+/*# sourceMappingURL=rectorate.css.map */

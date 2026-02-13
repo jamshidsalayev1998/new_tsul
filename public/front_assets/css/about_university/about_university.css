@@ -1,0 +1,78 @@
+.about_university {
+  margin-top: 30px;
+  margin-bottom: 60px;
+  /*Media*/ }
+  .about_university .img_style img {
+    width: 100%;
+    height: auto;
+    border-radius: px;
+    object-fit: fill; }
+  .about_university .img_style h3 {
+    color: #0A2355;
+    text-align: center; }
+  .about_university .img_style h5 {
+    text-align: center; }
+  .about_university .img_style hr {
+    color: #0A2355;
+    border-radius: 50%; }
+  .about_university .rektor_icons i {
+    color: #0A2355;
+    font-size: 20px; }
+  .about_university .rektor_icons span {
+    color: #000; }
+  .about_university .card_sticky {
+    position: -webkit-sticky;
+    position: sticky;
+    top: 60px; }
+  .about_university .ob-info {
+    text-align: justify; }
+  .about_university .ob-info h3 {
+    color: #0A2355; }
+  .about_university .ob-info h4 {
+    color: #0A2355; }
+  .about_university .ob-info h5 {
+    color: #0A2355; }
+
+    .rn_line {
+      color: #434343;
+      box-shadow: 0 4px 2px -2px #8c8c8c;
+
+    }
+    
+  @media only screen and (max-width: 1440px) {
+    .about_university .rektor_icons i {
+      font-size: 20px; }
+    .about_university .img_style h3 {
+      font-size: 24px; }
+    .about_university .img_style h5 {
+      font-size: 19px; } }
+  @media only screen and (max-width: 1024px) {
+    .about_university .rektor_icons i {
+      font-size: 19px; }
+    .about_university .img_style h3 {
+      font-size: 22px; }
+    .about_university .img_style h5 {
+      font-size: 19px; } }
+  @media only screen and (max-width: 768px) {
+    .about_university .rektor_icons i {
+      font-size: 16px; }
+    .about_university .img_style h3 {
+      font-size: 19px; }
+    .about_university .img_style h5 {
+      font-size: 17px; } }
+  @media only screen and (max-width: 425px) {
+    .about_university .rektor_icons i {
+      font-size: 16px; }
+    .about_university .img_style h3 {
+      font-size: 18px; }
+    .about_university .img_style h5 {
+      font-size: 17px; } }
+  @media only screen and (max-width: 375px) {
+    .about_university .rektor_icons i {
+      font-size: 15px; }
+    .about_university .img_style h3 {
+      font-size: 16px; }
+    .about_university .img_style h5 {
+      font-size: 15px; } }
+
+/*# sourceMappingURL=about_university.css.map */

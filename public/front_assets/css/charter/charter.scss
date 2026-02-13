@@ -1,0 +1,235 @@
+$tsul-color:#0A2355;
+$tsul-lighter: #2C42A6;
+$tsul-bg-color:#F6F7FD;
+$tab-text:#555555;
+$tab-border:#EEEEEE;
+$white:#fff;
+$white-lighter:#f1f1f1;
+$black:#000;
+$left-dotted: red;
+$pdf: #82C91E;
+
+.charter{
+    margin-top: 30px;
+    margin-bottom: 60px;
+
+    .rounded-box{
+        border: 1px solid $tab-border;
+        border-radius: 30px;
+        background-color: $white;
+        h3{
+            border-bottom: 2px solid $tab-border;
+            font-family: "Open Sans", sans-serif;
+            color:#333333;
+            font-size: 26px;
+            line-height: 20px;
+            vertical-align: baseline;
+            letter-spacing: normal;
+            word-spacing: 0px;
+            font-weight: 600;
+        }
+        .box-body{
+            
+          
+            .pdf{
+                background-color: #FBFBFB;
+                border-radius: 8px;
+                padding: 8px;
+                border: 1px solid $tab-border;
+                margin-bottom: 10px;
+                
+              
+                a{
+                    text-decoration: none;
+                    color: $tab-text;
+                    font-size: 16px;
+                    margin-left: 10px;
+                    margin-right:  auto;
+                    text-align: justify;
+                
+
+                    &:hover{
+                        color: $tsul-color;
+                    }
+                    i{
+                        color:$pdf;
+                        font-size: 24px;
+                        float: left;
+                        border-left: 2px dotted $left-dotted;
+                    }
+                }
+                .download-icon{
+                    i{
+                        float: right;
+                        font-size: 18px;
+                        color: $tab-text;  
+                        border-left: none;
+                    }
+                }
+
+            }
+        }
+    }
+
+    /*Media*/
+$pc: 1440px;
+$laptop: 1200px;
+$laptop-l: 1023px;
+$tablet: 767px;
+$phone-l: 425px;
+$phone-m: 375px;
+$phone-s: 320px;
+
+@media only screen and(max-width:$pc) and(min-width:$laptop){
+    .rounded-box{
+        
+        h3{
+            font-size: 25px;
+        }
+        .box-body{
+          
+            .pdf{
+                        
+                a{
+                    font-size: 15px;
+                    i{
+                        font-size: 23px;
+                    }
+                    
+                   span{
+                       font-size: 17px;
+                   }
+                }
+            }
+        }
+    }
+}
+@media only screen and(max-width:$laptop) and(min-width:$laptop-l){
+    .rounded-box{
+        
+        h3{
+            font-size: 24px;
+        }
+        .box-body{
+          
+            .pdf{
+                        
+                a{
+                    font-size: 15px;
+                    i{
+                        font-size: 23px;
+                    }
+                    
+                   span{
+                       font-size: 17px;
+                   }
+                }
+            }
+        }
+    }
+  
+}
+@media only screen and(max-width:$laptop-l) and(min-width:$tablet){
+    .rounded-box{
+        
+        h3{
+            font-size: 24px;
+        }
+        .box-body{
+          
+            .pdf{
+                        
+                a{
+                    font-size: 14px;
+                    margin-left: 5px;
+                    margin-right:  auto;
+                    i{
+                        font-size: 22px;
+                    }
+                    
+                   span{
+                       font-size: 16px;
+                   }
+                }
+            }
+        }
+    }  
+   
+}
+@media only screen and(max-width:$tablet) and(min-width:$phone-l){
+    .rounded-box{
+        
+        h3{
+            font-size: 23px;
+        }
+        .box-body{
+          
+            .pdf{
+                        
+                a{
+                    font-size: 14px;
+                    i{
+                        font-size: 21px;
+                    }
+                    
+                   span{
+                       font-size: 16px;
+                   }
+                }
+            }
+        }
+    }    
+    
+}
+@media only screen and(max-width:$phone-l) and(min-width:$phone-m){
+    .rounded-box{
+        
+        h3{
+            font-size: 22px;
+        }
+        .box-body{
+          
+            .pdf{
+                        
+                a{
+                    font-size: 13px;
+                    i{
+                        font-size: 20px;
+                    }
+                    
+                   span{
+                       font-size: 15px;
+                   }
+                }
+            }
+        }
+    }      
+}
+@media only screen and(max-width:$phone-m) and(min-width:$phone-s){
+    .rounded-box{
+        
+        h3{
+            font-size: 20px;
+        }
+        .box-body{
+          
+            .pdf{
+                        
+                a{
+                    font-size: 12px;
+                    i{
+                        font-size: 19px;
+                    }
+                    
+                   span{
+                       font-size: 14px;
+                   }
+                }
+            }
+        }
+    }       
+   
+}
+/*End media*/
+}
+

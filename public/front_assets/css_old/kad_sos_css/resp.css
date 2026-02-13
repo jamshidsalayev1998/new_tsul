@@ -1,0 +1,62 @@
+@media only screen and (min-width:1440px) {
+    .img-bar img {
+        height: 199px;
+        width: 340px;
+    }
+    .my-icon-bar{
+        margin-left: 20px;
+    }
+}
+
+
+@media only screen and (max-width:1024px) {
+    .col-9-full-res {
+        flex-basis: 100%;
+        max-width: 100%;
+    }
+    .text-bar-con {
+        width: 100%;
+    }
+    .urtaga-ol {
+        width: 585px;
+        MARGIN: auto;
+    }
+    .ung-tomon-top {
+        margin: 15px 0;
+    }
+    .my-icon-bar {
+        text-align: center;
+        padding: 0 30px 0 30px;
+        margin-left: 3px;
+    }
+}
+
+
+
+@media only screen and (max-width:900px) {
+    .col-4-full-res {
+        flex-basis: 100%;
+        max-width: 100%;
+    }
+   
+    .img-bar img {
+        margin: 10px 0;
+        padding-bottom: 10px;
+        width: 400px;
+        height: 199px;
+    }
+
+}
+@media only screen and (max-width:768px){
+    .img-bar img{
+        width: 720px;
+    }
+}
+
+
+@media only screen and (max-width:650px) {
+    .urtaga-ol {
+        width: 292px;
+        MARGIN: auto;
+    }
+}

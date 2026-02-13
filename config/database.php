@@ -4,8 +4,6 @@ use Illuminate\Support\Str;
 
 return [
 
-
-
     /*
     |--------------------------------------------------------------------------
     | Default Database Connection Name
@@ -50,9 +48,9 @@ return [
             'url' => env('DATABASE_URL'),
             'host' => env('DB_HOST', '127.0.0.1'),
             'port' => env('DB_PORT', '3306'),
-            'database' => 'new_tsul2',
-            'username' => 'new_tsul',
-            'password' => 'N3w_T$uluz*l',
+            'database' => env('DB_DATABASE', 'forge'),
+            'username' => env('DB_USERNAME', 'forge'),
+            'password' => env('DB_PASSWORD', ''),
             'unix_socket' => env('DB_SOCKET', ''),
             'charset' => 'utf8mb4',
             'collation' => 'utf8mb4_unicode_ci',

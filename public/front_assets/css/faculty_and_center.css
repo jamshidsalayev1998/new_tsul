@@ -1,0 +1,601 @@
+h1, h2, h3, h4, h5, h6, p, span, b {
+    font-family: 'Times New Roman', sans-serif;
+}
+
+.faculty_and_center {
+    /* background-color: #F8F8F8; */
+}
+
+[data-tab-content] {
+    display: none;
+}
+
+.active[data-tab-content] {
+    display: block;
+}
+
+.fc_tabs {
+    display: flex;
+    justify-content: space-around;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    background-color:  #EEEEEE;
+    color: white;
+    border: 1px solid #233585;
+    border-bottom: none;
+    border-top-left-radius: 7px;
+    border-top-right-radius: 7px;
+}
+
+.fc_tab {
+    cursor: pointer;
+    padding: 10px;
+    background-color: #fff;
+    color: #2C42A6;
+    font-weight: 400;
+    display: block;
+    width: calc(100% / 4);
+    text-align: center;
+}
+
+.fc_tab.active {
+    background-color: #2c42A6;
+    color: #fff;
+    font-weight: bolder;
+}
+
+
+.fc_tab-content {
+    border: 1px solid #2C42A6;
+    border-top: 1px solid;
+    border-left: 1px solid #2c42A6;
+    border-right: 1px solid #2c42A6;
+    border-bottom: 1px solid #2c42A6;
+    border-top-left-radius: 7px;
+    border-top-right-radius: 7px;
+}
+
+.about_fc_card {
+    display: flex;
+    background-color: white;
+}
+
+.about_fc_card>div:nth-child(1) {
+    width: 200px;
+    height: auto;
+}
+
+.about_fc_card>div:nth-child(1) img {
+    width: 100%;
+    height: 100%;
+}
+
+.about_fc_card_text_box {
+    width: 100%;
+    padding: 4px 10px 4px 20px;
+}
+
+.about_fc_card_text_box i {
+    font-size: 18px;
+    color: #233585;
+}
+
+.about_fc_card_text_box b {
+    font-size: 16px;
+}
+
+.about_fc_card_text_box span {
+    font-size: 17px;
+}
+
+.header_fc_content h5 {
+    font-size: 24px;
+    font-weight: 500;
+    font-family: Arial, Helvetica, sans-serif !important; 
+    color: #233585;
+}
+
+.header_fc_content p {
+    font-size: medium;
+    font-family: Arial, Helvetica, sans-serif !important; 
+    text-align: justify;
+}
+.header_fc_content span {
+    font-size: 20px;
+    font-family: Arial, Helvetica, sans-serif !important; 
+    text-align: justify;
+}
+
+/* accordion */
+
+.accordion-container {
+    position: relative;
+    width: 100%;
+    border: 1px solid #233585;
+    border-top: none;
+    outline: 0;
+    cursor: pointer
+}
+
+.accordion-container .article-title {
+    display: block;
+    position: relative;
+    margin: 0;
+    padding: 0.625em 0.625em 0.625em 2em;
+    border-top: 1px solid #233585;
+    font-size: 1.25em;
+    font-weight: normal;
+    color: #233585;
+    cursor: pointer;
+}
+
+.accordion-container .article-title:hover, .accordion-container .article-title:active, .accordion-container .content-entry.open .article-title {
+    background-color: #233585;
+    color: white;
+}
+
+.accordion-container .article-title:hover i:before, .accordion-container .article-title:hover i:active, .accordion-container .content-entry.open i {
+    color: white;
+}
+
+.accordion-container .content-entry i {
+    position: absolute;
+    top: 3px;
+    left: 12px;
+    font-style: normal;
+    font-size: 1.625em;
+    font-family: Arial, Helvetica, sans-serif !important; 
+    color: #233585;
+}
+
+.accordion-container .content-entry i:before {
+    content: "+ ";
+}
+
+.accordion-container .content-entry.open i:before {
+    content: "- ";
+}
+
+.accordion-content {
+    display: none;
+    padding-left: 2em;
+}
+
+/* This stuff is just for the Codepen demo */
+
+#content_accordion {
+    width: 100%;
+}
+
+/* all faculty starts */
+
+.af_item_box {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.all_faculty_items {
+    position: relative;
+    box-shadow: 0 0 6px 0 rgba(0, 0, 0, 0.2);
+    width: 300px;
+    margin-top: 50px;
+    border-radius: 6px;
+    padding: 4px 12px;
+    min-height: 100px;
+    cursor: pointer;
+    transition: all 0.2s ease-in-out;
+    background-color: white;
+    text-decoration: none !important;
+    color: rgba(0, 0, 0, 0.8);
+}
+
+.all_faculty_items:hover {
+    background-color: #233585;
+    color: white;
+}
+
+.all_faculty_items span {
+    margin-top: 30px;
+    display: block;
+    font-size: 24px;
+    font-weight: 500;
+    text-align: center;
+    word-wrap: break-word;
+}
+
+.all_faculty_items_icon {
+    position: absolute;
+    top: -30px;
+    left: 50%;
+    width: 60px;
+    height: 60px;
+    transform: translateX(-50%);
+    background-color: #233585;
+    border-radius: 50%;
+    border: 5px solid white;
+    box-shadow: 0 0 4px 0 rgba(0, 0, 0, 0.2);
+}
+
+.all_faculty_items_icon i {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+    font-size: 30px;
+}
+
+/* all faculty ends */
+
+/* all center starts */
+
+/* all center ends */
+
+.all_center_items {
+    text-decoration: none !important;
+    display: flex;
+    align-items: center;
+    width: 100%;
+    color: rgba(0, 0, 0, 0.8);
+    margin-top: 10px;
+    cursor: pointer;
+}
+
+.all_center_items:hover .all_center_items_text_card {
+    box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.2);
+}
+
+.all_center_items_icon {
+    height: 120px;
+    width: 100px;
+    background-color: #233585 !important;
+    color: white;
+    position: relative;
+    clip-path: polygon(100% 0%, 75% 50%, 100% 100%, 25% 100%, 0% 50%, 25% 0%);
+}
+
+.all_center_items:nth-child(2n) .all_center_items_icon {
+    height: 120px;
+    width: 100px;
+    background-color: #1946BA !important;
+    color: white !important;
+    position: relative;
+    clip-path: polygon(100% 0%, 75% 50%, 100% 100%, 25% 100%, 0% 50%, 25% 0%);
+}
+
+.all_center_items:nth-child(2n) .all_center_items_icon i {
+    /* color: #233585; */
+    color: white;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-70%, -50%);
+    font-size: 34px;
+}
+
+.all_center_items:nth-child(2n+1) .all_center_items_icon i {
+    color: white;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-70%, -50%);
+    font-size: 34px;
+}
+
+.all_center_items_text_card {
+    width: calc(100% - 100px);
+    background-color: white;
+    padding: 4px 16px;
+    border-top-right-radius: 4px;
+    border-bottom-right-radius: 4px;
+}
+
+.all_center_items_text_card>div {
+    display: -webkit-box;
+    max-width: 100%;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    font-size: 16px;
+}
+
+.all_center_items_text_card i {
+    color: #233585;
+    font-size: 16px;
+    margin-right: 8px;
+}
+
+.all_center_items_text_card h4 {
+    color: #233585;
+    font-weight: 500;
+    font-size: 21px;
+}
+
+@media all and (min-width: 860px) {
+    #content_accordion {
+        width: 100%;
+        margin: 0 auto;
+    }
+}
+
+/* accordion */
+
+.faculty_and_centers_list {
+    margin: 20px 0;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.faculty_and_centers_list>div {
+    width: 300px;
+    margin: 0px 10px;
+    text-align: center;
+    padding: 26px 0;
+    cursor: pointer;
+}
+
+.faculty_and_centers_list>div:hover {
+    background-color: #233585;
+    color: white;
+}
+
+.faculty_and_centers_list>div:hover i {
+    background-color: #233585;
+    color: white;
+}
+
+.faculty_and_centers_list>div:hover span {
+    background-color: #233585;
+    color: white;
+}
+
+.faculty_and_centers_list>div i {
+    font-size: 28px;
+    color: #233585;
+}
+
+.faculty_and_centers_list>div span {
+    font-size: 20px;
+    font-weight: 500;
+    color: #233585;
+}
+
+.faculty_and_centers_list_text>ul {
+    list-style: none;
+}
+
+.faculty_and_centers_list_text>ul li {
+    font-size: 16px;
+    font-weight: 400;
+    cursor: pointer;
+}
+
+.faculty_and_centers_list_text>ul li i {
+    color: #233585;
+    transition: all 0.2s ease-in-out;
+}
+
+.faculty_and_centers_list_text>ul li:hover i {
+    margin-left: 4px;
+}
+
+/* media */
+
+@media(max-width:1291px) {
+    .faculty_and_center {
+        margin-top: 46px;
+    }
+}
+
+@media(max-width:768px) {
+    .about_fc_card {
+        display: block;
+        background-color: white;
+    }
+    .about_fc_card>div:nth-child(1) {
+        width: 100%;
+        height: 250px;
+    }
+    .about_fc_card>div:nth-child(1) img {
+        width: 100%;
+        height: 100%;
+    }
+    .about_fc_card_text_box {
+        padding: 4px 10px 4px 16px;
+    }
+    .about_fc_card_text_box i {
+        font-size: 14px;
+        color: #006523;
+    }
+    .about_fc_card_text_box b {
+        font-size: 14px;
+    }
+    .about_fc_card_text_box span {
+        font-size: 14px;
+    }
+    .header_fc_content h5 {
+        font-size: 24px;
+        font-weight: 500;
+    }
+    .header_fc_content p {
+        font-size: 14px;
+    }
+    .accordion-container .article-title {
+        font-size: 14px;
+    }
+    .accordion-container .content-entry i {
+        position: absolute;
+        top: 50%;
+        left: 12px;
+        transform: translateY(-50%);
+        font-style: normal;
+        font-size: 14px;
+        font-family: Arial, Helvetica, sans-serif !important; 
+        color: #006523;
+    }
+    .faculty_and_centers_list_text>ul {
+        padding-left: 10px;
+        font-size: 14px;
+    }
+    .faculty_and_centers_list_text>ul li {
+        font-size: 15px;
+    }
+    .header_fc_content h5 {
+        font-size: 20px;
+        font-weight: 500;
+    }
+    .header_fc_content p {
+        font-size: 14px;
+        text-align: justify;
+    }
+    .rectors_greeting_img {
+        float: left;
+        margin: 0px 10px 10px 0px;
+        background-color: white;
+    }
+    .rectors_greeting_img img {
+        width: 150px !important;
+        height: 200px !important;
+    }
+    .af_item_box {
+        display: flex;
+        justify-content: center;
+        padding: 0 20px;
+        flex-wrap: wrap;
+    }
+    .all_faculty_items {
+        position: relative;
+        box-shadow: 0 0 6px 0 rgba(0, 0, 0, 0.2);
+        width: 100%;
+        margin-top: 50px;
+        border-radius: 6px;
+        padding: 4px 12px;
+        min-height: 100px;
+        cursor: pointer;
+        transition: all 0.2s ease-in-out;
+        background-color: white;
+        text-decoration: none !important;
+        color: rgba(0, 0, 0, 0.8);
+    }
+}
+
+@media(max-width:576px) {
+    .rectors_greeting_img {
+        float: left;
+        margin: 0px 8px 8px 0px;
+        background-color: white;
+    }
+    .rectors_greeting_img img {
+        width: 150px !important;
+        height: 200px !important;
+    }
+
+    /* all center ends */
+    .all_center_items {
+        text-decoration: none !important;
+        display: block;
+        width: 100%;
+        color: rgba(0, 0, 0, 0.8);
+        margin-top: 10px;
+        cursor: pointer;
+        box-shadow: 0 0 6px 0 rgba(0, 0, 0, 0.2);
+        padding: 10px 5px;
+    }
+    .all_center_items:hover .all_center_items_text_card {
+        box-shadow: none;
+    }
+    .all_center_items_icon {
+        height: 60px;
+        width: 100%;
+        /* border-radius: 50%; */
+        background-color: #1946BA !important;
+        background: linear-gradient(to bottom, #1946BA, white); 
+        height: 80px;
+        color: white;
+        position: relative;
+        clip-path: none !important;
+        margin: 0 auto;
+    }
+    .all_center_items:nth-child(2n) .all_center_items_icon {
+        background-color: #1946BA !important;
+        background: linear-gradient(to bottom, #1946BA, white); 
+        height: 80px;
+        width: 100%;
+        color: white;
+        position: relative;
+        clip-path: none !important;
+    }
+    .all_center_items:nth-child(2n) .all_center_items_icon i {
+        color: #233585;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-100%, -50%);
+        font-size: 28px;
+    }
+    .all_center_items:nth-child(2n+1) .all_center_items_icon i {
+        color: white;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-100%, -50%);
+        font-size: 28px;
+    }
+    .all_center_items_text_card {
+        width: 100%;
+        background-color: white;
+        padding: 4px 16px;
+        margin-top: 10px;
+    }
+    .all_center_items_text_card > div {
+        display: -webkit-box;
+        max-width: 100%;
+        -webkit-line-clamp: 4;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+        font-size: 16px;
+        border-bottom: none !important;
+        text-align: justify;
+    }
+    .all_center_items_text_card > h5 {
+        display: -webkit-box;
+        max-width: 100%;
+        -webkit-line-clamp: 2;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+        font-size: 16px;
+    }
+    .all_center_items_text_card i {
+        color: #233585;
+        font-size: 14px;
+        margin-right: 8px;
+    }
+    .all_center_items_text_card h4 {
+        color: #233585;
+        font-weight: 500;
+        font-size: 18px;
+    }
+    .ac_title_1 {
+        font-size: 14px;
+    }
+}
+
+/* media */
+
+.rectors_greeting_img {
+    float: left;
+    margin: 0px 15px 15px 0px;
+    background-color: white;
+}
+
+.rectors_greeting_img img {
+    width: 200px;
+    height: 250px;
+}
+
+.rectors_greeting_box div>p {
+    font-size: 18px !important;
+}

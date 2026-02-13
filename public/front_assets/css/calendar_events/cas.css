@@ -1,0 +1,46 @@
+.my-cal-name {
+    background: #d3d3d3;
+}
+
+.my-cal-name td {
+    padding: 3px 16px;
+}
+
+.my-cal-name-top {
+    background-color: #d3d3d3;
+    text-align: center;
+    height: 48px;
+    padding: 13px 0 8px 0;
+    margin: 25px 0 -17px 0;
+    width: 103%;
+}
+
+.my-cal-date td {
+    padding: 5px 17px 9px 16px;
+}
+
+.my-calendar-bar {
+    width: 300px;
+    margin: auto;
+}
+
+.my-cal-date h3 {
+    font-size: 12px;
+}
+
+.my-render {
+    transform: scale(0.9);
+    margin: 0 -14px;
+}
+
+.my-cal-hed {
+    padding: 1;
+}
+
+.my-cal-data {
+    margin: 38px 0 0 115px;
+}
+
+.my-cal-data span {
+    margin: 0 31px 0 31px;
+}

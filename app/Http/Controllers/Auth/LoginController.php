@@ -3,7 +3,6 @@
 namespace App\Http\Controllers\Auth;
 
 use App\Http\Controllers\Controller;
-use App\Providers\RouteServiceProvider;
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
 use Illuminate\Http\Request;
 
@@ -69,7 +68,13 @@ class LoginController extends Controller
     protected function attemptLogin(Request $request)
     {
         return auth()->attempt(
-            $this->credentials($request), $request->filled('remember')
+            $this->credentials($request),
+            $request->filled('remember')
         );
+    }
+
+    public function username()
+    {
+        return 'username';
     }
 }

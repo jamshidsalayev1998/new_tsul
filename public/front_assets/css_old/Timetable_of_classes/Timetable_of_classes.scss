@@ -1,0 +1,103 @@
+$tsul-color:#0A2355;
+$tab-text:#555555;
+$tab-border:#EEEEEE;
+$white:#fff;
+$white-lighter:#f1f1f1;
+$black:#000;
+$left-dotted: red;
+$faculty-color: #20B27E;
+
+
+.Timetable_of_classes{
+ margin-top: 60px;
+ margin-bottom: 60px;
+ font-family: Schlange Sans Light, Open Sans, sans-serif;
+ h1{
+     border-bottom: solid 2px $tab-border;
+     color: $tab-text;
+     font-size: 32px;
+     line-height:38.4px;
+    vertical-align: baseline;
+    letter-spacing:-0.64px;
+    word-spacing:0px;
+    margin: 9.6px 0px;
+    padding:0px 0px 9px;
+    font-weight:700;
+    text-align: start;
+    text-indent:0px;
+ }
+ .tablink {
+    background-color: #EEEEEE;
+    color: #555555;
+    float: left;
+    outline: none;
+    cursor: pointer;
+    padding: 14px 16px;
+    font-size: 17px;
+    width: 16.66%;
+    border: solid 1px $tab-border;
+    border-bottom: none;
+    
+
+  }
+  .tabcontent {
+    color: black;
+    display: none;
+    padding: 100px 20px;
+    height: 100%;
+    border: solid 1px $tab-border;
+    border-radius: 30px;
+    box-shadow: $tab-border 0px 2px 8px 0px;
+    background-color: $white;
+  }
+  .class-list{
+      border-bottom: dashed 2px $tab-border;
+      margin-bottom: 15px;
+      h5{
+        border-left-style: dotted;
+        border-left-color: $left-dotted;
+        padding-left: 10px;
+      }
+      p{
+        color:$faculty-color;
+      }
+      a{
+        width: auto;
+        display: inline-block;
+        padding: 8px 10px;
+        margin: 0 0 7px 3px;
+        text-align: center;
+        vertical-align: middle;
+        border-radius: 20px;
+        border: 1px solid #eee;
+        color: #333;
+        text-decoration: none;
+        font-size: 13px;
+        outline: none;
+        &:hover{
+           background-color: $white-lighter;
+        }
+    }
+  }
+  @media only screen and(max-width:375px)and(min-width:320px){
+    h1{
+        font-size: 24px;
+    }
+    .tablink{
+        font-size: 13px;
+    }
+    .class-list{
+        h5{
+            font-size: 16px;
+        }
+        p{
+            font-size: 14px;
+        }
+        a{
+            font-size: 10px;
+        }
+    }
+  }
+
+
+}

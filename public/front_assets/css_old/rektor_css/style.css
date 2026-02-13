@@ -1,0 +1,111 @@
+a i {
+    color: #0A2355;
+}
+.cont-info{
+    background-color: #f9f9f9;
+    padding-top: 35px;
+    margin-bottom: 35px;
+}
+.card-image{
+    text-align: center;
+    width: 220px;
+    height: 260px;
+    margin: 0 auto;
+    overflow: hidden;
+    border: 8px solid #fff;
+    box-shadow: 3px 6px 12px #eaeaea;
+}
+.card-image img{
+    max-width: 205px;
+}
+.title_name{
+    margin-top: 30px ;
+    padding: 0 5px;
+}
+.title_name{
+    animation-name: heart-puls;
+    animation-duration: 0.5s;
+}
+.title_name h4{
+ color: #0A2355;
+ text-align: center;
+}
+.mdb_60{
+    margin-bottom: 60px;
+}
+.title_name img{
+
+ width: 100%;
+ height: auto;
+
+}
+.doc_info h1{
+    font-size: 2rem;
+}
+.doc_info h1, .doc_info h2, .doc_info h3{
+    text-align: center;
+}
+.doc_info div p{
+    text-align: justify;
+}
+.doc_info .emails {
+    width: 80%;
+    margin: 0 auto 15px;
+}
+.doc_info .emails a{
+    display: block;
+}
+.doc_info .emails span{
+    margin-left: 10px;
+}
+.card_sticky{
+    position: -webkit-sticky;
+    position: sticky;
+
+}
+/* Animations*/
+
+@keyframes heart-puls {
+    from {width: 95%; filter: brightness(0.5);}
+    to {width: 100%; filter: brightness(1);}
+  }
+
+  .button-animated {
+    border-radius: 4px;
+    background-color: #0A2355;
+    border: none;
+    color: #FFFFFF;
+    text-align: center;
+    font-size: 14px;
+    padding: 5px;
+    width: 100px;
+    transition: all 0.5s;
+    cursor: pointer;
+    margin: 5px;
+  }
+
+  .button-animated span {
+    cursor: pointer;
+    display: inline-block;
+    position: relative;
+    transition: 0.5s;
+  }
+
+  .button-animated span:after {
+    content: '\00bb';
+    position: absolute;
+    opacity: 0;
+    top: 0;
+    right: -20px;
+    transition: 0.5s;
+  }
+
+  .button-animated:hover span {
+    padding-right: 25px;
+  }
+
+  .button-animated:hover span:after {
+    opacity: 1;
+    right: 0;
+  }
+

@@ -1,0 +1,326 @@
+/*Social colors*/
+.calendar_events {
+  margin-top: 60px;
+  margin-bottom: 60px;
+  /* o'ng tomon content boshlash */
+  /* border */
+  /*Media*/
+  /*End media*/ }
+  .calendar_events .my-text-top {
+    text-transform: uppercase;
+    font-family: "system-ui";
+    font-size: 12px;
+    margin: 26px 0 34px 0; }
+  .calendar_events .my-text-top h1 {
+    margin-bottom: 6px;
+    font-weight: 900;
+    font-size: 2em; }
+  .calendar_events .my-text-top h3 {
+    font-size: 1.17em;
+    font-weight: 900; }
+  .calendar_events .my-cart-item {
+    width: 90%; }
+  .calendar_events .my-cart-item img {
+    width: 100%;
+    transition: .5s; }
+  .calendar_events .my-cart-item img:hover {
+    filter: brightness(0.5); }
+  .calendar_events .my-cart-item h1,
+  .calendar_events .my-cart-item span {
+    font-family: monospace;
+    font-size: 23px;
+    color: #2C42A6;
+    margin: 0 0 -5px 0;
+    width: 28px;
+    padding: 0;
+    font-weight: bold; }
+  .calendar_events .my-yanvar-29 {
+    margin: 5px 0 0 0;
+    float: left; }
+  .calendar_events .my-yanvar-29 h1 {
+    margin-bottom: -5px; }
+  .calendar_events .my-cart-item span {
+    color: #333;
+    padding: 0 0 5px 0;
+    border-bottom: 2px solid #0A2355; }
+  .calendar_events .my-param p {
+    font-family: sans-serif;
+    font-size: 14px;
+    margin: 12px 10px 10px 20px;
+    line-height: 1.4; }
+  .calendar_events .my-cart-item-foot i span {
+    font-weight: 100;
+    font-family: 'Rubik', sans-serif;
+    color: #2C42A6;
+    margin: 0 0 0 6px;
+    font-size: 13px; }
+  .calendar_events .my-cart-item-foot i {
+    color: #0A2355;
+    font-size: 16px;
+    margin: 15px 16px 0 0; }
+  .calendar_events .my-cart-item-foot .fa-clock {
+    color: #0A2355;
+    font-size: 16px;
+    margin: 10px 16px 35px 0; }
+  .calendar_events .my-full-width-width h5 {
+    font-size: 0.83em;
+    font-weight: 800; }
+  .calendar_events .my-lin-co {
+    width: 100%;
+    height: 3px;
+    margin: 9px 0 12px 0;
+    background: #2C42A6; }
+  .calendar_events .my-icon-cart i {
+    font-size: 27px;
+    color: #55acee; }
+  .calendar_events .my-icon-col-md h4 {
+    margin: 5px 0; }
+  .calendar_events .my-youtube i {
+    color: #cd201f; }
+  .calendar_events .my-facebook i {
+    color: #3b5999; }
+  .calendar_events .my-rit {
+    width: 1px;
+    height: 60px;
+    background: #333; }
+  .calendar_events .my-icon-cart {
+    text-align: center;
+    float: left;
+    margin: 0px 0px 14px 0px;
+    padding: 0px 20px;
+    width: 50%;
+    font-family: sans-serif;
+    font-size: 13px;
+    text-decoration: none; }
+  .calendar_events .my-icon-cart h4 {
+    margin: 5px;
+    font-size: 13px;
+    font-weight: 600;
+    text-decoration: none; }
+  .calendar_events .my-border-icon {
+    border-right: 1px solid;
+    border-color: #D3D3D3;
+    height: 67px; }
+  .calendar_events .calendar-top {
+    background: #D3D3D3;
+    text-align: center;
+    padding: 10px;
+    margin: -8px 0;
+    color: #D3D3D3;
+    font-size: 16px;
+    width: 90%; }
+  .calendar_events .my-tema-top {
+    font-family: sans-serif;
+    margin: 13px 0;
+    border-bottom: 1px solid #D3D3D3;
+    border-top: 1px solid #D3D3D3;
+    padding: 20px 0 14px 0; }
+  .calendar_events .my-tema-bottom {
+    border: none;
+    padding: 0;
+    margin: 20px 0; }
+  .calendar_events .my-bt-top {
+    display: block;
+    margin: 0 0 0 20px; }
+  .calendar_events .my-bt-top h4 {
+    font-weight: 600; }
+  .calendar_events .my-tema-top span {
+    font-weight: 400;
+    margin: 0 0 0 15px;
+    font-size: 12px; }
+  .calendar_events .my-tema-top h4 {
+    float: left;
+    font-family: sans-serif;
+    font-size: 11px; }
+  .calendar_events .my-tema-top input {
+    width: 12px;
+    height: 12px;
+    margin: 0 0 5px 50px; }
+  .calendar_events .my-btn-tema {
+    margin: 20px 0 0 0;
+    width: 48%;
+    height: 26px;
+    font-size: 12px;
+    padding: 5px;
+    border: none;
+    background-color: #2C42A6;
+    color: #fff;
+    cursor: pointer;
+    transition: .5s;
+    outline: none; }
+  .calendar_events .my-btn-tema:hover {
+    background-color: #fff;
+    color: #0A2355; }
+  .calendar_events .my-left-btn-bottom {
+    float: right;
+    background-color: #2C42A6;
+    color: #fff; }
+  .calendar_events .my-list-button-top i {
+    float: right;
+    background-color: #0A2355;
+    color: #fff;
+    border-radius: 50%;
+    width: 15px;
+    height: 14px;
+    font-size: 12px;
+    padding: 0px 0 0 3px;
+    margin: 0 20px 0 0; }
+  .calendar_events .my-icon-item {
+    height: 160px;
+    text-decoration: none; }
+  .calendar_events .my-icn {
+    margin: 8px 3px;
+    font-size: 12px; }
+  .calendar_events .my-ic {
+    margin: 0 5px 0 2px; }
+  .calendar_events .my-img-lor {
+    width: 100%;
+    margin: 16px 0; }
+  .calendar_events .my-img-lor img {
+    width: 74px;
+    height: 74px; }
+  .calendar_events .my-img-lor p {
+    width: 61%;
+    float: right;
+    font-size: 13px; }
+  .calendar_events .my-img-lor img {
+    border-radius: 50%; }
+  .calendar_events .my-img-lor span {
+    color: #D3D3D3; }
+  .calendar_events .my-a {
+    color: #000;
+    margin: 0;
+    float: right; }
+  .calendar_events .my-wid-yu {
+    flex-basis: 100%;
+    max-width: 88%;
+    margin: auto;
+    float: unset; }
+  .calendar_events .my-nch-r {
+    margin: 9px 0 20px 0; }
+  .calendar_events .my-center-p {
+    margin: auto;
+    display: flex; }
+  .calendar_events .my-pagination {
+    display: flex;
+    justify-content: center; }
+    .calendar_events .my-pagination a {
+      color: black;
+      float: left;
+      padding: 2px 8px;
+      text-decoration: none;
+      border-radius: 50%;
+      font-weight: 600;
+      font-family: 'Rubik', sans-serif;
+      font-size: 13px; }
+    .calendar_events .my-pagination .active {
+      background-color: #2C42A6;
+      color: white; }
+  .calendar_events .my-just-content p {
+    display: -webkit-box;
+    max-width: 100%;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden; }
+  .calendar_events .my-param {
+    display: -webkit-box;
+    max-width: 100%;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden; }
+  @media only screen and (max-width: 1184px) {
+    .calendar_events .my-full-width {
+      flex-basis: 100%;
+      max-width: 100%; }
+    .calendar_events .my-full-width-width {
+      width: 100%; }
+    .calendar_events .my-icon-cart {
+      width: 25%; }
+    .calendar_events .my-just-content {
+      width: 50%;
+      margin: auto; } }
+  @media only screen and (max-width: 893px) {
+    .calendar_events .my-harf-width {
+      flex-basis: 50%;
+      max-width: 50%; } }
+  @media only screen and (max-width: 630px) {
+    .calendar_events .my-ful-width-1 {
+      flex-basis: 100%;
+      max-width: 100%; }
+    .calendar_events .my-col-4 {
+      flex-basis: 100%;
+      max-width: 100%; }
+    .calendar_events .my-cart-item {
+      width: 100%; }
+    .calendar_events .my-icon-cart {
+      width: 50%; }
+    .calendar_events .my-just-content {
+      width: 100%;
+      margin: auto; }
+    .calendar_events .my-param p {
+      margin: 20px 10px 10px 40px; } }
+
+/*Cols*/
+.my-col-1 {
+  flex-basis: 8.333333%;
+  max-width: 8.333333%;
+  float: left; }
+
+.my-col-2 {
+  flex-basis: 16.666666%;
+  max-width: 16.666666%;
+  float: left; }
+
+.my-col-3 {
+  flex-basis: 25%;
+  float: left;
+  max-width: 25%; }
+
+.my-col-4 {
+  flex-basis: 33.333333%;
+  max-width: 33.333333%;
+  float: left; }
+
+.my-col-5 {
+  flex-basis: 41.666666%;
+  max-width: 41.666666%;
+  float: left; }
+
+.my-col-6 {
+  flex-basis: 50%;
+  max-width: 50%;
+  float: left; }
+
+.my-col-7 {
+  flex-basis: 58.333333%;
+  max-width: 58.333333%;
+  float: left; }
+
+.my-col-8 {
+  flex-basis: 66.666666%;
+  max-width: 66.666666%;
+  float: left; }
+
+.my-col-9 {
+  flex-basis: 75%;
+  width: 75%;
+  float: left; }
+
+.my-col-10 {
+  flex-basis: 83.333333%;
+  max-width: 83.333333%;
+  float: left; }
+
+.my-col-11 {
+  flex-basis: 91.666666%;
+  max-width: 91.666666%;
+  float: left; }
+
+.my-col-12 {
+  flex-basis: 100%;
+  max-width: 100%;
+  float: left; }
+
+/*End cols*/
+
+/*# sourceMappingURL=calendar_events.css.map */

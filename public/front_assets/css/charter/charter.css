@@ -1,0 +1,102 @@
+.charter {
+  margin-top: 30px;
+  margin-bottom: 60px;
+  /*Media*/
+  /*End media*/ }
+  .charter .rounded-box {
+    border: 1px solid #EEEEEE;
+    border-radius: 30px;
+    background-color: #fff; }
+    .charter .rounded-box h3 {
+      border-bottom: 2px solid #EEEEEE;
+      font-family: "Open Sans", sans-serif;
+      color: #333333;
+      font-size: 26px;
+      line-height: 20px;
+      vertical-align: baseline;
+      letter-spacing: normal;
+      word-spacing: 0px;
+      font-weight: 600; }
+    .charter .rounded-box .box-body .pdf {
+      background-color: #FBFBFB;
+      border-radius: 8px;
+      padding: 8px;
+      border: 1px solid #EEEEEE;
+      margin-bottom: 10px; }
+      .charter .rounded-box .box-body .pdf a {
+        text-decoration: none;
+        color: #555555;
+        font-size: 16px;
+        margin-left: 10px;
+        margin-right: auto;
+        text-align: justify; }
+        .charter .rounded-box .box-body .pdf a:hover {
+          color: #0A2355; }
+        .charter .rounded-box .box-body .pdf a i {
+          color: #82C91E;
+          font-size: 24px;
+          float: left;
+          border-left: 2px dotted red; }
+      .charter .rounded-box .box-body .pdf .download-icon i {
+        float: right;
+        font-size: 18px;
+        color: #555555;
+        border-left: none; }
+  @media only screen and (max-width: 1440px) and (min-width: 1200px) {
+    .charter .rounded-box h3 {
+      font-size: 25px; }
+    .charter .rounded-box .box-body .pdf a {
+      font-size: 15px; }
+      .charter .rounded-box .box-body .pdf a i {
+        font-size: 23px; }
+      .charter .rounded-box .box-body .pdf a span {
+        font-size: 17px; } }
+  @media only screen and (max-width: 1200px) and (min-width: 1023px) {
+    .charter .rounded-box h3 {
+      font-size: 24px; }
+    .charter .rounded-box .box-body .pdf a {
+      font-size: 15px; }
+      .charter .rounded-box .box-body .pdf a i {
+        font-size: 23px; }
+      .charter .rounded-box .box-body .pdf a span {
+        font-size: 17px; } }
+  @media only screen and (max-width: 1023px) and (min-width: 767px) {
+    .charter .rounded-box h3 {
+      font-size: 24px; }
+    .charter .rounded-box .box-body .pdf a {
+      font-size: 14px;
+      margin-left: 5px;
+      margin-right: auto; }
+      .charter .rounded-box .box-body .pdf a i {
+        font-size: 22px; }
+      .charter .rounded-box .box-body .pdf a span {
+        font-size: 16px; } }
+  @media only screen and (max-width: 767px) and (min-width: 425px) {
+    .charter .rounded-box h3 {
+      font-size: 23px; }
+    .charter .rounded-box .box-body .pdf a {
+      font-size: 14px; }
+      .charter .rounded-box .box-body .pdf a i {
+        font-size: 21px; }
+      .charter .rounded-box .box-body .pdf a span {
+        font-size: 16px; } }
+  @media only screen and (max-width: 425px) and (min-width: 375px) {
+    .charter .rounded-box h3 {
+      font-size: 22px; }
+    .charter .rounded-box .box-body .pdf a {
+      font-size: 13px; }
+      .charter .rounded-box .box-body .pdf a i {
+        font-size: 20px; }
+      .charter .rounded-box .box-body .pdf a span {
+        font-size: 15px; } }
+  @media only screen and (max-width: 375px) and (min-width: 320px) {
+    .charter .rounded-box h3 {
+      font-size: 20px; }
+    .charter .rounded-box .box-body .pdf a {
+      font-size: 12px; }
+      .charter .rounded-box .box-body .pdf a i {
+        font-size: 19px; }
+      .charter .rounded-box .box-body .pdf a span {
+        font-size: 14px; } }
+
+/*# sourceMappingURL=charter.css.map */
