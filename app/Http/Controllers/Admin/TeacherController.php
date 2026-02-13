@@ -84,8 +84,10 @@ class TeacherController extends Controller
         $new_teacher->fio_uz = $request->fio_uz;
         $new_teacher->fio_ru = $request->fio_uz;
         $new_teacher->fio_en = $request->fio_uz;
-        if ($request->fio_ru)$new_teacher->fio_ru = $request->fio_ru;
-        if ($request->fio_en)$new_teacher->fio_en = $request->fio_en;
+        if ($request->fio_ru)
+            $new_teacher->fio_ru = $request->fio_ru;
+        if ($request->fio_en)
+            $new_teacher->fio_en = $request->fio_en;
         $new_teacher->degree = $request->degree;
         $new_teacher->academic_title = $request->academic_title;
         if ($request->hasFile('image')) {
@@ -111,7 +113,7 @@ class TeacherController extends Controller
     public function show($id)
     {
         $teacher = Teacher::find($id);
-//        return $teacher;
+        //        return $teacher;
         if ($teacher) {
             return view('admin.pages.teachers.show', [
                 'data' => $teacher
@@ -133,7 +135,7 @@ class TeacherController extends Controller
 
     public function update(Request $request, $id)
     {
-//        return $request;
+        //        return $request;
         $new_teacher = Teacher::find($id);
         $request_data = $request->all();
         if ($request_data['general_info_uz'] == '<p><br data-cke-filler="true"></p>') {
@@ -142,7 +144,7 @@ class TeacherController extends Controller
         if ($request_data['contact_info_uz'] == '<p><br data-cke-filler="true"></p>') {
             $request_data['contact_info_uz'] = '';
         }
-//        $request->validate([
+        //        $request->validate([
 //            'general_info_uz' => ['required', 'string'],
 //            'contact_info_uz' => ['required', 'string'],
 //            'fio_uz' => ['required', 'string'],
@@ -194,12 +196,11 @@ class TeacherController extends Controller
         $new_teacher->orcid = $request->orcid;
         $new_teacher->staj = $request->staj;
         $new_teacher->save();
-        if (Auth::user()->role == 7) {
+        if (Auth::user()->hasRole('super-admin')) {
             return redirect(route('superadmin.teachers.index'))->with('success', 'Malumot saqlandi');
 
-        } elseif (Auth::user()->role == 1) {
+        } elseif (Auth::user()->hasRole('kafedra-admin')) {
             return redirect(route('teachers.index'))->with('success', 'Malumot saqlandi');
-
         }
     }
 

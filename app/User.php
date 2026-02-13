@@ -6,10 +6,11 @@ use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Support\Facades\Auth;
+use Spatie\Permission\Traits\HasRoles;
 
 class User extends Authenticatable
 {
-    use Notifiable;
+    use Notifiable, HasRoles;
 
     /**
      * The attributes that are mass assignable.
@@ -17,7 +18,11 @@ class User extends Authenticatable
      * @var array
      */
     protected $fillable = [
-        'name', 'email', 'password',
+        'name',
+        'username',
+        'email',
+        'password',
+        'role',
     ];
 
     /**
@@ -26,7 +31,8 @@ class User extends Authenticatable
      * @var array
      */
     protected $hidden = [
-        'password', 'remember_token',
+        'password',
+        'remember_token',
     ];
 
     /**
@@ -37,10 +43,11 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
-    public function profession(){
+    public function profession()
+    {
         $prof = null;
-        if (Auth::user()->role == 1){
-            $prof = KafedraAdmin::where('user_id' , Auth::user()->id)->first();
+        if ($this->hasRole('kafedra-admin')) {
+            $prof = KafedraAdmin::where('user_id', $this->id)->first();
         }
         return $prof;
     }

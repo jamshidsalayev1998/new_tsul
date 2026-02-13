@@ -1,0 +1,146 @@
+
+<?php $__env->startSection('content'); ?>
+    <div class="content-wrapper">
+    <!-- Content Header (Page header) -->
+
+
+    <!-- Main content -->
+    <section class="content">
+      <div class="container-fluid">
+        <div class="row">
+          <div class="col-12">
+
+
+            <div class="card">
+              <div class="card-header w-100">
+                  <div  style="display: flex; justify-content: space-between ; width: 100%">
+                      <div>
+                        <h3 class="card-title">System cards</h3>
+                    </div>
+                      <div>
+                        <button type="submit" class="btn btn-success" data-toggle="modal" data-target=".bd-example-modal-lg">+ yangi</button>
+                    </div>
+
+                  </div>
+
+              </div>
+              <!-- /.card-header -->
+              <div class="card-body">
+                  <table class="table table-bordered">
+                      <thead>
+                      <tr>
+                          <th class="last-td">
+                              #
+                          </th>
+                          <th>
+                              Name uz
+                          </th>
+                          <th>
+                              Name ru
+                          </th>
+                          <th>
+                              Name en
+                          </th>
+                          <th class="last-td">
+                              Icon
+                          </th>
+                          <th class="last-td">
+
+                          </th>
+                      </tr>
+                      </thead>
+                      <tbody>
+                      <?php $i = 0;?>
+                      <?php $__currentLoopData = $system_cards; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $card): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+                          <tr>
+                              <td><?php echo e(++$i); ?></td>
+                              <td><?php echo e($card->name_uz); ?></td>
+                              <td><?php echo e($card->name_ru); ?></td>
+                              <td><?php echo e($card->name_en); ?></td>
+                              <td><?php echo $card->icon; ?></td>
+                              <td>
+                                  <button type="button" class="btn btn-light form-delete" data-id="<?php echo e($card->id); ?>">
+                                      <i class="fa fa-trash"></i>
+                                  </button>
+                                  <form action="<?php echo e(route('system_card.delete')); ?>" class="form-card-delete-<?php echo e($card->id); ?>" method="post">
+                                      <?php echo method_field('DELETE'); ?>
+                                      <?php echo csrf_field(); ?>
+                                      <input type="text" hidden readonly value="<?php echo e($card->id); ?>" name="id">
+                                  </form>
+                              </td>
+                          </tr>
+                      <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
+                      </tbody>
+                  </table>
+              </div>
+              <!-- /.card-body -->
+            </div>
+            <!-- /.card -->
+          </div>
+          <!-- /.col -->
+        </div>
+        <!-- /.row -->
+      </div>
+      <!-- /.container-fluid -->
+    </section>
+    <!-- /.content -->
+  </div>
+    <div class="modal fade bd-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+      <div class="modal-dialog modal-lg">
+        <div class="modal-content p-3">
+            <form action="<?php echo e(route('system_card.store')); ?>" method="post">
+                <?php echo csrf_field(); ?>
+              <div class="row p-3" >
+                  <div class="col-md-12">
+                      <label for="">Nomi uz</label>
+                      <input type="text" class="form-control" name="name_uz">
+                  </div>
+                  <div class="col-md-12">
+                      <label for="">Nomi ru</label>
+                      <input type="text" class="form-control" name="name_ru">
+                  </div>
+                  <div class="col-md-12">
+                      <label for="">Nomi en</label>
+                      <input type="text" class="form-control" name="name_en">
+                  </div>
+                  <div class="col-md-12">
+                      <label for="">Link</label>
+                      <input type="text" class="form-control" name="link">
+                  </div>
+                  <div class="col-md-12">
+                      <label for="">Icon</label>
+                      <input type="text" class="form-control" name="icon">
+                  </div>
+              </div>
+                <div class="row" style="display: flex ; justify-content: flex-end">
+                    <button class="btn btn-success">Saqlash</button>
+                </div>
+                </form>
+        </div>
+      </div>
+    </div>
+<?php $__env->stopSection(); ?>
+<?php $__env->startSection('js'); ?>
+    <script>
+        $(function () {
+            $('#summernote').summernote()
+          });
+        $(function () {
+            $('#summernote1').summernote()
+          });
+        $(function () {
+            $('#summernote2').summernote()
+          });
+    </script>
+    <script>
+        $('.form-delete').click(function(){
+            var id = $(this).attr('data-id');
+            if(confirm('O`chirishni tasdiqlaysizmi')){
+                // alert('.form-card-delete-'+id);
+                $('.form-card-delete-'+id).submit();
+            }
+        })
+    </script>
+<?php $__env->stopSection(); ?>
+
+<?php echo $__env->make('admin.layouts.master', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?><?php /**PATH /var/www/html/resources/views/admin/pages/system_card/index.blade.php ENDPATH**/ ?>
