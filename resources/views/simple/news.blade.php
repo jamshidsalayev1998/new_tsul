@@ -79,7 +79,7 @@
                                     {{$item->$title_locale}}
                                 </a>
                                 <div class="text-end text-secondary mt-1" style="font-size: 14px; font-weight: 500;">
-                                    {{date('d.m.Y' , strtotime($item->created_at))}}</div>
+                                    {{date('d.m.Y' , strtotime($item->date))}}</div>
                             </div>
                             @php
                                 $news->forget($i);
@@ -103,7 +103,7 @@
                                                class="news_small_cards_text ">{{$item->$title_locale}}
                                             </a>
                                             <span class="text-end text-secondary mt-1 d-block"
-                                                  style="font-size: 13px; font-weight: 600;">{{date('d.m.Y' , strtotime($item->created_at))}}</span>
+                                                  style="font-size: 13px; font-weight: 600;">{{date('d.m.Y' , strtotime($item->date))}}</span>
                                         </div>
                                     </div>
                                 </div>
