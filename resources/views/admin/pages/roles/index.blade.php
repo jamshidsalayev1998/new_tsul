@@ -1,0 +1,66 @@
+@extends('admin.layouts.master')
+@section('content')
+    <div class="content-wrapper">
+        <section class="content">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-12">
+                        <div class="card">
+                            <div class="card-header w-100">
+                                <div style="display: flex; justify-content: space-between ; width: 100%">
+                                    <div>
+                                        <h3 class="card-title">Roles</h3>
+                                    </div>
+                                    <div>
+                                        <a href="{{route('roles.create')}}" class="btn btn-success">+ New Role</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="card-body">
+                                <table class="table table-bordered connect-datatable">
+                                    <thead>
+                                        <tr>
+                                            <th class="last-td">#</th>
+                                            <th>Name</th>
+                                            <th class="last-td">Actions</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        @foreach($roles as $role)
+                                            <tr>
+                                                <td>{{ $loop->iteration }}</td>
+                                                <td>{{ $role->name }}</td>
+                                                <td>
+                                                    <a href="{{ route('roles.edit', $role->id) }}"
+                                                        class="btn btn-primary btn-sm"><i class="fa fa-edit"></i></a>
+                                                    <button class="btn btn-danger btn-sm form-delete" data-id="{{$role->id}}"><i
+                                                            class="fa fa-trash"></i></button>
+                                                    <form class="form-card-delete-{{$role->id}}"
+                                                        action="{{route('roles.destroy', $role->id)}}" method="post"
+                                                        style="display: none;">
+                                                        @csrf
+                                                        @method('DELETE')
+                                                    </form>
+                                                </td>
+                                            </tr>
+                                        @endforeach
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+@endsection
+@section('js')
+    <script>
+        $('.form-delete').click(function () {
+            var id = $(this).attr('data-id');
+            if (confirm('Are you sure you want to delete this role?')) {
+                $('.form-card-delete-' + id).submit();
+            }
+        })
+    </script>
+@endsection

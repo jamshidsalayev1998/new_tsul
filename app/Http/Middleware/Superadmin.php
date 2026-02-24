@@ -16,12 +16,11 @@ class Superadmin
      */
     public function handle($request, Closure $next)
     {
-        if (Auth::user()->role == 7) {
+        if (Auth::user()->hasRole('super-admin')) {
             return $next($request);
-        }
-        else{
-            return response('Bu amal uchun sizning huquqingiz yetarli emas!' , 403);
-//            return response()->json(array('status' => 2 , 'message' => 'Bu amal uchun sizning huquqingiz yetarli emas!'));
+        } else {
+            return response('Bu amal uchun sizning huquqingiz yetarli emas!', 403);
+            //            return response()->json(array('status' => 2 , 'message' => 'Bu amal uchun sizning huquqingiz yetarli emas!'));
         }
 
 

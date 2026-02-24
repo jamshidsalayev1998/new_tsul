@@ -13,11 +13,26 @@ class IndexController extends Controller
      *
      * @return void
      */
-    public function index(){
-        if (Auth::user()->role == 1){
+    public function index()
+    {
+        $user = Auth::user();
+
+        if ($user->hasRole('kafedra-admin')) {
             return redirect(route('teachers.index'));
         }
+
+        if ($user->hasRole('youth-sport-admin')) {
+            return redirect(route('youth-sport.index'));
+        }
+
+        if ($user->hasRole('legal-research-admin')) {
+            return redirect(route('scientific.index'));
+        }
+
+        if ($user->hasRole('international-admin')) {
+            return redirect(route('international.index'));
+        }
+
         return redirect(route('admin.slider.index'));
-        return view('admin.pages.dashboard.index');
     }
 }
