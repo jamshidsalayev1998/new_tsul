@@ -34,12 +34,11 @@ services:
   db:
     image: mysql:8.0
     container_name: laravel-db
-    restart: unless-stopped
     environment:
-      MYSQL_DATABASE: ${DB_DATABASE:-new_tsul}
-      MYSQL_ROOT_PASSWORD: ${DB_ROOT_PASSWORD:-root}
-      MYSQL_PASSWORD: ${DB_PASSWORD:-secret}
-      MYSQL_USER: ${DB_USERNAME:-db_user}
+      MYSQL_DATABASE: ${DB_DATABASE:-testsitedb}
+      MYSQL_ROOT_PASSWORD: ${DB_ROOT_PASSWORD:-testsite123}
+      MYSQL_PASSWORD: ${DB_PASSWORD:-testsite123}
+      MYSQL_USER: ${DB_USERNAME:-testsitedbuser}
     # ports:
     #   - "3306:3306" # Commented out for security on server
     volumes:
