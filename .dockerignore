@@ -4,7 +4,7 @@ node_modules
 .env
 .env.docker
 .env.example
-docker
+# docker (removed to allow COPY)
 app_old*
 resources_old*
 routes_old*
