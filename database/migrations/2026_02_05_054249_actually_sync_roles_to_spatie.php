@@ -16,14 +16,16 @@ return new class extends Migration {
         $superAdmin = Role::firstOrCreate(['name' => 'super-admin', 'guard_name' => 'web']);
         $kafedraAdmin = Role::firstOrCreate(['name' => 'kafedra-admin', 'guard_name' => 'web']);
 
-        // Sync users
-        $users = User::whereIn('role', [1, 7])->get();
+        // Sync users only if the 'role' column exists
+        if (Schema::hasColumn('users', 'role')) {
+            $users = User::whereIn('role', [1, 7])->get();
 
-        foreach ($users as $user) {
-            if ($user->role == 7) {
-                $user->assignRole($superAdmin);
-            } elseif ($user->role == 1) {
-                $user->assignRole($kafedraAdmin);
+            foreach ($users as $user) {
+                if ($user->role == 7) {
+                    $user->assignRole($superAdmin);
+                } elseif ($user->role == 1) {
+                    $user->assignRole($kafedraAdmin);
+                }
             }
         }
     }
