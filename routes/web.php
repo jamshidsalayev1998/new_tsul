@@ -220,6 +220,7 @@ Route::group(
         Route::get('/rektorat-edit/{id}', 'RektoratController@edit')->name('admin.rektorat.edit');
         Route::get('/rektorat-move-up/{id}', 'RektoratController@move_up')->name('admin.rektorat.move_up');
         Route::get('/rektorat-move-down/{id}', 'RektoratController@move_down')->name('admin.rektorat.move_down');
+        Route::delete('/rektorat-delete', 'RektoratController@destroy')->name('admin.rektorat.delete');
 
         Route::get('/timetable-lesson-index', 'TimeTableController@index')->name('admin.lesson.timetable.index');
         Route::post('/timetable-group-store', 'TimeTableController@group_store')->name('admin.lesson.group.store');

@@ -20,27 +20,32 @@ class RektoratController extends Controller
      *
      * @return void
      */
-    public function index(){
-        $persons = Rektorat::orderBy('id' , 'ASC')->get();
-        return view('admin.pages.rektorat.index' , [
+    public function index()
+    {
+        $persons = Rektorat::orderBy('id', 'ASC')->get();
+        return view('admin.pages.rektorat.index', [
             'data' => $persons
         ]);
     }
 
-    public function create(){
+    public function create()
+    {
         return view('admin.pages.rektorat.create');
     }
-    public function edit($id){
+    public function edit($id)
+    {
         $rektorat = Rektorat::find($id);
-        return view('admin.pages.rektorat.edit' , [
+        return view('admin.pages.rektorat.edit', [
             'data' => $rektorat
         ]);
     }
-    public function file_name($name){
-        $name2 = $name.date('s').'_'.date('i').'_'.date('h').'_'.date('d').'_'.date('m');
+    public function file_name($name)
+    {
+        $name2 = $name . date('s') . '_' . date('i') . '_' . date('h') . '_' . date('d') . '_' . date('m');
         return $name2;
     }
-    public function randomPassword_alpha($count) {
+    public function randomPassword_alpha($count)
+    {
         $alphabet = 'abcdefghjkmnpqrstuvwxyz';
         $pass = array(); //remember to declare $pass as an array
         $alphaLength = strlen($alphabet) - 1; //put the length -1 in cache
@@ -50,8 +55,9 @@ class RektoratController extends Controller
         }
         return implode($pass); //turn the array into a string
     }
-    public function store(Request $request){
-//        return $request;
+    public function store(Request $request)
+    {
+        //        return $request;
         $rektorat = new Rektorat();
         $rektorat->full_name_uz = $request->full_name_uz;
         $rektorat->full_name_ru = $request->full_name_ru;
@@ -75,20 +81,21 @@ class RektoratController extends Controller
         $rektorat->phone1 = $request->phone1;
         $rektorat->phone2 = $request->phone2;
         $rektorat->phone3 = $request->phone3;
-        if($request->hasFile('image')){
+        if ($request->hasFile('image')) {
             $file = $request->file('image');
             $ext = $file->getClientOriginalExtension();
-            $new_name = $this->file_name($this->randomPassword_alpha(10)).'.'.$ext;
-            $file->move(public_path().'/about_university' , $new_name);
-            $rektorat->image = 'about_university/'.$new_name;
+            $new_name = $this->file_name($this->randomPassword_alpha(10)) . '.' . $ext;
+            $file->move(public_path() . '/about_university', $new_name);
+            $rektorat->image = 'about_university/' . $new_name;
         }
         $rektorat->save();
-        return redirect()->back()->with('success' , 'Malumot saqlandi');
+        return redirect()->back()->with('success', 'Malumot saqlandi');
 
     }
-    public function update(Request $request){
-//        return $request;
-        $rektorat =  Rektorat::find($request->data_id);
+    public function update(Request $request)
+    {
+        //        return $request;
+        $rektorat = Rektorat::find($request->data_id);
         $rektorat->full_name_uz = $request->full_name_uz;
         $rektorat->full_name_ru = $request->full_name_ru;
         $rektorat->full_name_en = $request->full_name_en;
@@ -111,22 +118,23 @@ class RektoratController extends Controller
         $rektorat->phone1 = $request->phone1;
         $rektorat->phone2 = $request->phone2;
         $rektorat->phone3 = $request->phone3;
-        if($request->hasFile('image')){
+        if ($request->hasFile('image')) {
             $file = $request->file('image');
             $ext = $file->getClientOriginalExtension();
-            $new_name = $this->file_name($this->randomPassword_alpha(10)).'.'.$ext;
-            $file->move(public_path().'/about_university' , $new_name);
-            $rektorat->image = 'about_university/'.$new_name;
+            $new_name = $this->file_name($this->randomPassword_alpha(10)) . '.' . $ext;
+            $file->move(public_path() . '/about_university', $new_name);
+            $rektorat->image = 'about_university/' . $new_name;
         }
         $rektorat->update();
-        return redirect()->back()->with('success' , 'Malumot saqlandi');
+        return redirect()->back()->with('success', 'Malumot saqlandi');
 
     }
 
-    public function move_up($id){
+    public function move_up($id)
+    {
         $rek = Rektorat::find($id);
-        $tepadagi = Rektorat::where('id' , '<' , $rek->id)->orderBy('id' , 'DESC')->first();
-        if ($tepadagi){
+        $tepadagi = Rektorat::where('id', '<', $rek->id)->orderBy('id', 'DESC')->first();
+        if ($tepadagi) {
             $oo = $rek->id;
             $rek->id = $tepadagi->id;
             $tepadagi->id = 0;
@@ -135,13 +143,14 @@ class RektoratController extends Controller
             $tepadagi->id = $oo;
             $tepadagi->update();
         }
-        return redirect()->back()->with('success' , 'Malumot ozgartirildi');
+        return redirect()->back()->with('success', 'Malumot ozgartirildi');
         return $tepadagi;
     }
-    public function move_down($id){
+    public function move_down($id)
+    {
         $rek = Rektorat::find($id);
-        $tepadagi = Rektorat::where('id' , '>' , $rek->id)->orderBy('id' , 'ASC')->first();
-        if ($tepadagi){
+        $tepadagi = Rektorat::where('id', '>', $rek->id)->orderBy('id', 'ASC')->first();
+        if ($tepadagi) {
             $oo = $rek->id;
             $rek->id = $tepadagi->id;
             $tepadagi->id = 0;
@@ -150,7 +159,16 @@ class RektoratController extends Controller
             $tepadagi->id = $oo;
             $tepadagi->update();
         }
-        return redirect()->back()->with('success' , 'Malumot ozgartirildi');
+        return redirect()->back()->with('success', 'Malumot ozgartirildi');
+    }
+    public function destroy(Request $request)
+    {
+        $rek = Rektorat::find($request->id);
+        if ($rek) {
+            $rek->delete();
+            return redirect()->back()->with('success', 'Malumot o`chirildi');
+        }
+        return redirect()->back()->with('error', 'Malumot topilmadi');
     }
 
 
