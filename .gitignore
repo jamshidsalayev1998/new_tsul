@@ -15,3 +15,4 @@ yarn-error.log
 /public_old
 app_old/AdministrationSection.php
 app_old/AboutUniversity.php
+*.sql

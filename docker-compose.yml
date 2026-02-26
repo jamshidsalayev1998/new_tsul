@@ -40,8 +40,8 @@ services:
       MYSQL_ROOT_PASSWORD: ${DB_ROOT_PASSWORD}
       MYSQL_PASSWORD: ${DB_PASSWORD}
       MYSQL_USER: ${DB_USERNAME}
-    # ports:
-    #   - "3306:3306" # Commented out for security on server
+    ports:
+      - "127.0.0.1:3306:3306" # Secure exposure for SSH tunneling
     volumes:
       - dbdata:/var/lib/mysql
     networks:
