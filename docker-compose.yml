@@ -1,3 +1,5 @@
+version: '3'
+
 services:
   # PHP Service
   app:
@@ -35,10 +37,10 @@ services:
     image: mysql:8.0
     container_name: laravel-db
     environment:
-      MYSQL_DATABASE: ${DB_DATABASE:-testsitedb}
-      MYSQL_ROOT_PASSWORD: ${DB_ROOT_PASSWORD:-testsite123}
-      MYSQL_PASSWORD: ${DB_PASSWORD:-testsite123}
-      MYSQL_USER: ${DB_USERNAME:-testsitedbuser}
+      MYSQL_DATABASE: ${DB_DATABASE}
+      MYSQL_ROOT_PASSWORD: ${DB_ROOT_PASSWORD}
+      MYSQL_PASSWORD: ${DB_PASSWORD}
+      MYSQL_USER: ${DB_USERNAME}
     # ports:
     #   - "3306:3306" # Commented out for security on server
     volumes:
