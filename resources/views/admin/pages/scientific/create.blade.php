@@ -39,17 +39,20 @@
                                             </div>
                                             <div class="form-group">
                                                 <label for="description_uz">Tavsif (UZ)</label>
-                                                <textarea name="description_uz" id="description_uz"
+                                                <div id="editor1" data-text="editor_text1" class="border"></div>
+                                                <textarea name="description_uz" hidden id="editor_text1"
                                                     class="form-control"></textarea>
                                             </div>
                                             <div class="form-group">
                                                 <label for="speakers_uz">Ma'ruzachilar (UZ)</label>
-                                                <textarea name="speakers_uz" id="speakers_uz"
+                                                <div id="editor2" data-text="editor_text2" class="border"></div>
+                                                <textarea name="speakers_uz" hidden id="editor_text2"
                                                     class="form-control"></textarea>
                                             </div>
                                             <div class="form-group">
                                                 <label for="participation_rules_uz">Ishtirok etish tartibi (UZ)</label>
-                                                <textarea name="participation_rules_uz" id="participation_rules_uz"
+                                                <div id="editor3" data-text="editor_text3" class="border"></div>
+                                                <textarea name="participation_rules_uz" hidden id="editor_text3"
                                                     class="form-control"></textarea>
                                             </div>
                                         </div>
@@ -65,17 +68,20 @@
                                             </div>
                                             <div class="form-group">
                                                 <label for="description_ru">Описание (RU)</label>
-                                                <textarea name="description_ru" id="description_ru"
+                                                <div id="editor4" data-text="editor_text4" class="border"></div>
+                                                <textarea name="description_ru" hidden id="editor_text4"
                                                     class="form-control"></textarea>
                                             </div>
                                             <div class="form-group">
                                                 <label for="speakers_ru">Спикеры (RU)</label>
-                                                <textarea name="speakers_ru" id="speakers_ru"
+                                                <div id="editor5" data-text="editor_text5" class="border"></div>
+                                                <textarea name="speakers_ru" hidden id="editor_text5"
                                                     class="form-control"></textarea>
                                             </div>
                                             <div class="form-group">
                                                 <label for="participation_rules_ru">Правила участия (RU)</label>
-                                                <textarea name="participation_rules_ru" id="participation_rules_ru"
+                                                <div id="editor6" data-text="editor_text6" class="border"></div>
+                                                <textarea name="participation_rules_ru" hidden id="editor_text6"
                                                     class="form-control"></textarea>
                                             </div>
                                         </div>
@@ -91,17 +97,20 @@
                                             </div>
                                             <div class="form-group">
                                                 <label for="description_en">Description (EN)</label>
-                                                <textarea name="description_en" id="description_en"
+                                                <div id="editor7" data-text="editor_text7" class="border"></div>
+                                                <textarea name="description_en" hidden id="editor_text7"
                                                     class="form-control"></textarea>
                                             </div>
                                             <div class="form-group">
                                                 <label for="speakers_en">Speakers (EN)</label>
-                                                <textarea name="speakers_en" id="speakers_en"
+                                                <div id="editor8" data-text="editor_text8" class="border"></div>
+                                                <textarea name="speakers_en" hidden id="editor_text8"
                                                     class="form-control"></textarea>
                                             </div>
                                             <div class="form-group">
                                                 <label for="participation_rules_en">Rules of Participation (EN)</label>
-                                                <textarea name="participation_rules_en" id="participation_rules_en"
+                                                <div id="editor9" data-text="editor_text9" class="border"></div>
+                                                <textarea name="participation_rules_en" hidden id="editor_text9"
                                                     class="form-control"></textarea>
                                             </div>
                                         </div>
@@ -125,4 +134,13 @@
             </div>
         </section>
     </div>
+@endsection
+
+@section('js_after')
+    <script src="{{asset('admin_lte/ckeditor5/build/ckeditor.js')}}"></script>
+    <script src="{{asset('admin_lte/ckeditor5/ckeditor5_connect.js')}}"></script>
+@endsection
+
+@section('js')
+    <script src="{{asset('admin_lte/ckeditor5/correcting.js')}}"></script>
 @endsection

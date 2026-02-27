@@ -42,18 +42,24 @@
                                             </div>
                                             <div class="form-group">
                                                 <label for="description_uz">Tavsif (UZ)</label>
-                                                <textarea name="description_uz" id="description_uz"
+                                                <div id="editor1" data-text="editor_text1" class="border">
+                                                    {!! $item->description_uz !!}</div>
+                                                <textarea name="description_uz" hidden id="editor_text1"
                                                     class="form-control">{{ $item->description_uz }}</textarea>
                                             </div>
                                             <div class="form-group">
                                                 <label for="organizers_uz">Mas'ul tashkilotchilar (UZ)</label>
-                                                <textarea name="organizers_uz" id="organizers_uz"
+                                                <div id="editor2" data-text="editor_text2" class="border">
+                                                    {!! $item->organizers_uz !!}</div>
+                                                <textarea name="organizers_uz" hidden id="editor_text2"
                                                     class="form-control">{{ $item->organizers_uz }}</textarea>
                                             </div>
                                             <div class="form-group">
                                                 <label for="participants_info_uz">Ishtirokchilar haqida ma'lumot
                                                     (UZ)</label>
-                                                <textarea name="participants_info_uz" id="participants_info_uz"
+                                                <div id="editor3" data-text="editor_text3" class="border">
+                                                    {!! $item->participants_info_uz !!}</div>
+                                                <textarea name="participants_info_uz" hidden id="editor_text3"
                                                     class="form-control">{{ $item->participants_info_uz }}</textarea>
                                             </div>
                                         </div>
@@ -71,17 +77,23 @@
                                             </div>
                                             <div class="form-group">
                                                 <label for="description_ru">Описание (RU)</label>
-                                                <textarea name="description_ru" id="description_ru"
+                                                <div id="editor4" data-text="editor_text4" class="border">
+                                                    {!! $item->description_ru !!}</div>
+                                                <textarea name="description_ru" hidden id="editor_text4"
                                                     class="form-control">{{ $item->description_ru }}</textarea>
                                             </div>
                                             <div class="form-group">
                                                 <label for="organizers_ru">Ответственные организаторы (RU)</label>
-                                                <textarea name="organizers_ru" id="organizers_ru"
+                                                <div id="editor5" data-text="editor_text5" class="border">
+                                                    {!! $item->organizers_ru !!}</div>
+                                                <textarea name="organizers_ru" hidden id="editor_text5"
                                                     class="form-control">{{ $item->organizers_ru }}</textarea>
                                             </div>
                                             <div class="form-group">
                                                 <label for="participants_info_ru">Информация об участниках (RU)</label>
-                                                <textarea name="participants_info_ru" id="participants_info_ru"
+                                                <div id="editor6" data-text="editor_text6" class="border">
+                                                    {!! $item->participants_info_ru !!}</div>
+                                                <textarea name="participants_info_ru" hidden id="editor_text6"
                                                     class="form-control">{{ $item->participants_info_ru }}</textarea>
                                             </div>
                                         </div>
@@ -99,18 +111,24 @@
                                             </div>
                                             <div class="form-group">
                                                 <label for="description_en">Description (EN)</label>
-                                                <textarea name="description_en" id="description_en"
+                                                <div id="editor7" data-text="editor_text7" class="border">
+                                                    {!! $item->description_en !!}</div>
+                                                <textarea name="description_en" hidden id="editor_text7"
                                                     class="form-control">{{ $item->description_en }}</textarea>
                                             </div>
                                             <div class="form-group">
                                                 <label for="organizers_en">Responsible Organizers (EN)</label>
-                                                <textarea name="organizers_en" id="organizers_en"
+                                                <div id="editor8" data-text="editor_text8" class="border">
+                                                    {!! $item->organizers_en !!}</div>
+                                                <textarea name="organizers_en" hidden id="editor_text8"
                                                     class="form-control">{{ $item->organizers_en }}</textarea>
                                             </div>
                                             <div class="form-group">
                                                 <label for="participants_info_en">Information about Participants
                                                     (EN)</label>
-                                                <textarea name="participants_info_en" id="participants_info_en"
+                                                <div id="editor9" data-text="editor_text9" class="border">
+                                                    {!! $item->participants_info_en !!}</div>
+                                                <textarea name="participants_info_en" hidden id="editor_text9"
                                                     class="form-control">{{ $item->participants_info_en }}</textarea>
                                             </div>
                                         </div>
@@ -140,4 +158,13 @@
             </div>
         </section>
     </div>
+@endsection
+
+@section('js_after')
+    <script src="{{asset('admin_lte/ckeditor5/build/ckeditor.js')}}"></script>
+    <script src="{{asset('admin_lte/ckeditor5/ckeditor5_connect.js')}}"></script>
+@endsection
+
+@section('js')
+    <script src="{{asset('admin_lte/ckeditor5/correcting.js')}}"></script>
 @endsection
