@@ -10,7 +10,11 @@ class YouthSportController extends Controller
 {
     public function index()
     {
-        $data = YouthSportEvent::orderBy('id', 'DESC')->paginate(20);
+        $query = YouthSportEvent::orderBy('id', 'DESC');
+        if (!auth()->user()->hasRole('super-admin')) {
+            $query->where('user_id', auth()->id());
+        }
+        $data = $query->paginate(20);
         return view('admin.pages.youth_sport.index', compact('data'));
     }
 
@@ -35,6 +39,8 @@ class YouthSportController extends Controller
             $data['image'] = 'uploads/youth_sport/' . $imageName;
         }
 
+        $data['user_id'] = auth()->id();
+
         YouthSportEvent::create($data);
 
         return redirect()->route('youth-sport.index')->with('success', 'Event created successfully.');
@@ -43,12 +49,19 @@ class YouthSportController extends Controller
     public function edit($id)
     {
         $item = YouthSportEvent::findOrFail($id);
+        if (!auth()->user()->hasRole('super-admin') && $item->user_id !== auth()->id()) {
+            abort(403, 'Unauthorized action.');
+        }
         return view('admin.pages.youth_sport.edit', compact('item'));
     }
 
     public function update(Request $request, $id)
     {
         $item = YouthSportEvent::findOrFail($id);
+
+        if (!auth()->user()->hasRole('super-admin') && $item->user_id !== auth()->id()) {
+            abort(403, 'Unauthorized action.');
+        }
 
         $request->validate([
             'title_uz' => 'required|string|max:255',
@@ -72,6 +85,9 @@ class YouthSportController extends Controller
     public function destroy($id)
     {
         $item = YouthSportEvent::findOrFail($id);
+        if (!auth()->user()->hasRole('super-admin') && $item->user_id !== auth()->id()) {
+            abort(403, 'Unauthorized action.');
+        }
         $item->delete();
         return redirect()->route('youth-sport.index')->with('success', 'Event deleted successfully.');
     }

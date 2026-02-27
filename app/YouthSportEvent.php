@@ -24,6 +24,12 @@ class YouthSportEvent extends Model
         'participants_info_ru',
         'participants_info_en',
         'image',
-        'status'
+        'status',
+        'user_id'
     ];
+
+    public function user()
+    {
+        return $this->belongsTo(\App\User::class);
+    }
 }

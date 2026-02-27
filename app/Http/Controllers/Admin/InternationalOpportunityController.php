@@ -10,7 +10,11 @@ class InternationalOpportunityController extends Controller
 {
     public function index()
     {
-        $data = InternationalOpportunity::orderBy('id', 'DESC')->paginate(20);
+        $query = InternationalOpportunity::orderBy('id', 'DESC');
+        if (!auth()->user()->hasRole('super-admin')) {
+            $query->where('user_id', auth()->id());
+        }
+        $data = $query->paginate(20);
         return view('admin.pages.international.index', compact('data'));
     }
 
@@ -35,6 +39,8 @@ class InternationalOpportunityController extends Controller
             $data['image'] = 'uploads/international/' . $imageName;
         }
 
+        $data['user_id'] = auth()->id();
+
         InternationalOpportunity::create($data);
 
         return redirect()->route('international.index')->with('success', 'Opportunity created successfully.');
@@ -43,12 +49,19 @@ class InternationalOpportunityController extends Controller
     public function edit($id)
     {
         $item = InternationalOpportunity::findOrFail($id);
+        if (!auth()->user()->hasRole('super-admin') && $item->user_id !== auth()->id()) {
+            abort(403, 'Unauthorized action.');
+        }
         return view('admin.pages.international.edit', compact('item'));
     }
 
     public function update(Request $request, $id)
     {
         $item = InternationalOpportunity::findOrFail($id);
+
+        if (!auth()->user()->hasRole('super-admin') && $item->user_id !== auth()->id()) {
+            abort(403, 'Unauthorized action.');
+        }
 
         $request->validate([
             'title_uz' => 'required|string|max:255',
@@ -72,6 +85,9 @@ class InternationalOpportunityController extends Controller
     public function destroy($id)
     {
         $item = InternationalOpportunity::findOrFail($id);
+        if (!auth()->user()->hasRole('super-admin') && $item->user_id !== auth()->id()) {
+            abort(403, 'Unauthorized action.');
+        }
         $item->delete();
         return redirect()->route('international.index')->with('success', 'Opportunity deleted successfully.');
     }

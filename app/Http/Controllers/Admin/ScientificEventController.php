@@ -10,7 +10,11 @@ class ScientificEventController extends Controller
 {
     public function index()
     {
-        $data = ScientificEvent::orderBy('id', 'DESC')->paginate(20);
+        $query = ScientificEvent::orderBy('id', 'DESC');
+        if (!auth()->user()->hasRole('super-admin')) {
+            $query->where('user_id', auth()->id());
+        }
+        $data = $query->paginate(20);
         return view('admin.pages.scientific.index', compact('data'));
     }
 
@@ -35,6 +39,8 @@ class ScientificEventController extends Controller
             $data['image'] = 'uploads/scientific/' . $imageName;
         }
 
+        $data['user_id'] = auth()->id();
+
         ScientificEvent::create($data);
 
         return redirect()->route('scientific.index')->with('success', 'Scientific event created successfully.');
@@ -43,12 +49,19 @@ class ScientificEventController extends Controller
     public function edit($id)
     {
         $item = ScientificEvent::findOrFail($id);
+        if (!auth()->user()->hasRole('super-admin') && $item->user_id !== auth()->id()) {
+            abort(403, 'Unauthorized action.');
+        }
         return view('admin.pages.scientific.edit', compact('item'));
     }
 
     public function update(Request $request, $id)
     {
         $item = ScientificEvent::findOrFail($id);
+
+        if (!auth()->user()->hasRole('super-admin') && $item->user_id !== auth()->id()) {
+            abort(403, 'Unauthorized action.');
+        }
 
         $request->validate([
             'title_uz' => 'required|string|max:255',
@@ -72,6 +85,9 @@ class ScientificEventController extends Controller
     public function destroy($id)
     {
         $item = ScientificEvent::findOrFail($id);
+        if (!auth()->user()->hasRole('super-admin') && $item->user_id !== auth()->id()) {
+            abort(403, 'Unauthorized action.');
+        }
         $item->delete();
         return redirect()->route('scientific.index')->with('success', 'Scientific event deleted successfully.');
     }

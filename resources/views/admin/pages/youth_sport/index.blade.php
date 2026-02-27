@@ -24,6 +24,7 @@
                                             <th>Title (UZ)</th>
                                             <th>Event Date</th>
                                             <th>Location</th>
+                                            <th>Created By</th>
                                             <th class="last-td">Actions</th>
                                         </tr>
                                     </thead>
@@ -34,6 +35,7 @@
                                                 <td>{{ $item->title_uz }}</td>
                                                 <td>{{ $item->event_date }}</td>
                                                 <td>{{ $item->location_uz }}</td>
+                                                <td>{{ $item->user->name ?? 'System' }}</td>
                                                 <td>
                                                     <a href="{{ route('youth-sport.edit', $item->id) }}"
                                                         class="btn btn-primary btn-sm"><i class="fa fa-edit"></i></a>

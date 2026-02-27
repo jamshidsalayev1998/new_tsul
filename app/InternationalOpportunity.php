@@ -22,6 +22,12 @@ class InternationalOpportunity extends Model
         'contact_info_ru',
         'contact_info_en',
         'image',
-        'status'
+        'status',
+        'user_id'
     ];
+
+    public function user()
+    {
+        return $this->belongsTo(\App\User::class);
+    }
 }

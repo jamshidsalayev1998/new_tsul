@@ -24,6 +24,12 @@ class ScientificEvent extends Model
         'participation_rules_ru',
         'participation_rules_en',
         'image',
-        'status'
+        'status',
+        'user_id'
     ];
+
+    public function user()
+    {
+        return $this->belongsTo(\App\User::class);
+    }
 }

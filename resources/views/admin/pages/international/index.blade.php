@@ -25,6 +25,7 @@
                                             <th>Title (UZ)</th>
                                             <th>Deadline</th>
                                             <th>Grant</th>
+                                            <th>Created By</th>
                                             <th class="last-td">Actions</th>
                                         </tr>
                                     </thead>
@@ -35,6 +36,7 @@
                                                 <td>{{ $item->title_uz }}</td>
                                                 <td>{{ $item->deadline }}</td>
                                                 <td>{{ $item->grant_amount }}</td>
+                                                <td>{{ $item->user->name ?? 'System' }}</td>
                                                 <td>
                                                     <a href="{{ route('international.edit', $item->id) }}"
                                                         class="btn btn-primary btn-sm"><i class="fa fa-edit"></i></a>
