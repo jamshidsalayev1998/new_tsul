@@ -14,3 +14,16 @@ storage/framework/views/*.php
 storage/logs/*.log
 proxy
 php/local.ini
+
+# Ignore large user-uploaded media and old backups to speed up Docker build
+public/media
+public/uploads
+public/video
+public/files
+public/front_assets_old
+public/timetable
+public/about_university
+public/young_scientists
+public/ustav_files
+public/storage
+storage/app/public
