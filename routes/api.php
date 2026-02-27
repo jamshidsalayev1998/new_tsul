@@ -14,6 +14,12 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+use App\Http\Controllers\Api\PublicDataController;
+
 Route::get('info', function () {
     return "info";
 });
+
+Route::get('/youth-sport', [PublicDataController::class, 'getYouthSport']);
+Route::get('/scientific', [PublicDataController::class, 'getScientific']);
+Route::get('/international', [PublicDataController::class, 'getInternational']);
