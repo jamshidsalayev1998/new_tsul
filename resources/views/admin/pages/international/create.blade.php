@@ -24,7 +24,7 @@
                             </div>
                             <div class="card-body">
                                 <form action="{{ route('international.store') }}" method="POST"
-                                    enctype="multipart/form-data">
+                                    enctype="multipart/form-data" class="form_news">
                                     @csrf
                                     <div class="tab-content" id="international-tabs-content">
                                         <!-- Uzbek -->
@@ -117,7 +117,7 @@
                                         <label for="image_file">Rasm</label>
                                         <input type="file" name="image_file" id="image_file" class="form-control-file">
                                     </div>
-                                    <button type="submit" class="btn btn-success">Saqlash</button>
+                                    <button type="button" class="btn btn-success saqlash_button">Saqlash</button>
                                     <a href="{{ route('international.index') }}" class="btn btn-secondary">Bekor qilish</a>
                                 </form>
                             </div>

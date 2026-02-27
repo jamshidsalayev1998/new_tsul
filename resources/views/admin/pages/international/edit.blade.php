@@ -24,7 +24,7 @@
                             </div>
                             <div class="card-body">
                                 <form action="{{ route('international.update', $item->id) }}" method="POST"
-                                    enctype="multipart/form-data">
+                                    enctype="multipart/form-data" class="form_news">
                                     @csrf
                                     @method('PUT')
                                     <div class="tab-content" id="international-tabs-content">
@@ -136,7 +136,7 @@
                                         @endif
                                         <input type="file" name="image_file" id="image_file" class="form-control-file">
                                     </div>
-                                    <button type="submit" class="btn btn-success">Yangilash</button>
+                                    <button type="button" class="btn btn-success saqlash_button">Yangilash</button>
                                     <a href="{{ route('international.index') }}" class="btn btn-secondary">Bekor qilish</a>
                                 </form>
                             </div>

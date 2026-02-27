@@ -23,7 +23,7 @@
                                 </ul>
                             </div>
                             <div class="card-body">
-                                <form action="{{ route('scientific.store') }}" method="POST" enctype="multipart/form-data">
+                                <form action="{{ route('scientific.store') }}" method="POST" enctype="multipart/form-data" class="form_news">
                                     @csrf
                                     <div class="tab-content" id="scientific-tabs-content">
                                         <!-- Uzbek -->
@@ -124,7 +124,7 @@
                                         <label for="image_file">Rasm</label>
                                         <input type="file" name="image_file" id="image_file" class="form-control-file">
                                     </div>
-                                    <button type="submit" class="btn btn-success">Saqlash</button>
+                                    <button type="button" class="btn btn-success saqlash_button">Saqlash</button>
                                     <a href="{{ route('scientific.index') }}" class="btn btn-secondary">Bekor qilish</a>
                                 </form>
                             </div>

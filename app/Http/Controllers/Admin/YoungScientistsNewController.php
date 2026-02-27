@@ -19,20 +19,23 @@ class YoungScientistsNewController extends Controller
      *
      * @return void
      */
-    public function index(){
+    public function index()
+    {
         $news = YoungScientistsNew::all();
-        return view('admin.pages.scientists_news.index' , [
+        return view('admin.pages.scientists_news.index', [
             'data' => $news
         ]);
         return $news;
     }
 
-    public function create(){
-        return view('admin.pages.scientists_news.create' );
+    public function create()
+    {
+        return view('admin.pages.scientists_news.create');
     }
 
-    public function store(Request $request){
-//        return $request;
+    public function store(Request $request)
+    {
+        //        return $request;
         $new = new YoungScientistsNew();
         $new->title_uz = $request->title_uz;
         $new->title_ru = $request->title_ru;
@@ -43,25 +46,25 @@ class YoungScientistsNewController extends Controller
         $new->short_info_uz = $request->short_info_uz;
         $new->short_info_ru = $request->short_info_ru;
         $new->short_info_en = $request->short_info_en;
-        if ($request->date == null){
+        if ($request->date == null) {
             $new->date = date('Y-m-d');
-        }
-        else{
+        } else {
             $new->date = $request->date;
         }
-        if ($request->hasFile('image')){
+        if ($request->hasFile('image')) {
             $file = $request->file('image');
             $file_ext = $file->getClientOriginalExtension();
-            $new_name = $this->file_name($this->randomPassword_alpha(10)).'.'.$file_ext;
-            $file->move(public_path().'/young_scientists' , $new_name);
-            $new->image = 'young_scientists/'.$new_name;
+            $new_name = $this->file_name($this->randomPassword_alpha(10)) . '.' . $file_ext;
+            $file->move(public_path() . '/young_scientists', $new_name);
+            $new->image = 'young_scientists/' . $new_name;
         }
         $new->save();
-        return redirect(route('admin_young_scientist_new.index'))->with('success' , 'Malumot saqlandi');
+        return redirect(route('admin_young_scientist_new.index'))->with('success', 'Malumot saqlandi');
     }
-    public function update(Request $request , $id){
-//        return $request;
-        $new =  YoungScientistsNew::find($id);
+    public function update(Request $request, $id)
+    {
+        //        return $request;
+        $new = YoungScientistsNew::find($id);
         $new->title_uz = $request->title_uz;
         $new->title_ru = $request->title_ru;
         $new->title_en = $request->title_en;
@@ -71,45 +74,48 @@ class YoungScientistsNewController extends Controller
         $new->short_info_uz = $request->short_info_uz;
         $new->short_info_ru = $request->short_info_ru;
         $new->short_info_en = $request->short_info_en;
-        if ($request->date == null){
+        if ($request->date == null) {
             $new->date = date('Y-m-d');
-        }
-        else{
+        } else {
             $new->date = $request->date;
         }
-        if ($request->hasFile('image')){
+        if ($request->hasFile('image')) {
             $file = $request->file('image');
             $file_ext = $file->getClientOriginalExtension();
-            $new_name = $this->file_name($this->randomPassword_alpha(10)).'.'.$file_ext;
-            $file->move(public_path().'/young_scientists' , $new_name);
-            $new->image = 'young_scientists/'.$new_name;
+            $new_name = $this->file_name($this->randomPassword_alpha(10)) . '.' . $file_ext;
+            $file->move(public_path() . '/young_scientists', $new_name);
+            $new->image = 'young_scientists/' . $new_name;
         }
         $new->update();
-        return redirect()->back()->with('success' , 'Malumot saqlandi');
+        return redirect()->back()->with('success', 'Malumot saqlandi');
     }
 
-    public function destroy($id){
+    public function destroy($id)
+    {
         $new = YoungScientistsNew::find($id);
-        if ($new){
+        if ($new) {
             $new->delete();
         }
-        return redirect()->back()->with('success' , 'Malumot ochirildi');
+        return redirect()->back()->with('success', 'Malumot ochirildi');
     }
 
-    public function edit($id){
+    public function edit($id)
+    {
         $new = YoungScientistsNew::find($id);
-        if ($new){
-            return view('admin.pages.scientists_news.edit' , [
+        if ($new) {
+            return view('admin.pages.scientists_news.edit', [
                 'data' => $new
             ]);
         }
     }
 
-    public function file_name($name){
-            $name2 =$name.date('s').'_'.date('i').'_'.date('h').'_'.date('d').'_'.date('m');
-            return $name2;
-     }
-     public function randomPassword_alpha($count) {
+    public function file_name($name)
+    {
+        $name2 = $name . date('s') . '_' . date('i') . '_' . date('h') . '_' . date('d') . '_' . date('m');
+        return $name2;
+    }
+    public function randomPassword_alpha($count)
+    {
         $alphabet = 'abcdefghjkmnpqrstuvwxyz';
         $pass = array(); //remember to declare $pass as an array
         $alphaLength = strlen($alphabet) - 1; //put the length -1 in cache
@@ -120,15 +126,15 @@ class YoungScientistsNewController extends Controller
         return implode($pass); //turn the array into a string
     }
 
-    public function change_status($id){
+    public function change_status($id)
+    {
         $new = YoungScientistsNew::find($id);
-        if ($new){
-            if ($new->status){
+        if ($new) {
+            if ($new->status) {
                 $new->status = 0;
                 $new->update();
                 return 0;
-            }
-            else{
+            } else {
                 $new->status = 1;
                 $new->update();
                 return 1;
