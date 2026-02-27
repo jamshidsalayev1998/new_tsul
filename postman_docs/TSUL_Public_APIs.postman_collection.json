@@ -1,0 +1,89 @@
+{
+  "info": {
+    "_postman_id": "b3e34b9d-4e94-4d1a-be2a-5b12a02b1c8f",
+    "name": "TSUL Public APIs",
+    "description": "Public, unauthenticated API endpoints for accessing Youth Sport, Scientific, and International data from TSUL application.",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "Get Youth Sports",
+      "request": {
+        "method": "GET",
+        "header": [
+          {
+            "key": "Accept",
+            "value": "application/json"
+          }
+        ],
+        "url": {
+          "raw": "{{base_url}}/api/youth-sport",
+          "host": [
+            "{{base_url}}"
+          ],
+          "path": [
+            "api",
+            "youth-sport"
+          ]
+        },
+        "description": "Fetch all youth sport events. The response includes fully qualified image URLs."
+      },
+      "response": []
+    },
+    {
+      "name": "Get Scientific Events",
+      "request": {
+        "method": "GET",
+        "header": [
+          {
+            "key": "Accept",
+            "value": "application/json"
+          }
+        ],
+        "url": {
+          "raw": "{{base_url}}/api/scientific",
+          "host": [
+            "{{base_url}}"
+          ],
+          "path": [
+            "api",
+            "scientific"
+          ]
+        },
+        "description": "Fetch all scientific events. The response includes fully qualified image URLs."
+      },
+      "response": []
+    },
+    {
+      "name": "Get International Opportunities",
+      "request": {
+        "method": "GET",
+        "header": [
+          {
+            "key": "Accept",
+            "value": "application/json"
+          }
+        ],
+        "url": {
+          "raw": "{{base_url}}/api/international",
+          "host": [
+            "{{base_url}}"
+          ],
+          "path": [
+            "api",
+            "international"
+          ]
+        },
+        "description": "Fetch all international opportunities. The response includes fully qualified image URLs."
+      },
+      "response": []
+    }
+  ],
+  "variable": [
+    {
+      "key": "base_url",
+      "value": "https://testsite.tsul.uz",
+      "type": "string"
+    }
+  ]
+}
