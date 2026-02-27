@@ -340,6 +340,7 @@ Route::group(
         Route::resource('youth-sport', 'YouthSportController')->middleware('role:youth-sport-admin|super-admin');
         Route::resource('scientific', 'ScientificEventController')->middleware('role:legal-research-admin|super-admin');
         Route::resource('international', 'InternationalOpportunityController')->middleware('role:international-admin|super-admin');
+        Route::resource('faculty-event', 'FacultyEventController')->middleware('role:faculty-admin|super-admin');
 
         Route::resource('kafedra_admin', 'KafedraAdminController');
     }

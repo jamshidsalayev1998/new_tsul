@@ -171,6 +171,15 @@
 </li>
 @endhasanyrole
 
+@hasanyrole('super-admin|faculty-admin')
+<li class="nav-item">
+    <a href="{{route('faculty-event.index')}}" class="nav-link">
+        <i class="nav-icon fas fa-university"></i>
+        <p>Fakultet tadbirlari</p>
+    </a>
+</li>
+@endhasanyrole
+
 @role('kafedra-admin')
 <li class="nav-item">
     <a href="{{route('teachers.index')}}" class="nav-link">

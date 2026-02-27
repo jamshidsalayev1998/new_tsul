@@ -17,3 +17,4 @@ use Illuminate\Support\Facades\Route;
 Route::get('/youth-sport', 'Api\PublicDataController@getYouthSport');
 Route::get('/scientific', 'Api\PublicDataController@getScientific');
 Route::get('/international', 'Api\PublicDataController@getInternational');
+Route::get('/faculty-event', 'Api\PublicDataController@getFacultyEvent');

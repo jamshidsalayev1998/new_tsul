@@ -9,21 +9,22 @@
     $biography_locale = 'biography_' . $locale;
     $reception_days_locale = 'reception_days_' . $locale;
     $full_name_locale = 'full_name_' . $locale;
-        ?>
+                                    ?>
     <div class="rectors_page pb-5">
         <div class="rectors_page_main">
             <div>
-                <!-- <div>
-                            {!! $data->$main_rektor_word_locale !!}
-                        </div> -->
-            </div>
-            <div>
-                <img style="width: 100%; height: auto;" src="{{asset('')}}{{$data->main_image}}" alt="">
+                <img style="width: 100%; " src="{{asset('')}}{{$data->main_image}}" alt="">
                 <span class="col-12">
                     <h4 class="col-12 col-md-12 col-lg-6">{{$data->$full_name_locale}}</h4>
                     <h5 class="col-12 col-md-12 col-lg-6">@lang('index.Huquqshunos, 1-darajali adliya maslahatchisi')</h5>
                 </span>
             </div>
+            <div>
+                <div>
+                    <!-- {!! $data->$main_rektor_word_locale !!} -->
+                </div>
+            </div>
+
         </div>
         <div class="container mt-5">
             <div class="my-3 py-1"
@@ -341,8 +342,7 @@
             <div class="short_card_about_rector">
                 <div>
                     <div class="rp_about_img bg-none" style="margin-left: 0 !important;">
-                        <img style="width: 100%;  object-fit: contain;"
-                            src="{{asset('')}}{{$data->main_image}}" alt="">
+                        <img style="width: 100%;  object-fit: contain;" src="{{asset('')}}{{$data->main_image}}" alt="">
                     </div>
                 </div>
                 <div class="d-flex align-items-center justify-content-center">

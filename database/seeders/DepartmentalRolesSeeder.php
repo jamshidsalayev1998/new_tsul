@@ -20,6 +20,7 @@ class DepartmentalRolesSeeder extends Seeder
             'manage youth_sport',
             'manage legal_research',
             'manage international',
+            'manage faculty_events',
         ];
 
         foreach ($permissions as $permission) {
@@ -31,6 +32,7 @@ class DepartmentalRolesSeeder extends Seeder
             'youth-sport-admin' => ['manage youth_sport'],
             'legal-research-admin' => ['manage legal_research'],
             'international-admin' => ['manage international'],
+            'faculty-admin' => ['manage faculty_events'],
         ];
 
         foreach ($roles as $roleName => $rolePermissions) {
