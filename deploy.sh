@@ -19,6 +19,10 @@ echo "Rebuilding and starting Docker containers..."
 docker-compose down
 docker-compose up -d --build
 
+# Clear Laravel caches within the container
+echo "Clearing application caches..."
+docker-compose exec -T app php artisan optimize:clear
+
 # Optional: You can also choose to only do the build process without restarting everything if needed
 # docker-compose build
 # docker-compose up -d
