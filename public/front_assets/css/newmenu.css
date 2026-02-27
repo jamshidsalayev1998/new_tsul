@@ -29,6 +29,7 @@ h1, h2, h3, h4, h5, h6, p, span, a {
     position: relative;
     margin-right: 6px;
     transition: all 0.2s ease-in-out;
+    z-index: 2222;
 }
 
 .nav_social_box a i {
@@ -101,6 +102,9 @@ h1, h2, h3, h4, h5, h6, p, span, a {
     align-items: center;
     width: calc(50% - (var(--logoBoxWidth) / 2));
 }
+.right-features-box{
+    z-index: 5555;
+}
 .left_bottom_nav{
     width: calc(50% - (var(--logoBoxWidth) / 2));
     display: flex;
@@ -143,6 +147,7 @@ h1, h2, h3, h4, h5, h6, p, span, a {
     display: inline-block;
     font-size: 14px;
     font-weight: 500;
+    z-index: 9999;
 }
 
 .top_nav .left_top_nav {
@@ -164,6 +169,7 @@ h1, h2, h3, h4, h5, h6, p, span, a {
     display: flex;
     align-items: center;
     justify-content: center;
+    z-index: 2222;
 }
 
 
@@ -204,7 +210,7 @@ h1, h2, h3, h4, h5, h6, p, span, a {
     top: 100%;
     left: 0;
     display: none;
-    z-index: 2000;
+    z-index: 5555;
     width: max-content;
     padding: 10px 8px;
     box-sizing: border-box;
@@ -218,7 +224,7 @@ h1, h2, h3, h4, h5, h6, p, span, a {
     right: 0;
     top: 100%;
     display: none;
-    z-index: 2000;
+    z-index: 5555;
     width: max-content;
     padding: 10px 8px;
     box-sizing: border-box;
@@ -232,7 +238,7 @@ h1, h2, h3, h4, h5, h6, p, span, a {
     top: 100%;
     left: 0;
     display: none;
-    z-index: 2000;
+    z-index: 2222;
     width: max-content;
     padding: 10px 8px;
     box-sizing: border-box;
@@ -246,7 +252,7 @@ h1, h2, h3, h4, h5, h6, p, span, a {
     top: 100%;
     right: 0;
     display: none;
-    z-index: 2000;
+    z-index: 2222;
     width: max-content;
     padding: 10px 8px;
     box-sizing: border-box;
