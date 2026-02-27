@@ -134,6 +134,12 @@
         <p>Feedbacks</p>
     </a>
 </li>
+<li class="nav-item">
+    <a href="{{ url('log-viewer') }}" class="nav-link" target="_blank">
+        <i class="nav-icon fas fa-file-code"></i>
+        <p>System Logs</p>
+    </a>
+</li>
 
 <li class="nav-header">Bo'limlar boshqaruvi</li>
 @endrole

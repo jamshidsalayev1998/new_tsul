@@ -37,5 +37,9 @@ class AppServiceProvider extends ServiceProvider
         }
 
         Paginator::useBootstrapFour();
+
+        \Opcodes\LogViewer\Facades\LogViewer::auth(function ($request) {
+            return $request->user() && $request->user()->hasRole('super-admin');
+        });
     }
 }
