@@ -7,8 +7,9 @@ fi
 
 # Set permissions (essential for server deployment)
 echo "Setting directory permissions..."
-chown -R www-data:www-data storage bootstrap/cache
-chmod -R 775 storage bootstrap/cache
+mkdir -p public/media
+chown -R www-data:www-data storage bootstrap/cache public/media
+chmod -R 775 storage bootstrap/cache public/media
 
 # Wait for MySQL to be ready
 echo "Waiting for database (db:3306)..."
