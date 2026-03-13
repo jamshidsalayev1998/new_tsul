@@ -119,6 +119,10 @@ Route::group(
         Route::get('requestment/{id}', 'RequestmentController@index')->name('simple.requestment');
 
         Route::post('requestments', 'RequestmentController@store')->name('simple.requestments.store');
+        
+        Route::get('poll/{slug}', 'PollController@show')->name('poll.show');
+        Route::post('poll/{slug}/vote', 'PollController@vote')->name('poll.vote');
+        Route::get('poll/{slug}/results', 'PollController@results')->name('poll.results');
     }
 );
 Route::group(
@@ -212,6 +216,7 @@ Route::group(
 
         Route::get('admin-media-index', 'MediaController@index')->name('admin.media.index');
         Route::post('admin-media-store', 'MediaController@store')->name('admin.media.store');
+        Route::delete('admin-media-delete/{id}', 'MediaController@destroy')->name('admin.media.destroy');
 
         Route::get('/rektorat', 'RektoratController@index')->name('admin.rektorat.index');
         Route::get('/rektorat-create', 'RektoratController@create')->name('admin.rektorat.create');
@@ -234,6 +239,8 @@ Route::group(
         Route::resource('admin_young_scientist_new', 'YoungScientistsNewController');
         Route::get('/admin_young_scientist_new-change-status/{id}', 'YoungScientistsNewController@change_status')->name('admin_young_scientist_new.change.status');
         Route::resource('admin_scientific_article', 'ScientificArticleController');
+        Route::get('polls/{poll}/export', 'PollController@export')->name('polls.export');
+        Route::resource('polls', 'PollController');
 
         // Route::resource('admin_faculty', 'FacultyController');
         // 1. Fakultetlar ro'yxatini ko'rish

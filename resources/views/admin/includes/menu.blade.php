@@ -135,6 +135,12 @@
     </a>
 </li>
 <li class="nav-item">
+    <a href="{{route('polls.index')}}" class="nav-link">
+        <i class="nav-icon fas fa-poll"></i>
+        <p>So'rovnomalar</p>
+    </a>
+</li>
+<li class="nav-item">
     <a href="{{ url('log-viewer') }}" class="nav-link" target="_blank">
         <i class="nav-icon fas fa-file-code"></i>
         <p>System Logs</p>

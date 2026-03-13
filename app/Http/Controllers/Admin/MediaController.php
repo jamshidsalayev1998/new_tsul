@@ -16,8 +16,19 @@ class MediaController extends Controller
      *
      * @return void
      */
-    public function index(){
-        $medias = Media::orderBy('id' , 'DESC')->get();
+    public function index(Request $request){
+        $query = Media::orderBy('id' , 'DESC');
+
+        if($request->has('search') && $request->search != ''){
+            $query->where('name', 'like', '%'.$request->search.'%');
+        }
+
+        if($request->has('type') && $request->type != ''){
+            $query->where('type', $request->type);
+        }
+
+        $medias = $query->paginate(20);
+
         return view('admin.pages.media.index',[
             'data' => $medias
         ]);
@@ -39,27 +50,52 @@ class MediaController extends Controller
     public function store(Request $request){
         if ($request->hasFile('image')){
             $file = $request->file('image');
-            $file_ext = $file->getClientOriginalExtension();
+            $file_ext = strtolower($file->getClientOriginalExtension());
             $new_name = $this->file_name($this->randomPassword_alpha(10)).'.'.$file_ext;
             $file->move(public_path().'/media' , $new_name);
             $new_media = new Media();
-            $new_media->name = $request->name;
+            $new_media->name = $request->name ?? $file->getClientOriginalName();
             $new_media->path = 'media/'.$new_name;
-            if ($file_ext == 'jpg' || $file_ext == 'jpeg' || $file_ext == 'JPG' || $file_ext == 'JPEG' || $file_ext == 'png' || $file_ext == 'PNG'){
+            
+            // 1 - Image, 2 - PDF, 3 - Word, 4 - Excel, 5 - Video, 6 - Audio, 0 - Other
+            if (in_array($file_ext, ['jpg', 'jpeg', 'png', 'gif', 'svg', 'webp'])){
                 $new_media->type = 1;
             }
             elseif ($file_ext == 'pdf'){
                 $new_media->type = 2;
             }
-            elseif ($file_ext == 'doc' || $file_ext == 'docx'){
+            elseif (in_array($file_ext, ['doc', 'docx', 'odt'])){
                 $new_media->type = 3;
             }
-            elseif ($file_ext == 'xls' || $file_ext == 'xlsx'){
+            elseif (in_array($file_ext, ['xls', 'xlsx', 'ods', 'csv'])){
                 $new_media->type = 4;
             }
+            elseif (in_array($file_ext, ['mp4', 'avi', 'mov', 'wmv'])){
+                $new_media->type = 5;
+            }
+            elseif (in_array($file_ext, ['mp3', 'wav', 'ogg'])){
+                $new_media->type = 6;
+            }
+            elseif (in_array($file_ext, ['zip', 'rar', '7z'])){
+                $new_media->type = 7;
+            }
+            else {
+                $new_media->type = 0;
+            }
+            
             $new_media->save();
             return redirect()->back()->with('success' , 'Malumot saqlandi');
         }
+    }
+
+    public function destroy($id){
+        $media = Media::findOrFail($id);
+        $file_path = public_path($media->path);
+        if(file_exists($file_path)){
+            unlink($file_path);
+        }
+        $media->delete();
+        return redirect()->back()->with('success', 'Fayl muvaffaqiyatli o\'chirildi');
     }
 
 }
