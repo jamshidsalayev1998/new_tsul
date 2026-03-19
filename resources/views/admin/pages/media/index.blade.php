@@ -194,8 +194,8 @@
                                 <i class="fa fa-cloud-upload" style="font-size: 50px;"></i>
                                 <p class="mb-0">Tanlash uchun bosing</p>
                               </div>
-                              <input type="file" id="imageUpload1" hidden name="image" required>
                           </div>
+                          <input type="file" id="imageUpload1" hidden name="image" required>
                       </div>
                       
                       <div class="form-group">
@@ -224,7 +224,7 @@
                 var validImageTypes = ['image/gif', 'image/jpeg', 'image/png', 'image/webp', 'image/svg+xml'];
                 
                 reader.onload = function(e) {
-                    if ($.in_array(fileType, validImageTypes) < 0) {
+                    if ($.inArray(fileType, validImageTypes) < 0) {
                         $('#imagePreview1').hide();
                         $('#fileInfo1').html('<i class="fa fa-file" style="font-size: 50px;"></i><p class="mt-2">' + file.name + '</p>').show();
                     } else {
