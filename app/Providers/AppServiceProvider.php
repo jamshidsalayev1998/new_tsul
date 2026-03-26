@@ -6,6 +6,7 @@ use Illuminate\Support\ServiceProvider;
 use Illuminate\Support\Facades\Schema;
 use Illuminate\Support\Facades\URL;
 use Illuminate\Support\Facades\App;
+use Illuminate\Pagination\Paginator;
 
 class AppServiceProvider extends ServiceProvider
 {
@@ -26,11 +27,15 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-//        if(env('APP_ENV') != 'locale'){
+        Schema::defaultStringLength(191);
+
+        //        if(env('APP_ENV') != 'locale'){
 //            URL::forceScheme('https');
 //        }
-       if (App::environment('production')) {
-             $this->app['request']->server->set('HTTPS', true);
-       }
+        if (App::environment('production')) {
+            $this->app['request']->server->set('HTTPS', true);
+        }
+
+        Paginator::useBootstrapFour();
     }
 }

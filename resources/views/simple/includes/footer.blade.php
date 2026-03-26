@@ -29,25 +29,31 @@ $locale = app()->getLocale();
                             <div>
                                  <p class="mt-3" style="font-size: 16px; font-weight: 600;">
                                     <i class="fas fa-phone-alt mr-2"></i>
-                                    <span>Kommutator: +998 71-236-28-06</span>
+                                    <span>Kommutator: +998 71-236-28-06 
+                                        <br>+998 71 233-66-36</span>
                                 </p>
                                 <p class="mt-3" style="font-size: 16px; font-weight: 600;">
                                     <i class="fas fa-phone-alt mr-2"></i>
-                                    <span>@lang('index.Тел'): {{$about->phone}}</span>
+                                    <!-- <span>@lang('index.Тел'): {{$about->phone}}</span> -->
+                                    <span>Qabul bo'limi: +998 71 233-13-95</span>
                                 </p>
                                 <p class="mt-3" style="font-size: 16px; font-weight: 600;">
                                     <i class="fas fa-fax mr-2"></i>
                                     <span>@lang('index.Факс'): {{$about->faks}}</span>
+                                </p>
+                                 <p class="mt-3" style="font-size: 16px; font-weight: 600;">
+                                    <i class="fas fa-phone-alt mr-2"></i>
+                                    <span>Korrupsiya haqida xabar berish uchun ishonch telefoni: +998 71 233-42-09</span>
                                 </p>
                                 <p class="mt-3" style="font-size: 16px; font-weight: 600;">
                                     <i class="fas fa-envelope mr-2"></i>
                                     <span>@lang('index.e-mail'): <a class="owlItems" href="#"
                                             style="font-size: 16px; font-weight: 600; color: white;">{{$about->email}}</a></span>
                                 </p>
-                                <p>
+                                <!-- <p>
                                     <i class="fas fa-map-marker-alt mr-2"></i>
                                     <span style="font-size: 16px; font-weight: 600;">{{$about->$address_locale}}</span>
-                                </p>
+                                </p> -->
                                 <p class="mt-4">
                                     <a href="{{$about->twitter}}" class="footer_icons" target="_blank"
                                         rel="noopener noreferrer">
@@ -74,10 +80,10 @@ $locale = app()->getLocale();
                         <div>
                             <div>
                                 <h5 class="footer_title_columns">@lang('index.Локация') </h5>
-                                <div class="mt-3">
+                                {{-- <div class="mt-3">
                                     <script type="text/javascript" charset="utf-8" async src="https://api-maps.yandex.ru/services/constructor/1.0/js/?um=constructor%3Aff74afcb8a7194150c0d50941943a50329548f652033ca20bb5ab6dc1a80a85f&amp;
                                 width=100%&amp;height=200&amp;lang=ru_RU&amp;scroll=true"></script>
-                                </div>
+                                </div> --}}
                             </div>
                         </div>
                     </div>

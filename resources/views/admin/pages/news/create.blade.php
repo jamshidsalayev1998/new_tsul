@@ -48,17 +48,17 @@
                                             <div class="row">
                                                 <div class="col-md-6">
                                                     <div class="form-group">
-                                                        <label for="">Date <span class="text-danger">@error('date') | {{$message}} @enderror</span> </label>
-                                                        <input type="date" class="form-control" name="date">
+                                                        <label for="">Date @error('date') <span class="text-danger">| {{$message}}</span> @enderror </label>
+                                                        <input type="date" class="form-control @error('date') is-invalid @enderror" name="date" value="{{ old('date') }}">
                                                     </div>
                                                 </div>
                                                 <div class="col-md-6">
                                                     <div class="form-group">
-                                                        <label for="">Type <span class="text-danger">@error('type_id') | {{$message}} @enderror</span></label>
-                                                        <select name="type_id" class="form-control">
+                                                        <label for="">Type @error('type_id') <span class="text-danger">| {{$message}}</span> @enderror</label>
+                                                        <select name="type_id" class="form-control @error('type_id') is-invalid @enderror">
                                                             @foreach($types as $type)
                                                                 <option
-                                                                    value="{{$type->id}}">{{$type->name_uz}}</option>
+                                                                    value="{{$type->id}}" {{ old('type_id') == $type->id ? 'selected' : '' }}>{{$type->name_uz}}</option>
                                                             @endforeach
                                                         </select>
                                                     </div>
@@ -97,19 +97,19 @@
                                                     <div class="tab-pane fade show active" id="custom-tabs-four-1"
                                                          role="tabpanel" aria-labelledby="custom-tabs-four-1-tab">
                                                         <div class="form-group">
-                                                            <label for="">Title uz <span class="text-danger">@error('title_uz') | {{$message}} @enderror</span></label>
-                                                            <input type="text" class="form-control" name="title_uz">
+                                                            <label for="">Title uz @error('title_uz') <span class="text-danger">| {{$message}}</span> @enderror</label>
+                                                            <input type="text" class="form-control @error('title_uz') is-invalid @enderror" name="title_uz" value="{{ old('title_uz') }}">
                                                         </div>
                                                         <div class="form-group">
-                                                            <label for="">Short info uz <span class="text-danger">@error('short_info_uz') | {{$message}} @enderror</span></label>
+                                                            <label for="">Short info uz @error('short_info_uz') <span class="text-danger">| {{$message}}</span> @enderror</label>
                                                             <textarea name="short_info_uz" cols="30"
-                                                                      class="form-control"></textarea>
+                                                                      class="form-control @error('short_info_uz') is-invalid @enderror">{{ old('short_info_uz') }}</textarea>
                                                         </div>
                                                         <div class="form-group">
                                                             <label for="">content uz <span class="text-danger">@error('content_uz') | {{$message}} @enderror</span></label>
                                                             <div id="toolbar-container1"></div>
                                                             <div id="editor1" data-text="editor_text1"
-                                                                 class="border"></div>
+                                                                 class="border @error('content_uz') border-danger @enderror">{!! old('content_uz', '') !!}</div>
                                                             <textarea name="content_uz" hidden id="editor_text1"
                                                                       cols="30"
                                                                       rows="10"></textarea>
@@ -135,19 +135,19 @@
                                                     <div class="tab-pane fade" id="custom-tabs-four-2" role="tabpanel"
                                                          aria-labelledby="custom-tabs-four-2-tab">
                                                         <div class="form-group">
-                                                            <label for="">Title ru <span class="text-danger">@error('title_ru') | {{$message}} @enderror</span></label>
-                                                            <input type="text" class="form-control" name="title_ru">
+                                                            <label for="">Title ru @error('title_ru') <span class="text-danger">| {{$message}}</span> @enderror</label>
+                                                            <input type="text" class="form-control @error('title_ru') is-invalid @enderror" name="title_ru" value="{{ old('title_ru') }}">
                                                         </div>
                                                         <div class="form-group">
-                                                            <label for="">Short info ru <span class="text-danger">@error('short_info_ru') | {{$message}} @enderror</span></label>
+                                                            <label for="">Short info ru @error('short_info_ru') <span class="text-danger">| {{$message}}</span> @enderror</label>
                                                             <textarea name="short_info_ru" cols="30"
-                                                                      class="form-control"></textarea>
+                                                                      class="form-control @error('short_info_ru') is-invalid @enderror">{{ old('short_info_ru') }}</textarea>
                                                         </div>
                                                         <div class="form-group">
                                                             <label for="">content ru <span class="text-danger">@error('content_ru') | {{$message}} @enderror</span></label>
                                                             <div id="toolbar-container2"></div>
                                                             <div id="editor2" data-text="editor_text2"
-                                                                 class="border"></div>
+                                                                 class="border @error('content_ru') border-danger @enderror">{!! old('content_ru', '') !!}</div>
                                                             <textarea name="content_ru" hidden id="editor_text2"
                                                                       cols="30"
                                                                       rows="10"></textarea>
@@ -173,19 +173,19 @@
                                                     <div class="tab-pane fade" id="custom-tabs-four-3" role="tabpanel"
                                                          aria-labelledby="custom-tabs-four-3-tab">
                                                         <div class="form-group">
-                                                            <label for="">Title en <span class="text-danger">@error('title_en') | {{$message}} @enderror</span></label>
-                                                            <input type="text" class="form-control" name="title_en">
+                                                            <label for="">Title en @error('title_en') <span class="text-danger">| {{$message}}</span> @enderror</label>
+                                                            <input type="text" class="form-control @error('title_en') is-invalid @enderror" name="title_en" value="{{ old('title_en') }}">
                                                         </div>
                                                         <div class="form-group">
-                                                            <label for="">Short info en <span class="text-danger">@error('short_info_en') | {{$message}} @enderror</span></label>
+                                                            <label for="">Short info en @error('short_info_en') <span class="text-danger">| {{$message}}</span> @enderror</label>
                                                             <textarea name="short_info_en" cols="30"
-                                                                      class="form-control"></textarea>
+                                                                      class="form-control @error('short_info_en') is-invalid @enderror">{{ old('short_info_en') }}</textarea>
                                                         </div>
                                                         <div class="form-group">
                                                             <label for="">content en <span class="text-danger">@error('content_en') | {{$message}} @enderror</span></label>
                                                             <div id="toolbar-container3"></div>
                                                             <div id="editor3" data-text="editor_text3"
-                                                                 class="border"></div>
+                                                                 class="border @error('content_en') border-danger @enderror">{!! old('content_en', '') !!}</div>
                                                             <textarea name="content_en" hidden id="editor_text3"
                                                                       cols="30"
                                                                       rows="10"></textarea>

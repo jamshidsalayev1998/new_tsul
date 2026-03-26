@@ -1,0 +1,16 @@
+.git
+vendor
+node_modules
+.env
+.env.docker
+.env.example
+docker
+app_old*
+resources_old*
+routes_old*
+storage/framework/cache/data/*
+storage/framework/sessions/*
+storage/framework/views/*.php
+storage/logs/*.log
+proxy
+php/local.ini
