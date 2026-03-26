@@ -49,6 +49,10 @@ class AboutUniversityController extends Controller
         $about->youtube = $request->youtube;
         $about->instagram = $request->instagram;
         $about->facebook = $request->facebook;
+        $about->kommutator_phone = $request->kommutator_phone;
+        $about->qabul_phone = $request->qabul_phone;
+        $about->ishonch_phone = $request->ishonch_phone;
+        $about->map_link = $request->map_link;
         $about->short_description_uz = $request->short_description_uz;
         $about->short_description_ru = $request->short_description_ru;
         $about->short_description_en = $request->short_description_en;
@@ -59,7 +63,7 @@ class AboutUniversityController extends Controller
             $file = $request->file('image');
             $ext = $file->getClientOriginalExtension();
             $full_name = $this->randomPassword(15).'.'.$ext;
-            $file->move('/images/about_university' , $full_name);
+            $file->move(public_path('images/about_university') , $full_name);
             $with_path = 'images/about_university/'.$full_name;
             $about->image = $with_path;
         }

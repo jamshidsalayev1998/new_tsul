@@ -89,6 +89,22 @@
                               <label for="">Faks</label>
                               <input type="text" class="form-control" name="faks" value="{{$about->faks}}">
                           </div>
+                          <div class="form-group">
+                              <label for="">Kommutator phone</label>
+                              <input type="text" class="form-control" name="kommutator_phone" value="{{$about->kommutator_phone}}">
+                          </div>
+                          <div class="form-group">
+                              <label for="">Qabul bo'limi phone</label>
+                              <input type="text" class="form-control" name="qabul_phone" value="{{$about->qabul_phone}}">
+                          </div>
+                          <div class="form-group">
+                              <label for="">Ishonch telefoni (Hotline)</label>
+                              <input type="text" class="form-control" name="ishonch_phone" value="{{$about->ishonch_phone}}">
+                          </div>
+                          <div class="form-group">
+                              <label for="">Map Link (Yandex Constructor)</label>
+                              <input type="text" class="form-control" name="map_link" value="{{$about->map_link}}">
+                          </div>
                       </div>
                       <div class="col-md-2">
                           Twitter

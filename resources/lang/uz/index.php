@@ -362,8 +362,8 @@ Toshkent davlat yuridik universiteti huzuridagi Yuridik kadrlarni xalqaro standa
     'Kafedralar' => 'Kafedralar',
     'Read more' => 'Batafsil',
     'Talim profillari' => 'Talim dasturi',
-    "Qabul bo‘limi" => "Qabul bo‘limi"
-
-
-
+    "Qabul bo‘limi" => "Qabul bo‘limi",
+    "Kommutator" => "Kommutator",
+    "Ishonch telefoni" => "Ishonch telefoni",
+    "Korrupsiya haqida xabar berish uchun ishonch telefoni" => "Korrupsiya haqida xabar berish uchun ishonch telefoni"
 ];

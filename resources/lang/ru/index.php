@@ -350,7 +350,8 @@ return [
     'Read more' => 'Подробнее',
     'Talim profillari' => 'Talim dasturi',
     'Rektor murojaati' => 'Приветствие ректора',
-    "Qabul bo‘limi" => "Отдел приема"
-
-
+    "Qabul bo‘limi" => "Отдел приема",
+    "Kommutator" => "Коммутатор",
+    "Ishonch telefoni" => "Телефон доверия",
+    "Korrupsiya haqida xabar berish uchun ishonch telefoni" => "Телефон доверия для сообщения о коррупции"
 ];

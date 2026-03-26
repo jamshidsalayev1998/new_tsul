@@ -332,7 +332,8 @@ return [
         'Read more' => 'Read more',
     'Talim profillari' => 'Educational programs',
     'Rektor murojaati' => 'Rector greetings',
-    "Qabul bo‘limi" => "Admissions Office"
-
-
+    "Qabul bo‘limi" => "Admissions Office",
+    "Kommutator" => "Switchboard",
+    "Ishonch telefoni" => "Helpline",
+    "Korrupsiya haqida xabar berish uchun ishonch telefoni" => "Hotline for reporting corruption"
 ];
