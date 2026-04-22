@@ -1,6 +1,7 @@
 <?php
 
 namespace App\Http\Controllers\Admin;
+
 use App\Hashtag;
 use App\Http\Controllers\Controller;
 
@@ -11,12 +12,26 @@ use App\SliderImage;
 use App\SliderText;
 use Illuminate\Http\Request;
 
+/**
+ * Admin controller for managing news articles.
+ *
+ * Handles full CRUD operations for multilingual news content (UZ/RU/EN).
+ * Supports per-locale image uploads; if only one locale image is provided,
+ * it is used as a fallback for the others. Empty CKEditor artifacts are
+ * stripped before validation to prevent false required-field failures.
+ *
+ * Images are stored in public/images/news/ using the original filename
+ * (no uniqueness guarantee — uploading the same filename will overwrite).
+ *
+ * Note: several methods contain unreachable `return $request` statements
+ * that are legacy debugging artifacts.
+ */
 class NewwController extends Controller
 {
     /**
-     * Create a new controller instance.
+     * Display all news articles ordered by date descending.
      *
-     * @return void
+     * @return \Illuminate\View\View
      */
     public function index()
     {
@@ -26,6 +41,14 @@ class NewwController extends Controller
         ]);
     }
 
+    /**
+     * Show the form for creating a new news article.
+     *
+     * Loads only non-deleted news types and all available hashtags
+     * for the dropdown and tag selectors.
+     *
+     * @return \Illuminate\View\View
+     */
     public function create()
     {
         $types = NewwType::isset()->get();
@@ -36,11 +59,24 @@ class NewwController extends Controller
         ]);
     }
 
+    /**
+     * Generate a timestamped filename suffix for file uploads.
+     *
+     * @param string $name Base name to append timestamp to
+     * @return string Timestamped filename
+     */
     public function file_name($name)
     {
         $name2 = $name . date('s') . '_' . date('i') . '_' . date('h') . '_' . date('d') . '_' . date('m');
         return $name2;
     }
+
+    /**
+     * Show the edit form for an existing news article.
+     *
+     * @param int $id The news article's primary key
+     * @return \Illuminate\View\View
+     */
     public function edit($id)
     {
         $types = NewwType::isset()->get();
@@ -52,10 +88,29 @@ class NewwController extends Controller
             'data' => $new
         ]);
     }
+
+    /**
+     * Store a newly created news article in the database.
+     *
+     * Pre-processes CKEditor empty paragraph placeholders, replacing them
+     * with null before validation runs. Image handling cascades: if only
+     * image_uz is provided it is used for all three locales; image_ru and
+     * image_en can independently override their respective locale images.
+     * Falls back to a default image when no locale image is uploaded.
+     *
+     * Side effects:
+     * - Writes uploaded images to public/images/news/
+     * - Creates a new Neww record
+     *
+     * @param \Illuminate\Http\Request $request
+     * @return \Illuminate\Http\RedirectResponse
+     * @throws \Illuminate\Validation\ValidationException
+     */
     public function store(Request $request)
     {
         //        return $request;
         $request_array = $request->all();
+        // Replace CKEditor empty paragraph artifacts with null so required validation works correctly
         foreach ($request_array as $key => $value) {
             if ($value == "<p><br data-cke-filler=\"true\"></p>") {
                 $request_array[$key] = null;
@@ -94,6 +149,7 @@ class NewwController extends Controller
 
         }
         $has_image = 0;
+        // UZ image is used as the base fallback for all locales
         if ($request->hasFile('image_uz')) {
             $file = $request->file('image_uz');
             $file_name = $file->getClientOriginalName();
@@ -127,6 +183,7 @@ class NewwController extends Controller
             $new->image_en = 'images/news/' . $file_name;
             $has_image = 1;
         }
+        // Use a generic default image when no locale-specific image was uploaded
         if (!$has_image) {
             $new->image_uz = 'images/default-news-image.png';
             $new->image_ru = 'images/default-news-image.png';
@@ -136,6 +193,23 @@ class NewwController extends Controller
         return redirect(route('admin.neww.index'))->with('success', 'Malumot saqlandi');
         return $request;
     }
+
+    /**
+     * Update an existing news article.
+     *
+     * Same CKEditor sanitization and image handling as store(). Unlike store(),
+     * missing locale images on update do NOT fall back to other locales —
+     * each locale image is only updated if explicitly uploaded.
+     *
+     * Side effects:
+     * - Optionally writes updated images to public/images/news/
+     * - Updates the Neww record
+     *
+     * @param \Illuminate\Http\Request $request
+     * @param int $id The news article's primary key
+     * @return \Illuminate\Http\RedirectResponse
+     * @throws \Illuminate\Validation\ValidationException
+     */
     public function update(Request $request, $id)
     {
         //        return $request;
@@ -206,6 +280,15 @@ class NewwController extends Controller
         return $request;
     }
 
+    /**
+     * Delete a news article by its ID passed in the request body.
+     *
+     * Note: the ID is taken from the request body (not the URL), which is
+     * unusual for a destroy action — the old image file is NOT deleted from disk.
+     *
+     * @param \Illuminate\Http\Request $request Must contain 'id' field
+     * @return \Illuminate\Http\RedirectResponse
+     */
     public function destroy(Request $request)
     {
         $news = Neww::find($request->id);
@@ -214,6 +297,15 @@ class NewwController extends Controller
         return $request;
     }
 
+    /**
+     * Toggle the published status of a news article (0 ↔ 1).
+     *
+     * Called via AJAX from the admin list view. Returns the new status
+     * value (0 or 1) as a plain integer response, not JSON.
+     *
+     * @param int $id The news article's primary key
+     * @return int|null New status value (0 or 1), or null if not found
+     */
     public function change_status($id)
     {
         $new = Neww::find($id);
@@ -229,6 +321,4 @@ class NewwController extends Controller
             }
         }
     }
-
-
 }

@@ -1,17 +1,35 @@
 <?php
 
 namespace App\Http\Controllers\Admin;
+
 use App\Http\Controllers\Controller;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
+/**
+ * Admin panel entry-point controller.
+ *
+ * Handles the initial redirect after login based on the authenticated
+ * user's role. Each role is directed to their relevant management section
+ * rather than a generic dashboard, simplifying navigation for role-specific admins.
+ *
+ * Super-admins and other roles without a specific redirect land on the
+ * slider management page as the default admin dashboard.
+ */
 class IndexController extends Controller
 {
     /**
-     * Create a new controller instance.
+     * Redirect the authenticated admin to their role-appropriate section.
      *
-     * @return void
+     * Role-to-route mapping:
+     * - kafedra-admin       → teachers.index (manage department teachers)
+     * - youth-sport-admin   → youth-sport.index (manage youth sport events)
+     * - legal-research-admin → scientific.index (manage scientific events)
+     * - international-admin → international.index (manage international opportunities)
+     * - all others (incl. super-admin) → admin.slider.index (main admin dashboard)
+     *
+     * @return \Illuminate\Http\RedirectResponse
      */
     public function index()
     {
